@@ -1,52 +1,28 @@
 'use client';
 
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import {
   Terminal,
-  Zap,
   MoveUpRight,
   Shield,
   Cloud,
   Smartphone,
   WifiOff,
   PhoneCall,
-  BarChart3,
-  CheckCircle2,
   ArrowRight,
   Globe,
-  TrendingUp,
+  Mail,
   Menu,
   X,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useEffect, useState } from 'react';
-import { EcosystemHero, BrandSheet, EndorsementLockup } from '@/components/brand';
-import { ClerqueLogo, SteadyLogo, HNSLogo } from '@/components/brand/logos';
+import { useRef, useState, useEffect } from 'react';
+import { EcosystemHero, BrandSheet } from '@/components/brand';
 
 // ---------------------------------------------------------------------------
-// Helpers
+// Animation variants
 // ---------------------------------------------------------------------------
-
-function useCountUp(target: number, inView: boolean, decimals = 0) {
-  const motionVal = useMotionValue(0);
-  const spring = useSpring(motionVal, { stiffness: 60, damping: 20 });
-  const [display, setDisplay] = useState('0');
-
-  useEffect(() => {
-    if (inView) motionVal.set(target);
-  }, [inView, target, motionVal]);
-
-  useEffect(() => {
-    const unsub = spring.on('change', (v: number) => {
-      setDisplay(
-        decimals > 0 ? v.toFixed(decimals) : Math.round(v).toLocaleString()
-      );
-    });
-    return unsub;
-  }, [spring, decimals]);
-
-  return display;
-}
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -62,6 +38,8 @@ const stagger = {
 // Navbar
 // ---------------------------------------------------------------------------
 
+const NAV_LINKS = ['About', 'Ecosystem', 'Compliance'];
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -73,68 +51,64 @@ function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-paper/95 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.08)]'
-          : 'bg-paper/80 backdrop-blur-sm'
+          ? 'border-b border-white/8 bg-[#020817]/80 backdrop-blur-md'
+          : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-hns-600">
-            <HNSLogo size={20} color="#fff" />
-          </div>
-          <span className="text-base font-semibold tracking-tight text-ink">HNScorpPH</span>
+        <div className="flex items-center gap-2">
+          <Image src="/logos/hns-icon.png" width={32} height={32} alt="HNScorpPH" className="rounded-lg" />
+          <span className="text-sm font-semibold tracking-tight text-white">HNScorpPH</span>
         </div>
 
-        {/* Nav links — desktop */}
-        <div className="hidden items-center gap-8 md:flex">
-          {['About', 'Ecosystem', 'Products'].map((label) => (
+        {/* Desktop links */}
+        <div className="hidden items-center gap-7 md:flex">
+          {NAV_LINKS.map((label) => (
             <a
               key={label}
               href={`#${label.toLowerCase()}`}
-              className="text-sm font-medium text-ink/55 transition-colors hover:text-ink"
+              className="text-sm font-medium text-white/60 transition-colors hover:text-white"
             >
               {label}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="https://clerque.hnscorpph.com/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-lg bg-hns-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-hns-700"
-          >
-            <Terminal className="h-3.5 w-3.5" />
-            Launch Clerque
-          </Link>
-        </div>
+        {/* Desktop CTA */}
+        <Link
+          href="https://clerque.hnscorpph.com/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden items-center gap-2 rounded-lg bg-hns-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-hns-500 md:flex"
+        >
+          <Terminal className="h-3.5 w-3.5" />
+          Launch Clerque
+        </Link>
 
         {/* Mobile hamburger */}
         <button
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-ink/10 text-ink/60 md:hidden"
+          className="flex items-center justify-center rounded-lg p-2 text-white/70 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {open && (
-        <div className="border-t border-ink/8 bg-paper px-6 pb-5 pt-3 md:hidden">
+        <div className="border-t border-white/8 bg-[#020817]/95 px-6 pb-5 pt-2 md:hidden">
           <div className="flex flex-col gap-3">
-            {['About', 'Ecosystem', 'Products'].map((label) => (
+            {NAV_LINKS.map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className="py-1 text-sm font-medium text-ink/60 hover:text-ink"
+                className="py-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
               >
                 {label}
               </a>
@@ -143,92 +117,47 @@ function Navbar() {
               href="https://clerque.hnscorpph.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 flex items-center justify-center gap-2 rounded-lg bg-hns-600 py-2.5 text-sm font-semibold text-white"
+              className="mt-1 flex items-center gap-2 rounded-lg bg-hns-600 px-4 py-2.5 text-sm font-semibold text-white"
             >
+              <Terminal className="h-3.5 w-3.5" />
               Launch Clerque
             </Link>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
 
 // ---------------------------------------------------------------------------
-// Hero Dashboard Card (light)
-// ---------------------------------------------------------------------------
-
-function DashboardCard() {
-  const bars = [40, 65, 50, 80, 70, 90];
-
-  return (
-    <div className="animate-float mx-auto mt-14 w-full max-w-sm rounded-2xl border border-ink/10 bg-paper p-5 shadow-[0_8px_40px_rgba(15,23,42,0.10)]">
-      {/* Card header */}
-      <div className="mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="flex h-6 w-6 items-center justify-center rounded-md bg-clerque-600/10">
-            <ClerqueLogo size={14} className="text-clerque-600" />
-          </div>
-          <span className="text-sm font-semibold text-ink">Clerque Suite</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-          </span>
-          <span className="text-xs font-medium text-emerald-600">Live</span>
-        </div>
-      </div>
-
-      {/* Metrics */}
-      <div className="mb-4 space-y-1.5">
-        {[
-          { label: "Today's Sales", value: '₱12,847', color: 'text-ink' },
-          { label: 'Active Shifts', value: '3', color: 'text-ink' },
-          { label: 'Pending Sync', value: '0', color: 'text-emerald-600' },
-        ].map(({ label, value, color }) => (
-          <div key={label} className="flex items-center justify-between rounded-lg bg-sand px-3 py-1.5">
-            <span className="text-xs text-ink/50">{label}</span>
-            <span className={`text-xs font-semibold ${color}`}>{value}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Mini bar chart */}
-      <div className="mb-4 flex h-10 items-end gap-1">
-        {bars.map((h, i) => (
-          <div
-            key={i}
-            className="flex-1 rounded-sm bg-hns-600"
-            style={{ height: `${h}%`, opacity: 0.35 + i * 0.1 }}
-          />
-        ))}
-      </div>
-
-      <div className="border-t border-ink/6 pt-3 text-center text-[10px] text-ink/35">
-        Powered by HNScorpPH Infrastructure
-      </div>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Hero Section
+// Hero — dark section
 // ---------------------------------------------------------------------------
 
 function Hero() {
   return (
     <section
       id="about"
-      className="relative flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-28 text-center"
-      style={{
-        background: 'linear-gradient(180deg, #F0FDFA 0%, #FFFFFF 55%, #FAFAF9 100%)',
-      }}
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pb-20 pt-28 text-center"
+      style={{ background: '#020817' }}
     >
-      {/* Subtle top accent */}
+      {/* Cyan radial glow */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, #0891B2, transparent)' }}
+        className="pointer-events-none absolute inset-x-0 top-0"
+        style={{
+          height: '520px',
+          background:
+            'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(8,145,178,0.28) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Subtle grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
       />
 
       <motion.div
@@ -238,8 +167,8 @@ function Hero() {
         variants={stagger}
       >
         {/* Badge */}
-        <motion.div variants={fadeUp} className="mb-6 inline-flex">
-          <span className="flex items-center gap-2 rounded-full border border-hns-200 bg-hns-50 px-4 py-1.5 text-sm font-medium text-hns-700">
+        <motion.div variants={fadeUp} className="mb-8 inline-flex">
+          <span className="flex items-center gap-2 rounded-full border border-hns-600/30 bg-hns-600/10 px-4 py-1.5 text-sm font-medium text-hns-400">
             🇵🇭 Built for Philippine MSMEs
           </span>
         </motion.div>
@@ -247,17 +176,17 @@ function Hero() {
         {/* Headline */}
         <motion.h1
           variants={fadeUp}
-          className="mb-5 text-5xl font-bold leading-[1.1] tracking-wordmark-tight text-ink md:text-7xl"
+          className="mb-6 text-5xl font-bold leading-[1.08] tracking-wordmark-tight text-white md:text-7xl"
         >
           Digital Sovereignty
           <br />
-          <span className="text-hns-600">for the Filipino MSME.</span>
+          <span className="text-hns-400">for the Filipino MSME.</span>
         </motion.h1>
 
         {/* Sub-headline */}
         <motion.p
           variants={fadeUp}
-          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-ink/55 md:text-xl"
+          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/50 md:text-xl"
         >
           HNScorpPH provides the high-tech infrastructure local businesses need
           to compete in the digital economy — POS, payroll, ledger, and more.
@@ -266,25 +195,45 @@ function Hero() {
         {/* CTAs */}
         <motion.div
           variants={fadeUp}
-          className="mb-4 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <Link
             href="https://clerque.hnscorpph.com/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-xl bg-hns-600 px-8 py-3.5 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(8,145,178,0.35)] transition-all hover:bg-hns-700 hover:shadow-[0_6px_20px_rgba(8,145,178,0.45)] hover:scale-[1.02]"
+            className="flex items-center gap-2 rounded-xl bg-hns-600 px-8 py-3.5 text-sm font-semibold text-white shadow-[0_4px_24px_rgba(8,145,178,0.4)] transition-all hover:bg-hns-500 hover:scale-[1.02]"
           >
             Login to Clerque
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <button className="flex items-center gap-2 rounded-xl border border-ink/12 bg-paper px-8 py-3.5 text-sm font-semibold text-ink/70 transition-all hover:border-ink/20 hover:text-ink hover:scale-[1.02]">
+          <a
+            href="mailto:hnscorpph@gmail.com?subject=Partnership%20Inquiry"
+            className="flex items-center gap-2 rounded-xl border border-white/15 px-8 py-3.5 text-sm font-semibold text-white/70 transition-all hover:border-white/30 hover:text-white"
+          >
+            <Mail className="h-4 w-4" />
             Partner with HNScorp
-          </button>
+          </a>
         </motion.div>
 
-        {/* Dashboard card */}
-        <motion.div variants={fadeUp}>
-          <DashboardCard />
+        {/* Trust strip */}
+        <motion.div
+          variants={fadeUp}
+          className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
+        >
+          {[
+            'BIR CAS-Ready',
+            'GCash & Maya',
+            'Offline-First',
+            'SEC Registered (OPC)',
+          ].map((item) => (
+            <span
+              key={item}
+              className="flex items-center gap-2 text-xs font-medium text-white/35"
+            >
+              <span className="h-1 w-1 rounded-full bg-hns-500" />
+              {item}
+            </span>
+          ))}
         </motion.div>
       </motion.div>
     </section>
@@ -300,7 +249,6 @@ const TICKER_TEXT =
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
-
   return (
     <div
       id="compliance"
@@ -308,9 +256,7 @@ function ComplianceTicker() {
     >
       <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-20 bg-gradient-to-r from-hns-50 to-transparent" />
       <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-20 bg-gradient-to-l from-hns-50 to-transparent" />
-      <div
-        className="flex animate-ticker whitespace-nowrap text-xs font-medium tracking-[0.06em] text-hns-700"
-      >
+      <div className="flex animate-ticker whitespace-nowrap text-xs font-medium tracking-[0.06em] text-hns-700">
         {doubled}
       </div>
     </div>
@@ -318,7 +264,7 @@ function ComplianceTicker() {
 }
 
 // ---------------------------------------------------------------------------
-// Ecosystem Bento Grid
+// Ecosystem Section
 // ---------------------------------------------------------------------------
 
 function EcosystemCard({
@@ -364,10 +310,7 @@ function EcosystemSection() {
           variants={stagger}
           className="mb-14 text-center"
         >
-          <motion.p
-            variants={fadeUp}
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600"
-          >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600">
             Products
           </motion.p>
           <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-wordmark-tight text-ink md:text-5xl">
@@ -384,11 +327,11 @@ function EcosystemSection() {
           variants={stagger}
           className="grid grid-cols-1 gap-4 md:grid-cols-3"
         >
-          {/* Featured card */}
+          {/* Clerque — featured */}
           <EcosystemCard featured className="relative overflow-hidden md:col-span-2">
             <div className="mb-4 flex items-start justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clerque-600/10">
-                <ClerqueLogo size={24} className="text-clerque-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
+                <Image src="/logos/clerque-icon.png" width={40} height={40} alt="Clerque" className="rounded-xl" />
               </div>
               <span className="rounded-full border border-hns-200 bg-hns-50 px-3 py-0.5 text-xs font-semibold text-hns-700">
                 Flagship
@@ -401,10 +344,7 @@ function EcosystemSection() {
             </p>
             <div className="mb-6 flex flex-wrap gap-2">
               {['POS', 'Payroll', 'Accounting', 'BIR'].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-clerque-200 bg-clerque-50 px-3 py-1 text-xs font-medium text-clerque-700"
-                >
+                <span key={tag} className="rounded-full border border-clerque-200 bg-clerque-50 px-3 py-1 text-xs font-medium text-clerque-700">
                   {tag}
                 </span>
               ))}
@@ -420,10 +360,10 @@ function EcosystemSection() {
             </Link>
           </EcosystemCard>
 
-          {/* Steady card */}
+          {/* Steady */}
           <EcosystemCard>
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-steady-600/10">
-              <SteadyLogo size={24} className="text-steady-600" />
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
+              <Image src="/logos/steady-icon.png" width={40} height={40} alt="Steady" className="rounded-xl" />
             </div>
             <h3 className="mb-1.5 text-lg font-bold tracking-tight text-ink">Steady</h3>
             <p className="mb-4 text-sm leading-relaxed text-ink/55">
@@ -437,7 +377,7 @@ function EcosystemSection() {
           {/* Feature cards */}
           {cards.map(({ icon: Icon, title, desc }) => (
             <EcosystemCard key={title}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-hns-600/8 border border-hns-100">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-hns-100 bg-hns-600/8">
                 <Icon className="h-5 w-5 text-hns-600" />
               </div>
               <h3 className="mb-1.5 text-base font-bold tracking-tight text-ink">{title}</h3>
@@ -451,7 +391,7 @@ function EcosystemSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Filipino Workflow Section
+// Why Clerque — feature section
 // ---------------------------------------------------------------------------
 
 function WorkflowSection() {
@@ -485,10 +425,7 @@ function WorkflowSection() {
           variants={stagger}
           className="mb-16 text-center"
         >
-          <motion.p
-            variants={fadeUp}
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600"
-          >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600">
             Why Clerque
           </motion.p>
           <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-wordmark-tight text-ink md:text-5xl">
@@ -522,158 +459,136 @@ function WorkflowSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Animated SVG Line Chart
+// Roadmap Section
 // ---------------------------------------------------------------------------
 
-function AnimatedLineChart({ inView }: { inView: boolean }) {
-  const pathRef = useRef<SVGPathElement>(null);
-  const [length, setLength] = useState(0);
-  const [offset, setOffset] = useState(0);
+const ROADMAP = [
+  {
+    phase: 'Now',
+    label: 'Live',
+    items: [
+      {
+        name: 'HNScorpPH',
+        desc: 'Company incorporated as a One Person Corporation in the Philippines. Platform infrastructure and design system established.',
+        status: 'done' as const,
+      },
+      {
+        name: 'Clerque',
+        desc: 'Flagship business suite live — POS, payroll, BIR-compliant accounting, and GCash & Maya payments for Filipino MSMEs.',
+        status: 'done' as const,
+      },
+      {
+        name: 'Steady',
+        desc: 'Free health companion live — seizure logging, trigger tracking, and caregiver alerts for people living with epilepsy.',
+        status: 'done' as const,
+      },
+    ],
+  },
+  {
+    phase: 'Building',
+    label: 'In Progress',
+    items: [
+      {
+        name: 'Clerque v2',
+        desc: 'Major update in development — expanded inventory management, multi-branch support, and advanced BIR EIS e-invoicing.',
+        status: 'in-progress' as const,
+      },
+      {
+        name: 'Steady v2',
+        desc: 'Caregiver dashboard, medication reminders, and seizure pattern reports — giving families a fuller picture.',
+        status: 'in-progress' as const,
+      },
+    ],
+  },
+  {
+    phase: 'Next',
+    label: 'Planned',
+    items: [
+      {
+        name: 'Product 3',
+        desc: 'Third HNScorpPH product currently under research. Targeting an underserved segment of the Philippine market.',
+        status: 'planned' as const,
+      },
+      {
+        name: 'Product 4',
+        desc: 'Long-term pipeline. The architecture is ready — the product will follow once the problem is fully understood.',
+        status: 'planned' as const,
+      },
+    ],
+  },
+];
 
-  useEffect(() => {
-    if (pathRef.current) {
-      const l = pathRef.current.getTotalLength();
-      setLength(l);
-      setOffset(l);
-    }
-  }, []);
+const STATUS_STYLES = {
+  done: { dot: 'bg-emerald-500', label: 'Live', text: 'text-emerald-700' },
+  'in-progress': { dot: 'bg-amber-400', label: 'In Progress', text: 'text-amber-700' },
+  planned: { dot: 'bg-ink/20', label: 'Planned', text: 'text-ink/40' },
+};
 
-  useEffect(() => {
-    if (inView && length > 0) {
-      const start = performance.now();
-      const duration = 1800;
-      const tick = (now: number) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setOffset(length * (1 - eased));
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    }
-  }, [inView, length]);
-
-  const points: [number, number][] = [
-    [0, 80], [40, 72], [80, 68], [120, 55], [160, 50],
-    [200, 42], [240, 30], [280, 22], [320, 10],
-  ];
-
-  const d =
-    `M ${points[0][0]} ${points[0][1]} ` +
-    points.slice(1).map(([x, y]) => `L ${x} ${y}`).join(' ');
-
-  const fillD = d + ` L 320 90 L 0 90 Z`;
-
-  return (
-    <svg viewBox="0 0 320 90" className="w-full" style={{ height: '100px' }}>
-      <defs>
-        <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(8,145,178,0.18)" />
-          <stop offset="100%" stopColor="rgba(8,145,178,0)" />
-        </linearGradient>
-      </defs>
-      <path d={fillD} fill="url(#chartFill)" opacity={inView ? 1 : 0} style={{ transition: 'opacity 0.5s 0.5s' }} />
-      <path
-        ref={pathRef}
-        d={d}
-        fill="none"
-        stroke="#0891B2"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeDasharray={length}
-        strokeDashoffset={offset}
-      />
-      {inView && (
-        <circle cx="320" cy="10" r="4" fill="#0891B2">
-          <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite" />
-        </circle>
-      )}
-      {['Jan', 'Mar', 'Jun', 'Sep', 'Dec'].map((label, i) => (
-        <text key={label} x={i * 80} y="88" fontSize="8" fill="rgba(15,23,42,0.3)" textAnchor="middle">
-          {label}
-        </text>
-      ))}
-    </svg>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// HUD Section (Business Health)
-// ---------------------------------------------------------------------------
-
-function HUDSection() {
+function RoadmapSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
-  const sales = useCountUp(2.4, inView, 1);
-  const txCount = useCountUp(1200, inView);
-  const uptime = useCountUp(99.9, inView, 1);
-
-  const metrics = [
-    { label: 'Total Processed', value: `₱${sales}M`, icon: TrendingUp },
-    { label: 'Transactions', value: `${txCount}+`, icon: BarChart3 },
-    { label: 'Uptime', value: `${uptime}%`, icon: CheckCircle2 },
-  ];
-
   return (
-    <section className="bg-paper py-24 px-6 md:px-12" ref={ref}>
-      <div className="mx-auto max-w-5xl">
+    <section ref={ref} className="bg-paper px-8 py-20 md:px-14 md:py-24">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={stagger}
-          className="mb-14 text-center"
         >
-          <motion.p
-            variants={fadeUp}
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600"
-          >
-            Live Dashboard
+          <motion.p variants={fadeUp} className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
+            What We&apos;re Building · The HNScorpPH Roadmap
           </motion.p>
-          <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-wordmark-tight text-ink md:text-5xl">
-            See Your Business Health
-            <br />
-            <span className="text-hns-600">in Real Time</span>
+          <motion.h2 variants={fadeUp} className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-wordmark-tight text-ink md:text-4xl">
+            One product at a time.{' '}
+            <span className="text-ink/45">Each one solving a real Filipino problem.</span>
           </motion.h2>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.65, delay: 0.15 }}
-          className="rounded-3xl border border-ink/8 bg-sand p-8 shadow-[0_2px_16px_rgba(15,23,42,0.06)] md:p-12"
-        >
-          {/* Metrics */}
-          <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {metrics.map(({ label, value, icon: Icon }) => (
-              <div
-                key={label}
-                className="rounded-2xl border border-ink/8 bg-paper p-6 text-center shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
-              >
-                <Icon className="mx-auto mb-3 h-6 w-6 text-hns-600" />
-                <div className="mb-1 text-3xl font-bold tracking-tight text-ink md:text-4xl">{value}</div>
-                <div className="text-xs font-medium uppercase tracking-wider text-ink/40">{label}</div>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {ROADMAP.map((phase, pi) => (
+            <motion.div
+              key={phase.phase}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.15 + pi * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="mb-4 flex items-center gap-2">
+                <span className="text-2xl font-bold tracking-tight text-ink">{phase.phase}</span>
+                <span className="rounded-full bg-ink/5 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-ink/40">
+                  {phase.label}
+                </span>
               </div>
-            ))}
-          </div>
-
-          {/* Chart */}
-          <div className="rounded-2xl border border-ink/8 bg-paper p-6">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-semibold text-ink">Revenue (₱)</span>
-              <span className="rounded bg-hns-50 px-2 py-0.5 text-xs font-medium text-hns-700">2026</span>
-            </div>
-            <AnimatedLineChart inView={inView} />
-          </div>
-        </motion.div>
+              <div className="flex flex-col gap-4">
+                {phase.items.map((item) => {
+                  const s = STATUS_STYLES[item.status];
+                  return (
+                    <div
+                      key={item.name}
+                      className="rounded-xl border border-ink/8 bg-paper p-5 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
+                    >
+                      <div className="mb-2 flex items-center justify-between gap-2">
+                        <span className="text-sm font-semibold text-ink">{item.name}</span>
+                        <span className={`flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider ${s.text}`}>
+                          <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
+                          {s.label}
+                        </span>
+                      </div>
+                      <p className="text-[11px] leading-relaxed text-ink/50">{item.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
 // ---------------------------------------------------------------------------
-// CTA Banner (intentionally dark for contrast)
+// CTA Banner — dark section
 // ---------------------------------------------------------------------------
 
 function CTABanner() {
@@ -683,9 +598,9 @@ function CTABanner() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-ink py-28 px-6"
+      className="relative overflow-hidden py-28 px-6"
+      style={{ background: '#020817' }}
     >
-      {/* Accent glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
         style={{
@@ -707,13 +622,13 @@ function CTABanner() {
           </span>
         </motion.div>
 
-        <motion.h2 variants={fadeUp} className="mb-5 text-4xl font-bold tracking-wordmark-tight text-paper md:text-6xl">
+        <motion.h2 variants={fadeUp} className="mb-5 text-4xl font-bold tracking-wordmark-tight text-white md:text-6xl">
           Ready to digitize
           <br />
           your business?
         </motion.h2>
 
-        <motion.p variants={fadeUp} className="mb-10 text-lg text-paper/50">
+        <motion.p variants={fadeUp} className="mb-10 text-lg text-white/50">
           Join hundreds of Filipino MSMEs already running on Clerque.
         </motion.p>
 
@@ -730,9 +645,13 @@ function CTABanner() {
             Start with Clerque
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <button className="flex items-center gap-2 rounded-xl border border-paper/15 px-8 py-4 text-sm font-semibold text-paper/70 transition-all hover:border-paper/30 hover:text-paper">
+          <a
+            href="mailto:hnscorpph@gmail.com?subject=Sales%20Inquiry"
+            className="flex items-center gap-2 rounded-xl border border-white/15 px-8 py-4 text-sm font-semibold text-white/70 transition-all hover:border-white/30 hover:text-white"
+          >
+            <Mail className="h-4 w-4" />
             Contact Sales
-          </button>
+          </a>
         </motion.div>
       </motion.div>
     </section>
@@ -748,9 +667,7 @@ function Footer() {
     <footer className="border-t border-ink/8 bg-paper py-10 px-6 md:px-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-sm text-ink/40 md:flex-row">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-hns-600">
-            <HNSLogo size={16} color="#fff" />
-          </div>
+          <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNScorpPH" className="rounded-md" />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold text-ink">HNScorpPH</span>
             <span className="text-[10px]">Powering Philippine MSMEs since 2024.</span>
@@ -777,7 +694,7 @@ function Footer() {
 }
 
 // ---------------------------------------------------------------------------
-// Page Root
+// Page
 // ---------------------------------------------------------------------------
 
 export default function Page() {
@@ -789,36 +706,13 @@ export default function Page() {
         <ComplianceTicker />
         <EcosystemSection />
         <WorkflowSection />
-        <HUDSection />
 
-        {/* Brand identity sections */}
+        {/* Brand identity */}
         <EcosystemHero />
 
-        <section className="bg-sand px-8 py-16 md:px-14 md:py-20">
-          <div className="mx-auto max-w-6xl">
-            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
-              Endorsement System · Product Lockups
-            </p>
-            <h2 className="mb-10 text-2xl font-semibold tracking-wordmark-tight text-ink md:text-3xl">
-              Every product, unmistakably HNScorpPH.
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              <EndorsementLockup
-                ProductMark={ClerqueLogo}
-                productName="Clerque"
-                productColorClass="text-clerque-600"
-              />
-              <EndorsementLockup
-                ProductMark={SteadyLogo}
-                productName="Steady"
-                productColorClass="text-steady-600"
-              />
-            </div>
-          </div>
-        </section>
+        <RoadmapSection />
 
         <BrandSheet />
-
         <CTABanner />
       </main>
       <Footer />

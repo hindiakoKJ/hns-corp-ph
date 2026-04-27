@@ -1,68 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ─── Tailwind v4 theme ──────────────────────────────────────────────────── */
+@theme inline {
+  /* HNScorpPH brand — cyan */
+  --color-hns-50:  #ECFEFF;
+  --color-hns-100: #CFFAFE;
+  --color-hns-200: #A5F3FC;
+  --color-hns-400: #22D3EE;
+  --color-hns-500: #06B6D4;
+  --color-hns-600: #0891B2;
+  --color-hns-700: #0E7490;
+  --color-hns-800: #155E75;
 
-html { scroll-behavior: smooth; }
+  /* Clerque brand — indigo */
+  --color-clerque-50:  #EEF2FF;
+  --color-clerque-100: #E0E7FF;
+  --color-clerque-200: #C7D2FE;
+  --color-clerque-600: #4F46E5;
+  --color-clerque-700: #4338CA;
 
-body {
-  background-color: #010101;
-  color: #e2e8f0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  /* Steady brand — teal */
+  --color-steady-50:  #F0FDFA;
+  --color-steady-100: #CCFBF1;
+  --color-steady-200: #99F6E4;
+  --color-steady-600: #0D9488;
+  --color-steady-700: #0F766E;
+
+  /* Semantic surfaces */
+  --color-paper: #FAFAF9;
+  --color-sand:  #F5F0E8;
+  --color-ink:   #0F172A;
+
+  /* Typography */
+  --tracking-wordmark-tight: -0.03em;
+
+  /* Font family */
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+
+  /* Ticker animation */
+  --animate-ticker: ticker 28s linear infinite;
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 }
 
-.network-bg {
-  background-image:
-    linear-gradient(rgba(0, 209, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 209, 255, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 209, 255, 0.12);
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.glass-hover:hover {
-  background: rgba(0, 209, 255, 0.06);
-  border-color: rgba(0, 209, 255, 0.25);
-  transition: all 0.3s ease;
-}
-
-.cyan-glow {
-  box-shadow: 0 0 30px rgba(0, 209, 255, 0.15), 0 0 60px rgba(0, 209, 255, 0.05);
-}
-
-.cyan-glow-sm {
-  box-shadow: 0 0 15px rgba(0, 209, 255, 0.2);
-}
-
-.shimmer-btn {
-  background: linear-gradient(
-    90deg,
-    #00d1ff 0%,
-    #00d1ff 40%,
-    #ffffff 50%,
-    #00d1ff 60%,
-    #00d1ff 100%
-  );
-  background-size: 200% auto;
-  animation: shimmer 2.5s linear infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #00d1ff 0%, #0057b7 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #010101; }
-::-webkit-scrollbar-thumb { background: rgba(0, 209, 255, 0.3); border-radius: 2px; }

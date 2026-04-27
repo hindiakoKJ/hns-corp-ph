@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter_Tight } from 'next/font/google';
 import './globals.css';
 
-// Inter Tight replaces the old <link> tag — faster, no CLS, self-hosted.
 const interTight = Inter_Tight({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -32,7 +31,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // Apply the CSS variable at root so Tailwind `font-sans` / `font-display` resolve.
     <html lang="en" className={interTight.variable}>
       <body>{children}</body>
     </html>
