@@ -353,8 +353,8 @@ function EcosystemSection() {
                   ))}
                 </div>
               </div>
-              {/* Right: CTA */}
-              <div className="flex items-start md:pt-1">
+              {/* Right: CTAs */}
+              <div className="flex flex-col items-start gap-2 md:pt-1">
                 <Link
                   href="https://clerque.hnscorpph.com/login"
                   target="_blank"
@@ -362,6 +362,15 @@ function EcosystemSection() {
                   className="inline-flex items-center gap-2 rounded-xl bg-clerque-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-clerque-700 hover:scale-[1.02]"
                 >
                   Open Clerque
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="https://clerque.hnscorpph.com/demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-clerque-200 bg-clerque-50 px-5 py-2.5 text-sm font-semibold text-clerque-700 transition-all hover:bg-clerque-100 hover:scale-[1.02]"
+                >
+                  Try Demo
                   <MoveUpRight className="h-4 w-4" />
                 </Link>
               </div>
