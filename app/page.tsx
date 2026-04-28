@@ -296,9 +296,8 @@ function EcosystemSection() {
 
   const cards = [
     { icon: Shield, title: 'BIR Compliance', desc: 'Built to CAS specifications — sequential ORs, immutable Z-Read/X-Read logs, and downloadable BIR forms. CAS accreditation in progress.' },
-    { icon: Cloud, title: 'Cloud Infrastructure', desc: 'Railway + Vercel. Asia-Pacific region. Hosted infrastructure built for the Philippine market.' },
-    { icon: Smartphone, title: 'Mobile-Ready', desc: 'Works on any device and screen size. Clerque POS is coming to Google Play as a standalone app.' },
-    { icon: WifiOff, title: 'Offline Mode', desc: 'Sells even without internet. Transactions are written locally and sync automatically when you reconnect.' },
+    { icon: WifiOff, title: 'Offline-Capable', desc: 'Sells even without internet. Transactions write locally and sync automatically when you reconnect.' },
+    { icon: Smartphone, title: 'Mobile-Ready', desc: 'Works on any device and screen size. Clerque Counter is coming to Google Play as a standalone app.' },
   ];
 
   return (
@@ -314,10 +313,10 @@ function EcosystemSection() {
             Products
           </motion.p>
           <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-wordmark-tight text-ink md:text-5xl">
-            The Clerque Ecosystem
+            What HNScorpPH builds
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-3 text-lg text-ink/50">
-            Every tool a Filipino business owner needs, unified.
+            Clerque for business. Steady for health. Built in the Philippines.
           </motion.p>
         </motion.div>
 
@@ -337,16 +336,20 @@ function EcosystemSection() {
                 Flagship
               </span>
             </div>
-            <h3 className="mb-2 text-2xl font-bold tracking-tight text-ink">Clerque Suite</h3>
+            <h3 className="mb-1.5 text-2xl font-bold tracking-tight text-ink">Clerque</h3>
             <p className="mb-5 text-sm leading-relaxed text-ink/55">
-              The all-in-one business platform for Philippine MSMEs. Manage your point of sale,
-              process payroll, and keep your books — all from a single, beautifully designed interface.
+              Three modules, one login. Built for Philippine MSMEs.
             </p>
-            <div className="mb-6 flex flex-wrap gap-2">
-              {['POS', 'Accounting', 'BIR Forms', 'AP / AR'].map((tag) => (
-                <span key={tag} className="rounded-full border border-clerque-200 bg-clerque-50 px-3 py-1 text-xs font-medium text-clerque-700">
-                  {tag}
-                </span>
+            <div className="mb-6 flex flex-col gap-2">
+              {[
+                { name: 'Clerque Counter', desc: 'Point of sale — fast checkout, offline-capable, BIR receipts' },
+                { name: 'Clerque Ledger', desc: 'Accounting — double-entry, BIR forms, Books of Account, AP/AR' },
+                { name: 'Clerque Sync', desc: 'Team — time tracking, attendance, and timesheets' },
+              ].map((m) => (
+                <div key={m.name} className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5">
+                  <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
+                  <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
+                </div>
               ))}
             </div>
             <Link
@@ -355,13 +358,16 @@ function EcosystemSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-clerque-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-clerque-700 hover:scale-[1.02]"
             >
-              Visit App
+              Open Clerque
               <MoveUpRight className="h-4 w-4" />
             </Link>
           </EcosystemCard>
 
-          {/* Steady */}
+          {/* Steady — separate HNScorpPH product */}
           <EcosystemCard>
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/30">
+              Also by HNScorpPH
+            </p>
             <div className="mb-4 flex items-start justify-between">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
                 <Image src="/logos/steady-icon.png" width={40} height={40} alt="Steady" className="rounded-xl" />

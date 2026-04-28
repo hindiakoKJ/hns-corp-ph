@@ -17,7 +17,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/clerque-icon.png',
     name: 'Clerque',
     tintClass: 'bg-clerque-600/10',
-    kind: 'Business suite — POS, accounting, BIR',
+    kind: 'Counter · Ledger · Sync',
     status: 'live',
   },
   {
@@ -25,7 +25,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/steady-icon.png',
     name: 'Steady',
     tintClass: 'bg-steady-600/10',
-    kind: 'Health companion — coming soon',
+    kind: 'Health companion — seizure logging',
     status: 'future',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
