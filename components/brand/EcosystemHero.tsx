@@ -26,7 +26,7 @@ const PRODUCTS: Product[] = [
     name: 'Steady',
     tintClass: 'bg-steady-600/10',
     kind: 'Health companion — seizure logging',
-    status: 'future',
+    status: 'coming-soon',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
   { key: 'future-2', kind: 'Coming soon', status: 'future' },

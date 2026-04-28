@@ -5,7 +5,6 @@ import {
   Terminal,
   MoveUpRight,
   Shield,
-  Cloud,
   Smartphone,
   WifiOff,
   PhoneCall,
@@ -309,14 +308,14 @@ function EcosystemSection() {
           variants={stagger}
           className="mb-14 text-center"
         >
-          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-600">
-            Products
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-clerque-600">
+            Clerque
           </motion.p>
           <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-wordmark-tight text-ink md:text-5xl">
-            What HNScorpPH builds
+            The Clerque Ecosystem
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-3 text-lg text-ink/50">
-            Clerque for business. Steady for health. Built in the Philippines.
+            Three modules. One login. Built for Philippine MSMEs.
           </motion.p>
         </motion.div>
 
@@ -326,75 +325,134 @@ function EcosystemSection() {
           variants={stagger}
           className="grid grid-cols-1 gap-4 md:grid-cols-3"
         >
-          {/* Clerque — featured */}
-          <EcosystemCard featured className="relative overflow-hidden md:col-span-2">
-            <div className="mb-4 flex items-start justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
-                <Image src="/logos/clerque-icon.png" width={40} height={40} alt="Clerque" className="rounded-xl" />
-              </div>
-              <span className="rounded-full border border-hns-200 bg-hns-50 px-3 py-0.5 text-xs font-semibold text-hns-700">
-                Flagship
-              </span>
-            </div>
-            <h3 className="mb-1.5 text-2xl font-bold tracking-tight text-ink">Clerque</h3>
-            <p className="mb-5 text-sm leading-relaxed text-ink/55">
-              Three modules, one login. Built for Philippine MSMEs.
-            </p>
-            <div className="mb-6 flex flex-col gap-2">
-              {[
-                { name: 'Clerque Counter', desc: 'Point of sale — fast checkout, offline-capable, BIR receipts' },
-                { name: 'Clerque Ledger', desc: 'Accounting — double-entry, BIR forms, Books of Account, AP/AR' },
-                { name: 'Clerque Sync', desc: 'Team — time tracking, attendance, and timesheets' },
-              ].map((m) => (
-                <div key={m.name} className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5">
-                  <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
-                  <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
+          {/* Clerque — full-width featured card */}
+          <EcosystemCard featured className="md:col-span-3">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-12">
+              {/* Left: identity + modules */}
+              <div className="flex-1">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl overflow-hidden">
+                    <Image src="/logos/clerque-icon.png" width={44} height={44} alt="Clerque" className="rounded-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold tracking-tight text-ink">Clerque</h3>
+                    <p className="text-sm text-ink/45">Three modules, one login.</p>
+                  </div>
+                  <span className="ml-auto rounded-full border border-hns-200 bg-hns-50 px-3 py-0.5 text-xs font-semibold text-hns-700 md:ml-0">
+                    Flagship
+                  </span>
                 </div>
-              ))}
-            </div>
-            <Link
-              href="https://clerque.hnscorpph.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-clerque-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-clerque-700 hover:scale-[1.02]"
-            >
-              Open Clerque
-              <MoveUpRight className="h-4 w-4" />
-            </Link>
-          </EcosystemCard>
-
-          {/* Steady — separate HNScorpPH product */}
-          <EcosystemCard>
-            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/30">
-              Also by HNScorpPH
-            </p>
-            <div className="mb-4 flex items-start justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
-                <Image src="/logos/steady-icon.png" width={40} height={40} alt="Steady" className="rounded-xl" />
+                <div className="flex flex-col gap-2">
+                  {[
+                    { name: 'Clerque Counter', desc: 'Point of sale — fast checkout, offline-capable, BIR-compliant receipts' },
+                    { name: 'Clerque Ledger', desc: 'Accounting — double-entry, BIR forms, Books of Account, AP/AR' },
+                    { name: 'Clerque Sync', desc: 'Team — time tracking, attendance, and timesheets' },
+                  ].map((m) => (
+                    <div key={m.name} className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5">
+                      <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
+                      <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <span className="rounded-full border border-steady-200 bg-steady-50 px-3 py-0.5 text-xs font-semibold text-steady-700">
-                Coming Soon
-              </span>
+              {/* Right: CTA */}
+              <div className="flex items-start md:pt-1">
+                <Link
+                  href="https://clerque.hnscorpph.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-clerque-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-clerque-700 hover:scale-[1.02]"
+                >
+                  Open Clerque
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-            <h3 className="mb-1.5 text-lg font-bold tracking-tight text-ink">Steady</h3>
-            <p className="mb-4 text-sm leading-relaxed text-ink/55">
-              A free health companion for people living with epilepsy — seizure logging, one-tap emergency alerts, and neurologist PDF reports.
-            </p>
-            <span className="rounded-full border border-ink/10 bg-ink/5 px-3 py-1 text-xs font-medium text-ink/40">
-              App Store &amp; Google Play
-            </span>
           </EcosystemCard>
 
-          {/* Feature cards */}
+          {/* Clerque feature cards */}
           {cards.map(({ icon: Icon, title, desc }) => (
             <EcosystemCard key={title}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-hns-100 bg-hns-600/8">
-                <Icon className="h-5 w-5 text-hns-600" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-clerque-100 bg-clerque-600/8">
+                <Icon className="h-5 w-5 text-clerque-600" />
               </div>
               <h3 className="mb-1.5 text-base font-bold tracking-tight text-ink">{title}</h3>
               <p className="text-sm leading-relaxed text-ink/55">{desc}</p>
             </EcosystemCard>
           ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Steady Section — separate HNScorpPH product
+// ---------------------------------------------------------------------------
+
+function SteadySection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const features = [
+    { icon: '📋', title: 'Seizure logging', desc: 'One tap to start. Captures time, GPS, and weather automatically.' },
+    { icon: '🚨', title: 'BEACON alerts', desc: 'One-tap emergency alert — SMS and push to all contacts simultaneously.' },
+    { icon: '📄', title: 'Neurologist report', desc: 'PDF export with 6-month chart, stats, and full log. Bring it to your appointment.' },
+    { icon: '🛡️', title: 'Privacy-first', desc: 'No full names stored. Phone optional. Free — no ads, no subscription.' },
+  ];
+
+  return (
+    <section className="bg-sand py-24 px-6 md:px-12" ref={ref}>
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-steady-600">
+            Also by HNScorpPH
+          </motion.p>
+
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            {/* Left: identity */}
+            <motion.div variants={fadeUp} className="md:w-72 shrink-0">
+              <div className="mb-4 flex items-center gap-4">
+                <Image src="/logos/steady-icon.png" width={56} height={56} alt="Steady" className="rounded-2xl" />
+                <div>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">Steady</h2>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-steady-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                    Coming soon
+                  </span>
+                </div>
+              </div>
+              <p className="mb-5 text-sm leading-relaxed text-ink/55">
+                A free health companion for people living with epilepsy and their caregivers.
+                Seizure logging, emergency alerts, and neurologist reports — no subscription, no ads.
+              </p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-steady-200 bg-steady-50 px-4 py-1.5 text-xs font-medium text-steady-700">
+                App Store &amp; Google Play
+              </span>
+            </motion.div>
+
+            {/* Right: features grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 flex-1"
+            >
+              {features.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-ink/8 bg-paper p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+                >
+                  <div className="mb-2 text-xl">{f.icon}</div>
+                  <h3 className="mb-1 text-sm font-bold text-ink">{f.title}</h3>
+                  <p className="text-xs leading-relaxed text-ink/50">{f.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -712,6 +770,7 @@ export default function Page() {
         <ComplianceTicker />
         <EcosystemSection />
         <WorkflowSection />
+        <SteadySection />
 
         {/* Brand identity */}
         <EcosystemHero />
