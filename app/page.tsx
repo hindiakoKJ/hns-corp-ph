@@ -196,15 +196,13 @@ function Hero() {
           variants={fadeUp}
           className="flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
-          <Link
-            href="https://clerque.hnscorpph.com/login"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a
+            href="#ecosystem"
             className="flex items-center gap-2 rounded-xl bg-hns-600 px-8 py-3.5 text-sm font-semibold text-white shadow-[0_4px_24px_rgba(8,145,178,0.4)] transition-all hover:bg-hns-500 hover:scale-[1.02]"
           >
-            Login to Clerque
+            Get Started
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
           <a
             href="mailto:hnscorpph@gmail.com?subject=Partnership%20Inquiry"
             className="flex items-center gap-2 rounded-xl border border-white/15 px-8 py-3.5 text-sm font-semibold text-white/70 transition-all hover:border-white/30 hover:text-white"
