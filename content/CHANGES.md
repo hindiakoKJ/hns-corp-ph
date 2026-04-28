@@ -1,63 +1,91 @@
 # Content Changes Log
-> What's different from the current site and why.
+> Last updated: 2026-04-28  
+> Documents every inaccurate claim found in the live site, what replaced it, and why.  
+> Source of truth for all edits made during the honesty audit.
 
 ---
 
 ## Removed Claims
 
-| Old Claim | Why Removed |
-|-----------|-------------|
-| "SEC Registered (OPC)" | HNScorpPH OPC filing is in progress, not yet registered. |
-| "BIR CAS-Ready" / "BIR CAS-Accredited" | System is built to CAS specifications; accreditation has not been filed with BIR. |
-| "GCash & Maya integrated" | No live API. Clerque tracks collections as payment methods; no real-time payment confirmation. |
-| "Accept GCash and Maya payments" | Misleading. Clerque records collections, not processes payments. |
-| Uptime SLA (e.g. "99.9% uptime") | No SLA established. Fabricated metric. |
-| Transaction count / customer count metrics | No confirmed data. Fabricated social proof. |
-| Payroll as a live feature | PayRun schema exists; computation engine is in development, not shipped. |
-| "PWA" / Progressive Web App | No service worker, no manifest. It's a Dexie IndexedDB write-through cache. |
-| Steady: "medication reminders" | Only a free-text notes field exists; no scheduler or notification system. |
-| Steady: "trigger tracking" | Only a free-text notes field; no structured UI or correlation analysis. |
-| Steady: "bilingual" | Zero translations implemented. Language type in i18n, no strings. |
-| EndorsementLockup / repetitive product sections | Removed redundancy — same products shown 4× on one page. Replaced with RoadmapSection. |
+| Location | Old Claim | Why Removed |
+|----------|-----------|-------------|
+| Hero trust strip | `"SEC Registered (OPC)"` | SEC OPC filing is in progress. Company is not yet registered. |
+| Hero trust strip | `"BIR CAS-Ready"` | CAS accreditation has not been filed. Clerque is built to CAS specifications. |
+| Compliance Ticker | `"SEC Registered (OPC)"` | Same as above. |
+| Compliance Ticker | `"BIR CAS-Ready"` | Same as above. |
+| Compliance Ticker | `"GCash & Maya Integrated"` | There is no live GCash or Maya API. Clerque tracks collections as payment method labels. |
+| Compliance Ticker | `"99.9% Uptime SLA"` | No SLA has been established. Fabricated metric. |
+| Compliance Ticker | `"Offline-First PWA"` | Not a Progressive Web App. No service worker, no manifest. It is a Dexie IndexedDB write-through cache. |
+| EcosystemSection cards | `"CAS-Ready"` | Same as BIR CAS note above. |
+| EcosystemSection cards | `"99.9% uptime backed by enterprise SLA"` | No SLA. Fabricated. |
+| EcosystemSection cards | `"Mobile-Native PWA"` / `"Install to homescreen. No app store needed."` | Not a PWA. Reframed as "Mobile-Ready" with honest Play Store context. |
+| EcosystemSection — Clerque tags | `'Payroll'` tag | Payroll computation engine is not shipped. TimeEntry + PayRun schema exist; no salary engine or payslip generation. |
+| WorkflowSection | `"Accept digital payments natively. No third-party plugins needed. Instant settlement built in."` | Completely inaccurate. No live GCash/Maya API. No real-time confirmation. No settlement engine. |
+| CTABanner | `"Join hundreds of Filipino MSMEs already running on Clerque."` | No clients yet. Fabricated social proof. |
+| Footer | `"Powering Philippine MSMEs since 2024."` | No clients. No confirmed date. |
+| ROADMAP — HNScorpPH item | `"Company incorporated as a One Person Corporation"` | SEC registration is not done. |
+| ROADMAP — Clerque item | `"payroll"` and `"GCash & Maya payments"` in description | Payroll computation not shipped. GCash/Maya is collection tracking, not payments. |
+| ROADMAP — Steady item | Status `done` / label `Live` | Steady is not live. Currently in development. |
+| ROADMAP — entire "Building" phase | `"Clerque v2"` and `"Steady v2"` as `in-progress` | No active v2 build happening. Both items were fabricated. |
+| BrandSheet — tagline | `"payroll"` in Clerque description | Not shipped. |
+| BrandSheet — tagline | `"Log seizures, track triggers"` in Steady description | Trigger tracking is scaffolded (notes field only); no structured UI. |
+| BrandSheet — tagline | Steady described as if live | Steady is not live. |
+| BrandSheet — footer | `"Philippine-registered company"` | Not yet registered. |
+| BrandSheet — footer | `"Two products live."` | Only Clerque is live. Steady is coming soon. |
+| BrandSheet — heading | `"Clerque and Steady are the first to ship."` | Steady has not shipped. |
+| EcosystemHero — Steady | `status: 'live'` → green "Live" dot | Steady is not live. |
+| EcosystemHero — Clerque kind | `"POS, ledger, payroll"` | Payroll computation not shipped. |
 
 ---
 
-## New Claims (Added)
+## Replacements
 
-| New Claim | Basis |
-|-----------|-------|
-| "Built to CAS specifications" | OR sequential numbering, Z-Read/X-Read, Books of Account — all implemented per RR 18-2012. |
-| "Tracks GCash and Maya collections" | Clerque records GCash/Maya as payment methods and tracks settlement amounts. Accurate. |
-| "Offline-capable POS (write-through cache, syncs on reconnect)" | Dexie 4 IndexedDB implementation confirmed in codebase. |
-| "SEC OPC filing in progress" | Accurate legal status. |
-| Steady: BEACON sends SMS + push + GPS simultaneously | Confirmed in seizure-logs BEACON endpoint + notifications service. |
-| Steady: Bystander Mode requires no login | Confirmed. `/bystander` route is public in Expo Router. |
-| Steady: Neurologist PDF includes 6-month chart + full log with weather | Confirmed in `lib/pdf.ts`. |
-| Steady: Passive detection is supplementary, not a medical device | Medical disclaimer present in codebase. Reflected in all copy. |
-| Medication reminders / trigger tracking / bilingual = "coming soon" | Active development (Steady v2). Honestly disclosed. |
-| Payroll computation = "in development" | TimeEntry + PayRun schema exists; computation engine in active development (Clerque v2). |
-| BIR CAS accreditation = "in progress" | Filing is pending. Disclosed on Clerque product page. |
+| Location | Old | New | Basis |
+|----------|-----|-----|-------|
+| Hero trust strip | `"BIR CAS-Ready"` | `"BIR CAS accreditation in progress"` | Honest status. |
+| Hero trust strip | `"SEC Registered (OPC)"` | `"Filipino-built"` | True and relevant. |
+| Hero trust strip | `"GCash & Maya"` | `"GCash & Maya collection tracking"` | Accurate description of what exists. |
+| Compliance Ticker | Full rewrite | `OR sequential numbering · Z-Read & X-Read · Offline-capable POS · PFRS-aligned COA · Filipino-built` | All verified SHIPPED features. |
+| EcosystemSection BIR card | `"CAS-Ready"` | `"Built to CAS specifications — sequential ORs, immutable Z-Read/X-Read logs... CAS accreditation in progress."` | Accurate. |
+| EcosystemSection Cloud card | SLA claim removed | `"Hosted infrastructure built for the Philippine market."` | No SLA to cite. |
+| EcosystemSection Mobile card | `"Mobile-Native PWA"` | `"Mobile-Ready"` + Play Store mention | Honest framing, forward-looking. |
+| EcosystemSection Clerque tags | `['POS', 'Payroll', 'Accounting', 'BIR']` | `['POS', 'Accounting', 'BIR Forms', 'AP / AR']` | Only shipped features. |
+| EcosystemSection Steady card | No status shown | `"Coming Soon"` badge + `"App Store & Google Play"` label | Honest. |
+| WorkflowSection GCash card | `"Accept digital payments... Instant settlement"` | `"Record and reconcile GCash and Maya collections alongside cash."` | Accurate. |
+| WorkflowSection Support card | `"Filipino support team. Real humans."` | `"Direct Local Support. You deal directly with the people who built it."` | Solo founder; honest. |
+| ROADMAP — HNScorpPH | `"Company incorporated"` | `"Platform infrastructure live. SEC OPC filing in progress."` | Accurate. |
+| ROADMAP — Clerque | `"payroll"` + `"GCash & Maya payments"` | Honest feature list: POS, OR numbering, Z-Read/X-Read, BIR forms, AP/AR | Matches SHIPPED list. |
+| ROADMAP — Steady | `done`/`Live` | `coming-soon`/`Coming Soon` | Steady is not live. |
+| ROADMAP — "Building" phase | Removed entirely | New "Next" phase: Clerque on Google Play + Steady | Replaces fake progress with real upcoming milestones. |
+| ROADMAP — "Later" phase | `Product 3` + `Product 4` | `BIR CAS Accreditation` + `Product 3` | More honest and specific. |
+| CTABanner | `"hundreds of Filipino MSMEs"` | `"Be one of the first Filipino MSMEs to run on it."` | Honest early-adopter framing. |
+| Footer tagline | `"Powering Philippine MSMEs since 2024."` | `"Software built for the Philippines."` | No clients, no date to cite. |
+| BrandSheet Clerque tagline | Included "payroll" + "GCash & Maya payments" | POS, BIR-compliant accounting, OR numbering, offline-capable POS | Accurate shipped features. |
+| BrandSheet Steady tagline | Implied live; "trigger tracking" | Seizure logging, BEACON alerts, PDF reports. "Coming soon to App Store and Google Play." | Accurate. |
+| BrandSheet HNS tagline | Implied incorporation complete | `"SEC OPC filing in progress."` | Accurate. |
+| BrandSheet footer col 1 | `"Philippine-registered company"` | `"SEC OPC filing in progress."` | Accurate. |
+| BrandSheet footer col 2 | `"Two products live."` + `"payroll"` | `"One product live. One coming soon."` + corrected Clerque description | Accurate. |
+| BrandSheet heading | `"Clerque and Steady are the first to ship."` | `"Clerque is live, Steady is coming soon."` | Accurate. |
+| EcosystemHero Steady | `status: 'live'` (green dot) | `status: 'coming-soon'` (sky blue dot) | Not live. |
+| EcosystemHero Clerque kind | `"POS, ledger, payroll"` | `"POS, accounting, BIR"` | Payroll not shipped. |
 
 ---
 
-## Structural Changes
+## Flagged for Owner Review
 
-| Old Structure | New Structure |
-|---------------|---------------|
-| Single scroll page only | Multi-page site: /, /clerque, /steady, /for-msmes, /build, /roadmap, /about, /ideas |
-| No content strategy | Content architecture in `content/architecture.md` |
-| No editorial backlog | 30 blog topics + 15 product concepts in `content/backlog.md` |
-| EndorsementLockup (repetitive) | Replaced with RoadmapSection showing phases: Now / Building / Next |
-| Generic design-system copy in BrandSheet footer | Real company copy: Philippines origin, two products live, brand commitment |
+| Item | Flag | Current treatment |
+|------|------|-------------------|
+| **GCash & Maya** | The site now says "collection tracking" — no live API. Confirm this is acceptable before next release, or confirm if a live API has since been built. | Treated as tracking-only. |
+| **Payroll** | Computation engine in development. Site removes all payroll claims. Add it back only when the salary engine ships. | Removed from all copy. |
+| **"Local Support, Always"** | Solo founder. Changed to "direct support from the people who built it." Confirm you're comfortable owning support expectations. | Copy updated to reflect solo. |
+| **CTA copy** | `"Be one of the first Filipino MSMEs to run on it."` — implies very early stage. Confirm this framing is intentional. | Early-adopter language. |
 
 ---
 
-## Tone Changes
+## Files Changed
 
-| Old Tone | New Tone |
-|----------|----------|
-| Marketing superlatives ("enterprise-grade," "cutting-edge") | Specific and functional. What the feature does, not how impressive it is. |
-| Lead with features | Lead with the problem the user stops having |
-| Clerque and Steady same voice | Clerque = confident/practical; Steady = gentle/human; HNScorpPH = composed/builder |
-| Opaque about product gaps | Honest about what's in progress and what's planned |
-| No acknowledgment of limitations | Explicit "honest notes" on GCash, offline mode, CAS accreditation status |
+| File | Changes |
+|------|---------|
+| `app/page.tsx` | Hero trust strip, Compliance Ticker, EcosystemSection cards + tags + Steady card, WorkflowSection GCash and Support cards, full ROADMAP rewrite, CTABanner, Footer tagline |
+| `components/brand/EcosystemHero.tsx` | Steady status `live` → `coming-soon`; Clerque kind; added `coming-soon` ProductCard variant |
+| `components/brand/BrandSheet.tsx` | All three taglines; footer columns; section heading |

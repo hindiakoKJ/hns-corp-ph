@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-type Status = 'live' | 'future';
+type Status = 'live' | 'coming-soon' | 'future';
 
 interface Product {
   key: string;
@@ -17,7 +17,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/clerque-icon.png',
     name: 'Clerque',
     tintClass: 'bg-clerque-600/10',
-    kind: 'Business suite — POS, ledger, payroll',
+    kind: 'Business suite — POS, accounting, BIR',
     status: 'live',
   },
   {
@@ -25,8 +25,8 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/steady-icon.png',
     name: 'Steady',
     tintClass: 'bg-steady-600/10',
-    kind: 'Health companion — seizure tracking',
-    status: 'live',
+    kind: 'Health companion — coming soon',
+    status: 'future',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
   { key: 'future-2', kind: 'Coming soon', status: 'future' },
@@ -97,6 +97,27 @@ function ProductCard({ product }: { product: Product }) {
         <div>
           <div className="text-base font-semibold tracking-tight text-ink/35">Future product</div>
           <div className="mt-1 text-[11px] leading-snug text-ink/50">{product.kind}</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (product.status === 'coming-soon') {
+    return (
+      <div className="relative flex min-h-[168px] flex-col gap-3 rounded-xl border border-ink/10 bg-paper p-5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+        <div className="absolute right-4 top-4 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700">
+          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+          Coming Soon
+        </div>
+        <div className={`flex h-11 w-11 items-center justify-center rounded-[10px] overflow-hidden ${product.tintClass}`}>
+          <Image src={product.imgSrc!} width={28} height={28} alt={product.name!} className="rounded-md" />
+        </div>
+        <div>
+          <div className="text-base font-semibold tracking-tight text-ink">{product.name}</div>
+          <div className="mt-1 text-[11px] leading-snug text-ink/50">{product.kind}</div>
+        </div>
+        <div className="mt-auto border-t border-ink/5 pt-2.5 text-[10px] tracking-wide text-ink/40">
+          by <span className="font-semibold text-hns-600">HNScorpPH</span>
         </div>
       </div>
     );

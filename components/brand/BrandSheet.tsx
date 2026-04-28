@@ -14,21 +14,21 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/hns-icon.png',
     name: 'HNScorpPH',
     hex: '#0891B2',
-    tagline: 'The parent company — a Philippine OPC building software that helps local businesses run like modern enterprises, without the enterprise price tag.',
+    tagline: 'The parent company — a solo-founded Philippine company building software for local businesses and families. SEC OPC filing in progress.',
   },
   {
     key: 'clerque',
     imgSrc: '/logos/clerque-icon.png',
     name: 'Clerque',
     hex: '#4F46E5',
-    tagline: 'All-in-one business suite for Filipino MSMEs. Point of sale, payroll, BIR-compliant accounting, and GCash & Maya payments — built for the Philippine market.',
+    tagline: 'Business suite for Filipino MSMEs. Point of sale, BIR-compliant accounting, OR sequential numbering, and offline-capable POS — built for Philippine compliance from day one.',
   },
   {
     key: 'steady',
     imgSrc: '/logos/steady-icon.png',
     name: 'Steady',
     hex: '#0D9488',
-    tagline: 'A free health companion for people living with epilepsy. Log seizures, track triggers, and keep caregivers informed — built with calm and empathy, not clinical coldness.',
+    tagline: 'A free health companion for people living with epilepsy. Seizure logging, one-tap BEACON emergency alerts, and neurologist PDF reports. Coming soon to App Store and Google Play.',
   },
 ];
 
@@ -45,7 +45,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque and Steady are the first to ship.
+                HNScorpPH is the platform — Clerque is live, Steady is coming soon.
               </span>
             </h2>
           </div>
@@ -81,18 +81,18 @@ export function BrandSheet() {
 
         <div className="mt-10 grid gap-8 border-t border-ink/10 pt-6 text-xs leading-relaxed text-ink/55 md:grid-cols-3">
           <div>
-            <h3 className="mb-1.5 text-sm font-semibold text-ink">Founded in the Philippines</h3>
-            HNScorpPH OPC is a solo-founded, Philippine-registered company building
-            digital infrastructure for local businesses. Every product is designed
-            around Filipino workflows, BIR compliance rules, and real-world
-            connectivity constraints — not adapted from foreign software.
+            <h3 className="mb-1.5 text-sm font-semibold text-ink">Built in the Philippines</h3>
+            HNScorpPH OPC is a solo-founded company building digital infrastructure
+            for local businesses and families. Every product is designed around
+            Filipino workflows, BIR compliance rules, and real-world connectivity
+            constraints — not adapted from foreign software. SEC OPC filing in progress.
           </div>
           <div>
-            <h3 className="mb-1.5 text-sm font-semibold text-ink">Two products live. More coming.</h3>
-            Clerque is the flagship business suite — point of sale, payroll, and
-            BIR-compliant accounting in one app built for MSMEs. Steady is a free
-            health companion for people living with epilepsy and their caregivers,
-            offering seizure logging and safety alerts.
+            <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. One coming soon.</h3>
+            Clerque is the flagship business suite — point of sale, BIR-compliant
+            accounting, and AP/AR tracking built for MSMEs. Steady is a free health
+            companion for people living with epilepsy, coming soon to App Store and
+            Google Play.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>

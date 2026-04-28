@@ -221,10 +221,10 @@ function Hero() {
           className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
         >
           {[
-            'BIR CAS-Ready',
-            'GCash & Maya',
-            'Offline-First',
-            'SEC Registered (OPC)',
+            'BIR CAS accreditation in progress',
+            'GCash & Maya collection tracking',
+            'Offline-Capable POS',
+            'Filipino-built',
           ].map((item) => (
             <span
               key={item}
@@ -245,7 +245,7 @@ function Hero() {
 // ---------------------------------------------------------------------------
 
 const TICKER_TEXT =
-  'BIR CAS-Ready  •  GCash & Maya Integrated  •  100% Local Support  •  SEC Registered (OPC)  •  99.9% Uptime SLA  •  Offline-First PWA  •  Powered by HNScorpPH  •  ';
+  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  Filipino-built  •  Powered by HNScorpPH  •  ';
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
@@ -295,10 +295,10 @@ function EcosystemSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   const cards = [
-    { icon: Shield, title: 'BIR Compliance', desc: 'CAS-Ready, 2550Q, EIS e-invoicing built in. Stay compliant without the headache.' },
-    { icon: Cloud, title: 'Cloud Infrastructure', desc: 'Railway + Vercel. Asia-Pacific region. 99.9% uptime backed by enterprise SLA.' },
-    { icon: Smartphone, title: 'Mobile-Native PWA', desc: 'Works on any device. Install to homescreen. No app store needed.' },
-    { icon: WifiOff, title: 'Offline Mode', desc: 'Sells even without internet. Auto-syncs when back online — zero data loss.' },
+    { icon: Shield, title: 'BIR Compliance', desc: 'Built to CAS specifications — sequential ORs, immutable Z-Read/X-Read logs, and downloadable BIR forms. CAS accreditation in progress.' },
+    { icon: Cloud, title: 'Cloud Infrastructure', desc: 'Railway + Vercel. Asia-Pacific region. Hosted infrastructure built for the Philippine market.' },
+    { icon: Smartphone, title: 'Mobile-Ready', desc: 'Works on any device and screen size. Clerque POS is coming to Google Play as a standalone app.' },
+    { icon: WifiOff, title: 'Offline Mode', desc: 'Sells even without internet. Transactions are written locally and sync automatically when you reconnect.' },
   ];
 
   return (
@@ -343,7 +343,7 @@ function EcosystemSection() {
               process payroll, and keep your books — all from a single, beautifully designed interface.
             </p>
             <div className="mb-6 flex flex-wrap gap-2">
-              {['POS', 'Payroll', 'Accounting', 'BIR'].map((tag) => (
+              {['POS', 'Accounting', 'BIR Forms', 'AP / AR'].map((tag) => (
                 <span key={tag} className="rounded-full border border-clerque-200 bg-clerque-50 px-3 py-1 text-xs font-medium text-clerque-700">
                   {tag}
                 </span>
@@ -362,15 +362,20 @@ function EcosystemSection() {
 
           {/* Steady */}
           <EcosystemCard>
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
-              <Image src="/logos/steady-icon.png" width={40} height={40} alt="Steady" className="rounded-xl" />
+            <div className="mb-4 flex items-start justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden">
+                <Image src="/logos/steady-icon.png" width={40} height={40} alt="Steady" className="rounded-xl" />
+              </div>
+              <span className="rounded-full border border-steady-200 bg-steady-50 px-3 py-0.5 text-xs font-semibold text-steady-700">
+                Coming Soon
+              </span>
             </div>
             <h3 className="mb-1.5 text-lg font-bold tracking-tight text-ink">Steady</h3>
             <p className="mb-4 text-sm leading-relaxed text-ink/55">
-              A calm, empathetic health companion for seizure tracking. Safety and peace of mind, always on hand.
+              A free health companion for people living with epilepsy — seizure logging, one-tap emergency alerts, and neurologist PDF reports.
             </p>
-            <span className="rounded-full border border-steady-200 bg-steady-50 px-3 py-1 text-xs font-medium text-steady-700">
-              Health Companion
+            <span className="rounded-full border border-ink/10 bg-ink/5 px-3 py-1 text-xs font-medium text-ink/40">
+              App Store &amp; Google Play
             </span>
           </EcosystemCard>
 
@@ -401,18 +406,18 @@ function WorkflowSection() {
   const features = [
     {
       icon: Globe,
-      title: 'GCash & Maya Ready',
-      desc: 'Accept digital payments natively. No third-party plugins needed. Instant settlement built in.',
+      title: 'GCash & Maya Tracking',
+      desc: 'Record and reconcile GCash and Maya collections alongside cash. Settlement tracking keeps your BIR records accurate.',
     },
     {
       icon: WifiOff,
-      title: 'Offline-First Architecture',
-      desc: "Patchy internet? No problem. Clerque queues transactions and syncs automatically when you're back online.",
+      title: 'Offline-Capable POS',
+      desc: "Power cut. Dead router. No signal. Clerque writes transactions locally and syncs automatically when you're back online.",
     },
     {
       icon: PhoneCall,
-      title: 'Local Support, Always',
-      desc: 'Filipino support team. Same timezone. Real humans who understand your business and speak your language.',
+      title: 'Direct Local Support',
+      desc: 'Filipino-built means Filipino support. You deal directly with the people who built it — not a foreign helpdesk.',
     },
   ];
 
@@ -469,49 +474,44 @@ const ROADMAP = [
     items: [
       {
         name: 'HNScorpPH',
-        desc: 'Company incorporated as a One Person Corporation in the Philippines. Platform infrastructure and design system established.',
+        desc: 'Platform infrastructure, design system, and company website live. SEC OPC filing in progress.',
         status: 'done' as const,
       },
       {
         name: 'Clerque',
-        desc: 'Flagship business suite live — POS, payroll, BIR-compliant accounting, and GCash & Maya payments for Filipino MSMEs.',
+        desc: 'Web app live — POS, OR sequential numbering, Z-Read/X-Read, BIR forms (2550Q, 1701Q, 2551Q), Books of Account, AP/AR modules.',
         status: 'done' as const,
-      },
-      {
-        name: 'Steady',
-        desc: 'Free health companion live — seizure logging, trigger tracking, and caregiver alerts for people living with epilepsy.',
-        status: 'done' as const,
-      },
-    ],
-  },
-  {
-    phase: 'Building',
-    label: 'In Progress',
-    items: [
-      {
-        name: 'Clerque v2',
-        desc: 'Major update in development — expanded inventory management, multi-branch support, and advanced BIR EIS e-invoicing.',
-        status: 'in-progress' as const,
-      },
-      {
-        name: 'Steady v2',
-        desc: 'Caregiver dashboard, medication reminders, and seizure pattern reports — giving families a fuller picture.',
-        status: 'in-progress' as const,
       },
     ],
   },
   {
     phase: 'Next',
+    label: 'Upcoming',
+    items: [
+      {
+        name: 'Clerque on Google Play',
+        desc: 'Standalone mobile POS app for Android. Clerque\'s point-of-sale built for the phone in your pocket.',
+        status: 'coming-soon' as const,
+      },
+      {
+        name: 'Steady',
+        desc: 'Free seizure logging and BEACON emergency alert app for people living with epilepsy. Coming to App Store and Google Play.',
+        status: 'coming-soon' as const,
+      },
+    ],
+  },
+  {
+    phase: 'Later',
     label: 'Planned',
     items: [
       {
-        name: 'Product 3',
-        desc: 'Third HNScorpPH product currently under research. Targeting an underserved segment of the Philippine market.',
+        name: 'BIR CAS Accreditation',
+        desc: 'Clerque is built to CAS specifications. Filing for accreditation with the BIR RDO is the next compliance milestone.',
         status: 'planned' as const,
       },
       {
-        name: 'Product 4',
-        desc: 'Long-term pipeline. The architecture is ready — the product will follow once the problem is fully understood.',
+        name: 'Product 3',
+        desc: 'Third HNScorpPH product in early research. More when there\'s something real to say.',
         status: 'planned' as const,
       },
     ],
@@ -520,7 +520,7 @@ const ROADMAP = [
 
 const STATUS_STYLES = {
   done: { dot: 'bg-emerald-500', label: 'Live', text: 'text-emerald-700' },
-  'in-progress': { dot: 'bg-amber-400', label: 'In Progress', text: 'text-amber-700' },
+  'coming-soon': { dot: 'bg-sky-400', label: 'Coming Soon', text: 'text-sky-700' },
   planned: { dot: 'bg-ink/20', label: 'Planned', text: 'text-ink/40' },
 };
 
@@ -629,7 +629,7 @@ function CTABanner() {
         </motion.h2>
 
         <motion.p variants={fadeUp} className="mb-10 text-lg text-white/50">
-          Join hundreds of Filipino MSMEs already running on Clerque.
+          Clerque is live. Be one of the first Filipino MSMEs to run on it.
         </motion.p>
 
         <motion.div
@@ -670,7 +670,7 @@ function Footer() {
           <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNScorpPH" className="rounded-md" />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold text-ink">HNScorpPH</span>
-            <span className="text-[10px]">Powering Philippine MSMEs since 2024.</span>
+            <span className="text-[10px]">Software built for the Philippines.</span>
           </div>
         </div>
 
