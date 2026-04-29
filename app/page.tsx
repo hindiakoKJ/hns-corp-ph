@@ -437,9 +437,18 @@ function SteadySection() {
                 A free health companion for people living with epilepsy and their caregivers.
                 Seizure logging, emergency alerts, and neurologist reports — no subscription, no ads.
               </p>
-              <span className="inline-flex items-center gap-2 rounded-full border border-steady-200 bg-steady-50 px-4 py-1.5 text-xs font-medium text-steady-700">
-                App Store &amp; Google Play
-              </span>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="https://steady.hnscorpph.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-steady-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-steady-700 hover:scale-[1.02]"
+                >
+                  Visit Steady
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+                <span className="text-xs text-ink/40">Coming to Google Play</span>
+              </div>
             </motion.div>
 
             {/* Right: features grid */}
@@ -566,7 +575,7 @@ const ROADMAP = [
       },
       {
         name: 'Steady',
-        desc: 'Free seizure logging and BEACON emergency alert app for people living with epilepsy. Coming to App Store and Google Play.',
+        desc: 'Free seizure logging and BEACON emergency alert app for people living with epilepsy. Coming to Google Play.',
         status: 'coming-soon' as const,
       },
     ],

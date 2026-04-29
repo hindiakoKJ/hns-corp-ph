@@ -28,7 +28,7 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/steady-icon.png',
     name: 'Steady',
     hex: '#0D9488',
-    tagline: 'A free health companion for people living with epilepsy. Seizure logging, one-tap BEACON emergency alerts, and neurologist PDF reports. Coming soon to App Store and Google Play.',
+    tagline: 'A free health companion for people living with epilepsy. Seizure logging, one-tap BEACON emergency alerts, and neurologist PDF reports. Coming soon to Google Play.',
   },
 ];
 
@@ -91,8 +91,7 @@ export function BrandSheet() {
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. One coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
             accounting, and AP/AR tracking built for MSMEs. Steady is a free health
-            companion for people living with epilepsy, coming soon to App Store and
-            Google Play.
+            companion for people living with epilepsy, coming soon to Google Play.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>
