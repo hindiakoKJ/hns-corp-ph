@@ -10,20 +10,21 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: 'HNScorpPH — Digital Sovereignty for the Filipino MSME',
+  title: 'HNScorpPH — Software Built for the Philippines',
   description:
-    'HNScorpPH provides high-tech infrastructure for Philippine MSMEs. Flagship product: Clerque — unified POS, Payroll, and Accounting.',
+    'HNScorpPH builds software for Filipino businesses and families. Clerque: POS, BIR-compliant accounting, and AP/AR for MSMEs. Steady: free epilepsy companion app.',
   keywords: [
     'HNScorpPH',
     'Clerque',
     'POS Philippines',
-    'MSME software',
-    'BIR CAS ready',
-    'Philippine payroll',
+    'MSME software Philippines',
+    'BIR accounting software',
+    'Filipino business software',
+    'Steady epilepsy app',
   ],
   openGraph: {
-    title: 'HNScorpPH — Powering the Philippine MSME Revolution',
-    description: 'Clerque: Unified POS, Payroll, and Accounting for Filipino businesses.',
+    title: 'HNScorpPH — Software Built for the Philippines',
+    description: 'Clerque for Filipino MSMEs. Steady for families living with epilepsy. Built in the Philippines.',
     url: 'https://hnscorpph.com',
     siteName: 'HNScorpPH',
   },
