@@ -10,6 +10,9 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: 'ZJarAiHMvsVgLAnxDzp6b5hKwvhldz0CI-mMtAiRKq4',
+  },
   title: 'HNScorpPH — Software Built for the Philippines',
   description:
     'HNScorpPH builds software for Filipino businesses and families. Clerque: POS, BIR-compliant accounting, and AP/AR for MSMEs. Steady: free epilepsy companion app.',
