@@ -38,6 +38,7 @@ const stagger = {
 // ---------------------------------------------------------------------------
 
 const NAV_LINKS = ['About', 'Ecosystem', 'Compliance'];
+const NAV_PAGE_LINKS = [{ label: 'Contact', href: '/contact' }];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -75,6 +76,15 @@ function Navbar() {
               {label}
             </a>
           ))}
+          {NAV_PAGE_LINKS.map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
 
         {/* Desktop CTA */}
@@ -111,6 +121,16 @@ function Navbar() {
               >
                 {label}
               </a>
+            ))}
+            {NAV_PAGE_LINKS.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="py-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+              >
+                {label}
+              </Link>
             ))}
             <Link
               href="https://clerque.hnscorpph.com/login"
@@ -187,8 +207,8 @@ function Hero() {
           variants={fadeUp}
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/50 md:text-xl"
         >
-          HNScorpPH provides the high-tech infrastructure local businesses need
-          to compete in the digital economy — POS, payroll, ledger, and more.
+          HNScorpPH builds software for Filipino businesses and families —
+          starting with the problems that foreign software never bothered to solve.
         </motion.p>
 
         {/* CTAs */}
@@ -203,13 +223,13 @@ function Hero() {
             Get Started
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a
-            href="mailto:hnscorpph@gmail.com?subject=Partnership%20Inquiry"
+          <Link
+            href="/contact?topic=partnership"
             className="flex items-center gap-2 rounded-xl border border-white/15 px-8 py-3.5 text-sm font-semibold text-white/70 transition-all hover:border-white/30 hover:text-white"
           >
             <Mail className="h-4 w-4" />
             Partner with HNScorp
-          </a>
+          </Link>
         </motion.div>
 
         {/* Trust strip */}
@@ -725,13 +745,13 @@ function CTABanner() {
             Start with Clerque
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <a
-            href="mailto:hnscorpph@gmail.com?subject=Sales%20Inquiry"
+          <Link
+            href="/contact?topic=sales"
             className="flex items-center gap-2 rounded-xl border border-white/15 px-8 py-4 text-sm font-semibold text-white/70 transition-all hover:border-white/30 hover:text-white"
           >
             <Mail className="h-4 w-4" />
             Contact Sales
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
@@ -763,6 +783,7 @@ function Footer() {
           >
             Clerque
           </Link>
+          <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
           <a href="#" className="transition-colors hover:text-ink">Privacy</a>
           <a href="#" className="transition-colors hover:text-ink">Terms</a>
         </div>
