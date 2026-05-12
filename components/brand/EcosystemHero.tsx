@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Status = 'live' | 'coming-soon' | 'future';
 
@@ -9,6 +10,7 @@ interface Product {
   tintClass?: string;
   kind: string;
   status: Status;
+  href?: string;
 }
 
 const PRODUCTS: Product[] = [
@@ -19,6 +21,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-clerque-600/10',
     kind: 'Counter · Ledger · Sync',
     status: 'live',
+    href: 'https://clerque.hnscorpph.com/login',
   },
   {
     key: 'steady',
@@ -27,6 +30,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-steady-600/10',
     kind: 'Health companion — seizure logging',
     status: 'coming-soon',
+    href: 'https://steady.hnscorpph.com',
   },
   {
     key: 'tindapos',
@@ -35,6 +39,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-tinda-600/10',
     kind: 'POS for every sari-sari store',
     status: 'coming-soon',
+    href: 'https://tindapos.hnscorpph.com',
   },
   {
     key: 'sangguni',
@@ -43,6 +48,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-sangguni-600/10',
     kind: 'Ordinance archive · Citizens Corner',
     status: 'coming-soon',
+    href: 'https://sangguni.hnscorpph.com',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
@@ -118,8 +124,8 @@ function ProductCard({ product }: { product: Product }) {
   }
 
   if (product.status === 'coming-soon') {
-    return (
-      <div className="relative flex min-h-[168px] flex-col gap-3 rounded-xl border border-ink/10 bg-paper p-5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+    const inner = (
+      <>
         <div className="absolute right-4 top-4 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700">
           <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
           Coming Soon
@@ -134,12 +140,16 @@ function ProductCard({ product }: { product: Product }) {
         <div className="mt-auto border-t border-ink/5 pt-2.5 text-[10px] tracking-wide text-ink/40">
           by <span className="font-semibold text-hns-600">HNScorpPH</span>
         </div>
-      </div>
+      </>
     );
+    const cls = 'relative flex min-h-[168px] flex-col gap-3 rounded-xl border border-ink/10 bg-paper p-5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]';
+    return product.href
+      ? <Link href={product.href} target="_blank" rel="noopener noreferrer" className={`${cls} transition-shadow hover:shadow-[0_4px_12px_rgba(15,23,42,0.08)]`}>{inner}</Link>
+      : <div className={cls}>{inner}</div>;
   }
 
-  return (
-    <div className="relative flex min-h-[168px] flex-col gap-3 rounded-xl border border-ink/10 bg-paper p-5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+  const inner = (
+    <>
       <div className="absolute right-4 top-4 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-700">
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
         Live
@@ -154,6 +164,10 @@ function ProductCard({ product }: { product: Product }) {
       <div className="mt-auto border-t border-ink/5 pt-2.5 text-[10px] tracking-wide text-ink/40">
         by <span className="font-semibold text-hns-600">HNScorpPH</span>
       </div>
-    </div>
+    </>
   );
+  const cls = 'relative flex min-h-[168px] flex-col gap-3 rounded-xl border border-ink/10 bg-paper p-5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]';
+  return product.href
+    ? <Link href={product.href} target="_blank" rel="noopener noreferrer" className={`${cls} transition-shadow hover:shadow-[0_4px_12px_rgba(15,23,42,0.08)]`}>{inner}</Link>
+    : <div className={cls}>{inner}</div>;
 }

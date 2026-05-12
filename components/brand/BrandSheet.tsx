@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface BrandPick {
   key: string;
@@ -6,6 +7,7 @@ interface BrandPick {
   name: string;
   hex: string;
   tagline: string;
+  href?: string;
 }
 
 const PICKS: BrandPick[] = [
@@ -22,6 +24,7 @@ const PICKS: BrandPick[] = [
     name: 'Clerque',
     hex: '#4F46E5',
     tagline: 'Business suite for Filipino MSMEs. Point of sale, BIR-compliant accounting, OR sequential numbering, and offline-capable POS — built for Philippine compliance from day one.',
+    href: 'https://clerque.hnscorpph.com/login',
   },
   {
     key: 'steady',
@@ -29,6 +32,7 @@ const PICKS: BrandPick[] = [
     name: 'Steady',
     hex: '#0D9488',
     tagline: 'A free health companion for people living with epilepsy. Seizure logging, one-tap BEACON emergency alerts, and neurologist PDF reports. Coming soon to Google Play.',
+    href: 'https://steady.hnscorpph.com',
   },
   {
     key: 'tindapos',
@@ -36,6 +40,7 @@ const PICKS: BrandPick[] = [
     name: 'TindaPOS',
     hex: '#F59E0B',
     tagline: 'Offline POS for Filipino micro-retailers. Tap to sell, track stock, view daily profit — no internet required, no login, no backend. Ang POS ng bawat tindahan. Coming soon to Google Play.',
+    href: 'https://tindapos.hnscorpph.com',
   },
   {
     key: 'sangguni',
@@ -43,6 +48,7 @@ const PICKS: BrandPick[] = [
     name: 'Sangguni',
     hex: '#059669',
     tagline: 'Digital ordinance management for Philippine LGUs. Citizens Corner public portal, OCR full-text search of Sanggunian archives, and audit-logged publish workflow — built for the DILG Full Disclosure Policy and RA 10173.',
+    href: 'https://sangguni.hnscorpph.com',
   },
 ];
 
@@ -85,10 +91,22 @@ export function BrandSheet() {
                 <div className="text-2xl font-semibold tracking-wordmark-tight text-ink">{p.name}</div>
                 <p className="mt-2 text-xs leading-relaxed text-ink/55">{p.tagline}</p>
               </div>
-              <div className="mt-auto flex items-center gap-2.5 rounded-lg bg-ink px-4 py-3.5">
-                <Image src={p.imgSrc} width={18} height={18} alt={p.name} className="rounded-md" />
-                <span className="text-[13px] font-semibold tracking-wordmark-tight text-paper">{p.name}</span>
-              </div>
+              {p.href ? (
+                <Link
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto flex items-center gap-2.5 rounded-lg bg-ink px-4 py-3.5 transition-opacity hover:opacity-80"
+                >
+                  <Image src={p.imgSrc} width={18} height={18} alt={p.name} className="rounded-md" />
+                  <span className="text-[13px] font-semibold tracking-wordmark-tight text-paper">{p.name}</span>
+                </Link>
+              ) : (
+                <div className="mt-auto flex items-center gap-2.5 rounded-lg bg-ink px-4 py-3.5">
+                  <Image src={p.imgSrc} width={18} height={18} alt={p.name} className="rounded-md" />
+                  <span className="text-[13px] font-semibold tracking-wordmark-tight text-paper">{p.name}</span>
+                </div>
+              )}
             </article>
           ))}
         </div>
