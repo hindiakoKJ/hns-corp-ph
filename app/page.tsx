@@ -598,6 +598,11 @@ const ROADMAP = [
         desc: 'Free seizure logging and BEACON emergency alert app for people living with epilepsy. Coming to Google Play.',
         status: 'coming-soon' as const,
       },
+      {
+        name: 'TindaPOS',
+        desc: 'Standalone offline POS for Filipino sari-sari stores. Tap to sell, track stock, view daily profit — no internet, no login, no backend.',
+        status: 'coming-soon' as const,
+      },
     ],
   },
   {
@@ -610,8 +615,8 @@ const ROADMAP = [
         status: 'planned' as const,
       },
       {
-        name: 'Product 3',
-        desc: 'Third HNScorpPH product in early research. More when there\'s something real to say.',
+        name: 'Next product',
+        desc: 'Another HNScorpPH product in early research. More when there\'s something real to say.',
         status: 'planned' as const,
       },
     ],

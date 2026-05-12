@@ -28,8 +28,15 @@ const PRODUCTS: Product[] = [
     kind: 'Health companion — seizure logging',
     status: 'coming-soon',
   },
+  {
+    key: 'tindapos',
+    imgSrc: '/logos/tindapos-icon.svg',
+    name: 'TindaPOS',
+    tintClass: 'bg-tinda-600/10',
+    kind: 'POS for every sari-sari store',
+    status: 'coming-soon',
+  },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
-  { key: 'future-2', kind: 'Coming soon', status: 'future' },
 ];
 
 export function EcosystemHero() {

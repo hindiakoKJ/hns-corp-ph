@@ -30,6 +30,13 @@ const PICKS: BrandPick[] = [
     hex: '#0D9488',
     tagline: 'A free health companion for people living with epilepsy. Seizure logging, one-tap BEACON emergency alerts, and neurologist PDF reports. Coming soon to Google Play.',
   },
+  {
+    key: 'tindapos',
+    imgSrc: '/logos/tindapos-icon.svg',
+    name: 'TindaPOS',
+    hex: '#F59E0B',
+    tagline: 'Offline POS for Filipino micro-retailers. Tap to sell, track stock, view daily profit — no internet required, no login, no backend. Ang POS ng bawat tindahan. Coming soon to Google Play.',
+  },
 ];
 
 export function BrandSheet() {
@@ -45,7 +52,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque is live, Steady is coming soon.
+                HNScorpPH is the platform — Clerque is live, Steady and TindaPOS coming soon.
               </span>
             </h2>
           </div>
@@ -55,7 +62,7 @@ export function BrandSheet() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {PICKS.map((p) => (
             <article
               key={p.key}
@@ -79,7 +86,7 @@ export function BrandSheet() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-8 border-t border-ink/10 pt-6 text-xs leading-relaxed text-ink/55 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 border-t border-ink/10 pt-6 text-xs leading-relaxed text-ink/55 md:grid-cols-3 xl:grid-cols-3">
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">Built in the Philippines</h3>
             HNScorpPH OPC is a solo-founded company building digital infrastructure
@@ -88,10 +95,10 @@ export function BrandSheet() {
             constraints — not adapted from foreign software. SEC OPC filing in progress.
           </div>
           <div>
-            <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. One coming soon.</h3>
+            <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. Two coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
-            accounting, and AP/AR tracking built for MSMEs. Steady is a free health
-            companion for people living with epilepsy, coming soon to Google Play.
+            accounting, and AP/AR tracking built for MSMEs. Steady and TindaPOS
+            are both coming soon to Google Play.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>

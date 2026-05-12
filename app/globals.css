@@ -26,6 +26,14 @@
   --color-steady-600: #0D9488;
   --color-steady-700: #0F766E;
 
+  /* TindaPOS brand — amber */
+  --color-tinda-50:  #FFFBEB;
+  --color-tinda-100: #FEF3C7;
+  --color-tinda-200: #FDE68A;
+  --color-tinda-400: #FBBF24;
+  --color-tinda-600: #F59E0B;
+  --color-tinda-700: #D97706;
+
   /* Semantic surfaces */
   --color-paper: #FAFAF9;
   --color-sand:  #F5F0E8;
