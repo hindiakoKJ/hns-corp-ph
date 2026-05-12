@@ -496,6 +496,94 @@ function SteadySection() {
 }
 
 // ---------------------------------------------------------------------------
+// TindaPOS Section — separate HNScorpPH product
+// ---------------------------------------------------------------------------
+
+function TindaPOSSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const features = [
+    { icon: '🛒', title: 'Mabilis na Benta (POS)', desc: 'I-tap ang produkto, auto-compute ang sukli. Checkout sa ilang segundo — kahit walang internet.' },
+    { icon: '📦', title: 'Inventory Tracking', desc: 'Alam mo lagi kung ilan pa ang natitira. Babala kung mababa na ang stock.' },
+    { icon: '📊', title: 'Buod ng Kita', desc: 'Makita ang benta, gross kita, gastos, at net kita ngayon sa isang screen.' },
+    { icon: '📋', title: 'Kasaysayan ng Benta', desc: 'Lahat ng transaksyon naka-save. Pwedeng i-filter by araw, linggo, o buwan.' },
+    { icon: '💰', title: 'Profit Tracker', desc: 'Per-product COGS at profit — alam mo kung anong produkto ang kumikita.' },
+    { icon: '💡', title: 'Expense Tracker', desc: 'I-track ang kuryente, tubig, at iba pang gastos para makita ang tunay na kita.' },
+  ];
+
+  return (
+    <section className="bg-paper py-24 px-6 md:px-12" ref={ref}>
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-tinda-600">
+            Also by HNScorpPH
+          </motion.p>
+
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            {/* Left: identity */}
+            <motion.div variants={fadeUp} className="md:w-72 shrink-0">
+              <div className="mb-4 flex items-center gap-4">
+                <Image src="/logos/tindapos-icon.svg" width={56} height={56} alt="TindaPOS" className="rounded-2xl" />
+                <div>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">TindaPOS</h2>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-tinda-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                    Coming soon
+                  </span>
+                </div>
+              </div>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                Ang POS ng bawat tindahan. Offline-first point of sale para sa sari-sari store,
+                carinderia, at lahat ng maliit na negosyo sa inyong kapitbahayan.
+              </p>
+              <p className="mb-5 text-sm leading-relaxed text-ink/40">
+                Walang internet? Hindi problema. Lahat ng datos nasa device mo — walang monthly fee,
+                walang login, walang backend.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="https://tindapos.hnscorpph.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-tinda-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-tinda-700 hover:scale-[1.02]"
+                >
+                  Visit TindaPOS
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+                <span className="text-xs text-ink/40">Coming to Google Play</span>
+              </div>
+            </motion.div>
+
+            {/* Right: features grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 flex-1"
+            >
+              {features.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-ink/8 bg-white p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+                >
+                  <div className="mb-2 text-xl">{f.icon}</div>
+                  <h3 className="mb-1 text-sm font-bold text-ink">{f.title}</h3>
+                  <p className="text-xs leading-relaxed text-ink/50">{f.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Why Clerque — feature section
 // ---------------------------------------------------------------------------
 
@@ -834,6 +922,7 @@ export default function Page() {
         <EcosystemSection />
         <WorkflowSection />
         <SteadySection />
+        <TindaPOSSection />
 
         {/* Brand identity */}
         <EcosystemHero />
