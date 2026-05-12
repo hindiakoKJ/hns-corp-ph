@@ -36,6 +36,14 @@ const PRODUCTS: Product[] = [
     kind: 'POS for every sari-sari store',
     status: 'coming-soon',
   },
+  {
+    key: 'sangguni',
+    imgSrc: '/logos/sangguni-icon.svg',
+    name: 'Sangguni',
+    tintClass: 'bg-sangguni-600/10',
+    kind: 'Ordinance archive · Citizens Corner',
+    status: 'coming-soon',
+  },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
 
@@ -69,7 +77,7 @@ export function EcosystemHero() {
           Products by HNScorpPH
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
           {PRODUCTS.map((p) => (
             <ProductCard key={p.key} product={p} />
           ))}
@@ -84,9 +92,9 @@ export function EcosystemHero() {
           </p>
           <p>
             <span className="font-semibold text-ink">Built to scale. </span>
-            New apps slot in alongside Clerque and Steady — same geometry, same
-            wordmark family, a fresh accent color. The architecture is ready
-            before the products are.
+            New apps slot in alongside Clerque, Steady, TindaPOS, and Sangguni —
+            same geometry, same wordmark family, a fresh accent color. The
+            architecture is ready before the products are.
           </p>
         </div>
       </div>

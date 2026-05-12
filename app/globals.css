@@ -26,6 +26,14 @@
   --color-steady-600: #0D9488;
   --color-steady-700: #0F766E;
 
+  /* Sangguni brand — emerald */
+  --color-sangguni-50:  #ECFDF5;
+  --color-sangguni-100: #D1FAE5;
+  --color-sangguni-200: #A7F3D0;
+  --color-sangguni-400: #34D399;
+  --color-sangguni-600: #059669;
+  --color-sangguni-700: #047857;
+
   /* TindaPOS brand — amber */
   --color-tinda-50:  #FFFBEB;
   --color-tinda-100: #FEF3C7;

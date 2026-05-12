@@ -262,7 +262,7 @@ function Hero() {
 // ---------------------------------------------------------------------------
 
 const TICKER_TEXT =
-  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  Filipino-built  •  Powered by HNScorpPH  •  ';
+  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  DILG Full Disclosure Policy (MC 2010-83)  •  Filipino-built  •  Powered by HNScorpPH  •  ';
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
@@ -603,6 +603,11 @@ const ROADMAP = [
         desc: 'Standalone offline POS for Filipino sari-sari stores. Tap to sell, track stock, view daily profit — no internet, no login, no backend.',
         status: 'coming-soon' as const,
       },
+      {
+        name: 'Sangguni',
+        desc: 'Digital ordinance archive for Philippine LGUs. OCR full-text search, citizen-facing Citizens Corner, and DILG Full Disclosure Policy compliance. Pilot tenant onboarding now.',
+        status: 'coming-soon' as const,
+      },
     ],
   },
   {
@@ -779,7 +784,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:justify-end">
           <Link
             href="https://clerque.hnscorpph.com/login"
             target="_blank"
@@ -787,6 +792,22 @@ function Footer() {
             className="transition-colors hover:text-ink"
           >
             Clerque
+          </Link>
+          <Link
+            href="https://steady.hnscorpph.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            Steady
+          </Link>
+          <Link
+            href="https://sangguni.hnscorpph.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            Sangguni
           </Link>
           <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
           <a href="#" className="transition-colors hover:text-ink">Privacy</a>

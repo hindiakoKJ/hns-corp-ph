@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#059669"/>
+  <!-- Document body with dog-ear corner -->
+  <path d="M152 132 L308 132 L360 184 L360 388 Q360 404 344 404 L168 404 Q152 404 152 388 Z" fill="white"/>
+  <!-- Dog-ear fold triangle -->
+  <path d="M308 132 L308 184 L360 184 Z" fill="#d1fae5"/>
+  <!-- Text lines -->
+  <rect x="186" y="220" width="140" height="14" rx="7" fill="#059669" opacity="0.7"/>
+  <rect x="186" y="250" width="140" height="14" rx="7" fill="#059669" opacity="0.7"/>
+  <rect x="186" y="280" width="100" height="14" rx="7" fill="#059669" opacity="0.7"/>
+  <!-- Official stamp / seal -->
+  <circle cx="282" cy="342" r="40" fill="#059669"/>
+  <circle cx="282" cy="342" r="29" fill="none" stroke="white" stroke-width="4" stroke-dasharray="5 3"/>
+  <!-- Checkmark inside seal -->
+  <path d="M267 342 L278 353 L299 331" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
