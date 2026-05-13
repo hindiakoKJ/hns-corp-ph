@@ -48,7 +48,6 @@ const PICKS: BrandPick[] = [
     name: 'Sangguni',
     hex: '#059669',
     tagline: 'Digital ordinance management for Philippine LGUs. Citizens Corner public portal, OCR full-text search of Sanggunian archives, and audit-logged publish workflow — built for the DILG Full Disclosure Policy and RA 10173.',
-    href: 'https://sangguni.hnscorpph.com',
   },
 ];
 

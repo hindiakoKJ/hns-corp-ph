@@ -889,14 +889,6 @@ function Footer() {
           >
             Steady
           </Link>
-          <Link
-            href="https://sangguni.hnscorpph.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            Sangguni
-          </Link>
           <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
           <a href="#" className="transition-colors hover:text-ink">Privacy</a>
           <a href="#" className="transition-colors hover:text-ink">Terms</a>

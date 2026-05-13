@@ -48,7 +48,6 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-sangguni-600/10',
     kind: 'Ordinance archive · Citizens Corner',
     status: 'coming-soon',
-    href: 'https://sangguni.hnscorpph.com',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
