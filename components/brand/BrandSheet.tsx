@@ -55,7 +55,7 @@ const PICKS: BrandPick[] = [
     name: 'LOCATR',
     hex: '#0D7377',
     tagline: 'The verified rental app for the Philippines. Landlords and renters connect directly — no scams, no middlemen, no locator fees. Now in Bicol Region. Coming nationwide 2026.',
-    href: 'https://locatr.ph',
+    href: 'https://locatr.hnscorpph.com',
   },
 ];
 

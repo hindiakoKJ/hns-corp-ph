@@ -56,7 +56,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-locatr-600/10',
     kind: 'Verified rental app · Philippines',
     status: 'coming-soon',
-    href: 'https://locatr.ph',
+    href: 'https://locatr.hnscorpph.com',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];

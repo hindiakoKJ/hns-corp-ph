@@ -632,7 +632,7 @@ function LocatrSection() {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="https://locatr.ph"
+                  href="https://locatr.hnscorpph.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl bg-locatr-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-locatr-700 hover:scale-[1.02]"
@@ -979,7 +979,7 @@ function Footer() {
             Steady
           </Link>
           <Link
-            href="https://locatr.ph"
+            href="https://locatr.hnscorpph.com"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-ink"
