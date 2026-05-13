@@ -34,6 +34,14 @@
   --color-sangguni-600: #059669;
   --color-sangguni-700: #047857;
 
+  /* LOCATR brand — dark teal */
+  --color-locatr-50:  #F0FAFA;
+  --color-locatr-100: #CCECEC;
+  --color-locatr-200: #99D8D8;
+  --color-locatr-400: #1AABAF;
+  --color-locatr-600: #0D7377;
+  --color-locatr-700: #054C50;
+
   /* TindaPOS brand — amber */
   --color-tinda-50:  #FFFBEB;
   --color-tinda-100: #FEF3C7;

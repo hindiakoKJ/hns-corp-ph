@@ -49,6 +49,15 @@ const PRODUCTS: Product[] = [
     kind: 'Coming soon',
     status: 'coming-soon',
   },
+  {
+    key: 'locatr',
+    imgSrc: '/logos/locatr-icon.svg',
+    name: 'LOCATR',
+    tintClass: 'bg-locatr-600/10',
+    kind: 'Verified rental app · Philippines',
+    status: 'coming-soon',
+    href: 'https://locatr.ph',
+  },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
 
@@ -82,7 +91,7 @@ export function EcosystemHero() {
           Products by HNScorpPH
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
           {PRODUCTS.map((p) => (
             <ProductCard key={p.key} product={p} />
           ))}
@@ -97,9 +106,9 @@ export function EcosystemHero() {
           </p>
           <p>
             <span className="font-semibold text-ink">Built to scale. </span>
-            New apps slot in alongside Clerque, Steady, TindaPOS, and Sangguni —
-            same geometry, same wordmark family, a fresh accent color. The
-            architecture is ready before the products are.
+            New apps slot in alongside Clerque, Steady, TindaPOS, Sangguni, and
+            LOCATR — same geometry, same wordmark family, a fresh accent color.
+            The architecture is ready before the products are.
           </p>
         </div>
       </div>

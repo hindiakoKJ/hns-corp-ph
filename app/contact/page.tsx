@@ -31,6 +31,18 @@ const CONCERNS: Record<string, string[]> = {
     'Privacy concern',
     'Other',
   ],
+  'TindaPOS': [
+    'App feedback',
+    'Bug report',
+    'Other',
+  ],
+  'LOCATR': [
+    'Landlord inquiry',
+    'Renter inquiry',
+    'Partnership inquiry',
+    'Bug report',
+    'Other',
+  ],
 };
 
 const PRODUCTS = Object.keys(CONCERNS);

@@ -49,6 +49,14 @@ const PICKS: BrandPick[] = [
     hex: '#059669',
     tagline: 'A new product by HNScorpPH. Coming soon.',
   },
+  {
+    key: 'locatr',
+    imgSrc: '/logos/locatr-icon.svg',
+    name: 'LOCATR',
+    hex: '#0D7377',
+    tagline: 'The verified rental app for the Philippines. Landlords and renters connect directly — no scams, no middlemen, no locator fees. Now in Bicol Region. Coming nationwide 2026.',
+    href: 'https://locatr.ph',
+  },
 ];
 
 export function BrandSheet() {
@@ -64,7 +72,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque is live, Steady, TindaPOS and Sangguni coming soon.
+                HNScorpPH is the platform — Clerque is live, Steady, TindaPOS, Sangguni and LOCATR coming soon.
               </span>
             </h2>
           </div>
@@ -74,7 +82,7 @@ export function BrandSheet() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {PICKS.map((p) => (
             <article
               key={p.key}
@@ -122,8 +130,8 @@ export function BrandSheet() {
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. Three coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
             accounting, and AP/AR tracking built for MSMEs. Steady and TindaPOS
-            are coming to Google Play. Sangguni is the next product — details
-            coming soon.
+            are coming to Google Play. Sangguni and LOCATR are also in the
+            pipeline — more details coming soon.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>

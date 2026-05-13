@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#0D7377"/>
+  <!-- Location pin -->
+  <path d="M256 118 C192 118 140 170 140 234 C140 318 256 400 256 400 C256 400 372 318 372 234 C372 170 320 118 256 118 Z" fill="white"/>
+  <!-- Inner circle cutout -->
+  <circle cx="256" cy="232" r="48" fill="#0D7377"/>
+  <!-- House inside pin -->
+  <path d="M230 244 L256 220 L282 244 L282 258 L230 258 Z" fill="white"/>
+  <rect x="248" y="244" width="16" height="14" rx="2" fill="#0D7377"/>
+</svg>
