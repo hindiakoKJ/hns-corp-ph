@@ -47,7 +47,7 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/sangguni-icon.svg',
     name: 'Sangguni',
     hex: '#059669',
-    tagline: 'Digital ordinance management for Philippine LGUs. Citizens Corner public portal, OCR full-text search of Sanggunian archives, and audit-logged publish workflow — built for the DILG Full Disclosure Policy and RA 10173.',
+    tagline: 'A new product by HNScorpPH. Coming soon.',
   },
 ];
 
@@ -122,8 +122,8 @@ export function BrandSheet() {
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. Three coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
             accounting, and AP/AR tracking built for MSMEs. Steady and TindaPOS
-            are coming to Google Play. Sangguni brings digital ordinance
-            management to Philippine LGUs.
+            are coming to Google Play. Sangguni is the next product — details
+            coming soon.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>

@@ -46,7 +46,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/sangguni-icon.svg',
     name: 'Sangguni',
     tintClass: 'bg-sangguni-600/10',
-    kind: 'Ordinance archive · Citizens Corner',
+    kind: 'Coming soon',
     status: 'coming-soon',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },

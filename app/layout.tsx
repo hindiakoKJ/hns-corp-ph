@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   title: 'HNScorpPH — Software Built for the Philippines',
   description:
-    'HNScorpPH builds software for Filipino businesses, families, and local government. Clerque: POS, BIR-compliant accounting, and AP/AR for MSMEs. Steady: free epilepsy companion app. Sangguni: digital ordinance management for Philippine LGUs.',
+    'HNScorpPH builds software for Filipino businesses and families. Clerque: POS, BIR-compliant accounting, and AP/AR for MSMEs. Steady: free epilepsy companion app.',
   keywords: [
     'HNScorpPH',
     'Clerque',
@@ -24,14 +24,10 @@ export const metadata: Metadata = {
     'BIR accounting software',
     'Filipino business software',
     'Steady epilepsy app',
-    'Sangguni',
-    'ordinance management Philippines',
-    'LGU software Philippines',
-    'DILG Full Disclosure Policy',
   ],
   openGraph: {
     title: 'HNScorpPH — Software Built for the Philippines',
-    description: 'Clerque for Filipino MSMEs. Steady for families living with epilepsy. Sangguni for Philippine LGUs. Built in the Philippines.',
+    description: 'Clerque for Filipino MSMEs. Steady for families living with epilepsy. Built in the Philippines.',
     url: 'https://hnscorpph.com',
     siteName: 'HNScorpPH',
   },

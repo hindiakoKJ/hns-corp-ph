@@ -262,7 +262,7 @@ function Hero() {
 // ---------------------------------------------------------------------------
 
 const TICKER_TEXT =
-  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  DILG Full Disclosure Policy (MC 2010-83)  •  Filipino-built  •  Powered by HNScorpPH  •  ';
+  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  Filipino-built  •  Powered by HNScorpPH  •  ';
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
@@ -693,7 +693,7 @@ const ROADMAP = [
       },
       {
         name: 'Sangguni',
-        desc: 'Digital ordinance archive for Philippine LGUs. OCR full-text search, citizen-facing Citizens Corner, and DILG Full Disclosure Policy compliance. Pilot tenant onboarding now.',
+        desc: 'A new HNScorpPH product. Details coming soon.',
         status: 'coming-soon' as const,
       },
     ],
