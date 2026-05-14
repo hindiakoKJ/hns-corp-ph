@@ -37,8 +37,11 @@ const stagger = {
 // Navbar
 // ---------------------------------------------------------------------------
 
-const NAV_LINKS = ['About', 'Ecosystem', 'Compliance'];
-const NAV_PAGE_LINKS = [{ label: 'Contact', href: '/contact' }];
+const NAV_LINKS = ['About', 'Ecosystem'];
+const NAV_PAGE_LINKS = [
+  { label: 'Compliance', href: '/compliance' },
+  { label: 'Contact', href: '/contact' },
+];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -986,9 +989,18 @@ function Footer() {
           >
             LOCATR
           </Link>
+          <Link
+            href="https://tindapos.hnscorpph.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            TindaPOS
+          </Link>
           <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
-          <a href="#" className="transition-colors hover:text-ink">Privacy</a>
-          <a href="#" className="transition-colors hover:text-ink">Terms</a>
+          <Link href="/compliance" className="transition-colors hover:text-ink">Compliance</Link>
+          <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
+          <Link href="/terms" className="transition-colors hover:text-ink">Terms</Link>
         </div>
 
         <div className="text-xs">© 2026 HNScorpPH OPC. All rights reserved.</div>
