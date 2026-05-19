@@ -43,6 +43,13 @@ const CONCERNS: Record<string, string[]> = {
     'Bug report',
     'Other',
   ],
+  'AltSpaceCW': [
+    'Operator inquiry',
+    'Sales inquiry',
+    'Technical support',
+    'Bug report',
+    'Other',
+  ],
 };
 
 const PRODUCTS = Object.keys(CONCERNS);

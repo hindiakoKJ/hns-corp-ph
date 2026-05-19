@@ -671,6 +671,93 @@ function LocatrSection() {
 }
 
 // ---------------------------------------------------------------------------
+// AltSpaceCW Section — separate HNScorpPH product
+// ---------------------------------------------------------------------------
+
+function AltSpaceCWSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const features = [
+    { icon: '🗺️', title: 'Real-time floor map', desc: 'See exactly who\'s sitting where, which desks are available, and flag spaces for maintenance — all updated live.' },
+    { icon: '📅', title: 'Smart booking flow', desc: 'Members browse, pick time slots, and reserve in seconds. A built-in 30-minute payment window keeps your calendar clean.' },
+    { icon: '✅', title: 'Payment confirmation', desc: 'Clients mark payment as done. You review and confirm within your window — or the slot auto-releases. No more ghost bookings.' },
+    { icon: '👥', title: 'Member management', desc: 'Add clients and admins directly from the console. Control who has access to which workspace, no back-and-forth emails.' },
+    { icon: '📊', title: 'Occupancy analytics', desc: 'Track daily occupancy, revenue trends, and member activity. Make data-driven decisions about your space.' },
+    { icon: '🏢', title: 'Multi-tenant ready', desc: 'Run multiple co-working locations under one operator account. Each space gets its own admin, branding, and booking portal.' },
+  ];
+
+  return (
+    <section className="bg-paper py-24 px-6 md:px-12" ref={ref}>
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-altspace-600">
+            Also by HNScorpPH
+          </motion.p>
+
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            {/* Left: identity */}
+            <motion.div variants={fadeUp} className="md:w-72 shrink-0">
+              <div className="mb-4 flex items-center gap-4">
+                <Image src="/logos/altspacecw-icon.svg" width={56} height={56} alt="AltSpaceCW" className="rounded-2xl" />
+                <div>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">AltSpaceCW</h2>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-altspace-600">
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                    Coming soon
+                  </span>
+                </div>
+              </div>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                Everything your co-working space needs. From first booking to confirmed payment —
+                AltSpaceCW handles the operational layer so you can focus on your members.
+              </p>
+              <p className="mb-5 text-sm leading-relaxed text-ink/40">
+                Real-time floor maps, smart booking flows, and multi-tenant support — built for
+                Philippine co-working operators.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="https://altspacecw.hnscorpph.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-altspace-700 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-altspace-900 hover:scale-[1.02]"
+                >
+                  Visit AltSpaceCW
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: features grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 flex-1"
+            >
+              {features.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-ink/8 bg-white p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+                >
+                  <div className="mb-2 text-xl">{f.icon}</div>
+                  <h3 className="mb-1 text-sm font-bold text-ink">{f.title}</h3>
+                  <p className="text-xs leading-relaxed text-ink/50">{f.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Why Clerque — feature section
 // ---------------------------------------------------------------------------
 
@@ -786,6 +873,11 @@ const ROADMAP = [
       {
         name: 'LOCATR',
         desc: 'Verified rental app for the Philippines. Landlords and renters connect directly — no scams, no locator fees. Live in Bicol. Coming nationwide 2026.',
+        status: 'coming-soon' as const,
+      },
+      {
+        name: 'AltSpaceCW',
+        desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
         status: 'coming-soon' as const,
       },
     ],
@@ -990,6 +1082,14 @@ function Footer() {
             LOCATR
           </Link>
           <Link
+            href="https://altspacecw.hnscorpph.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            AltSpaceCW
+          </Link>
+          <Link
             href="https://tindapos.hnscorpph.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -1025,6 +1125,7 @@ export default function Page() {
         <SteadySection />
         <TindaPOSSection />
         <LocatrSection />
+        <AltSpaceCWSection />
 
         {/* Brand identity */}
         <EcosystemHero />

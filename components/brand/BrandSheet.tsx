@@ -57,6 +57,14 @@ const PICKS: BrandPick[] = [
     tagline: 'The verified rental app for the Philippines. Landlords and renters connect directly — no scams, no middlemen, no locator fees. Now in Bicol Region. Coming nationwide 2026.',
     href: 'https://locatr.hnscorpph.com',
   },
+  {
+    key: 'altspacecw',
+    imgSrc: '/logos/altspacecw-icon.svg',
+    name: 'AltSpaceCW',
+    hex: '#334155',
+    tagline: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking flows, payment confirmation, and multi-tenant support — everything your space needs.',
+    href: 'https://altspacecw.hnscorpph.com',
+  },
 ];
 
 export function BrandSheet() {
@@ -72,7 +80,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque is live, Steady, TindaPOS, Sangguni and LOCATR coming soon.
+                HNScorpPH is the platform — Clerque is live, Steady, TindaPOS, Sangguni, LOCATR and AltSpaceCW coming soon.
               </span>
             </h2>
           </div>
@@ -130,8 +138,8 @@ export function BrandSheet() {
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. Three coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
             accounting, and AP/AR tracking built for MSMEs. Steady and TindaPOS
-            are coming to Google Play. Sangguni and LOCATR are also in the
-            pipeline — more details coming soon.
+            are coming to Google Play. Sangguni, LOCATR, and AltSpaceCW are
+            also in the pipeline — more details coming soon.
           </div>
           <div>
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One brand. One promise.</h3>

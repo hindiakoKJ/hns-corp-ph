@@ -58,6 +58,15 @@ const PRODUCTS: Product[] = [
     status: 'coming-soon',
     href: 'https://locatr.hnscorpph.com',
   },
+  {
+    key: 'altspacecw',
+    imgSrc: '/logos/altspacecw-icon.svg',
+    name: 'AltSpaceCW',
+    tintClass: 'bg-altspace-600/10',
+    kind: 'Co-working space management',
+    status: 'coming-soon',
+    href: 'https://altspacecw.hnscorpph.com',
+  },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
 
@@ -91,7 +100,7 @@ export function EcosystemHero() {
           Products by HNScorpPH
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {PRODUCTS.map((p) => (
             <ProductCard key={p.key} product={p} />
           ))}
@@ -106,8 +115,8 @@ export function EcosystemHero() {
           </p>
           <p>
             <span className="font-semibold text-ink">Built to scale. </span>
-            New apps slot in alongside Clerque, Steady, TindaPOS, Sangguni, and
-            LOCATR — same geometry, same wordmark family, a fresh accent color.
+            New apps slot in alongside the existing product family — same
+            geometry, same wordmark family, a fresh accent color each time.
             The architecture is ready before the products are.
           </p>
         </div>
