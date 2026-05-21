@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="kuha-glow" cx="80%" cy="18%" r="72%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.58"/>
+      <stop offset="65%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Base tile -->
+  <rect width="64" height="64" rx="14" fill="#0d0d0d"/>
+  <!-- Warm light-leak glow -->
+  <rect width="64" height="64" rx="14" fill="url(#kuha-glow)"/>
+  <!-- Viewfinder corner brackets -->
+  <g stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4" fill="none" stroke-linecap="round">
+    <path d="M9 15 L9 9 L15 9"/>
+    <path d="M49 9 L55 9 L55 15"/>
+    <path d="M9 49 L9 55 L15 55"/>
+    <path d="M55 49 L55 55 L49 55"/>
+  </g>
+  <!-- KUHA wordmark -->
+  <text x="32" y="35" text-anchor="middle"
+        font-family="Archivo Black, Impact, Arial Black, sans-serif" font-weight="900"
+        font-size="14" letter-spacing="1.4" fill="#ffffff">KUHA</text>
+  <!-- ISO 400 sub-label -->
+  <text x="32" y="46" text-anchor="middle"
+        font-family="JetBrains Mono, Courier New, monospace" font-weight="700"
+        font-size="5.5" letter-spacing="1.3" fill="#ff6b35">ISO 400</text>
+</svg>

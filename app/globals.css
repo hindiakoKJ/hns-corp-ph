@@ -59,6 +59,15 @@
   --color-tinda-600: #F59E0B;
   --color-tinda-700: #D97706;
 
+  /* KUHA brand — light-leak orange */
+  --color-kuha-50:  #FFF5F0;
+  --color-kuha-100: #FFEADF;
+  --color-kuha-200: #FFCBB2;
+  --color-kuha-400: #FF8F5C;
+  --color-kuha-500: #FF6B35;
+  --color-kuha-600: #E55525;
+  --color-kuha-700: #C44A1F;
+
   /* Semantic surfaces */
   --color-paper: #FAFAF9;
   --color-sand:  #F5F0E8;

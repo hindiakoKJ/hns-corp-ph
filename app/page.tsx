@@ -758,6 +758,103 @@ function AltSpaceCWSection() {
 }
 
 // ---------------------------------------------------------------------------
+// KUHA Section — disposable event camera
+// ---------------------------------------------------------------------------
+
+function KuhaSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const features = [
+    { icon: '🎞', title: 'Limited roll', desc: 'Every guest gets 5–30 shots. When it\'s gone, it\'s gone — just like a real disposable.' },
+    { icon: '🎨', title: 'Filter baked in', desc: 'Kodak Gold, Tri-X B&W, Disposable Flash, or Raw — host picks the look once, every camera wears it.' },
+    { icon: '⏱', title: 'Delayed reveal', desc: 'Photos can stay locked until morning. Like waiting for film to develop.' },
+    { icon: '📱', title: 'QR join, no accounts', desc: 'Guests scan a code and start shooting. No signup, no email, no app friction.' },
+    { icon: '📦', title: 'Develop the roll', desc: 'Host downloads a ZIP of every photo plus a printable contact-sheet PDF when the event ends.' },
+    { icon: '₱', title: 'Pay once per event', desc: '₱149 to ₱2,999 depending on guest count. No subscriptions. GCash, Maya, GrabPay, cards.' },
+  ];
+
+  return (
+    <section className="bg-sand py-24 px-6 md:px-12" ref={ref}>
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#E55525]">
+            Also by HNScorpPH
+          </motion.p>
+
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            {/* Left: identity */}
+            <motion.div variants={fadeUp} className="md:w-72 shrink-0">
+              <div className="mb-4 flex items-center gap-4">
+                <Image src="/logos/kuha-icon.svg" width={56} height={56} alt="KUHA" className="rounded-2xl" />
+                <div>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">KUHA</h2>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-[#C44A1F]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                    Coming soon
+                  </span>
+                </div>
+              </div>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                One event. Limited shots. Shared memories.
+              </p>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                KUHA turns any Filipino event into a shared disposable camera. Guests get a limited roll,
+                photos bake in a film aesthetic, and the whole event develops into one shared album.
+              </p>
+              <p className="mb-5 text-sm leading-relaxed text-ink/40">
+                Made for debuts, weddings, fiestas, and corporate parties. Paid per event — no subscriptions.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="https://kuha.hnscorpph.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
+                  style={{ background: '#FF6B35' }}
+                >
+                  Visit Kuha
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+                <span className="text-xs text-ink/40">Coming to Google Play</span>
+              </div>
+              {/* Trust signals */}
+              <div className="mt-5 flex flex-col gap-1.5">
+                {['4 film looks · 4 pricing tiers · 0 subscriptions', 'GCash · Maya · GrabPay · Card via PayMongo', 'Photos stored in Singapore · No ML training · No ads'].map(t => (
+                  <span key={t} className="text-[11px] leading-relaxed text-ink/35">{t}</span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right: features grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 flex-1"
+            >
+              {features.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-ink/8 bg-paper p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+                >
+                  <div className="mb-2 text-xl">{f.icon}</div>
+                  <h3 className="mb-1 text-sm font-bold text-ink">{f.title}</h3>
+                  <p className="text-xs leading-relaxed text-ink/50">{f.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Why Clerque — feature section
 // ---------------------------------------------------------------------------
 
@@ -878,6 +975,11 @@ const ROADMAP = [
       {
         name: 'AltSpaceCW',
         desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
+        status: 'coming-soon' as const,
+      },
+      {
+        name: 'KUHA',
+        desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album. Paid per event, Android.',
         status: 'coming-soon' as const,
       },
     ],
@@ -1097,6 +1199,14 @@ function Footer() {
           >
             TindaPOS
           </Link>
+          <Link
+            href="https://kuha.hnscorpph.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            KUHA
+          </Link>
           <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
           <Link href="/compliance" className="transition-colors hover:text-ink">Compliance</Link>
           <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
@@ -1126,6 +1236,7 @@ export default function Page() {
         <TindaPOSSection />
         <LocatrSection />
         <AltSpaceCWSection />
+        <KuhaSection />
 
         {/* Brand identity */}
         <EcosystemHero />

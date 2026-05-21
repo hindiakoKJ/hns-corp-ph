@@ -50,6 +50,13 @@ const CONCERNS: Record<string, string[]> = {
     'Bug report',
     'Other',
   ],
+  'KUHA': [
+    'Event setup help',
+    'Sales inquiry',
+    'Bug report',
+    'Feature request',
+    'Other',
+  ],
 };
 
 const PRODUCTS = Object.keys(CONCERNS);
