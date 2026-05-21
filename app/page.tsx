@@ -706,9 +706,9 @@ function AltSpaceCWSection() {
                 <Image src="/logos/altspacecw-icon.svg" width={56} height={56} alt="AltSpaceCW" className="rounded-2xl" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">AltSpaceCW</h2>
-                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-altspace-600">
-                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                    Coming soon
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    Live
                   </span>
                 </div>
               </div>
@@ -965,7 +965,7 @@ const ROADMAP = [
       {
         name: 'Sangguni',
         desc: 'A new HNScorpPH product. Details coming soon.',
-        status: 'coming-soon' as const,
+        status: 'done' as const,
       },
       {
         name: 'LOCATR',
@@ -975,7 +975,7 @@ const ROADMAP = [
       {
         name: 'AltSpaceCW',
         desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
-        status: 'coming-soon' as const,
+        status: 'done' as const,
       },
       {
         name: 'KUHA',

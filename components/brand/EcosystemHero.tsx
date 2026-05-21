@@ -47,7 +47,7 @@ const PRODUCTS: Product[] = [
     name: 'Sangguni',
     tintClass: 'bg-sangguni-600/10',
     kind: 'Coming soon',
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     key: 'locatr',
@@ -64,7 +64,7 @@ const PRODUCTS: Product[] = [
     name: 'AltSpaceCW',
     tintClass: 'bg-altspace-600/10',
     kind: 'Co-working space management',
-    status: 'coming-soon',
+    status: 'live',
     href: 'https://altspacecw.hnscorpph.com',
   },
   {
