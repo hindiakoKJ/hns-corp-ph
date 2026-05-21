@@ -941,6 +941,16 @@ const ROADMAP = [
         desc: 'Web app live — POS, OR sequential numbering, Z-Read/X-Read, BIR forms (2550Q, 1701Q, 2551Q), Books of Account, AP/AR modules.',
         status: 'done' as const,
       },
+      {
+        name: 'Sangguni',
+        desc: 'A new HNScorpPH product. Details coming soon.',
+        status: 'done' as const,
+      },
+      {
+        name: 'AltSpaceCW',
+        desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
+        status: 'done' as const,
+      },
     ],
   },
   {
@@ -963,19 +973,9 @@ const ROADMAP = [
         status: 'coming-soon' as const,
       },
       {
-        name: 'Sangguni',
-        desc: 'A new HNScorpPH product. Details coming soon.',
-        status: 'done' as const,
-      },
-      {
         name: 'LOCATR',
         desc: 'Verified rental app for the Philippines. Landlords and renters connect directly — no scams, no locator fees. Live in Bicol. Coming nationwide 2026.',
         status: 'coming-soon' as const,
-      },
-      {
-        name: 'AltSpaceCW',
-        desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
-        status: 'done' as const,
       },
       {
         name: 'KUHA',
