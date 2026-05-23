@@ -45,7 +45,7 @@ const PRODUCTS: Product[] = [
     key: 'sangguni',
     imgSrc: '/logos/sangguni-icon.svg',
     name: 'Sangguni',
-    tintClass: 'bg-sangguni-600/10',
+    tintClass: 'bg-[#103A78]/10',
     kind: 'Details coming soon',
     status: 'live',
   },

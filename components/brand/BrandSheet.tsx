@@ -46,7 +46,7 @@ const PICKS: BrandPick[] = [
     key: 'sangguni',
     imgSrc: '/logos/sangguni-icon.svg',
     name: 'Sangguni',
-    hex: '#059669',
+    hex: '#103A78',
     tagline: 'A new product by HNScorpPH. Coming soon.',
   },
   {
