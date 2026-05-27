@@ -1290,73 +1290,50 @@ function CTABanner() {
 
 function Footer() {
   return (
-    <footer className="border-t border-ink/8 bg-paper py-10 px-6 md:px-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-sm text-ink/40 md:flex-row">
-        <div className="flex items-center gap-2.5">
-          <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNScorpPH" className="rounded-md" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-ink">HNScorpPH</span>
-            <span className="text-[10px]">Software built for the Philippines.</span>
+    <footer className="border-t border-ink/8 bg-paper px-6 pt-12 pb-8 md:px-12">
+      <div className="mx-auto max-w-6xl">
+        {/* Top row: brand + product links */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          {/* Brand */}
+          <div className="flex items-center gap-3">
+            <Image src="/logos/hns-icon.png" width={36} height={36} alt="HNScorpPH" className="rounded-[8px]" />
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-ink">HNScorpPH</span>
+              <span className="text-[11px] text-ink/45">Software built for the Philippines.</span>
+            </div>
+          </div>
+
+          {/* Link columns */}
+          <div className="flex flex-wrap gap-x-12 gap-y-6 text-sm text-ink/50">
+            <div className="flex flex-col gap-2.5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/30">Products</span>
+              <Link href="https://clerque.hnscorpph.com/login" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Clerque</Link>
+              <Link href="https://tindapos.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">TindaPOS</Link>
+              <Link href="https://altspacecw.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">AltSpaceCW</Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">KUHA</Link>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/30">Coming Soon</span>
+              <Link href="https://steady.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Steady</Link>
+              <Link href="https://locatr.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">LOCATR</Link>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/30">Company</span>
+              <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
+              <Link href="/compliance" className="transition-colors hover:text-ink">Compliance</Link>
+              <a href="mailto:support@hnscorpph.com" className="transition-colors hover:text-ink">support@hnscorpph.com</a>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 md:justify-end">
-          <Link
-            href="https://clerque.hnscorpph.com/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            Clerque
-          </Link>
-          <Link
-            href="https://steady.hnscorpph.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            Steady
-          </Link>
-          <Link
-            href="https://locatr.hnscorpph.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            LOCATR
-          </Link>
-          <Link
-            href="https://altspacecw.hnscorpph.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            AltSpaceCW
-          </Link>
-          <Link
-            href="https://tindapos.hnscorpph.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            TindaPOS
-          </Link>
-          <Link
-            href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-ink"
-          >
-            KUHA
-          </Link>
-          <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
-          <a href="mailto:support@hnscorpph.com" className="transition-colors hover:text-ink">support@hnscorpph.com</a>
-          <Link href="/compliance" className="transition-colors hover:text-ink">Compliance</Link>
-          <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
-          <Link href="/terms" className="transition-colors hover:text-ink">Terms</Link>
+        {/* Bottom row: copyright + legal */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-ink/8 pt-6 text-xs text-ink/35 md:flex-row">
+          <span>© 2026 HNScorpPH OPC. All rights reserved.</span>
+          <div className="flex gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
+            <Link href="/terms" className="transition-colors hover:text-ink">Terms</Link>
+          </div>
         </div>
-
-        <div className="text-xs">© 2026 HNScorpPH OPC. All rights reserved.</div>
       </div>
     </footer>
   );
