@@ -904,11 +904,15 @@ function GovReadySection() {
             <motion.div variants={fadeUp} className="md:w-80 shrink-0">
               <div className="rounded-2xl border border-konek-200 bg-konek-50 p-7">
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-konek-600">
-                    <Shield className="h-5 w-5 text-white" />
-                  </div>
+                  <Image
+                    src="/logos/philgeps-logo.png"
+                    width={80}
+                    height={44}
+                    alt="PhilGEPS"
+                    className="object-contain"
+                  />
                   <div>
-                    <div className="text-sm font-bold text-ink">PhilGEPS Red Member</div>
+                    <div className="text-sm font-bold text-ink">Red Member</div>
                     <div className="text-xs text-ink/50">Philippine Government Electronic Procurement</div>
                   </div>
                 </div>

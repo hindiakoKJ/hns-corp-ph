@@ -11,11 +11,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
   }
 
-  const recipient = process.env.CONTACT_RECIPIENT ?? 'hnscorpph@gmail.com';
+  const recipient = process.env.CONTACT_RECIPIENT ?? 'support@hnscorpph.com';
 
   try {
     await resend.emails.send({
-      from: 'HNScorpPH Contact <noreply@hnscorpph.com>',
+      from: 'HNScorpPH Contact <support@hnscorpph.com>',
       to: recipient,
       replyTo: email,
       subject: `[${product}] ${concern} — ${name}`,
