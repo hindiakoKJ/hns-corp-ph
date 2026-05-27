@@ -70,8 +70,8 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/kuha-icon.svg',
     name: 'KUHA',
     hex: '#FF6B35',
-    tagline: 'A disposable event camera for Filipino weddings, debuts, fiestas, and corporate parties. Limited shots, baked-in film aesthetic, one shared roll per event. Android, paid per event. Live at kuha.hnscorpph.com.',
-    href: 'https://kuha.hnscorpph.com',
+    tagline: 'A disposable event camera for Filipino weddings, debuts, fiestas, and corporate parties. Limited shots, baked-in film aesthetic, one shared roll per event. Android, paid per event. Now on Google Play.',
+    href: 'https://play.google.com/store/apps/details?id=com.hnscorpph.kuha',
   },
 ];
 

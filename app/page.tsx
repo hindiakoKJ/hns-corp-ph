@@ -811,7 +811,7 @@ function KuhaSection() {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="https://kuha.hnscorpph.com"
+                  href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
@@ -820,7 +820,7 @@ function KuhaSection() {
                   Visit Kuha
                   <MoveUpRight className="h-4 w-4" />
                 </Link>
-                <span className="text-xs text-ink/40">Coming to Google Play</span>
+                <span className="text-xs text-ink/40">Available on Google Play</span>
               </div>
               {/* Trust signals */}
               <div className="mt-5 flex flex-col gap-1.5">
@@ -1200,7 +1200,7 @@ function Footer() {
             TindaPOS
           </Link>
           <Link
-            href="https://kuha.hnscorpph.com"
+            href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-ink"
@@ -1208,6 +1208,7 @@ function Footer() {
             KUHA
           </Link>
           <Link href="/contact" className="transition-colors hover:text-ink">Contact</Link>
+          <a href="mailto:support@hnscorpph.com" className="transition-colors hover:text-ink">support@hnscorpph.com</a>
           <Link href="/compliance" className="transition-colors hover:text-ink">Compliance</Link>
           <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
           <Link href="/terms" className="transition-colors hover:text-ink">Terms</Link>

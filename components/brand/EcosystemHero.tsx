@@ -74,7 +74,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-[#ff6b35]/10',
     kind: 'Disposable event camera · Android',
     status: 'coming-soon',
-    href: 'https://kuha.hnscorpph.com',
+    href: 'https://play.google.com/store/apps/details?id=com.hnscorpph.kuha',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
