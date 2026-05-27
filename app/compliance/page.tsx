@@ -139,6 +139,20 @@ const PRODUCTS = [
     ],
   },
   {
+    key: 'konekbarangay',
+    icon: '/logos/konekbarangay-icon.svg',
+    name: 'KonekBarangay',
+    color: '#16A34A',
+    status: 'Coming Soon',
+    items: [
+      {
+        law: 'HNScorpPH Policy',
+        label: 'Compliance Details Coming Soon',
+        desc: 'KonekBarangay is an upcoming HNScorpPH product. Full compliance documentation will be published here when the product details are made public. All HNScorpPH products are built to comply with applicable Philippine laws and regulations.',
+      },
+    ],
+  },
+  {
     key: 'steady',
     icon: '/logos/steady-icon.png',
     name: 'Steady',

@@ -66,6 +66,13 @@ const PICKS: BrandPick[] = [
     href: 'https://altspacecw.hnscorpph.com',
   },
   {
+    key: 'konekbarangay',
+    imgSrc: '/logos/konekbarangay-icon.svg',
+    name: 'KonekBarangay',
+    hex: '#16A34A',
+    tagline: 'A new product by HNScorpPH. Coming soon.',
+  },
+  {
     key: 'kuha',
     imgSrc: '/logos/kuha-icon.svg',
     name: 'KUHA',
@@ -88,7 +95,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and KUHA are live. Steady and LOCATR coming soon.
+                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and KUHA are live. Steady, LOCATR, and KonekBarangay coming soon.
               </span>
             </h2>
           </div>

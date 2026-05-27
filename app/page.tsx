@@ -989,6 +989,11 @@ const ROADMAP = [
         desc: 'Verified rental app for the Philippines. Landlords and renters connect directly — no scams, no locator fees. Live in Bicol. Coming nationwide 2026.',
         status: 'coming-soon' as const,
       },
+      {
+        name: 'KonekBarangay',
+        desc: 'A new HNScorpPH product. Details coming soon.',
+        status: 'coming-soon' as const,
+      },
     ],
   },
   {

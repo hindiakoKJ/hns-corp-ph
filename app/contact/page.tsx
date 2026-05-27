@@ -57,6 +57,12 @@ const CONCERNS: Record<string, string[]> = {
     'Feature request',
     'Other',
   ],
+  'KonekBarangay': [
+    'LGU inquiry',
+    'Partnership inquiry',
+    'General question',
+    'Other',
+  ],
 };
 
 const PRODUCTS = Object.keys(CONCERNS);
@@ -310,6 +316,13 @@ export default function ContactPage() {
             <motion.p variants={fadeUp} className="text-base text-white/45">
               We read everything. You&apos;ll hear back directly from the team.
             </motion.p>
+            <motion.a
+              variants={fadeUp}
+              href="mailto:support@hnscorpph.com"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-hns-400 hover:text-hns-300 transition-colors"
+            >
+              support@hnscorpph.com
+            </motion.a>
           </motion.div>
         </section>
 

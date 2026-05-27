@@ -68,6 +68,14 @@ const PRODUCTS: Product[] = [
     href: 'https://altspacecw.hnscorpph.com',
   },
   {
+    key: 'konekbarangay',
+    imgSrc: '/logos/konekbarangay-icon.svg',
+    name: 'KonekBarangay',
+    tintClass: 'bg-[#16A34A]/10',
+    kind: 'Details coming soon',
+    status: 'coming-soon',
+  },
+  {
     key: 'kuha',
     imgSrc: '/logos/kuha-icon.svg',
     name: 'KUHA',
