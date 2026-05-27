@@ -38,7 +38,7 @@ const PRODUCTS: Product[] = [
     name: 'TindaPOS',
     tintClass: 'bg-tinda-600/10',
     kind: 'POS for every sari-sari store',
-    status: 'coming-soon',
+    status: 'live',
     href: 'https://tindapos.hnscorpph.com',
   },
   {
@@ -73,7 +73,7 @@ const PRODUCTS: Product[] = [
     name: 'KUHA',
     tintClass: 'bg-[#ff6b35]/10',
     kind: 'Disposable event camera · Android',
-    status: 'coming-soon',
+    status: 'live',
     href: 'https://play.google.com/store/apps/details?id=com.hnscorpph.kuha',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },

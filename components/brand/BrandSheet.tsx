@@ -39,7 +39,7 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/tindapos-icon.svg',
     name: 'TindaPOS',
     hex: '#F59E0B',
-    tagline: 'Offline POS for Filipino micro-retailers. Tap to sell, track stock, view daily profit — no internet required, no login, no backend. Ang POS ng bawat tindahan. Coming soon to Google Play.',
+    tagline: 'Offline POS for Filipino micro-retailers. Tap to sell, track stock, view daily profit — no internet required, no login, no backend. Ang POS ng bawat tindahan. Now on Google Play.',
     href: 'https://tindapos.hnscorpph.com',
   },
   {
@@ -88,7 +88,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque is live, Steady, TindaPOS, Sangguni, LOCATR, AltSpaceCW, and KUHA coming soon.
+                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and KUHA are live. Steady and LOCATR coming soon.
               </span>
             </h2>
           </div>

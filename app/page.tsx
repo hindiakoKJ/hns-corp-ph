@@ -534,9 +534,9 @@ function TindaPOSSection() {
                 <Image src="/logos/tindapos-icon.svg" width={56} height={56} alt="TindaPOS" className="rounded-2xl" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">TindaPOS</h2>
-                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-tinda-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                    Coming soon
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    Live
                   </span>
                 </div>
               </div>
@@ -793,9 +793,9 @@ function KuhaSection() {
                 <Image src="/logos/kuha-icon.svg" width={56} height={56} alt="KUHA" className="rounded-2xl" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">KUHA</h2>
-                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-[#C44A1F]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                    Coming soon
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    Live
                   </span>
                 </div>
               </div>
@@ -951,6 +951,16 @@ const ROADMAP = [
         desc: 'Co-working space management for Philippine operators. Real-time floor maps, smart booking, payment confirmation, and multi-tenant support.',
         status: 'done' as const,
       },
+      {
+        name: 'TindaPOS',
+        desc: 'Standalone offline POS for Filipino sari-sari stores. Tap to sell, track stock, view daily profit — no internet, no login, no backend.',
+        status: 'done' as const,
+      },
+      {
+        name: 'KUHA',
+        desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album. Now on Google Play.',
+        status: 'done' as const,
+      },
     ],
   },
   {
@@ -968,18 +978,8 @@ const ROADMAP = [
         status: 'coming-soon' as const,
       },
       {
-        name: 'TindaPOS',
-        desc: 'Standalone offline POS for Filipino sari-sari stores. Tap to sell, track stock, view daily profit — no internet, no login, no backend.',
-        status: 'coming-soon' as const,
-      },
-      {
         name: 'LOCATR',
         desc: 'Verified rental app for the Philippines. Landlords and renters connect directly — no scams, no locator fees. Live in Bicol. Coming nationwide 2026.',
-        status: 'coming-soon' as const,
-      },
-      {
-        name: 'KUHA',
-        desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album. Paid per event, Android.',
         status: 'coming-soon' as const,
       },
     ],
