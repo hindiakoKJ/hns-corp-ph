@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Compliance — HNScorpPH',
-  description: 'How HNScorpPH products comply with Philippine regulations — BIR, RA 10173, and more.',
+  description: 'How HNScorpPH products comply with Philippine regulations — BIR, RA 10173, PayMongo, and more.',
 };
 
 const PRODUCTS = [
@@ -40,6 +40,11 @@ const PRODUCTS = [
         label: 'E-Money Collection Tracking',
         desc: 'GCash and Maya collections are recorded and reconciled alongside cash transactions. Settlement tracking keeps Books of Account accurate.',
       },
+      {
+        law: 'Google Play Policies',
+        label: 'Clerque Counter — Now on Google Play',
+        desc: 'The Clerque Counter Android app is live on Google Play. It meets Google Play\'s data safety requirements and declares only the permissions necessary for POS functionality.',
+      },
     ],
   },
   {
@@ -47,7 +52,7 @@ const PRODUCTS = [
     icon: '/logos/tindapos-icon.svg',
     name: 'TindaPOS',
     color: '#F59E0B',
-    status: 'Coming Soon',
+    status: 'Live',
     items: [
       {
         law: 'RA 10173 — Data Privacy Act of 2012',
@@ -58,6 +63,78 @@ const PRODUCTS = [
         law: 'RA 10173 — Data Privacy Act of 2012',
         label: 'Minimal Data Principle',
         desc: 'Product names, prices, and transaction amounts are entered by the owner and stay on-device. No customer data, no payment credentials, no biometrics.',
+      },
+      {
+        law: 'Google Play Policies',
+        label: 'Android App — Data Safety Declared',
+        desc: 'TindaPOS declares no data collection in the Google Play Data Safety section. All transactions remain entirely on-device with no network transmission.',
+      },
+    ],
+  },
+  {
+    key: 'kuha',
+    icon: '/logos/kuha-icon.svg',
+    name: 'KUHA',
+    color: '#FF6B35',
+    status: 'Live',
+    items: [
+      {
+        law: 'RA 10173 — Data Privacy Act of 2012',
+        label: 'Event Photo Data',
+        desc: 'Photos captured by guests are stored in Singapore-based cloud storage. They are never used for machine learning, advertising, or sold to third parties. Hosts download their event\'s full roll and photos are deleted from our servers after the retention period.',
+      },
+      {
+        law: 'RA 10173 — Data Privacy Act of 2012',
+        label: 'Guest Privacy — No Account Required',
+        desc: 'Guests join by scanning a QR code. No name, email, or phone number is required to participate. The only data associated with a guest is the photos they take within the event session.',
+      },
+      {
+        law: 'BSP / PayMongo',
+        label: 'Payment Processing via PayMongo',
+        desc: 'KUHA processes payments through PayMongo, a BSP-supervised payment gateway. Accepted methods include GCash, Maya, GrabPay, and credit/debit cards. HNScorpPH does not store card numbers or payment credentials.',
+      },
+      {
+        law: 'Google Play Policies',
+        label: 'Android App — Camera & Storage Permissions',
+        desc: 'KUHA requests camera access only during active event sessions. Storage access is used exclusively to save photos to the event roll. Both permissions are declared in the Google Play Data Safety section.',
+      },
+    ],
+  },
+  {
+    key: 'altspacecw',
+    icon: '/logos/altspacecw-icon.svg',
+    name: 'AltSpaceCW',
+    color: '#334155',
+    status: 'Live',
+    items: [
+      {
+        law: 'RA 10173 — Data Privacy Act of 2012',
+        label: 'Operator & Member Account Data',
+        desc: 'AltSpaceCW collects name and email address from operators and members to enable bookings, floor access, and payment confirmation. This data is used solely for platform operations and is never sold or shared with third parties.',
+      },
+      {
+        law: 'RA 10173 — Data Privacy Act of 2012',
+        label: 'Booking & Payment Records',
+        desc: 'Booking history and payment confirmation records are retained for the duration of the operator\'s active subscription. Users may request access to or deletion of their data by contacting support@hnscorpph.com.',
+      },
+      {
+        law: 'NPC Circular 16-01',
+        label: 'Security of Personal Data',
+        desc: 'Access to AltSpaceCW data is role-controlled — operators see their own workspace data, admins and clients see only what is relevant to their account. Data is encrypted in transit.',
+      },
+    ],
+  },
+  {
+    key: 'sangguni',
+    icon: '/logos/sangguni-icon.svg',
+    name: 'Sangguni',
+    color: '#103A78',
+    status: 'Live',
+    items: [
+      {
+        law: 'HNScorpPH Policy',
+        label: 'Compliance Details Coming Soon',
+        desc: 'Sangguni is a live HNScorpPH product. Full compliance documentation will be published here as the product details are made public. All HNScorpPH products are built to comply with applicable Philippine laws and regulations.',
       },
     ],
   },
@@ -95,7 +172,7 @@ const PRODUCTS = [
       {
         law: 'RA 10173 — Data Privacy Act of 2012',
         label: 'User Rights',
-        desc: 'LOCATR users may request access to, correction of, or deletion of their personal data at any time by contacting the HNScorpPH Data Protection Officer at hnscorpph@gmail.com.',
+        desc: 'LOCATR users may request access to, correction of, or deletion of their personal data at any time by contacting the HNScorpPH Data Protection Officer at support@hnscorpph.com.',
       },
     ],
   },
@@ -178,8 +255,8 @@ export default function CompliancePage() {
             <div className="rounded-2xl border border-ink/8 bg-sand p-6 text-sm leading-relaxed text-ink/55">
               <p className="mb-1 font-semibold text-ink">Questions about compliance?</p>
               Contact us at{' '}
-              <a href="mailto:hnscorpph@gmail.com" className="font-medium text-hns-600 hover:underline">
-                hnscorpph@gmail.com
+              <a href="mailto:support@hnscorpph.com" className="font-medium text-hns-600 hover:underline">
+                support@hnscorpph.com
               </a>
               . We&apos;re happy to provide documentation for audits, procurement requirements, or due diligence.
             </div>
