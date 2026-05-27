@@ -317,7 +317,7 @@ function EcosystemSection() {
   const cards = [
     { icon: Shield, title: 'BIR Compliance', desc: 'Built to CAS specifications — sequential ORs, immutable Z-Read/X-Read logs, and downloadable BIR forms. CAS accreditation in progress.' },
     { icon: WifiOff, title: 'Offline-Capable', desc: 'Sells even without internet. Transactions write locally and sync automatically when you reconnect.' },
-    { icon: Smartphone, title: 'Mobile-Ready', desc: 'Works on any device and screen size. Clerque Counter is coming to Google Play as a standalone app.' },
+    { icon: Smartphone, title: 'Mobile-Ready', desc: 'Works on any device and screen size. Clerque Counter is now live on Google Play as a standalone app.' },
   ];
 
   return (
@@ -365,14 +365,21 @@ function EcosystemSection() {
                 </div>
                 <div className="flex flex-col gap-2">
                   {[
-                    { name: 'Clerque Counter', desc: 'Point of sale — fast checkout, offline-capable, BIR-compliant receipts' },
+                    { name: 'Clerque Counter', desc: 'Point of sale — fast checkout, offline-capable, BIR-compliant receipts. Now on Google Play ↗', href: 'https://play.google.com/store/apps/details?id=com.clerque.counter' },
                     { name: 'Clerque Ledger', desc: 'Accounting — double-entry, BIR forms, Books of Account, AP/AR' },
                     { name: 'Clerque Sync', desc: 'Team — time tracking, attendance, and timesheets' },
                   ].map((m) => (
-                    <div key={m.name} className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5">
-                      <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
-                      <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
-                    </div>
+                    m.href ? (
+                      <Link key={m.name} href={m.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5 transition-colors hover:bg-clerque-100/60">
+                        <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
+                        <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
+                      </Link>
+                    ) : (
+                      <div key={m.name} className="flex items-start gap-3 rounded-lg border border-clerque-100 bg-clerque-50/60 px-3 py-2.5">
+                        <span className="min-w-[120px] text-[11px] font-semibold text-clerque-700">{m.name}</span>
+                        <span className="text-[11px] leading-snug text-ink/50">{m.desc}</span>
+                      </div>
+                    )
                   ))}
                 </div>
               </div>
@@ -942,6 +949,11 @@ const ROADMAP = [
         status: 'done' as const,
       },
       {
+        name: 'Clerque Counter on Google Play',
+        desc: 'Standalone mobile POS app for Android. Now live on Google Play.',
+        status: 'done' as const,
+      },
+      {
         name: 'Sangguni',
         desc: 'A new HNScorpPH product. Details coming soon.',
         status: 'done' as const,
@@ -967,11 +979,6 @@ const ROADMAP = [
     phase: 'Next',
     label: 'Upcoming',
     items: [
-      {
-        name: 'Clerque on Google Play',
-        desc: 'Standalone mobile POS app for Android. Clerque\'s point-of-sale built for the phone in your pocket.',
-        status: 'coming-soon' as const,
-      },
       {
         name: 'Steady',
         desc: 'Free seizure logging and BEACON emergency alert app for people living with epilepsy. Coming to Google Play.',
