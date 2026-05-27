@@ -46,7 +46,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/sangguni-icon.svg',
     name: 'Sangguni',
     tintClass: 'bg-[#103A78]/10',
-    kind: 'Details coming soon',
+    kind: 'Government app · LGU',
     status: 'live',
   },
   {
@@ -72,7 +72,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/konekbarangay-icon.svg',
     name: 'KonekBarangay',
     tintClass: 'bg-[#16A34A]/10',
-    kind: 'Details coming soon',
+    kind: 'Government app · Barangay level',
     status: 'coming-soon',
   },
   {

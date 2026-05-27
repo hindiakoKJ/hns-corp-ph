@@ -265,7 +265,7 @@ function Hero() {
 // ---------------------------------------------------------------------------
 
 const TICKER_TEXT =
-  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  Filipino-built  •  Powered by HNScorpPH  •  ';
+  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  PhilGEPS Red Member  •  Government-ready apps  •  Filipino-built  •  Powered by HNScorpPH  •  ';
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
@@ -862,6 +862,132 @@ function KuhaSection() {
 }
 
 // ---------------------------------------------------------------------------
+// Government-Ready Section
+// ---------------------------------------------------------------------------
+
+function GovReadySection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  return (
+    <section ref={ref} className="bg-paper py-20 px-6 md:px-12">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          {/* Header */}
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
+            <motion.div variants={fadeUp} className="flex-1">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-konek-600">
+                Government-Ready
+              </p>
+              <h2 className="mb-4 text-3xl font-bold tracking-wordmark-tight text-ink md:text-4xl">
+                Not just for businesses.
+                <br />
+                <span className="text-ink/45">Built for the barangay, too.</span>
+              </h2>
+              <p className="mb-5 max-w-xl text-sm leading-relaxed text-ink/55">
+                HNScorpPH builds software for Filipino businesses and for Filipino government — from
+                the smallest sari-sari store to the barangay hall. Our government products are
+                designed around Philippine procurement law, DILG mandates, and real LGU workflows.
+              </p>
+              <p className="text-sm leading-relaxed text-ink/55">
+                Two government apps are in development. Details are not public yet — but they&apos;re
+                coming. When they ship, every barangay and LGU in the country will be able to procure
+                them directly through PhilGEPS, no bidding required.
+              </p>
+            </motion.div>
+
+            {/* PhilGEPS credential card */}
+            <motion.div variants={fadeUp} className="md:w-80 shrink-0">
+              <div className="rounded-2xl border border-konek-200 bg-konek-50 p-7">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-konek-600">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-ink">PhilGEPS Red Member</div>
+                    <div className="text-xs text-ink/50">Philippine Government Electronic Procurement</div>
+                  </div>
+                </div>
+                <div className="space-y-2.5 text-xs leading-relaxed text-ink/60">
+                  <div className="flex items-start gap-2">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-konek-500" />
+                    HNScorpPH is a registered PhilGEPS Red Member — eligible for government procurement transactions.
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-konek-500" />
+                    LGUs can procure HNScorpPH products via Small Value Procurement (SVP) under RA 9184 — no public bidding required.
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-konek-500" />
+                    Priced under the ₱50,000 SVP threshold per product per year.
+                  </div>
+                </div>
+                <div className="mt-5 border-t border-konek-200 pt-4">
+                  <Link
+                    href="/contact?topic=partnership"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-konek-700 hover:underline"
+                  >
+                    Inquire for your LGU
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Two product teasers */}
+          <motion.div variants={stagger} className="mt-10 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                icon: '/logos/sangguni-icon.svg',
+                name: 'Sangguni',
+                color: '#103A78',
+                desc: 'A live government product by HNScorpPH. Details are not public yet.',
+                tag: 'Live',
+                tagColor: 'text-emerald-700',
+                dot: 'bg-emerald-500',
+              },
+              {
+                icon: '/logos/konekbarangay-icon.svg',
+                name: 'KonekBarangay',
+                color: '#16A34A',
+                desc: 'An upcoming government product by HNScorpPH. Details coming soon.',
+                tag: 'Coming Soon',
+                tagColor: 'text-sky-700',
+                dot: 'bg-sky-400',
+              },
+            ].map((p) => (
+              <motion.div
+                key={p.name}
+                variants={fadeUp}
+                className="flex items-start gap-4 rounded-xl border border-ink/8 bg-white p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+              >
+                <Image src={p.icon} width={44} height={44} alt={p.name} className="rounded-xl shrink-0" />
+                <div>
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="text-sm font-bold text-ink">{p.name}</span>
+                    <span className={`flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide ${p.tagColor}`}>
+                      <span className={`h-1.5 w-1.5 rounded-full ${p.dot}`} />
+                      {p.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs leading-relaxed text-ink/50">{p.desc}</p>
+                  <p className="mt-1.5 text-[10px] font-medium text-ink/30">by HNScorpPH · Government-ready · LGU</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Why Clerque — feature section
 // ---------------------------------------------------------------------------
 
@@ -1250,6 +1376,7 @@ export default function Page() {
         <LocatrSection />
         <AltSpaceCWSection />
         <KuhaSection />
+        <GovReadySection />
 
         {/* Brand identity */}
         <EcosystemHero />
