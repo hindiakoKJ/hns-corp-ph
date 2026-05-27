@@ -1,30 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="kb-bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#166534"/>
-      <stop offset="1" stop-color="#14532D"/>
-    </linearGradient>
-    <linearGradient id="kb-gloss" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.15"/>
-      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <!-- Base tile -->
-  <rect width="64" height="64" rx="14" fill="url(#kb-bg)"/>
-  <rect width="64" height="64" rx="14" fill="url(#kb-gloss)"/>
-  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
-  <!-- Barangay hall / building silhouette -->
-  <g fill="none" stroke="#FAF8F4" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Roof / triangle peak -->
-    <polyline points="20,30 32,18 44,30" stroke-width="2.4"/>
-    <!-- Building body -->
-    <rect x="23" y="30" width="18" height="14" rx="1" stroke-width="2.4"/>
-    <!-- Door -->
-    <rect x="29" y="36" width="6" height="8" rx="1" stroke-width="2"/>
-    <!-- Connectivity arc (Konek) -->
-    <path d="M14,24 Q32,10 50,24" stroke-width="1.8" stroke-opacity="0.55" stroke-dasharray="2 2"/>
-    <path d="M17,27.5 Q32,16 47,27.5" stroke-width="1.6" stroke-opacity="0.35" stroke-dasharray="2 2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="KonekBarangay">
+  <title>KonekBarangay (full color, navy background)</title>
+  <rect width="256" height="256" fill="#0E2A5C" rx="32"/>
+  <g fill="#F6C90E">
+    <rect x="120" y="16" width="16" height="48" rx="8"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(45 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(90 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(135 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(180 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(225 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(270 128 128)"/>
+    <rect x="120" y="16" width="16" height="48" rx="8" transform="rotate(315 128 128)"/>
+    <circle cx="128" cy="128" r="52"/>
   </g>
-  <!-- Signal dot at peak -->
-  <circle cx="32" cy="18" r="2.2" fill="#4ADE80"/>
+  <g fill="#0E2A5C">
+    <circle cx="128" cy="116" r="8.8"/>
+    <circle cx="112" cy="140" r="8.8"/>
+    <circle cx="144" cy="140" r="8.8"/>
+  </g>
 </svg>

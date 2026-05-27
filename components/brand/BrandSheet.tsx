@@ -69,7 +69,7 @@ const PICKS: BrandPick[] = [
     key: 'konekbarangay',
     imgSrc: '/logos/konekbarangay-icon.svg',
     name: 'KonekBarangay',
-    hex: '#16A34A',
+    hex: '#0E2A5C',
     tagline: 'A new product by HNScorpPH. Coming soon.',
   },
   {

@@ -71,7 +71,7 @@ const PRODUCTS: Product[] = [
     key: 'konekbarangay',
     imgSrc: '/logos/konekbarangay-icon.svg',
     name: 'KonekBarangay',
-    tintClass: 'bg-[#16A34A]/10',
+    tintClass: 'bg-[#0E2A5C]/10',
     kind: 'Government app · Barangay level',
     status: 'coming-soon',
   },
