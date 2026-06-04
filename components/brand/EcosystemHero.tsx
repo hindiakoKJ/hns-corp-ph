@@ -39,7 +39,7 @@ const PRODUCTS: Product[] = [
     tintClass: 'bg-tinda-600/10',
     kind: 'POS for every sari-sari store',
     status: 'live',
-    href: 'https://tindapos.hnscorpph.com',
+    href: 'https://play.google.com/store/apps/details?id=com.hnscorp.tindapos',
   },
   {
     key: 'sangguni',

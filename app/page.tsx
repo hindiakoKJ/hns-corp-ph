@@ -565,7 +565,17 @@ function TindaPOSSection() {
                   Visit TindaPOS
                   <MoveUpRight className="h-4 w-4" />
                 </Link>
-                <span className="text-xs text-ink/40">Coming to Google Play</span>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.hnscorp.tindapos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-ink/15 bg-ink px-4 py-2.5 text-xs font-semibold text-white transition-all hover:bg-ink/80 hover:scale-[1.02]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
+                    <path d="M3.18 23.76c.3.17.64.24.99.21L15.77 12 12 8.23 3.18 23.76zM20.77 10.43l-2.55-1.47-3.77 3.34 3.77 3.34 2.57-1.48c.73-.42.73-1.31-.02-1.73zM2.36.25C2.13.49 2 .87 2 1.36V22.6c0 .49.13.87.36 1.11L3.1 23l11.1-11.1v-.26L3.1.94 2.36.25zM15.77 12l3.45-3.45-2.11-1.22L15.77 12z"/>
+                  </svg>
+                  Google Play
+                </Link>
               </div>
             </motion.div>
 

@@ -40,7 +40,7 @@ const PICKS: BrandPick[] = [
     name: 'TindaPOS',
     hex: '#F59E0B',
     tagline: 'Offline POS for Filipino micro-retailers. Tap to sell, track stock, view daily profit — no internet required, no login, no backend. Ang POS ng bawat tindahan. Now on Google Play.',
-    href: 'https://tindapos.hnscorpph.com',
+    href: 'https://play.google.com/store/apps/details?id=com.hnscorp.tindapos',
   },
   {
     key: 'sangguni',
