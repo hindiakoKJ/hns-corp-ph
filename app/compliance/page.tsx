@@ -72,9 +72,9 @@ const PRODUCTS = [
     ],
   },
   {
-    key: 'kuha',
-    icon: '/logos/kuha-icon.svg',
-    name: 'KUHA',
+    key: 'scatto',
+    icon: '/logos/scatto-icon.svg',
+    name: 'Scatto',
     color: '#FF6B35',
     status: 'Live',
     items: [
@@ -91,12 +91,12 @@ const PRODUCTS = [
       {
         law: 'BSP / PayMongo',
         label: 'Payment Processing via PayMongo',
-        desc: 'KUHA processes payments through PayMongo, a BSP-supervised payment gateway. Accepted methods include GCash, Maya, GrabPay, and credit/debit cards. HNScorpPH does not store card numbers or payment credentials.',
+        desc: 'Scatto processes payments through PayMongo, a BSP-supervised payment gateway. Accepted methods include GCash, Maya, GrabPay, and credit/debit cards. HNScorpPH does not store card numbers or payment credentials.',
       },
       {
         law: 'Google Play Policies',
         label: 'Android App — Camera & Storage Permissions',
-        desc: 'KUHA requests camera access only during active event sessions. Storage access is used exclusively to save photos to the event roll. Both permissions are declared in the Google Play Data Safety section.',
+        desc: 'Scatto requests camera access only during active event sessions. Storage access is used exclusively to save photos to the event roll. Both permissions are declared in the Google Play Data Safety section.',
       },
     ],
   },

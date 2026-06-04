@@ -765,10 +765,10 @@ function AltSpaceCWSection() {
 }
 
 // ---------------------------------------------------------------------------
-// KUHA Section — disposable event camera
+// Scatto Section — disposable event camera
 // ---------------------------------------------------------------------------
 
-function KuhaSection() {
+function ScattoSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -797,9 +797,9 @@ function KuhaSection() {
             {/* Left: identity */}
             <motion.div variants={fadeUp} className="md:w-72 shrink-0">
               <div className="mb-4 flex items-center gap-4">
-                <Image src="/logos/kuha-icon.svg" width={56} height={56} alt="KUHA" className="rounded-2xl" />
+                <Image src="/logos/scatto-icon.svg" width={56} height={56} alt="Scatto" className="rounded-2xl" />
                 <div>
-                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">KUHA</h2>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">Scatto</h2>
                   <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                     Live
@@ -810,7 +810,7 @@ function KuhaSection() {
                 One event. Limited shots. Shared memories.
               </p>
               <p className="mb-2 text-sm leading-relaxed text-ink/55">
-                KUHA turns any Filipino event into a shared disposable camera. Guests get a limited roll,
+                Scatto turns any Filipino event into a shared disposable camera. Guests get a limited roll,
                 photos bake in a film aesthetic, and the whole event develops into one shared album.
               </p>
               <p className="mb-5 text-sm leading-relaxed text-ink/40">
@@ -818,16 +818,22 @@ function KuhaSection() {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha"
+                  href="https://scatto.hnscorpph.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
                   style={{ background: '#FF6B35' }}
                 >
-                  Visit Kuha
+                  Visit Scatto
                   <MoveUpRight className="h-4 w-4" />
                 </Link>
-                <span className="text-xs text-ink/40">Available on Google Play</span>
+                {/* Google Play — link TBD */}
+                <div className="inline-flex items-center gap-2 rounded-xl border border-ink/15 bg-ink/5 px-4 py-2.5 text-xs font-semibold text-ink/35 cursor-not-allowed select-none">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
+                    <path d="M3.18 23.76c.3.17.64.24.99.21L15.77 12 12 8.23 3.18 23.76zM20.77 10.43l-2.55-1.47-3.77 3.34 3.77 3.34 2.57-1.48c.73-.42.73-1.31-.02-1.73zM2.36.25C2.13.49 2 .87 2 1.36V22.6c0 .49.13.87.36 1.11L3.1 23l11.1-11.1v-.26L3.1.94 2.36.25zM15.77 12l3.45-3.45-2.11-1.22L15.77 12z"/>
+                  </svg>
+                  Google Play · Coming soon
+                </div>
               </div>
               {/* Trust signals */}
               <div className="mt-5 flex flex-col gap-1.5">
@@ -1099,8 +1105,8 @@ const ROADMAP = [
         status: 'done' as const,
       },
       {
-        name: 'KUHA',
-        desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album. Now on Google Play.',
+        name: 'Scatto',
+        desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album.',
         status: 'done' as const,
       },
     ],
@@ -1310,7 +1316,7 @@ function Footer() {
               <Link href="https://clerque.hnscorpph.com/login" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Clerque</Link>
               <Link href="https://tindapos.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">TindaPOS</Link>
               <Link href="https://altspacecw.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">AltSpaceCW</Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.hnscorpph.kuha" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">KUHA</Link>
+              <Link href="https://scatto.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Scatto</Link>
             </div>
             <div className="flex flex-col gap-2.5">
               <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/30">Coming Soon</span>
@@ -1356,7 +1362,7 @@ export default function Page() {
         <TindaPOSSection />
         <LocatrSection />
         <AltSpaceCWSection />
-        <KuhaSection />
+        <ScattoSection />
         <GovReadySection />
 
         {/* Brand identity */}

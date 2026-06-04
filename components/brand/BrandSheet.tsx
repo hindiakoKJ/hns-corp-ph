@@ -73,12 +73,12 @@ const PICKS: BrandPick[] = [
     tagline: 'A new product by HNScorpPH. Coming soon.',
   },
   {
-    key: 'kuha',
-    imgSrc: '/logos/kuha-icon.svg',
-    name: 'KUHA',
+    key: 'scatto',
+    imgSrc: '/logos/scatto-icon.svg',
+    name: 'Scatto',
     hex: '#FF6B35',
-    tagline: 'A disposable event camera for Filipino weddings, debuts, fiestas, and corporate parties. Limited shots, baked-in film aesthetic, one shared roll per event. Android, paid per event. Now on Google Play.',
-    href: 'https://play.google.com/store/apps/details?id=com.hnscorpph.kuha',
+    tagline: 'A disposable event camera for Filipino weddings, debuts, fiestas, and corporate parties. Limited shots, baked-in film aesthetic, one shared roll per event. Android, paid per event.',
+    href: 'https://scatto.hnscorpph.com',
   },
 ];
 
@@ -95,7 +95,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and KUHA are live. Steady, LOCATR, and KonekBarangay coming soon.
+                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and Scatto are live. Steady, LOCATR, and KonekBarangay coming soon.
               </span>
             </h2>
           </div>
@@ -153,7 +153,7 @@ export function BrandSheet() {
             <h3 className="mb-1.5 text-sm font-semibold text-ink">One product live. Three coming soon.</h3>
             Clerque is the flagship business suite — point of sale, BIR-compliant
             accounting, and AP/AR tracking built for MSMEs. Steady and TindaPOS
-            are coming to Google Play. Sangguni, LOCATR, AltSpaceCW, and KUHA are
+            are coming to Google Play. Sangguni, LOCATR, AltSpaceCW, and Scatto are
             also in the pipeline — more details coming soon.
           </div>
           <div>

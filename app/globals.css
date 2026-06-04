@@ -67,7 +67,16 @@
   --color-konek-600: #0E2A5C;
   --color-konek-700: #091D3F;
 
-  /* KUHA brand — light-leak orange */
+  /* Scatto brand — light-leak orange */
+  --color-scatto-50:  #FFF5F0;
+  --color-scatto-100: #FFEADF;
+  --color-scatto-200: #FFCBB2;
+  --color-scatto-400: #FF8F5C;
+  --color-scatto-500: #FF6B35;
+  --color-scatto-600: #E55525;
+  --color-scatto-700: #C44A1F;
+
+  /* KUHA — legacy alias (same palette) */
   --color-kuha-50:  #FFF5F0;
   --color-kuha-100: #FFEADF;
   --color-kuha-200: #FFCBB2;

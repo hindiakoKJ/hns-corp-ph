@@ -76,13 +76,13 @@ const PRODUCTS: Product[] = [
     status: 'coming-soon',
   },
   {
-    key: 'kuha',
-    imgSrc: '/logos/kuha-icon.svg',
-    name: 'KUHA',
+    key: 'scatto',
+    imgSrc: '/logos/scatto-icon.svg',
+    name: 'Scatto',
     tintClass: 'bg-[#ff6b35]/10',
     kind: 'Disposable event camera · Android',
     status: 'live',
-    href: 'https://play.google.com/store/apps/details?id=com.hnscorpph.kuha',
+    href: 'https://scatto.hnscorpph.com',
   },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];

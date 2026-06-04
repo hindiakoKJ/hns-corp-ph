@@ -50,7 +50,7 @@ const CONCERNS: Record<string, string[]> = {
     'Bug report',
     'Other',
   ],
-  'KUHA': [
+  'Scatto': [
     'Event setup help',
     'Sales inquiry',
     'Bug report',
