@@ -188,10 +188,14 @@ function Hero() {
         animate="visible"
         variants={stagger}
       >
-        {/* Badge */}
-        <motion.div variants={fadeUp} className="mb-8 inline-flex">
+        {/* Badges */}
+        <motion.div variants={fadeUp} className="mb-8 flex flex-wrap items-center justify-center gap-2.5">
           <span className="flex items-center gap-2 rounded-full border border-hns-600/30 bg-hns-600/10 px-4 py-1.5 text-sm font-medium text-hns-400">
             🇵🇭 Built for Philippine MSMEs
+          </span>
+          <span className="flex items-center gap-1.5 rounded-full border border-[#d4714a]/30 bg-[#d4714a]/10 px-4 py-1.5 text-sm font-medium text-[#e8845a]">
+            <span className="text-base leading-none">✳</span>
+            Claude for Startups
           </span>
         </motion.div>
 
@@ -265,7 +269,7 @@ function Hero() {
 // ---------------------------------------------------------------------------
 
 const TICKER_TEXT =
-  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  PhilGEPS Red Member  •  Government-ready apps  •  Filipino-built  •  Powered by HNScorpPH  •  ';
+  'BIR CAS accreditation in progress  •  GCash & Maya collection tracking  •  OR sequential numbering (RR 18-2012)  •  Z-Read & X-Read audit logs  •  Offline-capable POS  •  PFRS-aligned Chart of Accounts  •  PhilGEPS Red Member  •  Government-ready apps  •  Filipino-built  •  Claude for Startups · Anthropic  •  Powered by HNScorpPH  •  ';
 
 function ComplianceTicker() {
   const doubled = TICKER_TEXT + TICKER_TEXT;
@@ -1230,6 +1234,47 @@ function RoadmapSection() {
 }
 
 // ---------------------------------------------------------------------------
+// Anthropic / Claude for Startups — supported-by strip
+// ---------------------------------------------------------------------------
+
+function AnthropicSection() {
+  return (
+    <section style={{ background: '#fdf7f3' }} className="border-t border-[#e8d4c8]/60 px-6 py-14 md:px-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center md:flex-row md:items-center md:text-left md:gap-12">
+        {/* Claude mark + wordmark */}
+        <div className="flex shrink-0 flex-col items-center gap-2 md:items-start">
+          <span className="text-5xl leading-none text-[#d4714a]">✳</span>
+          <div>
+            <div className="text-base font-bold tracking-tight text-[#2d1a12]">Claude for Startups</div>
+            <div className="text-xs font-medium text-[#8a5a47]">by Anthropic</div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="hidden h-14 w-px bg-[#e0c8be] md:block" />
+
+        {/* Copy */}
+        <div className="flex-1">
+          <p className="text-sm leading-relaxed text-[#4a2e24]">
+            <span className="font-semibold">HNScorpPH is a member of the Claude for Startups program by Anthropic.</span>
+            {' '}This gives HNScorpPH direct access to the team building Claude, early access to new capabilities, and a community of founders working on similar problems — so every product we ship benefits from the frontier of AI development.
+          </p>
+        </div>
+
+        {/* Badge */}
+        <div className="shrink-0">
+          <div className="rounded-xl border border-[#d4714a]/25 bg-white px-5 py-3.5 shadow-[0_1px_4px_rgba(212,113,74,0.08)]">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8a5a47]">Program member</div>
+            <div className="mt-0.5 text-sm font-bold text-[#2d1a12]">Claude for Startups</div>
+            <div className="mt-0.5 text-[11px] text-[#8a5a47]">Anthropic · 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // CTA Banner — dark section
 // ---------------------------------------------------------------------------
 
@@ -1381,6 +1426,7 @@ export default function Page() {
         <RoadmapSection />
 
         <BrandSheet />
+        <AnthropicSection />
         <CTABanner />
       </main>
       <Footer />
