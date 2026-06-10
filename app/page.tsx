@@ -803,7 +803,7 @@ function EverafterSection() {
           animate={inView ? 'visible' : 'hidden'}
           variants={stagger}
         >
-          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#DB2777]">
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#5C2530]">
             Also by HNScorpPH
           </motion.p>
 
@@ -836,7 +836,7 @@ function EverafterSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
-                  style={{ background: '#DB2777' }}
+                  style={{ background: '#5C2530' }}
                 >
                   Visit Everafter
                   <MoveUpRight className="h-4 w-4" />
