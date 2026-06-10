@@ -1518,8 +1518,8 @@ export default function Page() {
         <TindaPOSSection />
         <LocatrSection />
         <AltSpaceCWSection />
-        <EverafterSection />
         <ScattoSection />
+        <EverafterSection />
         <GovReadySection />
 
         {/* Brand identity */}
