@@ -77,7 +77,7 @@ const PICKS: BrandPick[] = [
     imgSrc: '/logos/everafter-icon.svg',
     name: 'Everafter',
     hex: '#DB2777',
-    tagline: 'A new product by HNScorpPH. Now live.',
+    tagline: 'Beautiful wedding websites for Filipino couples — RSVP management, live photo wall via Scatto, two-venue support, and custom motifs. Ready to ship in an afternoon.',
     href: 'https://everafter.hnscorpph.com',
   },
   {

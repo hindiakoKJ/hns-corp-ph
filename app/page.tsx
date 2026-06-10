@@ -779,6 +779,101 @@ function AltSpaceCWSection() {
 }
 
 // ---------------------------------------------------------------------------
+// Everafter Section — Filipino wedding websites
+// ---------------------------------------------------------------------------
+
+function EverafterSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const features = [
+    { icon: '📋', title: 'Smart RSVP wizard', desc: 'Guests find their name, RSVP for their whole household, add plus-ones, and pick meals. No spreadsheets.' },
+    { icon: '📸', title: 'Live photo wall', desc: 'Guests scan a QR and share photos in real time via Scatto. Memories appear on the wedding site instantly.' },
+    { icon: '⛪', title: 'Ceremony + reception', desc: 'Two venues, two maps, one site. Built for Philippine weddings where ceremony and reception are usually separate.' },
+    { icon: '✉️', title: 'Branded confirmation', desc: 'Every guest gets a beautiful email with calendar invite, venue info, and a downloadable wedding pass.' },
+    { icon: '🎨', title: 'Custom motif + palette', desc: 'Pick Blush, Sage, Gold, Burgundy, or custom. Drop in your motif swatches. Match your wedding mood.' },
+    { icon: '🖐', title: 'Drag-to-position photos', desc: 'Upload any photo. Drag the focal point where you want it. The site crops intelligently for every device.' },
+  ];
+
+  return (
+    <section className="bg-paper py-24 px-6 md:px-12" ref={ref}>
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={stagger}
+        >
+          <motion.p variants={fadeUp} className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#DB2777]">
+            Also by HNScorpPH
+          </motion.p>
+
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            {/* Left: identity */}
+            <motion.div variants={fadeUp} className="md:w-72 shrink-0">
+              <div className="mb-4 flex items-center gap-4">
+                <Image src="/logos/everafter-icon.svg" width={56} height={56} alt="Everafter" className="rounded-2xl" />
+                <div>
+                  <h2 className="text-3xl font-bold tracking-wordmark-tight text-ink">Everafter</h2>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    Live
+                  </span>
+                </div>
+              </div>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                A wedding website your couples will love.
+              </p>
+              <p className="mb-2 text-sm leading-relaxed text-ink/55">
+                Beautiful, full-featured wedding websites with RSVP management and a live photo wall — built for the way Filipino weddings actually run. Ready to ship in an afternoon.
+              </p>
+              <div className="mb-5 flex items-center gap-2 rounded-lg bg-[#FF6B35]/8 border border-[#FF6B35]/15 px-3 py-2">
+                <Image src="/logos/scatto-icon.svg" width={16} height={16} alt="Scatto" className="rounded-sm" />
+                <span className="text-xs font-semibold text-[#FF6B35]">Bundled with Scatto</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="https://everafter.hnscorpph.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-[1.02]"
+                  style={{ background: '#DB2777' }}
+                >
+                  Visit Everafter
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="mt-5 flex flex-col gap-1.5">
+                {['Smart RSVP · Live photo wall · Custom motifs', 'Ceremony + reception venue support', 'Built for Filipino weddings'].map(t => (
+                  <span key={t} className="text-[11px] leading-relaxed text-ink/35">{t}</span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right: features grid */}
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 flex-1"
+            >
+              {features.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-ink/8 bg-paper p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04)]"
+                >
+                  <div className="mb-2 text-xl">{f.icon}</div>
+                  <h3 className="mb-1 text-sm font-bold text-ink">{f.title}</h3>
+                  <p className="text-xs leading-relaxed text-ink/50">{f.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Scatto Section — disposable event camera
 // ---------------------------------------------------------------------------
 
@@ -1423,6 +1518,7 @@ export default function Page() {
         <TindaPOSSection />
         <LocatrSection />
         <AltSpaceCWSection />
+        <EverafterSection />
         <ScattoSection />
         <GovReadySection />
 

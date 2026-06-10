@@ -89,7 +89,7 @@ const PRODUCTS: Product[] = [
     imgSrc: '/logos/everafter-icon.svg',
     name: 'Everafter',
     tintClass: 'bg-[#DB2777]/10',
-    kind: 'Romantic event app',
+    kind: 'Wedding website · RSVP · Live photo wall',
     status: 'live',
     href: 'https://everafter.hnscorpph.com',
   },
