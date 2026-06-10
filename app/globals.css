@@ -67,6 +67,15 @@
   --color-konek-600: #0E2A5C;
   --color-konek-700: #091D3F;
 
+  /* Everafter brand — warm rose */
+  --color-everafter-50:  #FFF1F5;
+  --color-everafter-100: #FFE0EB;
+  --color-everafter-200: #FFADC8;
+  --color-everafter-400: #F472B6;
+  --color-everafter-500: #EC4899;
+  --color-everafter-600: #DB2777;
+  --color-everafter-700: #BE185D;
+
   /* Scatto brand — light-leak orange */
   --color-scatto-50:  #FFF5F0;
   --color-scatto-100: #FFEADF;

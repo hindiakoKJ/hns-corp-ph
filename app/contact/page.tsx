@@ -57,6 +57,13 @@ const CONCERNS: Record<string, string[]> = {
     'Feature request',
     'Other',
   ],
+  'Everafter': [
+    'General inquiry',
+    'Sales inquiry',
+    'Bug report',
+    'Feature request',
+    'Other',
+  ],
   'KonekBarangay': [
     'LGU inquiry',
     'Partnership inquiry',

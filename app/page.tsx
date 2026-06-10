@@ -1123,6 +1123,11 @@ const ROADMAP = [
         desc: 'Shared disposable camera for Filipino events. Guests scan a QR, shoot a limited roll with baked-in film looks, and the whole event develops into one shared album.',
         status: 'done' as const,
       },
+      {
+        name: 'Everafter',
+        desc: 'A new HNScorpPH product. Now live at everafter.hnscorpph.com.',
+        status: 'done' as const,
+      },
     ],
   },
   {
@@ -1372,6 +1377,7 @@ function Footer() {
               <Link href="https://tindapos.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">TindaPOS</Link>
               <Link href="https://altspacecw.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">AltSpaceCW</Link>
               <Link href="https://scatto.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Scatto</Link>
+              <Link href="https://everafter.hnscorpph.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">Everafter</Link>
             </div>
             <div className="flex flex-col gap-2.5">
               <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink/30">Coming Soon</span>

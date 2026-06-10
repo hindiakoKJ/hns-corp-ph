@@ -84,6 +84,15 @@ const PRODUCTS: Product[] = [
     status: 'live',
     href: 'https://scatto.hnscorpph.com',
   },
+  {
+    key: 'everafter',
+    imgSrc: '/logos/everafter-icon.svg',
+    name: 'Everafter',
+    tintClass: 'bg-[#DB2777]/10',
+    kind: 'Romantic event app',
+    status: 'live',
+    href: 'https://everafter.hnscorpph.com',
+  },
   { key: 'future-1', kind: 'Coming soon', status: 'future' },
 ];
 

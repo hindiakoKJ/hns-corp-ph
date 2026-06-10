@@ -73,6 +73,14 @@ const PICKS: BrandPick[] = [
     tagline: 'A new product by HNScorpPH. Coming soon.',
   },
   {
+    key: 'everafter',
+    imgSrc: '/logos/everafter-icon.svg',
+    name: 'Everafter',
+    hex: '#DB2777',
+    tagline: 'A new product by HNScorpPH. Now live.',
+    href: 'https://everafter.hnscorpph.com',
+  },
+  {
     key: 'scatto',
     imgSrc: '/logos/scatto-icon.svg',
     name: 'Scatto',
@@ -95,7 +103,7 @@ export function BrandSheet() {
               One parent. A growing family of products.
               <br />
               <span className="text-ink/50">
-                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, and Scatto are live. Steady, LOCATR, and KonekBarangay coming soon.
+                HNScorpPH is the platform — Clerque, TindaPOS, Sangguni, AltSpaceCW, Scatto, and Everafter are live. Steady, LOCATR, and KonekBarangay coming soon.
               </span>
             </h2>
           </div>
