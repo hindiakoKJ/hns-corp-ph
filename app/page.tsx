@@ -63,16 +63,32 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Constellation visual */}
+          {/* Constellation visual — all apps orbiting the HNS core */}
           <div className="viz" aria-hidden="true">
             <div className="dotgrid" />
             <div className="ring r1" /><div className="ring r2" />
             <div className="core"><EcoIcon name="HNScorpPH" size={66} color="#2BC4DE" /></div>
-            <div className="chip c1"><EcoIcon name="Clerque"  size={28} color="#7C8DF5" /></div>
-            <div className="chip c2"><EcoIcon name="TindaPOS" size={28} color="#E8A24E" /></div>
-            <div className="chip c3"><EcoIcon name="Steady"   size={28} color="#37D9A0" /></div>
-            <div className="chip c4"><EcoIcon name="Sangguni" size={28} color="#5B8BF0" /></div>
-            <div className="chip c5"><EcoIcon name="Scatto"   size={28} color="#E0573B" /></div>
+            {ECO_PRODUCTS.map((p, i) => {
+              const R = 160;
+              const a = (-90 + i * (360 / ECO_PRODUCTS.length)) * (Math.PI / 180);
+              const x = Math.round(Math.cos(a) * R);
+              const y = Math.round(Math.sin(a) * R);
+              return (
+                <div
+                  key={p.key}
+                  className="chip"
+                  style={{
+                    left: `calc(50% + ${x}px)`,
+                    top: `calc(50% + ${y}px)`,
+                    marginLeft: -31,
+                    marginTop: -31,
+                    animationDelay: `${(i * 0.35).toFixed(2)}s`,
+                  }}
+                >
+                  <EcoIcon name={p.key} size={28} color={p.accent} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -131,9 +147,9 @@ export default function HomePage() {
         <div className="wrap cta-in">
           <div className="eyebrow" style={{ marginBottom: 18 }}>Build on a foundation you own</div>
           <h2>Ready to run on <span className="grad">sovereign software?</span></h2>
-          <p>Launch Clerque free, or talk to us about rolling HNScorpPH across your business or LGU.</p>
+          <p>Browse the full ecosystem, or talk to us about rolling HNScorpPH across your business or LGU.</p>
           <div className="hero-acts" style={{ justifyContent: 'center' }}>
-            <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Launch Clerque <span className="arr">→</span></a>
+            <Link href="/#products" className="btn btn-blue">Explore products <span className="arr">→</span></Link>
             <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
           </div>
         </div>

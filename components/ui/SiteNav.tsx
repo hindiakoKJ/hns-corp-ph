@@ -23,8 +23,7 @@ export default function SiteNav() {
         </div>
 
         <div className="ncta">
-          <a href="https://clerque.hnscorpph.com/login" className="btn btn-ghost">Sign in</a>
-          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Launch Clerque <span className="arr">→</span></a>
+          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Sign in <span className="arr">→</span></a>
         </div>
 
         <button
@@ -51,7 +50,7 @@ export default function SiteNav() {
           <Link href="/#products"  onClick={() => setOpen(false)}>Products</Link>
           <Link href="/compliance" onClick={() => setOpen(false)}>Compliance</Link>
           <Link href="/about"      onClick={() => setOpen(false)}>Company</Link>
-          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue" style={{ marginTop: '8px' }}>Launch Clerque →</a>
+          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue" style={{ marginTop: '8px' }}>Sign in →</a>
         </div>
       )}
     </nav>
