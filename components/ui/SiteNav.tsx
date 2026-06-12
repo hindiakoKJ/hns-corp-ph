@@ -22,10 +22,6 @@ export default function SiteNav() {
           <Link href="/about">Company</Link>
         </div>
 
-        <div className="ncta">
-          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Sign in <span className="arr">→</span></a>
-        </div>
-
         <button
           className="burger"
           aria-label="Toggle menu"
@@ -50,7 +46,6 @@ export default function SiteNav() {
           <Link href="/#products"  onClick={() => setOpen(false)}>Products</Link>
           <Link href="/compliance" onClick={() => setOpen(false)}>Compliance</Link>
           <Link href="/about"      onClick={() => setOpen(false)}>Company</Link>
-          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue" style={{ marginTop: '8px' }}>Sign in →</a>
         </div>
       )}
     </nav>

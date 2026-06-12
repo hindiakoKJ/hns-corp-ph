@@ -4,6 +4,28 @@ import SiteFooter from '@/components/ui/SiteFooter';
 import { EcoIcon } from '@/components/brand/EcosystemIcons';
 import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
 
+// Gemini (the Twins) laid out as two parallel star-chains + a head bond + one
+// outstretched arm. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
+// 0 Clerque 1 TindaPOS 2 AltSpaceCW 3 Scatto 4 Everafter 5 Sangguni 6 KonekBarangay 7 Steady 8 LOCATR
+const GEMINI_STARS = [
+  { x: 33, y: 16 }, // 0 Clerque       — Castor (left head, top)
+  { x: 60, y: 11 }, // 1 TindaPOS      — Pollux (right head, top)
+  { x: 27, y: 41 }, // 2 AltSpaceCW    — left chest
+  { x: 66, y: 39 }, // 3 Scatto        — right chest
+  { x: 32, y: 66 }, // 4 Everafter     — left waist
+  { x: 62, y: 64 }, // 5 Sangguni      — right waist
+  { x: 26, y: 89 }, // 6 KonekBarangay — left foot
+  { x: 71, y: 87 }, // 7 Steady        — right foot
+  { x: 12, y: 55 }, // 8 LOCATR        — left outstretched arm
+];
+
+// stick-figure links: left chain 0-2-4-6, right chain 1-3-5-7, head bond 0-1, arm 2-8
+const GEMINI_EDGES: [number, number][] = [
+  [0, 2], [2, 4], [4, 6],
+  [1, 3], [3, 5], [5, 7],
+  [0, 1], [2, 8],
+];
+
 const PLATFORM = [
   {
     title: 'Sovereign by design',
@@ -63,26 +85,29 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Constellation visual — all apps orbiting the HNS core */}
+          {/* Gemini constellation — the apps are the stars (positions in %, index-aligned to ECO_PRODUCTS) */}
           <div className="viz" aria-hidden="true">
             <div className="dotgrid" />
-            <div className="ring r1" /><div className="ring r2" />
-            <div className="core"><EcoIcon name="HNScorpPH" size={66} color="#2BC4DE" /></div>
+            <svg className="clines" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {GEMINI_EDGES.map(([a, b], i) => (
+                <line
+                  key={i}
+                  x1={GEMINI_STARS[a].x} y1={GEMINI_STARS[a].y}
+                  x2={GEMINI_STARS[b].x} y2={GEMINI_STARS[b].y}
+                  stroke="rgba(125,210,235,0.16)" strokeWidth={1} vectorEffect="non-scaling-stroke"
+                />
+              ))}
+            </svg>
+            <div className="core"><EcoIcon name="HNScorpPH" size={62} color="#2BC4DE" /></div>
             {ECO_PRODUCTS.map((p, i) => {
-              const a = (-90 + i * (360 / ECO_PRODUCTS.length)) * (Math.PI / 180);
-              const cos = Math.cos(a).toFixed(4);
-              const sin = Math.sin(a).toFixed(4);
+              const s = GEMINI_STARS[i];
               return (
                 <div
                   key={p.key}
                   className="chip"
-                  style={{
-                    left: `calc(50% + (var(--cr) * ${cos}))`,
-                    top: `calc(50% + (var(--cr) * ${sin}))`,
-                    animationDelay: `${(i * 0.35).toFixed(2)}s`,
-                  }}
+                  style={{ left: `${s.x}%`, top: `${s.y}%`, animationDelay: `${(i * 0.4).toFixed(2)}s` }}
                 >
-                  <EcoIcon name={p.key} size={28} color={p.accent} />
+                  <EcoIcon name={p.key} size={26} color={p.accent} />
                 </div>
               );
             })}
