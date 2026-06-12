@@ -4,160 +4,121 @@ import SiteFooter from '@/components/ui/SiteFooter';
 import { EcoIcon } from '@/components/brand/EcosystemIcons';
 import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
 
+const PLATFORM = [
+  {
+    title: 'Sovereign by design',
+    body: 'Your records live on infrastructure inside the Philippines, encrypted by default, yours to export on day one.',
+    link: 'Why sovereign →',
+    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M32 10l18 7v12c0 13-8 20-18 25-10-5-18-12-18-25V17z" /><path d="M25 31l5 5 9-11" /></svg>,
+  },
+  {
+    title: 'BIR-compliant from day one',
+    body: 'OR sequential numbering, immutable Z-Read & X-Read, and BIR forms — built to CAS spec, not bolted on.',
+    link: 'See compliance →',
+    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><rect x="15" y="10" width="34" height="44" rx="3" /><line x1="23" y1="22" x2="41" y2="22" /><line x1="23" y1="29" x2="41" y2="29" /><path d="M23 40 l4 4 9 -10" /></svg>,
+  },
+  {
+    title: 'Built for government',
+    body: 'A PhilGEPS Red Member — LGUs procure directly via Small Value Procurement, no public bidding required.',
+    link: 'For LGUs →',
+    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 31L32 17L50 31" /><line x1="12" y1="52" x2="52" y2="52" /><line x1="20" y1="31" x2="20" y2="52" /><line x1="32" y1="31" x2="32" y2="52" /><line x1="44" y1="31" x2="44" y2="52" /></svg>,
+  },
+  {
+    title: 'Offline, always',
+    body: 'Power cut? Dead router? Transactions write locally and sync the moment you reconnect. Nothing stops the sale.',
+    link: 'How it works →',
+    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 26a28 28 0 0 1 40 0" /><path d="M20 34a18 18 0 0 1 24 0" /><path d="M27 42a8 8 0 0 1 10 0" /><circle cx="32" cy="49" r="1.8" fill="currentColor" stroke="none" /><line x1="14" y1="13" x2="51" y2="50" /></svg>,
+  },
+];
+
 export default function HomePage() {
   return (
     <>
       <SiteNav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          position: 'relative',
-          minHeight: '92vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          padding: '100px 32px 80px',
-          overflow: 'hidden',
-        }}
-      >
-        {/* Glows */}
-        <div className="glow" style={{ width: 600, height: 600, top: -200, left: '50%', transform: 'translateX(-50%)', background: 'radial-gradient(circle, rgba(43,196,222,.18) 0%, transparent 70%)' }} />
-        <div className="glow" style={{ width: 400, height: 400, bottom: 0, left: '15%', background: 'radial-gradient(circle, rgba(61,123,255,.12) 0%, transparent 70%)' }} />
-        <div className="glow" style={{ width: 320, height: 320, bottom: 60, right: '12%', background: 'radial-gradient(circle, rgba(124,107,240,.1) 0%, transparent 70%)' }} />
-
-        {/* Dot grid */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px)', backgroundSize: '28px 28px', zIndex: 0 }} />
-
-        {/* Orbit rings */}
-        <div style={{ position: 'absolute', width: 480, height: 480, borderRadius: '50%', border: '1px solid rgba(43,196,222,.12)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }} />
-        <div style={{ position: 'absolute', width: 700, height: 700, borderRadius: '50%', border: '1px solid rgba(255,255,255,.05)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }} />
-
-        {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '820px' }}>
-          {/* Badge */}
-          <div className="chip" style={{ marginBottom: '32px' }}>
-            <span className="cdot" />
-            PhilGEPS Red Member · Claude for Startups
+      <section className="hero">
+        <div className="glow g1" /><div className="glow g2" /><div className="glow g3" />
+        <div className="wrap hero-in">
+          <div>
+            <div className="nbadge">
+              <span className="nt">NEW</span>
+              <span className="ntx">PhilGEPS Red Member · Claude for Startups</span>
+            </div>
+            <h1 className="h1">
+              Sovereign software,<br />
+              <span className="grad">engineered for the Philippines.</span>
+            </h1>
+            <p className="sub">
+              BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, nine products, your data in-country.
+            </p>
+            <div className="hero-acts">
+              <Link href="/#products" className="btn btn-blue">Explore the platform <span className="arr">→</span></Link>
+              <Link href="/contact" className="btn btn-ghost">Book a demo</Link>
+            </div>
+            <div className="hero-stats">
+              <div className="hstat"><div className="v">9</div><div className="l">Products</div></div>
+              <div className="hstat"><div className="v">100%</div><div className="l">PH residency</div></div>
+              <div className="hstat"><div className="v">1</div><div className="l">Login, all apps</div></div>
+            </div>
           </div>
 
-          <h1
-            style={{
-              fontSize: 'clamp(42px, 7vw, 82px)',
-              lineHeight: 1.03,
-              letterSpacing: '-.03em',
-              marginBottom: '24px',
-              fontFamily: 'var(--font-space-grotesk)',
-            }}
-          >
-            <span className="grad">Sovereign software,</span>
-            <br />
-            engineered for the Philippines.
-          </h1>
-
-          <p style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: '#94A2B6', maxWidth: '560px', margin: '0 auto 40px', lineHeight: 1.6 }}>
-            BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs. One login. Nine products. Your data in-country.
-          </p>
-
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '56px' }}>
-            <Link href="/clerque" className="btn btn-blue">
-              Explore Clerque
-              <svg className="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-            </Link>
-            <Link href="/about" className="btn btn-ghost">Our story</Link>
+          {/* Constellation visual */}
+          <div className="viz" aria-hidden="true">
+            <div className="dotgrid" />
+            <div className="ring r1" /><div className="ring r2" />
+            <div className="core"><EcoIcon name="HNScorpPH" size={66} color="#2BC4DE" /></div>
+            <div className="chip c1"><EcoIcon name="Clerque"  size={28} color="#7C8DF5" /></div>
+            <div className="chip c2"><EcoIcon name="TindaPOS" size={28} color="#E8A24E" /></div>
+            <div className="chip c3"><EcoIcon name="Steady"   size={28} color="#37D9A0" /></div>
+            <div className="chip c4"><EcoIcon name="Sangguni" size={28} color="#5B8BF0" /></div>
+            <div className="chip c5"><EcoIcon name="Scatto"   size={28} color="#E0573B" /></div>
           </div>
+        </div>
+      </section>
 
-          {/* Stats */}
-          <div style={{ display: 'flex', gap: '48px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {[['9', 'Products'], ['100%', 'PH residency'], ['1', 'Login, all apps']].map(([num, label]) => (
-              <div key={label} style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 'clamp(28px, 4vw, 40px)', color: '#fff' }}>{num}</div>
-                <div style={{ fontSize: '13px', color: '#63718A', marginTop: '4px' }}>{label}</div>
+      {/* ── Platform / Solution ───────────────────────────────────────────── */}
+      <section className="sol" id="solution">
+        <div className="glow gs" />
+        <div className="wrap">
+          <div className="stab"><span className="d" /><span>The Platform</span></div>
+          <div className="sol-head">
+            <h2>One sovereign foundation under every product.</h2>
+            <p>The things foreign software treats as add-ons, we built into the core — so every app inherits them.</p>
+          </div>
+          <div className="quad">
+            {PLATFORM.map((c) => (
+              <div className="cell" key={c.title}>
+                <div className="ic">{c.icon}</div>
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
+                <span className="lk">{c.link}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Solution quad ─────────────────────────────────────────────────── */}
-      <section style={{ padding: '90px 0', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
+      {/* ── Products / Ecosystem ──────────────────────────────────────────── */}
+      <section className="prod" id="products">
         <div className="wrap">
-          <div className="stab" style={{ marginBottom: '20px' }}>
-            <span className="d" />
-            <span>Why HNScorpPH</span>
+          <div className="stab"><span className="d" /><span>The Ecosystem</span></div>
+          <div className="sol-head">
+            <h2>Nine products. One login. Growing.</h2>
+            <p>From the sari-sari counter to the barangay hall — each app, its own accent; all of them, by HNScorpPH.</p>
           </div>
-          <div className="sec-head">
-            <h2>Built for how the Philippines actually works</h2>
-            <p>From sari-sari stores to city halls, our tools are designed around PH realities — not ported from abroad.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '18px' }}>
-            {[
-              { title: 'Sovereign by design', body: 'All data resides in Philippine servers. No foreign-cloud lock-in, no vendor dependency for sensitive records.', icon: '🛡️' },
-              { title: 'BIR-compliant', body: 'Accounting reports map directly to BIR Form 2550Q, 1701Q, and 2551Q. CAS-accredited architecture.', icon: '📋' },
-              { title: 'Built for government', body: 'PhilGEPS Red Member. Procurement-ready. Designed for LGU workflows with multi-tenant isolation.', icon: '🏛️' },
-              { title: 'Offline always', body: 'Products work without internet. Sync automatically when connectivity returns — no data lost in brownouts.', icon: '📶' },
-            ].map(({ title, body, icon }) => (
-              <div
-                key={title}
-                style={{ background: '#101724', border: '1px solid rgba(255,255,255,.08)', borderRadius: '16px', padding: '32px' }}
-              >
-                <div style={{ fontSize: '28px', marginBottom: '16px' }}>{icon}</div>
-                <h3 style={{ fontSize: '18px', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, marginBottom: '10px', color: '#EAF1F9' }}>{title}</h3>
-                <p style={{ color: '#94A2B6', fontSize: '14.5px', lineHeight: 1.65, margin: 0 }}>{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Products grid ─────────────────────────────────────────────────── */}
-      <section style={{ padding: '90px 0' }}>
-        <div className="wrap">
-          <div className="stab" style={{ marginBottom: '20px' }}>
-            <span className="d" />
-            <span>Ecosystem</span>
-          </div>
-          <div className="sec-head">
-            <h2>Nine products. One platform.</h2>
-            <p>From POS to LGU records to wedding websites — built sovereign, built Filipino.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '14px' }}>
+          <div className="pgrid">
             {ECO_PRODUCTS.map((p) => (
-              <Link
-                key={p.key}
-                href={p.href}
-                style={{
-                  display: 'block',
-                  background: '#101724',
-                  border: '1px solid rgba(255,255,255,.08)',
-                  borderRadius: '16px',
-                  padding: '28px',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  overflow: 'hidden',
-                }}
-              >
-                <div style={{ position: 'absolute', top: 0, right: 0, width: 120, height: 120, borderRadius: '50%', background: p.accent, opacity: 0.06, filter: 'blur(40px)', pointerEvents: 'none' }} />
-
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '20px' }}>
-                  <div style={{ width: 48, height: 48, background: `${p.accent}18`, border: `1px solid ${p.accent}30`, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <EcoIcon name={p.key} size={26} color={p.accent} />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                    <span className={`pill ${p.status}`}>
-                      <span style={{ width: 5, height: 5, borderRadius: '50%', background: p.status === 'live' ? '#37D9A0' : '#63718A', display: 'inline-block', marginRight: '4px' }} />
-                      {p.status === 'live' ? 'Live' : 'Soon'}
-                    </span>
-                    {p.gov && <span className="gov-tag">GOV</span>}
-                  </div>
+              <Link key={p.key} className="pcard" href={p.href} style={{ ['--accent' as string]: p.accent }}>
+                <div className="ptop">
+                  <span className="pic"><EcoIcon name={p.key} size={28} color={p.accent} /></span>
+                  {p.status === 'live'
+                    ? <span className="badge-live">● Live</span>
+                    : <span className="badge-soon">Soon</span>}
                 </div>
-
-                <h3 style={{ fontSize: '17px', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, color: '#EAF1F9', marginBottom: '6px' }}>{p.name}</h3>
-                <p style={{ fontSize: '13.5px', color: '#63718A', margin: 0 }}>{p.kind}</p>
+                <h3>{p.name}{p.gov && <span className="gov">GOV</span>}</h3>
+                <div className="pk">{p.kind}</div>
+                <div className="pby">by <b>HNScorpPH</b></div>
               </Link>
             ))}
           </div>
@@ -165,22 +126,15 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
-      <section style={{ background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)', padding: '100px 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div className="glow" style={{ width: 500, height: 500, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(circle, rgba(43,196,222,.12) 0%, transparent 70%)' }} />
-        <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="eyebrow" style={{ marginBottom: '20px' }}>Ready to switch?</div>
-          <h2 style={{ fontSize: 'clamp(30px, 4.5vw, 52px)', lineHeight: 1.06, maxWidth: '640px', margin: '0 auto 20px' }}>
-            Ready to run on <span className="grad">sovereign software?</span>
-          </h2>
-          <p style={{ color: '#94A2B6', maxWidth: '440px', margin: '0 auto 40px', fontSize: '16px' }}>
-            Start with Clerque — the all-in-one Filipino business suite. Free tier available.
-          </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/clerque" className="btn btn-blue">
-              Start for free
-              <svg className="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-            </Link>
-            <Link href="/contact" className="btn btn-ghost">Contact sales</Link>
+      <section className="cta">
+        <div className="glow gc" />
+        <div className="wrap cta-in">
+          <div className="eyebrow" style={{ marginBottom: 18 }}>Build on a foundation you own</div>
+          <h2>Ready to run on <span className="grad">sovereign software?</span></h2>
+          <p>Launch Clerque free, or talk to us about rolling HNScorpPH across your business or LGU.</p>
+          <div className="hero-acts" style={{ justifyContent: 'center' }}>
+            <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Launch Clerque <span className="arr">→</span></a>
+            <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
           </div>
         </div>
       </section>

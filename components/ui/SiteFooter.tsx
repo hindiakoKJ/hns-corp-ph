@@ -4,17 +4,14 @@ import { HNScorpPHIcon } from '@/components/brand/EcosystemIcons';
 export default function SiteFooter() {
   return (
     <footer className="foot">
-      <div className="foot-in">
-        <div className="foot-col">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-            <HNScorpPHIcon size={28} color="#2BC4DE" />
-            <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: '1rem', color: 'var(--txt)' }}>HNScorpPH</span>
-          </div>
-          <p style={{ fontSize: '0.875rem', color: 'var(--muted)', lineHeight: 1.7, maxWidth: '220px' }}>
-            Sovereign software, engineered for the Philippines.
-          </p>
-          <p style={{ fontSize: '0.8rem', color: 'var(--dim)', marginTop: '14px' }}>
-            PhilGEPS Red Member · Claude for Startups
+      <div className="wrap foot-in">
+        <div>
+          <Link href="/" className="brand">
+            <HNScorpPHIcon size={26} color="#2BC4DE" />
+            <span>HNScorpPH</span>
+          </Link>
+          <p className="fd">
+            Sovereign digital infrastructure for Filipino businesses, families, and government. A solo-founded OPC — SEC filing in progress.
           </p>
         </div>
 
@@ -24,28 +21,27 @@ export default function SiteFooter() {
           <Link href="/tindapos">TindaPOS</Link>
           <Link href="/altspacecw">AltSpaceCW</Link>
           <Link href="/scatto">Scatto</Link>
-          <Link href="/everafter">Everafter</Link>
         </div>
 
         <div className="foot-col">
           <h4>Platform</h4>
-          <Link href="/about">About</Link>
+          <Link href="/#solution">Why sovereign</Link>
           <Link href="/compliance">Compliance</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/compliance">Security</Link>
+          <Link href="/about">Status</Link>
         </div>
 
         <div className="foot-col">
-          <h4>Government</h4>
-          <Link href="#">Sangguni</Link>
-          <Link href="#">KonekBarangay</Link>
-          <Link href="/compliance">PhilGEPS</Link>
-          <Link href="/compliance">BIR Compliance</Link>
+          <h4>Company</h4>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/contact">For LGUs</Link>
         </div>
       </div>
 
-      <div className="foot-bot">
-        <span>© {new Date().getFullYear()} HNS Corp PH. All rights reserved.</span>
-        <span style={{ color: 'var(--dim)' }}>Made in the Philippines 🇵🇭</span>
+      <div className="wrap foot-bot">
+        <span>© {new Date().getFullYear()} HNScorpPH OPC — Manila, Philippines</span>
+        <span>Own your tools · Own your future</span>
       </div>
     </footer>
   );

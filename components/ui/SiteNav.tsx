@@ -16,16 +16,15 @@ export default function SiteNav() {
         </Link>
 
         <div className="nlinks">
-          <Link href="/clerque">Clerque</Link>
-          <Link href="/tindapos">TindaPOS</Link>
-          <Link href="/altspacecw">AltSpaceCW</Link>
-          <Link href="/about">About</Link>
+          <Link href="/#solution">Platform</Link>
+          <Link href="/#products">Products</Link>
           <Link href="/compliance">Compliance</Link>
+          <Link href="/about">Company</Link>
         </div>
 
         <div className="ncta">
-          <Link href="/contact" className="btn-ghost">Contact</Link>
-          <Link href="/clerque" className="btn btn-blue">Get started</Link>
+          <a href="https://clerque.hnscorpph.com/login" className="btn btn-ghost">Sign in</a>
+          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue">Launch Clerque <span className="arr">→</span></a>
         </div>
 
         <button
@@ -48,12 +47,11 @@ export default function SiteNav() {
 
       {open && (
         <div className="mmenu open">
-          <Link href="/clerque"   onClick={() => setOpen(false)}>Clerque</Link>
-          <Link href="/tindapos"  onClick={() => setOpen(false)}>TindaPOS</Link>
-          <Link href="/altspacecw" onClick={() => setOpen(false)}>AltSpaceCW</Link>
-          <Link href="/about"     onClick={() => setOpen(false)}>About</Link>
+          <Link href="/#solution"  onClick={() => setOpen(false)}>Platform</Link>
+          <Link href="/#products"  onClick={() => setOpen(false)}>Products</Link>
           <Link href="/compliance" onClick={() => setOpen(false)}>Compliance</Link>
-          <Link href="/contact"   onClick={() => setOpen(false)} className="btn btn-blue" style={{ marginTop: '8px' }}>Get started</Link>
+          <Link href="/about"      onClick={() => setOpen(false)}>Company</Link>
+          <a href="https://clerque.hnscorpph.com/login" className="btn btn-blue" style={{ marginTop: '8px' }}>Launch Clerque →</a>
         </div>
       )}
     </nav>
