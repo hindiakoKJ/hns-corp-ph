@@ -32,7 +32,7 @@ export default function TindaPOSPage() {
               Ang POS ng bawat tindahan.
             </h1>
             <p style={{ fontSize: 18, color: '#94A2B6', maxWidth: 500, margin: '0 auto 36px', lineHeight: 1.65 }}>
-              Simple, mabilis, at libre para sa sari-sari stores, carinderia, at maliliit na negosyo sa Pilipinas.
+              Simple at mabilis para sa sari-sari stores, carinderia, at maliliit na negosyo sa Pilipinas.
             </p>
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://tindapos.hnscorpph.com" className="btn" style={{ background: `linear-gradient(180deg, ${ACC}dd, ${ACC}bb)`, color: '#fff', boxShadow: `0 8px 24px -8px ${ACC}80`, border: 'none' }}>
@@ -71,8 +71,8 @@ export default function TindaPOSPage() {
         <section style={{ padding: '80px 0', textAlign: 'center' }}>
           <div className="wrap">
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', marginBottom: 16 }}>I-digitize ang tindahan mo ngayon.</h2>
-            <p style={{ color: '#94A2B6', marginBottom: 32, fontSize: 16 }}>Libre. Walang credit card. Gumagana offline.</p>
-            <a href="https://tindapos.hnscorpph.com" className="btn btn-blue">Simulan na — libre ito</a>
+            <p style={{ color: '#94A2B6', marginBottom: 32, fontSize: 16 }}>Mabilis i-setup. Gumagana kahit offline.</p>
+            <a href="https://tindapos.hnscorpph.com" className="btn btn-blue">Simulan na</a>
           </div>
         </section>
 

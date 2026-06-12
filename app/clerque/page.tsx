@@ -20,12 +20,6 @@ const MODULES = [
   { name: 'Sync', color: '#2BC4DE', desc: 'Multi-device, multi-branch sync. One master record, no conflicts.' },
 ];
 
-const PRICING = [
-  { tier: 'Tindahan', price: 'Free', desc: 'Single device, 500 SKUs, 3 months history', cta: 'Get started free', featured: false },
-  { tier: 'Negosyo', price: '₱899', per: '/mo', desc: 'Unlimited SKUs, 3 branches, BIR reports, priority support', cta: 'Start free trial', featured: true },
-  { tier: 'Enterprise', price: 'Custom', desc: 'Unlimited branches, API access, LGU integration, SLA', cta: 'Contact us', featured: false },
-];
-
 export default function ClequePage() {
   return (
     <>
@@ -119,35 +113,6 @@ export default function ClequePage() {
                     <h4 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 15, fontWeight: 700, marginBottom: 6, color: '#EAF1F9' }}>{f.title}</h4>
                     <p style={{ color: '#94A2B6', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{f.body}</p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section style={{ padding: '80px 0', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
-          <div className="wrap">
-            <div className="stab" style={{ marginBottom: 20 }}><span className="d" /><span>Pricing</span></div>
-            <div className="sec-head">
-              <h2>Simple, peso-denominated pricing</h2>
-              <p>No USD surprises. No per-seat traps.</p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 18, maxWidth: 900, margin: '0 auto' }}>
-              {PRICING.map((tier) => (
-                <div key={tier.tier} style={{ background: tier.featured ? '#141D2D' : '#101724', border: `1px solid ${tier.featured ? ACC + '60' : 'rgba(255,255,255,.08)'}`, borderRadius: 18, padding: '36px 28px', position: 'relative' }}>
-                  {tier.featured && (
-                    <div style={{ position: 'absolute', top: -13, left: '50%', transform: 'translateX(-50%)', background: `linear-gradient(90deg, ${ACC}, #5C9EE8)`, borderRadius: 999, padding: '4px 16px', fontSize: 11, fontWeight: 700, color: '#fff', fontFamily: 'var(--font-space-grotesk)', whiteSpace: 'nowrap' }}>Most popular</div>
-                  )}
-                  <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 13, letterSpacing: '.14em', textTransform: 'uppercase', color: '#63718A', marginBottom: 14 }}>{tier.tier}</h3>
-                  <div style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 40, fontWeight: 700, color: '#EAF1F9', marginBottom: 4 }}>
-                    {tier.price}
-                    {tier.per && <span style={{ fontSize: 16, color: '#63718A' }}>{tier.per}</span>}
-                  </div>
-                  <p style={{ color: '#94A2B6', fontSize: 14, marginBottom: 28, lineHeight: 1.6 }}>{tier.desc}</p>
-                  <a href="https://clerque.hnscorpph.com/login" className="btn" style={{ width: '100%', justifyContent: 'center', background: tier.featured ? `linear-gradient(180deg,${ACC}dd,${ACC}bb)` : 'rgba(255,255,255,.05)', color: tier.featured ? '#fff' : '#94A2B6', border: `1px solid ${tier.featured ? 'transparent' : 'rgba(255,255,255,.14)'}` }}>
-                    {tier.cta}
-                  </a>
                 </div>
               ))}
             </div>
