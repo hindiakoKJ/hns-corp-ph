@@ -69,19 +69,16 @@ export default function HomePage() {
             <div className="ring r1" /><div className="ring r2" />
             <div className="core"><EcoIcon name="HNScorpPH" size={66} color="#2BC4DE" /></div>
             {ECO_PRODUCTS.map((p, i) => {
-              const R = 160;
               const a = (-90 + i * (360 / ECO_PRODUCTS.length)) * (Math.PI / 180);
-              const x = Math.round(Math.cos(a) * R);
-              const y = Math.round(Math.sin(a) * R);
+              const cos = Math.cos(a).toFixed(4);
+              const sin = Math.sin(a).toFixed(4);
               return (
                 <div
                   key={p.key}
                   className="chip"
                   style={{
-                    left: `calc(50% + ${x}px)`,
-                    top: `calc(50% + ${y}px)`,
-                    marginLeft: -31,
-                    marginTop: -31,
+                    left: `calc(50% + (var(--cr) * ${cos}))`,
+                    top: `calc(50% + (var(--cr) * ${sin}))`,
                     animationDelay: `${(i * 0.35).toFixed(2)}s`,
                   }}
                 >

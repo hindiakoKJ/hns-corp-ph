@@ -293,22 +293,17 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
 .hstat .v { font-family:"Space Grotesk",sans-serif; font-size:26px; font-weight:700; }
 .hstat .l { font-size:12.5px; color:var(--dim); text-transform:uppercase; letter-spacing:.12em; margin-top:3px; }
 
-/* hero visual — constellation */
-.viz { position:relative; height:440px; }
+/* hero visual — constellation. --cr = orbit radius, --chip = chip size (both responsive) */
+.viz { position:relative; height:440px; --cr:160px; --chip:62px; }
 .viz .ring { position:absolute; inset:0; margin:auto; border-radius:50%; border:1px solid var(--line); }
 .viz .r1 { width:340px; height:340px; }
 .viz .r2 { width:220px; height:220px; border-color:var(--line2); }
 .viz .core { position:absolute; inset:0; margin:auto; width:118px; height:118px; border-radius:26px; background:linear-gradient(160deg,#13344c,#0a1828); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; box-shadow:0 0 60px -6px rgba(43,196,222,.5),inset 0 1px 0 rgba(255,255,255,.08); z-index:3; }
-.viz .chip { position:absolute; width:62px; height:62px; border-radius:16px; background:rgba(18,26,40,.9); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); box-shadow:0 10px 30px -8px rgba(0,0,0,.6); z-index:2; animation:float 6s ease-in-out infinite; }
-.viz .c1 { top:14px; left:50%; margin-left:-31px; animation-delay:0s; }
-.viz .c2 { top:50%; right:6px; margin-top:-31px; animation-delay:.8s; }
-.viz .c3 { bottom:18px; left:54%; animation-delay:1.6s; }
-.viz .c4 { top:54%; left:2px; margin-top:-31px; animation-delay:2.4s; }
-.viz .c5 { top:6px; left:14%; animation-delay:1.2s; }
+.viz .chip { position:absolute; width:var(--chip); height:var(--chip); margin-left:calc(var(--chip) / -2); margin-top:calc(var(--chip) / -2); border-radius:16px; background:rgba(18,26,40,.9); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); box-shadow:0 10px 30px -8px rgba(0,0,0,.6); z-index:2; animation:float 6s ease-in-out infinite; }
 .viz .dotgrid { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px); background-size:26px 26px; -webkit-mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); }
 
 /* ── Solution quad ───────────────────────────────────────────────────────── */
-.sol { padding:90px 0; position:relative; }
+.sol { padding:90px 0; position:relative; overflow:hidden; }
 .sol .glow.gs { width:500px; height:500px; background:#26508f; top:120px; right:-200px; opacity:.18; }
 .sol-head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin:26px 0 40px; flex-wrap:wrap; }
 .sol-head h2 { font-size:clamp(28px,3.6vw,44px); line-height:1.06; max-width:18ch; }
@@ -352,7 +347,7 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
   .quad { grid-template-columns:1fr; }
   .pgrid { grid-template-columns:1fr 1fr; }
   .foot-in { grid-template-columns: 1fr 1fr; }
-  .nlinks, .ncta .btn-ghost { display: none; }
+  .nlinks, .ncta { display: none; }
   .burger { display: flex; }
   .mmenu.open {
     display: block;
@@ -382,4 +377,6 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
   .pgrid { grid-template-columns: 1fr; }
   .cell { min-height: auto; padding: 28px 24px; }
   .hero-acts .btn { flex: 1; justify-content: center; }
+  /* tighten the orbit so chips never clip on a phone */
+  .viz { height: 300px; --cr: 112px; --chip: 50px; }
 }

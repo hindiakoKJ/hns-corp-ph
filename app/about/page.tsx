@@ -25,7 +25,7 @@ export default function AboutPage() {
         {/* Story */}
         <section style={{ padding: '80px 0', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
           <div className="wrap">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 48, alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,320px),1fr))', gap: 48, alignItems: 'start' }}>
               <div>
                 <div className="stab" style={{ marginBottom: 20 }}><span className="d" /><span>The story</span></div>
                 <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 40px)', lineHeight: 1.1, marginBottom: 20 }}>
@@ -103,7 +103,7 @@ export default function AboutPage() {
             <div className="sec-head">
               <h2>Built with the best</h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 18 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,300px),1fr))', gap: 18 }}>
               {[
                 { title: 'Claude for Startups', body: 'Selected for Anthropic\'s Claude for Startups program — access to frontier AI models to accelerate product development.', badge: 'AI' },
                 { title: 'PhilGEPS Red Member', body: 'Registered government procurement participant. Products are procurement-eligible for LGUs and national agencies.', badge: 'GOV' },

@@ -56,12 +56,12 @@ export default function ClequePage() {
 
             {/* Dashboard preview */}
             <div style={{ marginTop: 56, maxWidth: 760, margin: '56px auto 0', background: '#101724', border: '1px solid rgba(255,255,255,.10)', borderRadius: 18, padding: '28px 24px', textAlign: 'left' }}>
-              <div style={{ display: 'flex', gap: 12, marginBottom: 22 }}>
+              <div style={{ display: 'flex', gap: 12, marginBottom: 22, flexWrap: 'wrap' }}>
                 {['Today', 'This week', 'This month'].map((t, i) => (
                   <button key={t} style={{ padding: '6px 14px', borderRadius: 8, border: `1px solid ${i === 0 ? ACC + '60' : 'rgba(255,255,255,.10)'}`, background: i === 0 ? ACC + '18' : 'transparent', color: i === 0 ? ACC : '#63718A', fontSize: 13, fontFamily: 'var(--font-space-grotesk)', fontWeight: 600, cursor: 'pointer' }}>{t}</button>
                 ))}
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginBottom: 22 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,minmax(0,1fr))', gap: 14, marginBottom: 22 }}>
                 {[['Revenue', '₱24,810', '+12%'], ['Transactions', '148', '+8%'], ['Avg. ticket', '₱168', '+4%']].map(([l, v, d]) => (
                   <div key={l} style={{ background: '#141D2D', borderRadius: 12, padding: '18px 16px' }}>
                     <div style={{ fontSize: 12, color: '#63718A', marginBottom: 6 }}>{l}</div>

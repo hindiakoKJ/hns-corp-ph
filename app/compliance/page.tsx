@@ -38,7 +38,7 @@ export default function CompliancePage() {
         {/* CAS Section */}
         <section style={{ padding: '80px 0', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
           <div className="wrap">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(360px,1fr))', gap: 48, alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,360px),1fr))', gap: 48, alignItems: 'start' }}>
               <div>
                 <div className="stab" style={{ marginBottom: 20 }}><span className="d" /><span>CAS Compliance</span></div>
                 <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 38px)', lineHeight: 1.12, marginBottom: 20 }}>
@@ -89,7 +89,7 @@ export default function CompliancePage() {
               <h2>Automated BIR report generation</h2>
               <p>Clerque auto-fills the returns your accountant files every quarter.</p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,300px),1fr))', gap: 16 }}>
               {BIR_FORMS.map((f) => (
                 <div key={f.form} style={{ background: '#101724', border: '1px solid rgba(255,255,255,.08)', borderRadius: 16, padding: '28px 24px' }}>
                   <div style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 13, letterSpacing: '.06em', color: '#3D7BFF', marginBottom: 10 }}>{f.form}</div>
@@ -105,7 +105,7 @@ export default function CompliancePage() {
         <section style={{ padding: '80px 0', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
           <div className="wrap">
             <div className="stab" style={{ marginBottom: 20 }}><span className="d" /><span>PhilGEPS</span></div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: 48 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))', gap: 48 }}>
               <div>
                 <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: 1.12, marginBottom: 18 }}>Government procurement-ready</h2>
                 <p style={{ color: '#94A2B6', lineHeight: 1.75, marginBottom: 16 }}>
