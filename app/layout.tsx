@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter_Tight } from 'next/font/google';
+import { Space_Grotesk, Manrope } from 'next/font/google';
 import './globals.css';
 
-const interTight = Inter_Tight({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-inter-tight',
+  weight: ['500', '600', '700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-manrope',
   display: 'swap',
 });
 
@@ -13,21 +20,17 @@ export const metadata: Metadata = {
   verification: {
     google: 'ZJarAiHMvsVgLAnxDzp6b5hKwvhldz0CI-mMtAiRKq4',
   },
-  title: 'HNScorpPH — Software Built for the Philippines',
+  title: 'HNScorpPH — Sovereign software, engineered for the Philippines',
   description:
-    'HNScorpPH builds software for Filipino businesses and families. Clerque: POS, BIR-compliant accounting, and AP/AR for MSMEs. Steady: free epilepsy companion app.',
+    'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, nine products, your data in-country.',
   keywords: [
-    'HNScorpPH',
-    'Clerque',
-    'POS Philippines',
-    'MSME software Philippines',
-    'BIR accounting software',
-    'Filipino business software',
-    'Steady epilepsy app',
+    'HNScorpPH', 'Clerque', 'TindaPOS', 'POS Philippines',
+    'MSME software Philippines', 'BIR accounting software',
+    'Filipino business software', 'PhilGEPS', 'sovereign software',
   ],
   openGraph: {
-    title: 'HNScorpPH — Software Built for the Philippines',
-    description: 'Clerque for Filipino MSMEs. Steady for families living with epilepsy. Built in the Philippines.',
+    title: 'HNScorpPH — Sovereign software, engineered for the Philippines',
+    description: 'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs.',
     url: 'https://hnscorpph.com',
     siteName: 'HNScorpPH',
   },
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={interTight.variable}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );
