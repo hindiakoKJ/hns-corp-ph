@@ -1,22 +1,21 @@
 import Link from 'next/link';
 import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
-import { EcoIcon } from '@/components/brand/EcosystemIcons';
-import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
+import { ECO_PRODUCTS, HNS_LOGO } from '@/components/brand/ecosystem.data';
 
 // Gemini (the Twins) laid out as two parallel star-chains + a head bond + one
 // outstretched arm. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
 // 0 Clerque 1 TindaPOS 2 AltSpaceCW 3 Scatto 4 Everafter 5 Sangguni 6 KonekBarangay 7 Steady 8 LOCATR
 const GEMINI_STARS = [
-  { x: 33, y: 16 }, // 0 Clerque       — Castor (left head, top)
-  { x: 60, y: 11 }, // 1 TindaPOS      — Pollux (right head, top)
-  { x: 27, y: 41 }, // 2 AltSpaceCW    — left chest
-  { x: 66, y: 39 }, // 3 Scatto        — right chest
-  { x: 32, y: 66 }, // 4 Everafter     — left waist
-  { x: 62, y: 64 }, // 5 Sangguni      — right waist
-  { x: 26, y: 89 }, // 6 KonekBarangay — left foot
-  { x: 71, y: 87 }, // 7 Steady        — right foot
-  { x: 12, y: 55 }, // 8 LOCATR        — left outstretched arm
+  { x: 30, y: 14 }, // 0 Clerque       — Castor (left head, top)
+  { x: 64, y: 10 }, // 1 TindaPOS      — Pollux (right head, top)
+  { x: 22, y: 40 }, // 2 AltSpaceCW    — left chest
+  { x: 74, y: 36 }, // 3 Scatto        — right chest
+  { x: 28, y: 66 }, // 4 Everafter     — left waist
+  { x: 70, y: 62 }, // 5 Sangguni      — right waist
+  { x: 24, y: 90 }, // 6 KonekBarangay — left foot
+  { x: 76, y: 88 }, // 7 Steady        — right foot
+  { x:  8, y: 54 }, // 8 LOCATR        — left outstretched arm
 ];
 
 // stick-figure links: left chain 0-2-4-6, right chain 1-3-5-7, head bond 0-1, arm 2-8
@@ -98,7 +97,7 @@ export default function HomePage() {
                 />
               ))}
             </svg>
-            <div className="core"><EcoIcon name="HNScorpPH" size={62} color="#2BC4DE" /></div>
+            <div className="core"><img src={HNS_LOGO} alt="HNScorpPH" /></div>
             {ECO_PRODUCTS.map((p, i) => {
               const s = GEMINI_STARS[i];
               return (
@@ -107,7 +106,7 @@ export default function HomePage() {
                   className="chip"
                   style={{ left: `${s.x}%`, top: `${s.y}%`, animationDelay: `${(i * 0.4).toFixed(2)}s` }}
                 >
-                  <EcoIcon name={p.key} size={26} color={p.accent} />
+                  <img src={p.logo} alt={p.name} />
                 </div>
               );
             })}
@@ -149,7 +148,7 @@ export default function HomePage() {
             {ECO_PRODUCTS.map((p) => (
               <Link key={p.key} className="pcard" href={p.href} style={{ ['--accent' as string]: p.accent }}>
                 <div className="ptop">
-                  <span className="pic"><EcoIcon name={p.key} size={28} color={p.accent} /></span>
+                  <span className="pic"><img src={p.logo} alt={p.name} /></span>
                   {p.status === 'live'
                     ? <span className="badge-live">● Live</span>
                     : <span className="badge-soon">Soon</span>}

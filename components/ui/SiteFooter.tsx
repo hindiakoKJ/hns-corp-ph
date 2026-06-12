@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HNScorpPHIcon } from '@/components/brand/EcosystemIcons';
+import { HNS_LOGO } from '@/components/brand/ecosystem.data';
 
 export default function SiteFooter() {
   return (
@@ -7,7 +7,7 @@ export default function SiteFooter() {
       <div className="wrap foot-in">
         <div>
           <Link href="/" className="brand">
-            <HNScorpPHIcon size={26} color="#2BC4DE" />
+            <img src={HNS_LOGO} alt="" width={26} height={26} style={{ borderRadius: 8 }} />
             <span>HNScorpPH</span>
           </Link>
           <p className="fd">

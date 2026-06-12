@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
-import { EverafterIcon } from '@/components/brand/EcosystemIcons';
 import { FeatureIcon } from '@/components/brand/FeatureIcons';
 
 const ACC = '#5E9E7E';
@@ -25,7 +24,7 @@ export default function EverafterPage() {
           <div style={{ position: 'absolute', top: -120, left: '50%', transform: 'translateX(-50%)', width: 560, height: 360, background: `radial-gradient(ellipse, ${ACC}22 0%, transparent 65%)`, pointerEvents: 'none' }} />
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, border: `1px solid ${ACC}40`, borderRadius: 12, padding: '10px 18px', background: `${ACC}0E`, marginBottom: 28 }}>
-              <EverafterIcon size={28} color={ACC} />
+              <img src="/logos/everafter-icon.svg" alt="" width={28} height={28} style={{ borderRadius: 7, display: 'block' }} />
               <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 15, color: ACC }}>Everafter</span>
             </div>
             <h1 style={{ fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.04, letterSpacing: '-.03em', maxWidth: 720, margin: '0 auto 22px' }}>

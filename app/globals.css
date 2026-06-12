@@ -298,8 +298,10 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
    Fixed aspect-ratio so the % chip positions and the SVG line overlay scale as one. */
 .viz { position:relative; width:100%; max-width:540px; margin-inline:auto; aspect-ratio:13 / 11; --chip:56px; }
 .viz .clines { position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:visible; }
-.viz .core { position:absolute; inset:0; margin:auto; width:112px; height:112px; border-radius:26px; background:linear-gradient(160deg,#13344c,#0a1828); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; box-shadow:0 0 60px -6px rgba(43,196,222,.5),inset 0 1px 0 rgba(255,255,255,.08); z-index:3; }
-.viz .chip { position:absolute; width:var(--chip); height:var(--chip); margin-left:calc(var(--chip) / -2); margin-top:calc(var(--chip) / -2); border-radius:15px; background:rgba(18,26,40,.92); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); box-shadow:0 10px 30px -8px rgba(0,0,0,.6); z-index:2; animation:float 7s ease-in-out infinite; }
+.viz .core { position:absolute; inset:0; margin:auto; width:19%; aspect-ratio:1; height:auto; border-radius:22%; overflow:hidden; border:1px solid var(--line2); box-shadow:0 0 60px -6px rgba(43,196,222,.5),inset 0 1px 0 rgba(255,255,255,.08); z-index:3; }
+.viz .core img { width:100%; height:100%; object-fit:cover; display:block; }
+.viz .chip { position:absolute; width:var(--chip); height:var(--chip); margin-left:calc(var(--chip) / -2); margin-top:calc(var(--chip) / -2); border-radius:26%; overflow:hidden; border:1px solid var(--line2); box-shadow:0 10px 26px -8px rgba(0,0,0,.7); z-index:2; animation:float 7s ease-in-out infinite; }
+.viz .chip img { width:100%; height:100%; object-fit:cover; display:block; }
 .viz .dotgrid { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px); background-size:26px 26px; -webkit-mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); }
 
 /* ── Solution quad ───────────────────────────────────────────────────────── */
@@ -323,7 +325,8 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
 .pcard:hover { transform:translateY(-4px); border-color:var(--line2); }
 .pcard::before { content:""; position:absolute; top:-40px; right:-40px; width:120px; height:120px; border-radius:50%; background:var(--accent,#2BC4DE); opacity:.10; filter:blur(30px); }
 .pcard .ptop { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:18px; }
-.pcard .pic { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--line2); display:flex; align-items:center; justify-content:center; }
+.pcard .pic { width:48px; height:48px; border-radius:12px; border:1px solid var(--line2); overflow:hidden; flex-shrink:0; }
+.pcard .pic img { width:100%; height:100%; object-fit:cover; display:block; }
 .pcard h3 { font-size:19px; display:flex; align-items:center; gap:8px; }
 .pcard .pk { color:var(--muted); font-size:13.5px; margin-top:6px; }
 .pcard .pby { margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:11.5px; color:var(--dim); }

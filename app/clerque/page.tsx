@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
-import { ClerqueIcon } from '@/components/brand/EcosystemIcons';
 import { FeatureIcon } from '@/components/brand/FeatureIcons';
 
 const ACC = '#7C8DF5';
@@ -38,7 +37,7 @@ export default function ClequePage() {
           <div style={{ position: 'absolute', top: -160, left: '50%', transform: 'translateX(-50%)', width: 600, height: 400, background: `radial-gradient(ellipse, ${ACC}28 0%, transparent 65%)`, pointerEvents: 'none' }} />
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, border: `1px solid ${ACC}40`, borderRadius: 12, padding: '10px 18px', background: `${ACC}0E`, marginBottom: 28 }}>
-              <ClerqueIcon size={28} color={ACC} />
+              <img src="/logos/clerque-icon.png" alt="" width={28} height={28} style={{ borderRadius: 7, display: 'block' }} />
               <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 15, color: ACC }}>Clerque</span>
             </div>
             <h1 style={{ fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.04, letterSpacing: '-.03em', maxWidth: 760, margin: '0 auto 22px' }}>

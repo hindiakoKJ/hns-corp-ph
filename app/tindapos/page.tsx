@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
-import { TindaPOSIcon } from '@/components/brand/EcosystemIcons';
 import { FeatureIcon } from '@/components/brand/FeatureIcons';
 
 const ACC = '#E8A24E';
@@ -26,7 +25,7 @@ export default function TindaPOSPage() {
           <div style={{ position: 'absolute', top: -120, left: '50%', transform: 'translateX(-50%)', width: 560, height: 360, background: `radial-gradient(ellipse, ${ACC}22 0%, transparent 65%)`, pointerEvents: 'none' }} />
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, border: `1px solid ${ACC}40`, borderRadius: 12, padding: '10px 18px', background: `${ACC}0E`, marginBottom: 28 }}>
-              <TindaPOSIcon size={28} color={ACC} />
+              <img src="/logos/tindapos-icon.svg" alt="" width={28} height={28} style={{ borderRadius: 7, display: 'block' }} />
               <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 15, color: ACC }}>TindaPOS</span>
             </div>
             <h1 style={{ fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.04, letterSpacing: '-.03em', maxWidth: 720, margin: '0 auto 22px' }}>

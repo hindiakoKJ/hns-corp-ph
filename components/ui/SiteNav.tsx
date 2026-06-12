@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { HNScorpPHIcon } from '@/components/brand/EcosystemIcons';
+import { HNS_LOGO } from '@/components/brand/ecosystem.data';
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function SiteNav() {
     <nav className="nav">
       <div className="nav-in">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <HNScorpPHIcon size={26} color="#2BC4DE" />
+          <img src={HNS_LOGO} alt="" width={28} height={28} style={{ borderRadius: 8 }} />
           <span>HNScorpPH</span>
         </Link>
 
