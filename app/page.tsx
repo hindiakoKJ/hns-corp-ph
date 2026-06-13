@@ -59,6 +59,7 @@ export default function HomePage() {
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="hero">
+        <div className="hero-photo" />
         <div className="glow g1" /><div className="glow g2" /><div className="glow g3" />
         <div className="wrap hero-in">
           <div>

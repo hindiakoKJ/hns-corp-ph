@@ -279,6 +279,18 @@ h1, h2, h3, h4 {
 
 /* ── Hero (split: text left, constellation right) ────────────────────────── */
 .hero { position:relative; overflow:hidden; }
+/* Optional photo background — drop an image at public/hero-bg.jpg (or override
+   --hero-img). Heavily darkened so the dark theme + text stay intact. Degrades
+   cleanly to the solid dark bg if the file is missing. */
+.hero-photo {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(100deg, rgba(7,10,16,.95) 0%, rgba(7,10,16,.86) 42%, rgba(9,14,22,.72) 100%),
+    var(--hero-img, url('/hero-bg.jpg'));
+  background-size:cover, cover;
+  background-position:center, center;
+  background-repeat:no-repeat, no-repeat;
+}
 .hero .glow.g1 { width:620px; height:620px; background:#3D4FE0; top:-220px; left:-120px; opacity:.32; }
 .hero .glow.g2 { width:560px; height:560px; background:#1FA6C4; top:-120px; right:-160px; opacity:.30; }
 .hero .glow.g3 { width:480px; height:480px; background:#6D49C9; bottom:-260px; left:40%; opacity:.22; }
@@ -300,7 +312,7 @@ h1.h1 .grad { background:linear-gradient(100deg,#fff 10%,#7FE3F4 55%,#5C8CFF 95%
 .viz .clines { position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:visible; }
 .viz .core { position:absolute; inset:0; margin:auto; width:19%; aspect-ratio:1; height:auto; border-radius:30%; overflow:hidden; border:1px solid var(--line2); box-shadow:0 0 60px -6px rgba(43,196,222,.5),inset 0 1px 0 rgba(255,255,255,.08); z-index:3; }
 .viz .core img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.1); }
-.viz .chip { position:absolute; width:var(--chip); height:var(--chip); margin-left:calc(var(--chip) / -2); margin-top:calc(var(--chip) / -2); border-radius:32%; overflow:hidden; border:1px solid var(--line2); box-shadow:0 10px 26px -8px rgba(0,0,0,.7); z-index:2; animation:float 7s ease-in-out infinite; }
+.viz .chip { display:block; padding:0; position:absolute; width:var(--chip); height:var(--chip); margin-left:calc(var(--chip) / -2); margin-top:calc(var(--chip) / -2); border-radius:32%; overflow:hidden; border:1px solid var(--line2); box-shadow:0 10px 26px -8px rgba(0,0,0,.7); z-index:2; animation:float 7s ease-in-out infinite; }
 .viz .chip img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.13); }
 .viz .dotgrid { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px); background-size:26px 26px; -webkit-mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); mask-image:radial-gradient(circle at center,#000 35%,transparent 72%); }
 
