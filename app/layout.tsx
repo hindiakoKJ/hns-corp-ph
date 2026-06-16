@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   title: 'HNScorpPH — Sovereign software, engineered for the Philippines',
   description:
-    'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, nine products, your data in-country.',
+    'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, ten products, your data in-country.',
   keywords: [
-    'HNScorpPH', 'Clerque', 'TindaPOS', 'POS Philippines',
+    'HNScorpPH', 'Clerque', 'TindaPOS', 'CVAssist', 'AI job application', 'POS Philippines',
     'MSME software Philippines', 'BIR accounting software',
     'Filipino business software', 'PhilGEPS', 'sovereign software',
   ],

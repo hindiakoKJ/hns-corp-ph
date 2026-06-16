@@ -3,26 +3,27 @@ import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
 import { ECO_PRODUCTS, HNS_LOGO } from '@/components/brand/ecosystem.data';
 
-// Gemini (the Twins) laid out as two parallel star-chains + a head bond + one
-// outstretched arm. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
-// 0 Clerque 1 TindaPOS 2 AltSpaceCW 3 Scatto 4 Everafter 5 Sangguni 6 KonekBarangay 7 Steady 8 LOCATR
+// Gemini (the Twins) laid out as two parallel star-chains + a head bond + two
+// outstretched arms. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
+// 0 Clerque 1 TindaPOS 2 AltSpaceCW 3 Scatto 4 Everafter 5 CVAssist 6 Sangguni 7 KonekBarangay 8 Steady 9 LOCATR
 const GEMINI_STARS = [
   { x: 30, y: 14 }, // 0 Clerque       — Castor (left head, top)
   { x: 64, y: 10 }, // 1 TindaPOS      — Pollux (right head, top)
   { x: 22, y: 40 }, // 2 AltSpaceCW    — left chest
   { x: 74, y: 36 }, // 3 Scatto        — right chest
   { x: 28, y: 66 }, // 4 Everafter     — left waist
-  { x: 70, y: 62 }, // 5 Sangguni      — right waist
-  { x: 24, y: 90 }, // 6 KonekBarangay — left foot
-  { x: 76, y: 88 }, // 7 Steady        — right foot
-  { x:  8, y: 54 }, // 8 LOCATR        — left outstretched arm
+  { x: 70, y: 62 }, // 5 CVAssist      — right waist
+  { x: 24, y: 90 }, // 6 Sangguni      — left foot
+  { x: 76, y: 88 }, // 7 KonekBarangay — right foot
+  { x:  8, y: 54 }, // 8 Steady        — left outstretched arm
+  { x: 90, y: 54 }, // 9 LOCATR        — right outstretched arm
 ];
 
-// stick-figure links: left chain 0-2-4-6, right chain 1-3-5-7, head bond 0-1, arm 2-8
+// stick-figure links: left chain 0-2-4-6, right chain 1-3-5-7, head bond 0-1, arms 2-8 & 3-9
 const GEMINI_EDGES: [number, number][] = [
   [0, 2], [2, 4], [4, 6],
   [1, 3], [3, 5], [5, 7],
-  [0, 1], [2, 8],
+  [0, 1], [2, 8], [3, 9],
 ];
 
 const PLATFORM = [
@@ -72,14 +73,14 @@ export default function HomePage() {
               <span className="grad">engineered for the Philippines.</span>
             </h1>
             <p className="sub">
-              BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, nine products, your data in-country.
+              BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, ten products, your data in-country.
             </p>
             <div className="hero-acts">
               <Link href="/#products" className="btn btn-blue">Explore the platform <span className="arr">→</span></Link>
               <Link href="/contact" className="btn btn-ghost">Book a demo</Link>
             </div>
             <div className="hero-stats">
-              <div className="hstat"><div className="v">9</div><div className="l">Products</div></div>
+              <div className="hstat"><div className="v">10</div><div className="l">Products</div></div>
               <div className="hstat"><div className="v">100%</div><div className="l">PH residency</div></div>
               <div className="hstat"><div className="v">1</div><div className="l">Login, all apps</div></div>
             </div>
@@ -142,7 +143,7 @@ export default function HomePage() {
         <div className="wrap">
           <div className="stab"><span className="d" /><span>The Ecosystem</span></div>
           <div className="sol-head">
-            <h2>Nine products. One login. Growing.</h2>
+            <h2>Ten products. One login. Growing.</h2>
             <p>From the sari-sari counter to the barangay hall — each app, its own accent; all of them, by HNScorpPH.</p>
           </div>
           <div className="pgrid">

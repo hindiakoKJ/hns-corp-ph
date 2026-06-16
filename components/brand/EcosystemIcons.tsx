@@ -135,6 +135,15 @@ export function KonekBarangayIcon({ color = 'currentColor', ...p }: IconProps) {
   );
 }
 
+export function CVAssistIcon({ color = 'currentColor', ...p }: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M45 23 A14 14 0 1 0 45 41" {...stroke(color)} />
+      <path d="M32 41 L32 25 M25.5 31.5 L32 25 L38.5 31.5" {...stroke(color)} />
+    </Svg>
+  );
+}
+
 export const ECO_ICONS = {
   HNScorpPH:     HNScorpPHIcon,
   Clerque:       ClerqueIcon,
@@ -144,6 +153,7 @@ export const ECO_ICONS = {
   AltSpaceCW:    AltSpaceCWIcon,
   Scatto:        ScattoIcon,
   Everafter:     EverafterIcon,
+  CVAssist:      CVAssistIcon,
   LOCATR:        LocatrIcon,
   KonekBarangay: KonekBarangayIcon,
 } as const;
