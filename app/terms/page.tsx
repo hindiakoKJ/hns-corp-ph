@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service — HNScorpPH',
-  description: 'Terms of Service for HNScorpPH and its products — Clerque, TindaPOS, Steady, and LOCATR.',
+  description: 'Terms of Service for HNScorpPH and its products — Clerque, SariAssist, Steady, and LOCATR.',
 };
 
 const LAST_UPDATED = 'May 14, 2026';
@@ -60,7 +60,7 @@ export default function TermsPage() {
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li><strong className="text-ink">hnscorpph.com</strong> — corporate website and product information</li>
                 <li><strong className="text-ink">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.hnscorpph.com)</li>
-                <li><strong className="text-ink">TindaPOS</strong> — offline point-of-sale app for micro-retailers (coming soon)</li>
+                <li><strong className="text-ink">SariAssist</strong> — point-of-sale app for sari-sari stores and micro-retailers (live at sariassist.hnscorpph.com)</li>
                 <li><strong className="text-ink">Steady</strong> — health companion app for people living with epilepsy (coming soon)</li>
                 <li><strong className="text-ink">LOCATR</strong> — verified rental matchmaking app for the Philippines (locatr.hnscorpph.com)</li>
               </ul>
@@ -105,9 +105,9 @@ export default function TermsPage() {
                   an accredited CAS.
                 </p>
               </SubSection>
-              <SubSection name="TindaPOS">
+              <SubSection name="SariAssist">
                 <p>
-                  TindaPOS operates entirely offline on your device. HNScorpPH has no access to your
+                  SariAssist operates entirely offline on your device. HNScorpPH has no access to your
                   data and cannot recover lost data if your device is lost, damaged, or reset.
                   Back up your data regularly.
                 </p>

@@ -4,6 +4,7 @@ import SiteFooter from '@/components/ui/SiteFooter';
 import { FeatureIcon } from '@/components/brand/FeatureIcons';
 
 const ACC = '#E8A24E';
+const APP_URL = 'https://sariassist.hnscorpph.com';
 
 const FEATURES = [
   { icon: 'cart' as const,    title: 'Mabilis na checkout', body: 'I-scan o i-type ang item, tanggapin ang bayad, mag-print ng resibo — tatlong hakbang.' },
@@ -14,7 +15,7 @@ const FEATURES = [
   { icon: 'offline' as const, title: 'Walang internet kailangan', body: 'Gumagana kahit brownout o walang signal. Sine-sync pagka-online.' },
 ];
 
-export default function TindaPOSPage() {
+export default function SariAssistPage() {
   return (
     <>
       <SiteNav />
@@ -25,18 +26,18 @@ export default function TindaPOSPage() {
           <div style={{ position: 'absolute', top: -120, left: '50%', transform: 'translateX(-50%)', width: 560, height: 360, background: `radial-gradient(ellipse, ${ACC}22 0%, transparent 65%)`, pointerEvents: 'none' }} />
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, border: `1px solid ${ACC}40`, borderRadius: 12, padding: '10px 18px', background: `${ACC}0E`, marginBottom: 28 }}>
-              <img src="/logos/tindapos-icon.svg" alt="" width={28} height={28} style={{ borderRadius: 7, display: 'block' }} />
-              <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 15, color: ACC }}>TindaPOS</span>
+              <img src="/logos/sariassist-icon.svg" alt="" width={28} height={28} style={{ borderRadius: 7, display: 'block' }} />
+              <span style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 15, color: ACC }}>SariAssist</span>
             </div>
             <h1 style={{ fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.04, letterSpacing: '-.03em', maxWidth: 720, margin: '0 auto 22px' }}>
-              Ang POS ng bawat tindahan.
+              Ang katuwang ng bawat tindahan.
             </h1>
             <p style={{ fontSize: 18, color: '#94A2B6', maxWidth: 500, margin: '0 auto 36px', lineHeight: 1.65 }}>
               Simple at mabilis para sa sari-sari stores, carinderia, at maliliit na negosyo sa Pilipinas.
             </p>
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://tindapos.hnscorpph.com" className="btn" style={{ background: `linear-gradient(180deg, ${ACC}dd, ${ACC}bb)`, color: '#fff', boxShadow: `0 8px 24px -8px ${ACC}80`, border: 'none' }}>
-                I-try ang TindaPOS
+              <a href={APP_URL} className="btn" style={{ background: `linear-gradient(180deg, ${ACC}dd, ${ACC}bb)`, color: '#fff', boxShadow: `0 8px 24px -8px ${ACC}80`, border: 'none' }}>
+                I-try ang SariAssist
               </a>
               <Link href="/contact" className="btn btn-ghost">Makipag-ugnayan</Link>
             </div>
@@ -72,7 +73,7 @@ export default function TindaPOSPage() {
           <div className="wrap">
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', marginBottom: 16 }}>I-digitize ang tindahan mo ngayon.</h2>
             <p style={{ color: '#94A2B6', marginBottom: 32, fontSize: 16 }}>Mabilis i-setup. Gumagana kahit offline.</p>
-            <a href="https://tindapos.hnscorpph.com" className="btn btn-blue">Simulan na</a>
+            <a href={APP_URL} className="btn btn-blue">Simulan na</a>
           </div>
         </section>
 

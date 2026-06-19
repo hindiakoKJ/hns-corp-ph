@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — HNScorpPH',
-  description: 'Privacy Policy for HNScorpPH and its products — Clerque, TindaPOS, Steady, and LOCATR.',
+  description: 'Privacy Policy for HNScorpPH and its products — Clerque, SariAssist, Steady, and LOCATR.',
 };
 
 const LAST_UPDATED = 'May 14, 2026';
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
               <p>
                 HNScorpPH OPC is a Philippine one-person corporation (SEC OPC filing in progress)
                 registered in the Philippines. We build software for Filipino businesses, families,
-                and communities — including Clerque, TindaPOS, Steady, and LOCATR.
+                and communities — including Clerque, SariAssist, Steady, and LOCATR.
               </p>
               <p className="mt-3">
                 <strong className="text-ink">Data Protection Officer / Contact:</strong>{' '}
@@ -84,9 +84,9 @@ export default function PrivacyPage() {
                   <li>Customer data is entered by the merchant — HNScorpPH is the processor, not the controller, of that data</li>
                 </ul>
               </SubSection>
-              <SubSection name="TindaPOS">
+              <SubSection name="SariAssist">
                 <ul className="list-disc space-y-1 pl-5">
-                  <li><strong className="text-ink">No data collected.</strong> TindaPOS operates fully offline. All product and transaction data stays on your device. HNScorpPH has no access to it.</li>
+                  <li><strong className="text-ink">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNScorpPH has no access to it.</li>
                 </ul>
               </SubSection>
               <SubSection name="Steady">
@@ -155,7 +155,7 @@ export default function PrivacyPage() {
               <ul className="list-disc space-y-2 pl-5">
                 <li>Contact form submissions: retained for up to 2 years or until you request deletion</li>
                 <li>Clerque account data: retained while your account is active and for 5 years after closure for BIR audit compliance</li>
-                <li>TindaPOS: no data on our servers — retention is entirely controlled by you on your device</li>
+                <li>SariAssist: no data on our servers — retention is entirely controlled by you on your device</li>
                 <li>Steady: no data on our servers — retention is entirely controlled by you on your device</li>
                 <li>LOCATR: account and listing data retained while active; verification data deleted within 90 days of account closure</li>
               </ul>

@@ -18,7 +18,7 @@ export default function SiteFooter() {
         <div className="foot-col">
           <h4>Products</h4>
           <Link href="/clerque">Clerque</Link>
-          <Link href="/tindapos">TindaPOS</Link>
+          <Link href="/sariassist">SariAssist</Link>
           <Link href="/altspacecw">AltSpaceCW</Link>
           <Link href="/scatto">Scatto</Link>
         </div>

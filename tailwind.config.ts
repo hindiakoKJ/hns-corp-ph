@@ -16,7 +16,7 @@ const config: Config = {
         green:  '#37D9A0',
         // Product accents
         clerque:   '#7C8DF5',
-        tindapos:  '#E8A24E',
+        sariassist: '#E8A24E',
         altspace:  '#7B5BD1',
         scatto:    '#E0573B',
         everafter: '#5E9E7E',

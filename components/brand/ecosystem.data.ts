@@ -22,7 +22,7 @@ export const HNS_LOGO = '/logos/hns-icon.png';
 // Sorted live-first, then soon (preserve order within each group). logo = real brand mark.
 export const ECO_PRODUCTS: EcoProduct[] = [
   { key: 'Clerque',       name: 'Clerque',       accent: '#7C8DF5', kind: 'Business suite — POS · Ledger · Sync',    status: 'live', href: '/clerque',                          logo: '/logos/clerque-icon.png' },
-  { key: 'TindaPOS',      name: 'TindaPOS',      accent: '#E8A24E', kind: 'Offline POS for every sari-sari store',   status: 'live', href: '/tindapos',                         logo: '/logos/tindapos-icon.svg' },
+  { key: 'SariAssist',    name: 'SariAssist',    accent: '#E8A24E', kind: 'Offline POS for every sari-sari store',   status: 'live', href: '/sariassist',                       logo: '/logos/sariassist-icon.svg' },
   { key: 'AltSpaceCW',    name: 'AltSpaceCW',    accent: '#7B5BD1', kind: 'Co-working space management',             status: 'live', href: '/altspacecw',                       logo: '/logos/altspacecw-icon.svg' },
   { key: 'Scatto',        name: 'Scatto',        accent: '#E0573B', kind: 'Disposable event camera',                 status: 'live', href: '/scatto',                           logo: '/logos/scatto-icon.svg' },
   { key: 'Everafter',     name: 'Everafter',     accent: '#5E9E7E', kind: 'Filipino wedding websites',               status: 'live', href: '/everafter',                        logo: '/logos/everafter-icon.svg' },

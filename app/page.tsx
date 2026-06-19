@@ -5,10 +5,10 @@ import { ECO_PRODUCTS, HNS_LOGO } from '@/components/brand/ecosystem.data';
 
 // Gemini (the Twins) laid out as two parallel star-chains + a head bond + two
 // outstretched arms. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
-// 0 Clerque 1 TindaPOS 2 AltSpaceCW 3 Scatto 4 Everafter 5 CVAssist 6 Sangguni 7 KonekBarangay 8 Steady 9 LOCATR
+// 0 Clerque 1 SariAssist 2 AltSpaceCW 3 Scatto 4 Everafter 5 CVAssist 6 Sangguni 7 KonekBarangay 8 Steady 9 LOCATR
 const GEMINI_STARS = [
   { x: 30, y: 14 }, // 0 Clerque       — Castor (left head, top)
-  { x: 64, y: 10 }, // 1 TindaPOS      — Pollux (right head, top)
+  { x: 64, y: 10 }, // 1 SariAssist    — Pollux (right head, top)
   { x: 22, y: 40 }, // 2 AltSpaceCW    — left chest
   { x: 74, y: 36 }, // 3 Scatto        — right chest
   { x: 28, y: 66 }, // 4 Everafter     — left waist

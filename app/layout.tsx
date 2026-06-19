@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, ten products, your data in-country.',
   keywords: [
-    'HNScorpPH', 'Clerque', 'TindaPOS', 'CVAssist', 'AI job application', 'POS Philippines',
+    'HNScorpPH', 'Clerque', 'SariAssist', 'CVAssist', 'AI job application', 'POS Philippines',
     'MSME software Philippines', 'BIR accounting software',
     'Filipino business software', 'PhilGEPS', 'sovereign software',
   ],

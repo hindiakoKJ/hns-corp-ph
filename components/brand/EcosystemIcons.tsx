@@ -55,7 +55,7 @@ export function SteadyIcon({ color = 'currentColor', ...p }: IconProps) {
   );
 }
 
-export function TindaPOSIcon({ color = 'currentColor', ...p }: IconProps) {
+export function SariAssistIcon({ color = 'currentColor', ...p }: IconProps) {
   return (
     <Svg {...p}>
       <path d="M14 28 V50 H50 V28" {...stroke(color)} />
@@ -148,7 +148,7 @@ export const ECO_ICONS = {
   HNScorpPH:     HNScorpPHIcon,
   Clerque:       ClerqueIcon,
   Steady:        SteadyIcon,
-  TindaPOS:      TindaPOSIcon,
+  SariAssist:    SariAssistIcon,
   Sangguni:      SangguniIcon,
   AltSpaceCW:    AltSpaceCWIcon,
   Scatto:        ScattoIcon,

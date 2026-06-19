@@ -73,7 +73,7 @@ export default function AboutPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 18 }}>
               {[
-                { phase: 'Now', color: '#37D9A0', items: ['Clerque — live', 'TindaPOS — live', 'AltSpaceCW — live', 'Scatto — live', 'Everafter — live', 'Sangguni — live'] },
+                { phase: 'Now', color: '#37D9A0', items: ['Clerque — live', 'SariAssist — live', 'AltSpaceCW — live', 'Scatto — live', 'Everafter — live', 'Sangguni — live'] },
                 { phase: 'Next', color: '#2BC4DE', items: ['Steady — epilepsy companion', 'LOCATR — rental matchmaking', 'KonekBarangay — barangay one-stop-shop', 'Clerque payroll module'] },
                 { phase: 'Later', color: '#7C6BF0', items: ['National interoperability (PhilSys)', 'Multi-LGU federation', 'Healthcare records integration', 'Export-ready financial statements'] },
               ].map(({ phase, color, items }) => (

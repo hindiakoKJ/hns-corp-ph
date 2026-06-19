@@ -10,7 +10,7 @@ const CONCERNS: Record<string, string[]> = {
   HNScorpPH:    ['Partnership inquiry', 'Press / Media', 'General question', 'Other'],
   Clerque:      ['Sales inquiry', 'Technical support', 'Feature request', 'Bug report', 'Other'],
   Steady:       ['App feedback', 'Bug report', 'Privacy concern', 'Other'],
-  TindaPOS:     ['App feedback', 'Bug report', 'Other'],
+  SariAssist:   ['App feedback', 'Bug report', 'Other'],
   LOCATR:       ['Landlord inquiry', 'Renter inquiry', 'Partnership inquiry', 'Bug report', 'Other'],
   AltSpaceCW:   ['Operator inquiry', 'Sales inquiry', 'Technical support', 'Bug report', 'Other'],
   Scatto:       ['Event setup help', 'Sales inquiry', 'Bug report', 'Feature request', 'Other'],
