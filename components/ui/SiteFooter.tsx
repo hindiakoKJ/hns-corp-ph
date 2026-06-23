@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div>
           <Link href="/" className="brand">
             <img src={HNS_LOGO} alt="" width={26} height={26} style={{ borderRadius: 8 }} />
-            <span>HNScorpPH</span>
+            <span>HNS PH Solutions</span>
           </Link>
           <p className="fd">
             Sovereign digital infrastructure for Filipino businesses, families, and government. A solo-founded OPC — SEC filing in progress.
@@ -40,7 +40,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="wrap foot-bot">
-        <span>© {new Date().getFullYear()} HNScorpPH OPC — Manila, Philippines</span>
+        <span>© {new Date().getFullYear()} HNS PH Solutions OPC — Manila, Philippines</span>
         <span>Own your tools · Own your future</span>
       </div>
     </footer>

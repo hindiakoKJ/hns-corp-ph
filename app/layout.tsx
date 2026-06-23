@@ -20,19 +20,19 @@ export const metadata: Metadata = {
   verification: {
     google: 'ZJarAiHMvsVgLAnxDzp6b5hKwvhldz0CI-mMtAiRKq4',
   },
-  title: 'HNScorpPH — Sovereign software, engineered for the Philippines',
+  title: 'HNS PH Solutions — Sovereign software, engineered for the Philippines',
   description:
     'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, ten products, your data in-country.',
   keywords: [
-    'HNScorpPH', 'Clerque', 'SariAssist', 'CVAssist', 'AI job application', 'POS Philippines',
+    'HNS PH Solutions', 'Clerque', 'SariAssist', 'CVAssist', 'AI job application', 'POS Philippines',
     'MSME software Philippines', 'BIR accounting software',
     'Filipino business software', 'PhilGEPS', 'sovereign software',
   ],
   openGraph: {
-    title: 'HNScorpPH — Sovereign software, engineered for the Philippines',
+    title: 'HNS PH Solutions — Sovereign software, engineered for the Philippines',
     description: 'BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs.',
     url: 'https://hnscorpph.com',
-    siteName: 'HNScorpPH',
+    siteName: 'HNS PH Solutions',
   },
 };
 

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — HNScorpPH',
-  description: 'Privacy Policy for HNScorpPH and its products — Clerque, SariAssist, Steady, and LOCATR.',
+  title: 'Privacy Policy — HNS PH Solutions',
+  description: 'Privacy Policy for HNS PH Solutions and its products — Clerque, SariAssist, Steady, and LOCATR.',
 };
 
 const LAST_UPDATED = 'May 14, 2026';
@@ -16,8 +16,8 @@ export default function PrivacyPage() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#020817]/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNScorpPH" className="rounded-lg" />
-            <span className="text-sm font-semibold tracking-tight text-white">HNScorpPH</span>
+            <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNS PH Solutions" className="rounded-lg" />
+            <span className="text-sm font-semibold tracking-tight text-white">HNS PH Solutions</span>
           </Link>
           <Link href="/" className="text-sm font-medium text-white/60 transition-colors hover:text-white">
             ← Back to site
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
 
             <div>
               <p>
-                HNScorpPH OPC (&quot;HNScorpPH,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting the
+                HNS PH Solutions OPC (&quot;HNS PH Solutions,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting the
                 privacy of users of our website and products. This Privacy Policy explains what
                 information we collect, how we use it, and your rights under the{' '}
                 <strong className="text-ink">Republic Act 10173 — Data Privacy Act of 2012</strong> and
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
 
             <Section title="1. Who We Are">
               <p>
-                HNScorpPH OPC is a Philippine one-person corporation (SEC OPC filing in progress)
+                HNS PH Solutions OPC is a Philippine one-person corporation (SEC OPC filing in progress)
                 registered in the Philippines. We build software for Filipino businesses, families,
                 and communities — including Clerque, SariAssist, Steady, and LOCATR.
               </p>
@@ -81,12 +81,12 @@ export default function PrivacyPage() {
                 <ul className="list-disc space-y-1 pl-5">
                   <li>Business name, owner name, and email used to create an account</li>
                   <li>Transaction records (sales, receipts, expenses) entered by the business owner</li>
-                  <li>Customer data is entered by the merchant — HNScorpPH is the processor, not the controller, of that data</li>
+                  <li>Customer data is entered by the merchant — HNS PH Solutions is the processor, not the controller, of that data</li>
                 </ul>
               </SubSection>
               <SubSection name="SariAssist">
                 <ul className="list-disc space-y-1 pl-5">
-                  <li><strong className="text-ink">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNScorpPH has no access to it.</li>
+                  <li><strong className="text-ink">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNS PH Solutions has no access to it.</li>
                 </ul>
               </SubSection>
               <SubSection name="Steady">
@@ -197,7 +197,7 @@ export default function PrivacyPage() {
       </main>
 
       <footer className="border-t border-ink/8 bg-paper px-6 py-8 text-center text-xs text-ink/40">
-        © 2026 HNScorpPH OPC · <Link href="/compliance" className="hover:text-ink">Compliance</Link> · <Link href="/terms" className="hover:text-ink">Terms</Link>
+        © 2026 HNS PH Solutions OPC · <Link href="/compliance" className="hover:text-ink">Compliance</Link> · <Link href="/terms" className="hover:text-ink">Terms</Link>
       </footer>
     </>
   );

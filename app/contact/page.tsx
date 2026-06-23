@@ -7,7 +7,7 @@ import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
 
 const CONCERNS: Record<string, string[]> = {
-  HNScorpPH:    ['Partnership inquiry', 'Press / Media', 'General question', 'Other'],
+  'HNS PH Solutions': ['Partnership inquiry', 'Press / Media', 'General question', 'Other'],
   Clerque:      ['Sales inquiry', 'Technical support', 'Feature request', 'Bug report', 'Other'],
   Steady:       ['App feedback', 'Bug report', 'Privacy concern', 'Other'],
   SariAssist:   ['App feedback', 'Bug report', 'Other'],
@@ -21,7 +21,7 @@ const CONCERNS: Record<string, string[]> = {
 const PRODUCTS = Object.keys(CONCERNS);
 
 const TOPIC_MAP: Record<string, { product: string; concern: string }> = {
-  partnership: { product: 'HNScorpPH', concern: 'Partnership inquiry' },
+  partnership: { product: 'HNS PH Solutions', concern: 'Partnership inquiry' },
   sales:       { product: 'Clerque',   concern: 'Sales inquiry' },
 };
 

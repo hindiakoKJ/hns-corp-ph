@@ -15,14 +15,14 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: 'HNScorpPH Contact <support@hnscorpph.com>',
+      from: 'HNS PH Solutions Contact <support@hnscorpph.com>',
       to: recipient,
       replyTo: email,
       subject: `[${product}] ${concern} — ${name}`,
       html: `
         <div style="font-family: system-ui, sans-serif; max-width: 580px; margin: 0 auto; color: #0f172a;">
           <div style="background: #0891B2; padding: 20px 28px; border-radius: 12px 12px 0 0;">
-            <p style="margin: 0; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em;">HNScorpPH · Contact Form</p>
+            <p style="margin: 0; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em;">HNS PH Solutions · Contact Form</p>
             <h1 style="margin: 6px 0 0; font-size: 20px; color: #fff;">${concern}</h1>
           </div>
 

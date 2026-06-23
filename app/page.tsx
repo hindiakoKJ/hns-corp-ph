@@ -99,7 +99,7 @@ export default function HomePage() {
                 />
               ))}
             </svg>
-            <div className="core"><img src={HNS_LOGO} alt="HNScorpPH" /></div>
+            <div className="core"><img src={HNS_LOGO} alt="HNS PH Solutions" /></div>
             {ECO_PRODUCTS.map((p, i) => {
               const s = GEMINI_STARS[i];
               return (
@@ -144,7 +144,7 @@ export default function HomePage() {
           <div className="stab"><span className="d" /><span>The Ecosystem</span></div>
           <div className="sol-head">
             <h2>Ten products. One login. Growing.</h2>
-            <p>From the sari-sari counter to the barangay hall — each app, its own accent; all of them, by HNScorpPH.</p>
+            <p>From the sari-sari counter to the barangay hall — each app, its own accent; all of them, by HNS PH Solutions.</p>
           </div>
           <div className="pgrid">
             {ECO_PRODUCTS.map((p) => (
@@ -157,7 +157,7 @@ export default function HomePage() {
                 </div>
                 <h3>{p.name}{p.gov && <span className="gov">GOV</span>}</h3>
                 <div className="pk">{p.kind}</div>
-                <div className="pby">by <b>HNScorpPH</b></div>
+                <div className="pby">by <b>HNS PH Solutions</b></div>
               </Link>
             ))}
           </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
         <div className="wrap cta-in">
           <div className="eyebrow" style={{ marginBottom: 18 }}>Build on a foundation you own</div>
           <h2>Ready to run on <span className="grad">sovereign software?</span></h2>
-          <p>Browse the full ecosystem, or talk to us about rolling HNScorpPH across your business or LGU.</p>
+          <p>Browse the full ecosystem, or talk to us about rolling HNS PH Solutions across your business or LGU.</p>
           <div className="hero-acts" style={{ justifyContent: 'center' }}>
             <Link href="/#products" className="btn btn-blue">Explore products <span className="arr">→</span></Link>
             <Link href="/contact" className="btn btn-ghost">Talk to us</Link>

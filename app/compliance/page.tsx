@@ -30,7 +30,7 @@ export default function CompliancePage() {
               BIR-compliant. PhilGEPS-registered. Built for Philippine law.
             </h1>
             <p style={{ fontSize: 17, color: '#94A2B6', maxWidth: 520, margin: '0 auto', lineHeight: 1.65 }}>
-              Every HNScorpPH product is designed around Philippine regulatory requirements — not retrofitted to them.
+              Every HNS PH Solutions product is designed around Philippine regulatory requirements — not retrofitted to them.
             </p>
           </div>
         </section>
@@ -109,7 +109,7 @@ export default function CompliancePage() {
               <div>
                 <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: 1.12, marginBottom: 18 }}>Government procurement-ready</h2>
                 <p style={{ color: '#94A2B6', lineHeight: 1.75, marginBottom: 16 }}>
-                  HNScorpPH is a PhilGEPS Red Member — registered in the Philippine Government Electronic Procurement System. Products can be procured by LGUs, national agencies, and GOCCs through the standard government procurement process.
+                  HNS PH Solutions is a PhilGEPS Red Member — registered in the Philippine Government Electronic Procurement System. Products can be procured by LGUs, national agencies, and GOCCs through the standard government procurement process.
                 </p>
                 <p style={{ color: '#94A2B6', lineHeight: 1.75 }}>
                   Sangguni (digital ordinance management) and KonekBarangay (barangay one-stop-shop) are purpose-built for government procurement — designed to meet RA 9184 requirements and COA audit standards.

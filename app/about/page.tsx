@@ -12,12 +12,12 @@ export default function AboutPage() {
         <section style={{ padding: '90px 32px 70px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
           <div style={{ position: 'absolute', top: -160, left: '50%', transform: 'translateX(-50%)', width: 600, height: 400, background: 'radial-gradient(ellipse, rgba(43,196,222,.14) 0%, transparent 65%)', pointerEvents: 'none' }} />
           <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="eyebrow" style={{ marginBottom: 20 }}>About HNScorpPH</div>
+            <div className="eyebrow" style={{ marginBottom: 20 }}>About HNS PH Solutions</div>
             <h1 style={{ fontSize: 'clamp(38px, 6vw, 70px)', lineHeight: 1.04, letterSpacing: '-.03em', maxWidth: 720, margin: '0 auto 24px' }}>
               One founder. A country&apos;s worth of software.
             </h1>
             <p style={{ fontSize: 18, color: '#94A2B6', maxWidth: 560, margin: '0 auto', lineHeight: 1.65 }}>
-              HNScorpPH is a solo-founded Philippine software company building sovereign, BIR-compliant tools for Filipino businesses, families, and local governments.
+              HNS PH Solutions is a solo-founded Philippine software company building sovereign, BIR-compliant tools for Filipino businesses, families, and local governments.
             </p>
           </div>
         </section>
@@ -35,7 +35,7 @@ export default function AboutPage() {
                   Every accounting tool available to Filipino businesses was either too expensive, USD-denominated, or required constant internet — unrealistic for a store in CamSur or a barangay hall in Bicol.
                 </p>
                 <p style={{ color: '#94A2B6', lineHeight: 1.75, marginBottom: 16 }}>
-                  HNScorpPH started with Clerque — a BIR-compliant, offline-first business suite — and has grown into a nine-product ecosystem serving MSMEs, co-working spaces, LGUs, and families.
+                  HNS PH Solutions started with Clerque — a BIR-compliant, offline-first business suite — and has grown into a nine-product ecosystem serving MSMEs, co-working spaces, LGUs, and families.
                 </p>
                 <p style={{ color: '#94A2B6', lineHeight: 1.75 }}>
                   All products are built, maintained, and shipped from the Philippines. All data stays in-country.

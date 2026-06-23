@@ -3,8 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — HNScorpPH',
-  description: 'Terms of Service for HNScorpPH and its products — Clerque, SariAssist, Steady, and LOCATR.',
+  title: 'Terms of Service — HNS PH Solutions',
+  description: 'Terms of Service for HNS PH Solutions and its products — Clerque, SariAssist, Steady, and LOCATR.',
 };
 
 const LAST_UPDATED = 'May 14, 2026';
@@ -16,8 +16,8 @@ export default function TermsPage() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#020817]/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNScorpPH" className="rounded-lg" />
-            <span className="text-sm font-semibold tracking-tight text-white">HNScorpPH</span>
+            <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNS PH Solutions" className="rounded-lg" />
+            <span className="text-sm font-semibold tracking-tight text-white">HNS PH Solutions</span>
           </Link>
           <Link href="/" className="text-sm font-medium text-white/60 transition-colors hover:text-white">
             ← Back to site
@@ -49,14 +49,14 @@ export default function TermsPage() {
             <div>
               <p>
                 These Terms of Service (&quot;Terms&quot;) govern your access to and use of the websites,
-                applications, and services operated by HNScorpPH OPC (&quot;HNScorpPH,&quot; &quot;we,&quot; &quot;our,&quot; or
-                &quot;us&quot;). By accessing or using any HNScorpPH product or this website, you agree to
+                applications, and services operated by HNS PH Solutions OPC (&quot;HNS PH Solutions,&quot; &quot;we,&quot; &quot;our,&quot; or
+                &quot;us&quot;). By accessing or using any HNS PH Solutions product or this website, you agree to
                 these Terms. If you do not agree, do not use our services.
               </p>
             </div>
 
             <Section title="1. The Services">
-              <p>HNScorpPH operates the following products, each subject to these Terms:</p>
+              <p>HNS PH Solutions operates the following products, each subject to these Terms:</p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li><strong className="text-ink">hnscorpph.com</strong> — corporate website and product information</li>
                 <li><strong className="text-ink">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.hnscorpph.com)</li>
@@ -107,7 +107,7 @@ export default function TermsPage() {
               </SubSection>
               <SubSection name="SariAssist">
                 <p>
-                  SariAssist operates entirely offline on your device. HNScorpPH has no access to your
+                  SariAssist operates entirely offline on your device. HNS PH Solutions has no access to your
                   data and cannot recover lost data if your device is lost, damaged, or reset.
                   Back up your data regularly.
                 </p>
@@ -116,15 +116,15 @@ export default function TermsPage() {
                 <p>
                   Steady is not a medical device and is not intended to diagnose, treat, cure, or
                   prevent any medical condition. BEACON emergency alerts require functioning SMS and
-                  push notification services — HNScorpPH cannot guarantee delivery in all
+                  push notification services — HNS PH Solutions cannot guarantee delivery in all
                   circumstances. Always have a primary emergency plan that does not depend on technology.
                 </p>
               </SubSection>
               <SubSection name="LOCATR">
                 <p>
-                  LOCATR facilitates introductions between landlords and renters. HNScorpPH is not
+                  LOCATR facilitates introductions between landlords and renters. HNS PH Solutions is not
                   a party to any rental agreement. All lease terms, payments, and disputes are
-                  between the landlord and renter. HNScorpPH does not guarantee the accuracy of
+                  between the landlord and renter. HNS PH Solutions does not guarantee the accuracy of
                   listings or the conduct of any user. Always inspect a property before signing
                   a lease agreement.
                 </p>
@@ -133,8 +133,8 @@ export default function TermsPage() {
 
             <Section title="6. Intellectual Property">
               <p>
-                All content on HNScorpPH websites and applications — including logos, product names,
-                UI designs, and written content — is owned by HNScorpPH OPC and protected under
+                All content on HNS PH Solutions websites and applications — including logos, product names,
+                UI designs, and written content — is owned by HNS PH Solutions OPC and protected under
                 Philippine intellectual property law. You may not reproduce, distribute, or create
                 derivative works without written permission.
               </p>
@@ -147,7 +147,7 @@ export default function TermsPage() {
             <Section title="7. Disclaimers">
               <p>
                 Our services are provided &quot;as is&quot; and &quot;as available.&quot; To the fullest extent
-                permitted by Philippine law, HNScorpPH disclaims all warranties, express or implied,
+                permitted by Philippine law, HNS PH Solutions disclaims all warranties, express or implied,
                 including warranties of merchantability, fitness for a particular purpose, and
                 non-infringement.
               </p>
@@ -160,7 +160,7 @@ export default function TermsPage() {
 
             <Section title="8. Limitation of Liability">
               <p>
-                To the maximum extent permitted by law, HNScorpPH OPC, its founder, and its
+                To the maximum extent permitted by law, HNS PH Solutions OPC, its founder, and its
                 employees shall not be liable for any indirect, incidental, special, consequential,
                 or punitive damages arising from your use of our services — including lost profits,
                 data loss, or business interruption.
@@ -198,7 +198,7 @@ export default function TermsPage() {
       </main>
 
       <footer className="border-t border-ink/8 bg-paper px-6 py-8 text-center text-xs text-ink/40">
-        © 2026 HNScorpPH OPC · <Link href="/compliance" className="hover:text-ink">Compliance</Link> · <Link href="/privacy" className="hover:text-ink">Privacy</Link>
+        © 2026 HNS PH Solutions OPC · <Link href="/compliance" className="hover:text-ink">Compliance</Link> · <Link href="/privacy" className="hover:text-ink">Privacy</Link>
       </footer>
     </>
   );
