@@ -46,10 +46,11 @@ export default function AboutPage() {
                   <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 15, letterSpacing: '.12em', textTransform: 'uppercase', color: '#63718A', marginBottom: 20 }}>Company facts</h3>
                   {[
                     ['Founded', '2024'],
-                    ['Headquarters', 'Camarines Sur, Philippines'],
-                    ['Products', '9 (5 live, 4 in development)'],
+                    ['Headquarters', 'Naga City, Camarines Sur'],
+                    ['Products', '10 (8 live, 2 in development)'],
+                    ['Registrations', 'SEC · BIR · Naga City LGU'],
                     ['PhilGEPS status', 'Red Member'],
-                    ['AI partnership', 'Claude for Startups'],
+                    ['Partnerships', 'Claude & Google for Startups'],
                     ['Data residency', '100% Philippines'],
                   ].map(([k, v]) => (
                     <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,.06)' }}>
@@ -106,7 +107,9 @@ export default function AboutPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,300px),1fr))', gap: 18 }}>
               {[
                 { title: 'Claude for Startups', body: 'Selected for Anthropic\'s Claude for Startups program — access to frontier AI models to accelerate product development.', badge: 'AI' },
+                { title: 'Google for Startups', body: 'Member of the Google for Startups Cloud Program — Google Cloud credits and infrastructure to scale our products.', badge: 'GCP' },
                 { title: 'PhilGEPS Red Member', body: 'Registered government procurement participant. Products are procurement-eligible for LGUs and national agencies.', badge: 'GOV' },
+                { title: 'SEC · BIR · LGU registered', body: 'A registered Philippine one-person corporation — SEC-registered, BIR-registered, and accredited with the LGU of Naga City.', badge: 'REG' },
               ].map(({ title, body, badge }) => (
                 <div key={title} style={{ background: '#101724', border: '1px solid rgba(255,255,255,.08)', borderRadius: 16, padding: '32px 28px', display: 'flex', gap: 18 }}>
                   <div style={{ flexShrink: 0, width: 44, height: 44, borderRadius: 12, background: 'rgba(43,196,222,.12)', border: '1px solid rgba(43,196,222,.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, fontSize: 11, color: '#2BC4DE' }}>{badge}</div>

@@ -59,6 +59,8 @@ export default function CompliancePage() {
                 <div style={{ background: '#101724', border: '1px solid rgba(255,255,255,.08)', borderRadius: 18, padding: 32, position: 'sticky', top: 90 }}>
                   <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 13, letterSpacing: '.14em', textTransform: 'uppercase', color: '#63718A', marginBottom: 22 }}>Accreditation status</h3>
                   {[
+                    ['SEC / BIR registration', 100],
+                    ['Naga City LGU permit', 100],
                     ['CAS Architecture', 100],
                     ['Audit trail', 100],
                     ['OR sequencing', 100],

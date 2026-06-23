@@ -58,9 +58,9 @@ export default function PrivacyPage() {
 
             <Section title="1. Who We Are">
               <p>
-                HNS PH Solutions OPC is a Philippine one-person corporation (SEC OPC filing in progress)
-                registered in the Philippines. We build software for Filipino businesses, families,
-                and communities — including Clerque, SariAssist, Steady, and LOCATR.
+                HNS PH Solutions OPC is a Philippine one-person corporation registered with the
+                SEC and BIR, and with the LGU of Naga City. We build software for Filipino businesses,
+                families, and communities — including Clerque, SariAssist, CVAssist, Steady, and LOCATR.
               </p>
               <p className="mt-3">
                 <strong className="text-ink">Data Protection Officer / Contact:</strong>{' '}

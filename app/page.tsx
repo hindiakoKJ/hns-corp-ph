@@ -66,7 +66,7 @@ export default function HomePage() {
           <div>
             <div className="nbadge">
               <span className="nt">NEW</span>
-              <span className="ntx">PhilGEPS Red Member · Claude for Startups</span>
+              <span className="ntx">PhilGEPS Red Member · Claude &amp; Google for Startups</span>
             </div>
             <h1 className="h1">
               Sovereign software,<br />

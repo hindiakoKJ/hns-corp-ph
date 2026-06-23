@@ -11,7 +11,7 @@ export default function SiteFooter() {
             <span>HNS PH Solutions</span>
           </Link>
           <p className="fd">
-            Sovereign digital infrastructure for Filipino businesses, families, and government. A solo-founded OPC — SEC filing in progress.
+            Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.
           </p>
         </div>
 
