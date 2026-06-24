@@ -47,7 +47,7 @@ export default function AboutPage() {
                   {[
                     ['Founded', '2026'],
                     ['Headquarters', 'Naga City, Camarines Sur'],
-                    ['Products', '10 (8 live, 2 in development)'],
+                    ['Products', '10 (9 live, 1 in development)'],
                     ['Registrations', 'SEC · BIR · Naga City LGU'],
                     ['PhilGEPS status', 'Red Member'],
                     ['Partnerships', 'Claude & Google for Startups'],
@@ -74,8 +74,8 @@ export default function AboutPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 18 }}>
               {[
-                { phase: 'Now', color: '#37D9A0', items: ['Clerque — live', 'SariAssist — live', 'AltSpaceCW — live', 'Scatto — live', 'Everafter — live', 'Sangguni — live'] },
-                { phase: 'Next', color: '#2BC4DE', items: ['Steady — epilepsy companion', 'LOCATR — rental matchmaking', 'KonekBarangay — barangay one-stop-shop', 'Clerque payroll module'] },
+                { phase: 'Now', color: '#37D9A0', items: ['Clerque — live', 'SariAssist — live', 'AltSpaceCW — live', 'Scatto — live', 'Everafter — live', 'CVAssist — live', 'Sangguni — live', 'KonekBarangay — live', 'Steady — live'] },
+                { phase: 'Next', color: '#2BC4DE', items: ['LOCATR — rental matchmaking', 'Clerque payroll module'] },
                 { phase: 'Later', color: '#7C6BF0', items: ['National interoperability (PhilSys)', 'Multi-LGU federation', 'Healthcare records integration', 'Export-ready financial statements'] },
               ].map(({ phase, color, items }) => (
                 <div key={phase} style={{ background: '#101724', border: '1px solid rgba(255,255,255,.07)', borderRadius: 16, padding: 28 }}>

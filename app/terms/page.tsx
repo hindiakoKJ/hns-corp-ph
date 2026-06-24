@@ -61,7 +61,7 @@ export default function TermsPage() {
                 <li><strong className="text-ink">hnscorpph.com</strong> — corporate website and product information</li>
                 <li><strong className="text-ink">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.hnscorpph.com)</li>
                 <li><strong className="text-ink">SariAssist</strong> — point-of-sale app for sari-sari stores and micro-retailers (live at sariassist.hnscorpph.com)</li>
-                <li><strong className="text-ink">Steady</strong> — health companion app for people living with epilepsy (coming soon)</li>
+                <li><strong className="text-ink">Steady</strong> — health companion app for people living with epilepsy (live at steady.hnscorpph.com)</li>
                 <li><strong className="text-ink">LOCATR</strong> — verified rental matchmaking app for the Philippines (locatr.hnscorpph.com)</li>
               </ul>
             </Section>
