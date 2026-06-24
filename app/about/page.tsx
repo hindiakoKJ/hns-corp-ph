@@ -45,7 +45,7 @@ export default function AboutPage() {
                 <div style={{ background: '#101724', border: '1px solid rgba(255,255,255,.08)', borderRadius: 18, padding: 32 }}>
                   <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 15, letterSpacing: '.12em', textTransform: 'uppercase', color: '#63718A', marginBottom: 20 }}>Company facts</h3>
                   {[
-                    ['Founded', '2024'],
+                    ['Founded', '2026'],
                     ['Headquarters', 'Naga City, Camarines Sur'],
                     ['Products', '10 (8 live, 2 in development)'],
                     ['Registrations', 'SEC · BIR · Naga City LGU'],
