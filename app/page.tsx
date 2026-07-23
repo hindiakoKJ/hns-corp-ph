@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SiteNav from '@/components/ui/SiteNav';
 import SiteFooter from '@/components/ui/SiteFooter';
+import CountUp from '@/components/ui/CountUp';
 import { ECO_PRODUCTS, HNS_LOGO } from '@/components/brand/ecosystem.data';
 
 // Gemini (the Twins) laid out as two parallel star-chains + a head bond + two
@@ -60,7 +61,12 @@ export default function HomePage() {
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="hero">
-        <div className="hero-photo" />
+        <div className="hero-media" aria-hidden="true">
+          <video className="hero-vid" autoPlay muted loop playsInline poster="/hero-bg.jpg">
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-scrim" />
+        </div>
         <div className="glow g1" /><div className="glow g2" /><div className="glow g3" />
         <div className="wrap hero-in">
           <div>
@@ -80,9 +86,9 @@ export default function HomePage() {
               <Link href="/contact" className="btn btn-ghost">Book a demo</Link>
             </div>
             <div className="hero-stats">
-              <div className="hstat"><div className="v">10</div><div className="l">Products</div></div>
-              <div className="hstat"><div className="v">100%</div><div className="l">PH residency</div></div>
-              <div className="hstat"><div className="v">1</div><div className="l">Login, all apps</div></div>
+              <div className="hstat"><div className="v"><CountUp to={10} /></div><div className="l">Products</div></div>
+              <div className="hstat"><div className="v"><CountUp to={100} suffix="%" /></div><div className="l">PH residency</div></div>
+              <div className="hstat"><div className="v"><CountUp to={1} /></div><div className="l">Login, all apps</div></div>
             </div>
           </div>
 
