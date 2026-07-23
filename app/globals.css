@@ -289,9 +289,15 @@ h1, h2, h3, h4 {
   background:linear-gradient(100deg, rgba(7,10,16,.95) 0%, rgba(7,10,16,.86) 42%, rgba(9,14,22,.72) 100%);
 }
 @media (prefers-reduced-motion: reduce) { .hero-vid { display:none; } }
-.hero .glow.g1 { width:620px; height:620px; background:#3D4FE0; top:-220px; left:-120px; opacity:.32; }
-.hero .glow.g2 { width:560px; height:560px; background:#1FA6C4; top:-120px; right:-160px; opacity:.30; }
-.hero .glow.g3 { width:480px; height:480px; background:#6D49C9; bottom:-260px; left:40%; opacity:.22; }
+.hero .glow.g1 { width:620px; height:620px; background:#3D4FE0; top:-220px; left:-120px; opacity:.32; animation:drift1 20s ease-in-out infinite; }
+.hero .glow.g2 { width:560px; height:560px; background:#1FA6C4; top:-120px; right:-160px; opacity:.30; animation:drift2 26s ease-in-out infinite; }
+.hero .glow.g3 { width:480px; height:480px; background:#6D49C9; bottom:-260px; left:40%; opacity:.22; animation:drift3 32s ease-in-out infinite; }
+
+/* Ambient motion for the hero — works with no video asset present. */
+@keyframes drift1 { 0%,100% { transform:translate3d(0,0,0) scale(1); }      50% { transform:translate3d(7%,5%,0) scale(1.14); } }
+@keyframes drift2 { 0%,100% { transform:translate3d(0,0,0) scale(1.06); }   50% { transform:translate3d(-6%,7%,0) scale(0.94); } }
+@keyframes drift3 { 0%,100% { transform:translate3d(0,0,0) scale(1); }      50% { transform:translate3d(-8%,-6%,0) scale(1.18); } }
+@media (prefers-reduced-motion: reduce) { .hero .glow { animation:none; } }
 .hero-in { position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; padding:64px 0 80px; }
 .nbadge { display:inline-flex; align-items:center; gap:10px; background:rgba(61,123,255,.10); border:1px solid rgba(61,123,255,.28); border-radius:999px; padding:6px; font-size:13px; color:#cfe0ff; margin-bottom:26px; }
 .nbadge .nt { background:var(--blue); color:#fff; font-size:10.5px; font-weight:700; letter-spacing:.08em; padding:3px 9px; border-radius:999px; font-family:"Space Grotesk",sans-serif; }
