@@ -61,12 +61,7 @@ export default function HomePage() {
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="hero">
-        <div className="hero-media" aria-hidden="true">
-          <video className="hero-vid" autoPlay muted loop playsInline poster="/hero-bg.jpg">
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-scrim" />
-        </div>
+        <div className="hero-photo" />
         <div className="glow g1" /><div className="glow g2" /><div className="glow g3" />
         <div className="wrap hero-in">
           <div>
