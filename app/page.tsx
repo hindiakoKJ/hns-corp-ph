@@ -1,185 +1,196 @@
 import Link from 'next/link';
-import SiteNav from '@/components/ui/SiteNav';
-import SiteFooter from '@/components/ui/SiteFooter';
-import CountUp from '@/components/ui/CountUp';
-import { ECO_PRODUCTS, HNS_LOGO } from '@/components/brand/ecosystem.data';
+import './terminal.css';
+import HNSFootmark from '@/components/brand/HNSFootmark';
+import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
 
-// Gemini (the Twins) laid out as two parallel star-chains + a head bond + two
-// outstretched arms. Coords are % of the .viz box; index-aligned to ECO_PRODUCTS:
-// 0 Clerque 1 SariAssist 2 AltSpaceCW 3 Scatto 4 Everafter 5 CVAssist 6 Sangguni 7 KonekBarangay 8 Steady 9 LOCATR
-const GEMINI_STARS = [
-  { x: 30, y: 14 }, // 0 Clerque       — Castor (left head, top)
-  { x: 64, y: 10 }, // 1 SariAssist    — Pollux (right head, top)
-  { x: 22, y: 40 }, // 2 AltSpaceCW    — left chest
-  { x: 74, y: 36 }, // 3 Scatto        — right chest
-  { x: 28, y: 66 }, // 4 Everafter     — left waist
-  { x: 70, y: 62 }, // 5 CVAssist      — right waist
-  { x: 24, y: 90 }, // 6 Sangguni      — left foot
-  { x: 76, y: 88 }, // 7 KonekBarangay — right foot
-  { x:  8, y: 54 }, // 8 Steady        — left outstretched arm
-  { x: 90, y: 54 }, // 9 LOCATR        — right outstretched arm
-];
-
-// stick-figure links: left chain 0-2-4-6, right chain 1-3-5-7, head bond 0-1, arms 2-8 & 3-9
-const GEMINI_EDGES: [number, number][] = [
-  [0, 2], [2, 4], [4, 6],
-  [1, 3], [3, 5], [5, 7],
-  [0, 1], [2, 8], [3, 9],
-];
+const APP_LOGIN = 'https://clerque.hnscorpph.com/login';
 
 const PLATFORM = [
-  {
-    title: 'Sovereign by design',
-    body: 'Your records live on infrastructure inside the Philippines, encrypted by default, yours to export on day one.',
-    link: 'Why sovereign →',
-    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M32 10l18 7v12c0 13-8 20-18 25-10-5-18-12-18-25V17z" /><path d="M25 31l5 5 9-11" /></svg>,
-  },
-  {
-    title: 'BIR-compliant from day one',
-    body: 'OR sequential numbering, immutable Z-Read & X-Read, and BIR forms — built to CAS spec, not bolted on.',
-    link: 'See compliance →',
-    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><rect x="15" y="10" width="34" height="44" rx="3" /><line x1="23" y1="22" x2="41" y2="22" /><line x1="23" y1="29" x2="41" y2="29" /><path d="M23 40 l4 4 9 -10" /></svg>,
-  },
-  {
-    title: 'Built for government',
-    body: 'A PhilGEPS Red Member — LGUs procure directly via Small Value Procurement, no public bidding required.',
-    link: 'For LGUs →',
-    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 31L32 17L50 31" /><line x1="12" y1="52" x2="52" y2="52" /><line x1="20" y1="31" x2="20" y2="52" /><line x1="32" y1="31" x2="32" y2="52" /><line x1="44" y1="31" x2="44" y2="52" /></svg>,
-  },
-  {
-    title: 'Offline, always',
-    body: 'Power cut? Dead router? Transactions write locally and sync the moment you reconnect. Nothing stops the sale.',
-    link: 'How it works →',
-    icon: <svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 26a28 28 0 0 1 40 0" /><path d="M20 34a18 18 0 0 1 24 0" /><path d="M27 42a8 8 0 0 1 10 0" /><circle cx="32" cy="49" r="1.8" fill="currentColor" stroke="none" /><line x1="14" y1="13" x2="51" y2="50" /></svg>,
-  },
+  { h: 'sovereign by design', p: 'Your data on PH infrastructure, encrypted, exportable on day one.' },
+  { h: 'BIR-compliant', p: 'OR sequencing, immutable Z-read & X-read, quarterly forms — CAS spec.' },
+  { h: 'built for government', p: 'PhilGEPS Red Member. LGUs procure via Small Value Procurement.' },
+  { h: 'offline, always', p: 'Writes locally, syncs on reconnect. Brownouts never stop the sale.' },
 ];
+
+const VERIFIED = ['SEC', 'BIR', 'Naga City LGU', 'PhilGEPS Red Member', 'Claude for Startups', 'Google for Startups'];
+
+// terminal-style: lowercase package-like names
+const slug = (k: string) => k.toLowerCase();
+
+function Mark({ size = 22 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 48 48" width={size} height={size} fill="none" aria-hidden="true">
+      <g stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 10V38" /><path d="M18 10V38" /><path d="M6 24H18" />
+        <path d="M18 10L30 38" /><path d="M30 10V38" />
+        <path d="M43.5 14 C42.5 10 34 9 32.5 13.5 C31 18 33 21 38 24 C43 27 44.5 30 43.5 34.5 C42 39 33.5 38 32.5 33.5" />
+      </g>
+    </svg>
+  );
+}
 
 export default function HomePage() {
   return (
-    <>
-      <SiteNav />
+    <div className="term-root">
+      <div className="t-scan" aria-hidden="true" />
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-photo" />
-        <div className="glow g1" /><div className="glow g2" /><div className="glow g3" />
-        <div className="wrap hero-in">
-          <div>
-            <div className="nbadge">
-              <span className="nt">NEW</span>
-              <span className="ntx">PhilGEPS Red Member · Claude &amp; Google for Startups</span>
-            </div>
-            <h1 className="h1">
-              Sovereign software,<br />
-              <span className="grad">engineered for the Philippines.</span>
-            </h1>
-            <p className="sub">
-              BIR-compliant, offline-capable, government-ready tools for Filipino businesses, families, and LGUs — one platform, ten products, your data in-country.
-            </p>
-            <div className="hero-acts">
-              <Link href="/#products" className="btn btn-blue">Explore the platform <span className="arr">→</span></Link>
-              <Link href="/contact" className="btn btn-ghost">Book a demo</Link>
-            </div>
-            <div className="hero-stats">
-              <div className="hstat"><div className="v"><CountUp to={10} /></div><div className="l">Products</div></div>
-              <div className="hstat"><div className="v"><CountUp to={100} suffix="%" /></div><div className="l">PH residency</div></div>
-              <div className="hstat"><div className="v"><CountUp to={1} /></div><div className="l">Login, all apps</div></div>
-            </div>
-          </div>
-
-          {/* Gemini constellation — the apps are the stars (positions in %, index-aligned to ECO_PRODUCTS) */}
-          <div className="viz" aria-hidden="true">
-            <div className="dotgrid" />
-            <svg className="clines" viewBox="0 0 100 100" preserveAspectRatio="none">
-              {GEMINI_EDGES.map(([a, b], i) => (
-                <line
-                  key={i}
-                  x1={GEMINI_STARS[a].x} y1={GEMINI_STARS[a].y}
-                  x2={GEMINI_STARS[b].x} y2={GEMINI_STARS[b].y}
-                  stroke="rgba(125,210,235,0.16)" strokeWidth={1} vectorEffect="non-scaling-stroke"
-                />
-              ))}
-            </svg>
-            <div className="core"><img src={HNS_LOGO} alt="HNS PH Solutions" /></div>
-            {ECO_PRODUCTS.map((p, i) => {
-              const s = GEMINI_STARS[i];
-              return (
-                <div
-                  key={p.key}
-                  className="chip"
-                  style={{ left: `${s.x}%`, top: `${s.y}%`, animationDelay: `${(i * 0.4).toFixed(2)}s` }}
-                >
-                  <img src={p.logo} alt={p.name} />
-                </div>
-              );
-            })}
-          </div>
+      {/* top bar */}
+      <header className="t-topbar">
+        <div className="t-wrap t-topbar-in">
+          <Link href="/" className="t-brand">
+            <span className="t-mk"><Mark size={22} /></span>
+            hns-ph-solutions
+          </Link>
+          <nav className="t-nav">
+            <a href="#platform">platform</a>
+            <a href="#products">products</a>
+            <Link href="/compliance">compliance</Link>
+            <Link href="/about">company</Link>
+          </nav>
+          <a href={APP_LOGIN} className="t-topcta">get started</a>
         </div>
-      </section>
+      </header>
 
-      {/* ── Platform / Solution ───────────────────────────────────────────── */}
-      <section className="sol" id="solution">
-        <div className="glow gs" />
-        <div className="wrap">
-          <div className="stab"><span className="d" /><span>The Platform</span></div>
-          <div className="sol-head">
-            <h2>One sovereign foundation under every product.</h2>
-            <p>The things foreign software treats as add-ons, we built into the core — so every app inherits them.</p>
-          </div>
-          <div className="quad">
-            {PLATFORM.map((c) => (
-              <div className="cell" key={c.title}>
-                <div className="ic">{c.icon}</div>
-                <h3>{c.title}</h3>
-                <p>{c.body}</p>
-                <span className="lk">{c.link}</span>
+      {/* hero — terminal window */}
+      <section className="t-hero">
+        <div className="t-wrap">
+          <div className="t-win">
+            <div className="t-winbar">
+              <span className="t-dot r" /><span className="t-dot y" /><span className="t-dot g" />
+              <span className="t-wintitle">visitor@hnsph: ~/sovereign-software</span>
+            </div>
+            <div className="t-winbody">
+              <div className="t-line"><span className="t-ps">$</span><span className="t-cmd">whoami</span></div>
+              <div className="t-line"><span className="t-ps t-dim">&gt;</span><span className="t-out">HNS PH Solutions OPC — Naga City, Philippines · SEC · BIR · LGU · PhilGEPS Red Member</span></div>
+
+              <div className="t-line" style={{ marginTop: 20 }}><span className="t-ps">$</span><span className="t-cmd">./manifesto</span></div>
+              <h1 className="t-h1">
+                Software the<br />
+                Philippines <span className="hl">owns.</span><span className="t-cur" aria-hidden="true" />
+              </h1>
+
+              <p className="t-sub">
+                Sovereign, BIR-compliant, offline-ready tools for Filipino businesses, families, and local
+                governments. Ten products, one login, and your data never leaves the country —{' '}
+                <span className="path">/var/ph</span>, not someone else&apos;s cloud.
+              </p>
+
+              <div className="t-acts">
+                <a href={APP_LOGIN} className="t-btn t-btn-primary">get started</a>
+                <Link href="/about" className="t-btn">read the story</Link>
               </div>
-            ))}
+
+              <div className="t-stats">
+                <span><b>10</b> products</span>
+                <span><b>100%</b> PH data residency</span>
+                <span><b>1</b> login, all apps</span>
+                <span><b>0</b> foreign cloud</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Products / Ecosystem ──────────────────────────────────────────── */}
-      <section className="prod" id="products">
-        <div className="wrap">
-          <div className="stab"><span className="d" /><span>The Ecosystem</span></div>
-          <div className="sol-head">
-            <h2>Ten products. One login. Growing.</h2>
-            <p>From the sari-sari counter to the barangay hall — each app, its own accent; all of them, by HNS PH Solutions.</p>
+      {/* products */}
+      <section className="t-sec" id="products">
+        <div className="t-wrap">
+          <div className="t-sec-cmd t-line">
+            <span className="t-ps">$</span><span className="t-cmd">hns products <span className="t-out">--list</span></span>
           </div>
-          <div className="pgrid">
+          <div className="t-list">
+            <div className="t-list-head">
+              <span>name</span><span>status</span><span>description</span><span />
+            </div>
             {ECO_PRODUCTS.map((p) => (
-              <Link key={p.key} className="pcard" href={p.href} style={{ ['--accent' as string]: p.accent }}>
-                <div className="ptop">
-                  <span className="pic"><img src={p.logo} alt={p.name} /></span>
-                  {p.status === 'live'
-                    ? <span className="badge-live">● Live</span>
-                    : <span className="badge-soon">Soon</span>}
-                </div>
-                <h3>{p.name}{p.gov && <span className="gov">GOV</span>}</h3>
-                <div className="pk">{p.kind}</div>
-                <div className="pby">by <b>HNS PH Solutions</b></div>
+              <Link key={p.key} href={p.href} className="t-prod">
+                <span className="name">{slug(p.key)}{p.gov && <span className="gov">[gov]</span>}</span>
+                <span className={`st ${p.status}`}><span className="d" />{p.status}</span>
+                <span className="desc">{p.kind}</span>
+                <span className="arr">→</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────────────────── */}
-      <section className="cta">
-        <div className="glow gc" />
-        <div className="wrap cta-in">
-          <div className="eyebrow" style={{ marginBottom: 18 }}>Build on a foundation you own</div>
-          <h2>Ready to run on <span className="grad">sovereign software?</span></h2>
-          <p>Browse the full ecosystem, or talk to us about rolling HNS PH Solutions across your business or LGU.</p>
-          <div className="hero-acts" style={{ justifyContent: 'center' }}>
-            <Link href="/#products" className="btn btn-blue">Explore products <span className="arr">→</span></Link>
-            <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+      {/* platform */}
+      <section className="t-sec" id="platform">
+        <div className="t-wrap">
+          <div className="t-sec-cmd t-line">
+            <span className="t-ps">$</span><span className="t-cmd">hns platform <span className="t-out">--why</span></span>
+          </div>
+          <div className="t-checks">
+            {PLATFORM.map((c) => (
+              <div className="t-check" key={c.h}>
+                <div className="h">{c.h}</div>
+                <p>{c.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <SiteFooter />
-    </>
+      {/* verify */}
+      <section className="t-sec">
+        <div className="t-wrap">
+          <div className="t-sec-cmd t-line">
+            <span className="t-ps">$</span><span className="t-cmd">hns <span className="t-out">--verify</span></span>
+          </div>
+          <div className="t-verify">
+            {VERIFIED.map((v) => <span key={v}>{v}</span>)}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="t-cta">
+        <div className="t-wrap">
+          <div className="t-cta-box">
+            <div className="t-line"><span className="t-ps">$</span><span className="t-cmd">hns start</span></div>
+            <h2>Ready to run on software you own?</h2>
+            <div className="t-acts">
+              <a href={APP_LOGIN} className="t-btn t-btn-primary">get started free</a>
+              <Link href="/contact" className="t-btn">talk to us</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* footer */}
+      <footer className="t-foot">
+        <div className="t-wrap t-foot-in">
+          <div>
+            <Link href="/" className="t-brand"><span className="t-mk"><Mark size={22} /></span>hns-ph-solutions</Link>
+            <p className="fd">Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.</p>
+          </div>
+          <div className="t-foot-col">
+            <h4>products</h4>
+            <Link href="/clerque">clerque</Link>
+            <Link href="/sariassist">sariassist</Link>
+            <Link href="/cvassist">cvassist</Link>
+            <Link href="/scatto">scatto</Link>
+          </div>
+          <div className="t-foot-col">
+            <h4>platform</h4>
+            <a href="#platform">why sovereign</a>
+            <Link href="/compliance">compliance</Link>
+            <Link href="/about">about</Link>
+          </div>
+          <div className="t-foot-col">
+            <h4>company</h4>
+            <Link href="/about">our story</Link>
+            <Link href="/contact">contact</Link>
+            <Link href="/contact">for lgus</Link>
+          </div>
+        </div>
+        <div className="t-wrap t-foot-bot">
+          <a href="https://hnscorpph.com" target="_blank" rel="noopener noreferrer" aria-label="Powered by HNS PH Solutions" className="t-footmark">
+            <span className="lbl">powered by</span>
+            <HNSFootmark size={20} />
+          </a>
+          <span># © {new Date().getFullYear()} HNS PH Solutions OPC · Naga City, Philippines</span>
+        </div>
+      </footer>
+    </div>
   );
 }
