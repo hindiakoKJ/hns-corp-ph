@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, Bricolage_Grotesque } from 'next/font/google';
+import { Space_Grotesk, Manrope } from 'next/font/google';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -13,14 +13,6 @@ const manrope = Manrope({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-manrope',
-  display: 'swap',
-});
-
-// Display face for the rebranded homepage — editorial, characterful.
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
-  variable: '--font-bricolage',
   display: 'swap',
 });
 
@@ -46,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${bricolage.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );
