@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HNS_LOGO } from '@/components/brand/ecosystem.data';
+import HNSFootmark from '@/components/brand/HNSFootmark';
 
 export default function SiteFooter() {
   return (
@@ -40,7 +41,17 @@ export default function SiteFooter() {
       </div>
 
       <div className="wrap foot-bot">
-        <span>© {new Date().getFullYear()} HNS PH Solutions OPC — Manila, Philippines</span>
+        <a
+          href="https://hnscorpph.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Powered by HNS PH Solutions"
+          className="footmark"
+        >
+          <span className="footmark-label">Powered by</span>
+          <HNSFootmark size={22} />
+        </a>
+        <span>© {new Date().getFullYear()} HNS PH Solutions OPC — Naga City, Philippines</span>
         <span>Own your tools · Own your future</span>
       </div>
     </footer>

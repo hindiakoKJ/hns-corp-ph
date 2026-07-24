@@ -261,10 +261,36 @@ h1, h2, h3, h4 {
   border-top: 1px solid rgba(255,255,255,.09);
   padding: 22px 0;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   color: #63718A;
   font-size: 13px;
+}
+
+/* "Powered by" footmark — subtle credit, legible on the dark footer */
+.footmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.82);   /* currentColor for the lockup */
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color .18s;
+}
+.footmark:hover { color: #fff; }
+.footmark .footmark-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #63718A;
+  white-space: nowrap;
+}
+.footmark:focus-visible {
+  outline: 2px solid #2BC4DE;
+  outline-offset: 3px;
 }
 
 /* ── Raw design tokens (for ported reference classes) ────────────────────── */
