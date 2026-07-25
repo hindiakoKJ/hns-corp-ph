@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces } from 'next/font/google';
+import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton } from 'next/font/google';
 import './globals.css';
+
+// Poster/brutalist display for the look-a mockup.
+const anton = Anton({ subsets: ['latin'], weight: ['400'], variable: '--font-anton', display: 'swap' });
 
 // Editorial display serif for the studio-direction homepage.
 const fraunces = Fraunces({
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${anton.variable}`}>
       <body>{children}</body>
     </html>
   );
