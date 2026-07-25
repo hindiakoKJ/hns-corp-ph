@@ -18,7 +18,7 @@
   --line2:   rgba(232,233,238,.18);
   --maxw:    1160px;
 
-  background: #0B0C14;
+  background: transparent;   /* let the fixed ::before backdrop show through */
   color: var(--txt);
   position: relative;
   font-family: var(--font-hanken), system-ui, sans-serif;
@@ -30,6 +30,7 @@
 /* one fixed backdrop behind the WHOLE page — the frozen earth-at-night photo */
 .hs-root::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-color: #0B0C14;   /* fallback if the photo is missing */
   background-image:
     linear-gradient(rgba(9,10,20,.62) 0%, rgba(9,10,20,.74) 100%),
     var(--hero-img, url('/hero-bg.jpg'));
