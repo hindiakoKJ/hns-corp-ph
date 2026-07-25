@@ -2,6 +2,7 @@ import Link from 'next/link';
 import './home.css';
 import HNSFootmark from '@/components/brand/HNSFootmark';
 import HomeFinder from '@/components/ui/HomeFinder';
+import HomeNav from '@/components/ui/HomeNav';
 
 const APP_LOGIN = 'https://clerque.hnscorpph.com/login';
 
@@ -30,18 +31,7 @@ export default function HomePage() {
   return (
     <div className="hs-root">
       {/* nav */}
-      <header className="hs-nav">
-        <div className="hs-wrap hs-nav-in">
-          <Link href="/" className="hs-brand"><span className="mk"><Mark size={27} /></span>HNS PH Solutions<span className="opc">OPC</span></Link>
-          <nav className="hs-nlinks">
-            <a href="#products">Products</a>
-            <a href="#sovereign">Why sovereign</a>
-            <Link href="/compliance">Compliance</Link>
-            <Link href="/about">Company</Link>
-          </nav>
-          <Link href="/contact" className="hs-btn hs-btn-ghost" style={{ padding: '9px 18px' }}>Talk to us</Link>
-        </div>
-      </header>
+      <HomeNav />
 
       {/* hero */}
       <section className="hs-hero">
