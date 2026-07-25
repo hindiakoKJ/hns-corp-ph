@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton } from 'next/font/google';
+import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton, Hanken_Grotesk } from 'next/font/google';
 import './globals.css';
 
 // Poster/brutalist display for the look-a mockup.
 const anton = Anton({ subsets: ['latin'], weight: ['400'], variable: '--font-anton', display: 'swap' });
+
+// Clean body sans for the indigo homepage (pairs with Fraunces headlines).
+const hanken = Hanken_Grotesk({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-hanken', display: 'swap' });
 
 // Editorial display serif for the studio-direction homepage.
 const fraunces = Fraunces({
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${anton.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${anton.variable} ${hanken.variable}`}>
       <body>{children}</body>
     </html>
   );
