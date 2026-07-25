@@ -60,14 +60,17 @@
 .hs-hero-bg {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image:
-    linear-gradient(120deg, rgba(9,10,22,.90) 0%, rgba(12,11,30,.72) 34%, rgba(20,18,58,.42) 70%, rgba(28,24,78,.22) 100%),
+    linear-gradient(rgba(10,11,24,.52) 0%, rgba(12,11,30,.60) 100%),
     var(--hero-img, url('/hero-bg.jpg'));
-  background-size: cover, cover; background-position: center, center;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;   /* frozen — stays put while you scroll */
 }
-/* keep the text side legible while the photo shows on the right */
+/* gentle scrim on the text side only, so the headline/paragraph stay legible */
 .hs-hero-bg::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(8,9,18,.6) 0%, rgba(8,9,18,.2) 42%, transparent 66%);
+  background: linear-gradient(90deg, rgba(8,9,18,.55) 0%, rgba(8,9,18,.18) 40%, transparent 64%);
 }
 .hs-hero-glow { position: absolute; top: -120px; right: -60px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(139,124,247,.28), transparent 65%); filter: blur(30px); z-index: 0; pointer-events: none; }
 .hs-hero-in { position: relative; z-index: 2; padding: 104px 0 90px; max-width: 60ch; }
