@@ -124,7 +124,7 @@ h1, h2, h3, h4 {
   font-size: 19px;
   color: #EAF1F9;
 }
-.brand .opc { font-family: "Manrope", sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: #7FE3F4; margin-left: 8px; align-self: center; }
+.brand .opc { font: inherit; font-size: .66em; letter-spacing: 0; color: inherit; opacity: .72; margin-left: 8px; align-self: baseline; }
 .brand .mk {
   width: 32px; height: 32px;
   border-radius: 9px;

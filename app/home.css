@@ -61,7 +61,7 @@
 .hs-nav-in { display: flex; align-items: center; gap: 26px; height: 70px; }
 .hs-brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-fraunces), serif; font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
 .hs-brand .mk { width: 27px; height: 27px; color: var(--lav); }
-.hs-brand .opc { font-family: var(--font-hanken), sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--lav); margin-left: 8px; align-self: center; }
+.hs-brand .opc { font: inherit; font-size: .66em; letter-spacing: 0; color: inherit; opacity: .72; margin-left: 8px; align-self: baseline; }
 .hs-nlinks { display: flex; gap: 26px; margin-left: auto; font-family: var(--font-hanken), sans-serif; }
 .hs-nlinks a { font-size: 14.5px; font-weight: 500; color: var(--mut); transition: color .14s; }
 .hs-nlinks a:hover { color: var(--txt); }
