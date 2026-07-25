@@ -3,14 +3,16 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import SiteNav from '@/components/ui/SiteNav';
-import SiteFooter from '@/components/ui/SiteFooter';
+import '../home.css';
+import HomeNav from '@/components/ui/HomeNav';
+import HomeFooter from '@/components/ui/HomeFooter';
 
 const CONCERNS: Record<string, string[]> = {
   'HNS PH Solutions': ['Partnership inquiry', 'Press / Media', 'General question', 'Other'],
   Clerque:      ['Sales inquiry', 'Technical support', 'Feature request', 'Bug report', 'Other'],
-  Steady:       ['App feedback', 'Bug report', 'Privacy concern', 'Other'],
   SariAssist:   ['App feedback', 'Bug report', 'Other'],
+  CVAssist:     ['App feedback', 'Bug report', 'Feature request', 'Other'],
+  Steady:       ['App feedback', 'Bug report', 'Privacy concern', 'Other'],
   LOCATR:       ['Landlord inquiry', 'Renter inquiry', 'Partnership inquiry', 'Bug report', 'Other'],
   AltSpaceCW:   ['Operator inquiry', 'Sales inquiry', 'Technical support', 'Bug report', 'Other'],
   Scatto:       ['Event setup help', 'Sales inquiry', 'Bug report', 'Feature request', 'Other'],
@@ -26,27 +28,13 @@ const TOPIC_MAP: Record<string, { product: string; concern: string }> = {
 };
 
 const inputStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '12px 16px',
-  background: '#101724',
-  border: '1px solid rgba(255,255,255,.12)',
-  borderRadius: 10,
-  color: '#EAF1F9',
-  fontSize: 15,
-  fontFamily: 'var(--font-manrope)',
-  outline: 'none',
-  transition: 'border-color .15s',
+  width: '100%', padding: '12px 16px', background: '#181B23',
+  border: '1px solid rgba(232,233,238,.14)', borderRadius: 12, color: '#E8E9EE',
+  fontSize: 15, fontFamily: 'var(--font-hanken)', outline: 'none', transition: 'border-color .15s',
 };
-
 const labelStyle: React.CSSProperties = {
-  display: 'block',
-  fontSize: 12.5,
-  fontWeight: 600,
-  fontFamily: 'var(--font-space-grotesk)',
-  letterSpacing: '.08em',
-  color: '#63718A',
-  textTransform: 'uppercase',
-  marginBottom: 8,
+  display: 'block', fontSize: 12.5, fontWeight: 600, fontFamily: 'var(--font-hanken)',
+  letterSpacing: '.08em', color: '#9AA0B2', textTransform: 'uppercase', marginBottom: 8,
 };
 
 function ContactForm() {
@@ -87,18 +75,17 @@ function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div style={{ background: 'rgba(55,217,160,.07)', border: '1px solid rgba(55,217,160,.25)', borderRadius: 18, padding: '48px 32px', textAlign: 'center' }}>
-        <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
-        <h2 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: 22, fontWeight: 700, color: '#EAF1F9', marginBottom: 10 }}>Message sent.</h2>
-        <p style={{ color: '#94A2B6', marginBottom: 24 }}>We&apos;ll reply to <strong style={{ color: '#EAF1F9' }}>{email}</strong> shortly.</p>
-        <Link href="/" style={{ color: '#2BC4DE', fontSize: 14, fontWeight: 600 }}>← Back to home</Link>
+      <div style={{ background: 'rgba(139,124,247,.08)', border: '1px solid rgba(139,124,247,.3)', borderRadius: 18, padding: '48px 32px', textAlign: 'center' }}>
+        <div style={{ fontSize: 44, marginBottom: 14 }}>✓</div>
+        <h2 style={{ fontFamily: 'var(--font-fraunces), serif', fontSize: 26, fontWeight: 600, color: '#F3F1FB', marginBottom: 10 }}>Message sent.</h2>
+        <p style={{ fontFamily: 'var(--font-hanken)', color: '#9AA0B2', marginBottom: 24 }}>We&apos;ll reply to <strong style={{ color: '#E8E9EE' }}>{email}</strong> shortly.</p>
+        <Link href="/" style={{ color: '#C4C0FB', fontSize: 14, fontWeight: 600 }}>← Back to home</Link>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-      {/* Name + Email */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16 }}>
         <div>
           <label style={labelStyle}>Name</label>
@@ -110,7 +97,6 @@ function ContactForm() {
         </div>
       </div>
 
-      {/* Product */}
       <div>
         <label style={labelStyle}>Which product?</label>
         <select required value={product} onChange={e => setProduct(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
@@ -119,7 +105,6 @@ function ContactForm() {
         </select>
       </div>
 
-      {/* Concern */}
       {product && (
         <div>
           <label style={labelStyle}>What&apos;s your concern?</label>
@@ -130,26 +115,19 @@ function ContactForm() {
         </div>
       )}
 
-      {/* Message */}
       <div>
         <label style={labelStyle}>Message</label>
         <textarea required rows={5} value={message} onChange={e => setMessage(e.target.value)} placeholder="Tell us what's on your mind…" style={{ ...inputStyle, resize: 'none' }} />
       </div>
 
-      {/* Error */}
       {status === 'error' && (
-        <div style={{ background: 'rgba(224,87,59,.08)', border: '1px solid rgba(224,87,59,.28)', borderRadius: 10, padding: '12px 16px', fontSize: 14, color: '#F08070' }}>
+        <div style={{ background: 'rgba(240,101,90,.08)', border: '1px solid rgba(240,101,90,.3)', borderRadius: 10, padding: '12px 16px', fontSize: 14, color: '#F0908A', fontFamily: 'var(--font-hanken)' }}>
           {errorMsg}
         </div>
       )}
 
-      {/* Submit */}
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="btn btn-blue"
-        style={{ alignSelf: 'flex-start', opacity: status === 'loading' ? 0.6 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer' }}
-      >
+      <button type="submit" disabled={status === 'loading'} className="hs-btn hs-btn-indigo"
+        style={{ alignSelf: 'flex-start', opacity: status === 'loading' ? 0.6 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer' }}>
         {status === 'loading' ? 'Sending…' : 'Send message'}
       </button>
     </form>
@@ -158,36 +136,27 @@ function ContactForm() {
 
 export default function ContactPage() {
   return (
-    <>
-      <SiteNav />
-      <main>
+    <div className="hs-root">
+      <HomeNav />
 
-        {/* Hero */}
-        <section style={{ padding: '90px 32px 60px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
-          <div style={{ position: 'absolute', top: -120, left: '50%', transform: 'translateX(-50%)', width: 500, height: 340, background: 'radial-gradient(ellipse, rgba(43,196,222,.14) 0%, transparent 65%)', pointerEvents: 'none' }} />
-          <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="eyebrow" style={{ marginBottom: 18 }}>Contact</div>
-            <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 60px)', lineHeight: 1.05, letterSpacing: '-.03em', marginBottom: 18 }}>
-              Get in touch.
-            </h1>
-            <p style={{ color: '#94A2B6', fontSize: 17, marginBottom: 10 }}>
-              We read everything. You&apos;ll hear back directly from the team.
-            </p>
-            <a href="mailto:hnscorpph@gmail.com" style={{ color: '#2BC4DE', fontSize: 15, fontWeight: 600 }}>hnscorpph@gmail.com</a>
-          </div>
-        </section>
+      <section className="hs-phero" style={{ paddingBottom: 40 }}>
+        <div className="hs-wrap">
+          <div className="hs-eyebrow" style={{ marginBottom: 18 }}>Contact</div>
+          <h1>Get in touch.</h1>
+          <p className="sub">We read everything. You&apos;ll hear back directly from the team.</p>
+          <a href="mailto:hnscorpph@gmail.com" style={{ color: '#C4C0FB', fontSize: 15, fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>hnscorpph@gmail.com</a>
+        </div>
+      </section>
 
-        {/* Form */}
-        <section style={{ padding: '40px 32px 100px', background: '#0C111B', borderTop: '1px solid rgba(255,255,255,.07)' }}>
-          <div style={{ maxWidth: 640, margin: '0 auto' }}>
-            <Suspense fallback={null}>
-              <ContactForm />
-            </Suspense>
-          </div>
-        </section>
+      <section className="hs-sec" style={{ paddingTop: 10 }}>
+        <div className="hs-wrap" style={{ maxWidth: 640 }}>
+          <Suspense fallback={null}>
+            <ContactForm />
+          </Suspense>
+        </div>
+      </section>
 
-      </main>
-      <SiteFooter />
-    </>
+      <HomeFooter />
+    </div>
   );
 }

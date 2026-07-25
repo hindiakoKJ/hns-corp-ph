@@ -27,8 +27,8 @@ export default function HomeNav() {
         </Link>
 
         <nav className="hs-nlinks">
-          <a href="#products">Products</a>
-          <a href="#sovereign">Why sovereign</a>
+          <a href="/#products">Products</a>
+          <a href="/#sovereign">Why sovereign</a>
           <Link href="/compliance">Compliance</Link>
           <Link href="/about">Company</Link>
         </nav>
@@ -45,8 +45,8 @@ export default function HomeNav() {
 
       {open && (
         <div className="hs-mmenu">
-          <a href="#products" onClick={close}>Products</a>
-          <a href="#sovereign" onClick={close}>Why sovereign</a>
+          <a href="/#products" onClick={close}>Products</a>
+          <a href="/#sovereign" onClick={close}>Why sovereign</a>
           <Link href="/compliance" onClick={close}>Compliance</Link>
           <Link href="/about" onClick={close}>Company</Link>
           <Link href="/contact" className="hs-btn hs-btn-indigo" onClick={close} style={{ marginTop: 8, justifyContent: 'center' }}>Talk to us</Link>

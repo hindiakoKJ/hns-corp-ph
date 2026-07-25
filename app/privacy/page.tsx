@@ -1,6 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import '../home.css';
+import HomeNav from '@/components/ui/HomeNav';
+import HomeFooter from '@/components/ui/HomeFooter';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — HNS PH Solutions',
@@ -11,47 +13,28 @@ const LAST_UPDATED = 'May 14, 2026';
 
 export default function PrivacyPage() {
   return (
-    <>
-      {/* Mini navbar */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#020817]/80 backdrop-blur-md">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logos/hns-icon.png" width={28} height={28} alt="HNS PH Solutions" className="rounded-lg" />
-            <span className="text-sm font-semibold tracking-tight text-white">HNS PH Solutions</span>
-          </Link>
-          <Link href="/" className="text-sm font-medium text-white/60 transition-colors hover:text-white">
-            ← Back to site
-          </Link>
-        </nav>
-      </header>
-
+    <div className="hs-root">
+      <HomeNav />
       <main>
         {/* Hero */}
-        <section
-          className="relative flex flex-col items-center justify-center px-6 pb-16 pt-32 text-center"
-          style={{ background: '#020817' }}
-        >
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0"
-            style={{ height: '320px', background: 'radial-gradient(ellipse 70% 60% at 50% -10%, rgba(8,145,178,0.22) 0%, transparent 70%)' }}
-          />
+        <section className="relative flex flex-col items-center justify-center px-6 pb-16 pt-24 text-center">
           <div className="relative z-10 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-hns-400">Legal</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#C4C0FB]">Legal</p>
             <h1 className="mb-3 text-4xl font-bold tracking-tight text-white md:text-5xl">Privacy Policy</h1>
             <p className="text-base text-white/45">Last updated: {LAST_UPDATED}</p>
           </div>
         </section>
 
         {/* Content */}
-        <section className="bg-paper px-6 py-16">
-          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-ink/70">
+        <section className="bg-transparent px-6 py-16">
+          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-[#C4D0C8]">
 
             <div>
               <p>
                 HNS PH Solutions OPC (&quot;HNS PH Solutions,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting the
                 privacy of users of our website and products. This Privacy Policy explains what
                 information we collect, how we use it, and your rights under the{' '}
-                <strong className="text-ink">Republic Act 10173 — Data Privacy Act of 2012</strong> and
+                <strong className="text-[#F3F1FB]">Republic Act 10173 — Data Privacy Act of 2012</strong> and
                 its Implementing Rules and Regulations.
               </p>
             </div>
@@ -63,8 +46,8 @@ export default function PrivacyPage() {
                 families, and communities — including Clerque, SariAssist, CVAssist, Steady, and LOCATR.
               </p>
               <p className="mt-3">
-                <strong className="text-ink">Data Protection Officer / Contact:</strong>{' '}
-                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-hns-600 hover:underline">
+                <strong className="text-[#F3F1FB]">Data Protection Officer / Contact:</strong>{' '}
+                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">
                   hnscorpph@gmail.com
                 </a>
               </p>
@@ -86,7 +69,7 @@ export default function PrivacyPage() {
               </SubSection>
               <SubSection name="SariAssist">
                 <ul className="list-disc space-y-1 pl-5">
-                  <li><strong className="text-ink">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNS PH Solutions has no access to it.</li>
+                  <li><strong className="text-[#F3F1FB]">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNS PH Solutions has no access to it.</li>
                 </ul>
               </SubSection>
               <SubSection name="Steady">
@@ -113,8 +96,8 @@ export default function PrivacyPage() {
                 <li>To respond to contact form inquiries</li>
                 <li>To verify identities on LOCATR (fraud prevention and trust)</li>
                 <li>To send transactional emails (e.g., receipt of your contact form submission)</li>
-                <li>We do <strong className="text-ink">not</strong> sell personal data to third parties</li>
-                <li>We do <strong className="text-ink">not</strong> use your data for advertising targeting</li>
+                <li>We do <strong className="text-[#F3F1FB]">not</strong> sell personal data to third parties</li>
+                <li>We do <strong className="text-[#F3F1FB]">not</strong> use your data for advertising targeting</li>
               </ul>
             </Section>
 
@@ -123,9 +106,9 @@ export default function PrivacyPage() {
                 We share personal data only with:
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li><strong className="text-ink">Resend</strong> — transactional email delivery for contact form submissions (hnscorpph.com only)</li>
-                <li><strong className="text-ink">Vercel</strong> — website hosting and CDN (standard server logs)</li>
-                <li><strong className="text-ink">Philippine government agencies</strong> — only when required by law or valid legal process</li>
+                <li><strong className="text-[#F3F1FB]">Resend</strong> — transactional email delivery for contact form submissions (hnscorpph.com only)</li>
+                <li><strong className="text-[#F3F1FB]">Vercel</strong> — website hosting and CDN (standard server logs)</li>
+                <li><strong className="text-[#F3F1FB]">Philippine government agencies</strong> — only when required by law or valid legal process</li>
               </ul>
               <p className="mt-3">
                 No personal data is shared with advertisers, data brokers, or other third parties.
@@ -135,16 +118,16 @@ export default function PrivacyPage() {
             <Section title="5. Your Rights Under RA 10173">
               <p>As a data subject, you have the right to:</p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li><strong className="text-ink">Access</strong> — request a copy of personal data we hold about you</li>
-                <li><strong className="text-ink">Correction</strong> — request correction of inaccurate or incomplete data</li>
-                <li><strong className="text-ink">Erasure</strong> — request deletion of your personal data, subject to legal retention obligations</li>
-                <li><strong className="text-ink">Object</strong> — object to processing of your personal data for legitimate interests</li>
-                <li><strong className="text-ink">Data portability</strong> — receive your data in a structured, machine-readable format</li>
-                <li><strong className="text-ink">Complaint</strong> — file a complaint with the National Privacy Commission (privacy.gov.ph)</li>
+                <li><strong className="text-[#F3F1FB]">Access</strong> — request a copy of personal data we hold about you</li>
+                <li><strong className="text-[#F3F1FB]">Correction</strong> — request correction of inaccurate or incomplete data</li>
+                <li><strong className="text-[#F3F1FB]">Erasure</strong> — request deletion of your personal data, subject to legal retention obligations</li>
+                <li><strong className="text-[#F3F1FB]">Object</strong> — object to processing of your personal data for legitimate interests</li>
+                <li><strong className="text-[#F3F1FB]">Data portability</strong> — receive your data in a structured, machine-readable format</li>
+                <li><strong className="text-[#F3F1FB]">Complaint</strong> — file a complaint with the National Privacy Commission (privacy.gov.ph)</li>
               </ul>
               <p className="mt-3">
                 To exercise any of these rights, email{' '}
-                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-hns-600 hover:underline">
+                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">
                   hnscorpph@gmail.com
                 </a>{' '}
                 with the subject line &quot;Privacy Request — [your name].&quot; We will respond within 15 business days.
@@ -195,18 +178,15 @@ export default function PrivacyPage() {
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-ink/8 bg-paper px-6 py-8 text-center text-xs text-ink/40">
-        © 2026 HNS PH Solutions OPC · <Link href="/compliance" className="hover:text-ink">Compliance</Link> · <Link href="/terms" className="hover:text-ink">Terms</Link>
-      </footer>
-    </>
+      <HomeFooter />
+    </div>
   );
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-4 text-lg font-bold tracking-tight text-ink">{title}</h2>
+      <h2 className="mb-4 text-lg font-bold tracking-tight text-[#F3F1FB]">{title}</h2>
       {children}
     </div>
   );
@@ -215,7 +195,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubSection({ name, children }: { name: string; children: React.ReactNode }) {
   return (
     <div className="mt-4">
-      <h3 className="mb-2 text-sm font-semibold text-ink">{name}</h3>
+      <h3 className="mb-2 text-sm font-semibold text-[#F3F1FB]">{name}</h3>
       {children}
     </div>
   );
