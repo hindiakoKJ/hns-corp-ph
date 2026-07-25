@@ -61,7 +61,7 @@
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image:
     linear-gradient(135deg, rgba(13,12,34,.90) 0%, rgba(34,29,84,.78) 52%, rgba(10,11,26,.94) 100%),
-    var(--hero-img, none);
+    var(--hero-img, url('/hero-bg.jpg'));
   background-size: cover, cover; background-position: center, center;
 }
 .hs-hero-bg::after { /* base indigo even with no photo */
