@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* nav */}
       <header className="hs-nav">
         <div className="hs-wrap hs-nav-in">
-          <Link href="/" className="hs-brand"><span className="mk"><Mark size={27} /></span>HNS PH Solutions</Link>
+          <Link href="/" className="hs-brand"><span className="mk"><Mark size={27} /></span>HNS PH Solutions<span className="opc">OPC</span></Link>
           <nav className="hs-nlinks">
             <a href="#products">Products</a>
             <a href="#sovereign">Why sovereign</a>
@@ -135,7 +135,7 @@ export default function HomePage() {
       <footer className="hs-foot">
         <div className="hs-wrap hs-foot-in">
           <div>
-            <Link href="/" className="hs-brand"><span className="mk"><Mark size={24} /></span>HNS PH Solutions</Link>
+            <Link href="/" className="hs-brand"><span className="mk"><Mark size={24} /></span>HNS PH Solutions<span className="opc">OPC</span></Link>
             <p className="fd">Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.</p>
           </div>
           <div className="hs-foot-col">

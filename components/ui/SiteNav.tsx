@@ -12,7 +12,7 @@ export default function SiteNav() {
       <div className="nav-in">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <img src={HNS_LOGO} alt="" width={28} height={28} style={{ borderRadius: 8 }} />
-          <span>HNS PH Solutions</span>
+          <span>HNS PH Solutions</span><span className="opc">OPC</span>
         </Link>
 
         <div className="nlinks">

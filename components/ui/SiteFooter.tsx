@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div>
           <Link href="/" className="brand">
             <img src={HNS_LOGO} alt="" width={26} height={26} style={{ borderRadius: 8 }} />
-            <span>HNS PH Solutions</span>
+            <span>HNS PH Solutions</span><span className="opc">OPC</span>
           </Link>
           <p className="fd">
             Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.
