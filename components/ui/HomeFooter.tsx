@@ -18,7 +18,7 @@ export default function HomeFooter() {
     <footer className="hs-foot">
       <div className="hs-wrap hs-foot-in">
         <div>
-          <Link href="/" className="hs-brand"><span className="mk"><Mark size={24} /></span>HNS PH Solutions<span className="opc">OPC</span></Link>
+          <Link href="/" className="hs-brand"><span className="mk"><Mark size={24} /></span><span className="wm">HNS PH Solutions<span className="opc">OPC</span></span></Link>
           <p className="fd">Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.</p>
         </div>
         <div className="hs-foot-col">
