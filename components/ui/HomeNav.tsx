@@ -23,7 +23,7 @@ export default function HomeNav() {
     <header className="hs-nav">
       <div className="hs-wrap hs-nav-in">
         <Link href="/" className="hs-brand" onClick={close}>
-          <span className="mk"><Mark size={26} /></span>HNS PH Solutions<span className="opc">OPC</span>
+          <span className="mk"><Mark size={26} /></span><span className="wm">HNS PH Solutions<span className="opc">OPC</span></span>
         </Link>
 
         <nav className="hs-nlinks">
