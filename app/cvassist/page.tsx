@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import CVAssistSim from '@/components/ui/sims/CVAssistSim';
 
 export default function CVAssistPage() {
   return (
     <ProductPage
       name="CVAssist" logo="/logos/cvassist-icon.svg" accent="#8B7CF7"
       url="https://cvassist.cc"
+      sim={<CVAssistSim />}
       h1="Your AI co-pilot for landing the next role."
       sub="Upload your CV, find matching jobs, and get a tailored CV, cover letter, and screening answers for each one. You always click submit — CVAssist just preps everything."
       primaryCta="Start free" secondaryCta={{ label: 'Request demo', href: '/contact' }}

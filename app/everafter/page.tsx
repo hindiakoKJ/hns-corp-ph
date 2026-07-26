@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import EverafterSim from '@/components/ui/sims/EverafterSim';
 
 export default function EverafterPage() {
   return (
     <ProductPage
       name="Everafter" logo="/logos/everafter-icon.svg" accent="#6FB894"
       url="https://everafter.hnscorpph.com"
+      sim={<EverafterSim />}
       h1="Beautiful Filipino wedding websites. Built in minutes."
       sub="RSVP, gallery, venue, schedule, and a built-in Scatto camera — everything guests need on one elegant page."
       primaryCta="Create your site" secondaryCta={{ label: 'Learn about Scatto', href: '/scatto' }}

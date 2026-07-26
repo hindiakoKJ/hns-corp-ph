@@ -171,6 +171,124 @@
 .hs-shot-pname { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: 22px; color: #F3F1FB; }
 .hs-shot-plabel { font-family: var(--font-hanken), sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
 
+/* ── app simulation (animated fake UI inside the browser frame) ───────────── */
+.sim { position: absolute; inset: 0; overflow: hidden; text-align: left; font-family: var(--font-hanken), sans-serif; }
+.sim::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3;
+  background: linear-gradient(115deg, transparent 36%, rgba(255,255,255,.06) 50%, transparent 64%);
+  transform: translateX(-120%); animation: simSweep 7s ease-in-out infinite; }
+@keyframes simSweep { 0% { transform: translateX(-120%); } 55%, 100% { transform: translateX(120%); } }
+@keyframes simPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes simBar { 0%, 100% { transform: scaleY(.34); } 46% { transform: scaleY(1); } }
+
+/* Clerque — dashboard */
+.sim-clq { background: linear-gradient(180deg, #10162490, #0D1220); padding: clamp(12px, 2.2vw, 20px); display: flex; flex-direction: column; gap: clamp(8px, 1.6vw, 14px); }
+.sim-clq .top { display: flex; align-items: center; gap: 12px; }
+.sim-clq .brand { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(12px, 1.5vw, 15px); color: #EAF1F9; }
+.sim-clq .tabs { display: flex; gap: 5px; }
+.sim-clq .tabs span { font-size: 10.5px; color: #6C7593; padding: 4px 9px; border-radius: 6px; }
+.sim-clq .tabs span.on { color: #C4C0FB; background: rgba(139,124,247,.16); }
+.sim-clq .live { margin-left: auto; font-size: 9.5px; color: #46C168; display: inline-flex; align-items: center; gap: 5px; text-transform: uppercase; letter-spacing: .12em; }
+.sim-clq .live i { width: 6px; height: 6px; border-radius: 50%; background: #46C168; animation: simPulse 1.6s ease-in-out infinite; }
+.sim-clq .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.sim-clq .kpi { background: #151C2C; border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: clamp(8px, 1.4vw, 13px); }
+.sim-clq .kpi small { display: block; font-size: 9.5px; color: #6C7593; margin-bottom: 5px; }
+.sim-clq .kpi b { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(15px, 2vw, 21px); color: #EAF1F9; display: block; line-height: 1; }
+.sim-clq .kpi em { font-style: normal; font-size: 9.5px; color: #46C168; }
+.sim-clq .chart { flex: 1; min-height: 0; display: flex; align-items: flex-end; gap: clamp(4px, .8vw, 7px); background: #151C2C; border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: clamp(10px, 1.6vw, 16px); }
+.sim-clq .bar { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #8B7CF7, #6D5EF0); transform-origin: bottom; animation: simBar 4.5s ease-in-out infinite; }
+.sim-clq .bar.hl { background: linear-gradient(180deg, #C4C0FB, #8B7CF7); }
+/* reusable sim keyframes */
+@keyframes simRise { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+@keyframes simBeat { 0%, 100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.025); filter: brightness(1.14); } }
+@keyframes simBreathe { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+@keyframes cvFill { 0% { stroke-dashoffset: 327; } 45%, 100% { stroke-dashoffset: 26; } }
+@keyframes cvType { 0% { transform: scaleX(0); opacity: .35; } 34%, 100% { transform: scaleX(1); opacity: 1; } }
+
+/* SariAssist — POS checkout */
+.sim-sari { display: flex; gap: clamp(8px, 1.4vw, 13px); padding: clamp(12px, 2.2vw, 20px); background: linear-gradient(180deg, #16110D, #0F0C09); }
+.sim-sari .cart { flex: 1.55; background: #1B1512; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: clamp(10px, 1.6vw, 14px); display: flex; flex-direction: column; min-height: 0; }
+.sim-sari .chead { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.sim-sari .chead span { font-family: var(--font-fraunces), serif; font-weight: 600; color: #F4EDE6; font-size: clamp(12px, 1.5vw, 15px); }
+.sim-sari .chead small { color: #8A7C6E; font-size: 10px; }
+.sim-sari .lines { display: flex; flex-direction: column; gap: 3px; }
+.sim-sari .li { display: flex; align-items: center; gap: 9px; padding: clamp(5px, 1vw, 7px) 8px; border-radius: 8px; font-size: clamp(10px, 1.25vw, 12.5px); color: #D9CFC4; animation: simRise .5s both; }
+.sim-sari .li .q { color: #E8A24E; font-weight: 700; min-width: 20px; }
+.sim-sari .li .n { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sim-sari .li .p { color: #F4EDE6; font-variant-numeric: tabular-nums; }
+.sim-sari .li.fresh { background: rgba(232,162,78,.14); }
+.sim-sari .pay { flex: 1; background: #1B1512; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: clamp(10px, 1.6vw, 14px); display: flex; flex-direction: column; gap: 6px; }
+.sim-sari .pay .row { display: flex; justify-content: space-between; font-size: 11px; color: #8A7C6E; }
+.sim-sari .pay .row b { color: #D9CFC4; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sim-sari .pay .tot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.08); }
+.sim-sari .pay .tot span { color: #F4EDE6; font-size: 12px; }
+.sim-sari .pay .tot b { font-family: var(--font-fraunces), serif; font-weight: 600; color: #F4EDE6; font-size: clamp(17px, 2.4vw, 24px); }
+.sim-sari .charge { margin-top: auto; text-align: center; font-weight: 700; font-size: clamp(11px, 1.4vw, 13px); color: #1A1006; padding: clamp(8px, 1.4vw, 11px); border-radius: 10px; background: linear-gradient(180deg, #F0B064, #E8A24E); box-shadow: 0 8px 20px -8px rgba(232,162,78,.7); animation: simBeat 2.6s ease-in-out infinite; }
+.sim-sari .tender { display: flex; gap: 5px; }
+.sim-sari .tender span { flex: 1; text-align: center; font-size: 9.5px; color: #8A7C6E; padding: 5px 0; border-radius: 6px; border: 1px solid rgba(255,255,255,.07); }
+.sim-sari .tender span.on { color: #E8A24E; border-color: rgba(232,162,78,.4); background: rgba(232,162,78,.1); }
+
+/* AltSpaceCW — booking calendar */
+.sim-alt { display: flex; flex-direction: column; gap: clamp(8px, 1.6vw, 13px); padding: clamp(12px, 2.2vw, 20px); background: linear-gradient(180deg, #14111F, #0D0B16); }
+.sim-alt .ahead { display: flex; align-items: center; gap: 10px; }
+.sim-alt .ahead .brand { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(12px, 1.5vw, 15px); color: #ECE9FB; }
+.sim-alt .ahead small { color: #6E688C; font-size: 10px; }
+.sim-alt .ahead .live { margin-left: auto; font-size: 9.5px; color: #9B7BF0; display: inline-flex; align-items: center; gap: 5px; text-transform: uppercase; letter-spacing: .12em; }
+.sim-alt .ahead .live i { width: 6px; height: 6px; border-radius: 50%; background: #9B7BF0; animation: simPulse 1.6s ease-in-out infinite; }
+.sim-alt .grid { flex: 1; min-height: 0; display: flex; gap: clamp(5px, 1vw, 9px); }
+.sim-alt .day { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.sim-alt .day .dl { font-size: 9.5px; color: #6E688C; text-align: center; }
+.sim-alt .day .track { position: relative; flex: 1; background: #171426; border: 1px solid rgba(255,255,255,.05); border-radius: 8px; }
+.sim-alt .blk { position: absolute; left: 3px; right: 3px; border-radius: 5px; background: rgba(155,123,240,.32); border: 1px solid rgba(155,123,240,.45); animation: simRise .5s both; }
+.sim-alt .blk.hot { background: linear-gradient(180deg, #A98DF4, #8B6BEA); border-color: transparent; box-shadow: 0 6px 16px -6px rgba(155,123,240,.8); animation: simRise .5s both, simBeat 2.4s ease-in-out .5s infinite; }
+
+/* Scatto — live photo wall */
+.sim-scatto { display: flex; flex-direction: column; gap: clamp(8px, 1.6vw, 12px); padding: clamp(12px, 2.2vw, 18px); background: linear-gradient(180deg, #1A100D, #100A08); }
+.sim-scatto .shead { display: flex; align-items: center; gap: 10px; }
+.sim-scatto .shead .brand { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(12px, 1.5vw, 15px); color: #F6E9E4; }
+.sim-scatto .shead small { color: #927A72; font-size: 10px; }
+.sim-scatto .shead .live { margin-left: auto; font-size: 9.5px; color: #E0573B; display: inline-flex; align-items: center; gap: 5px; font-variant-numeric: tabular-nums; }
+.sim-scatto .shead .live i { width: 6px; height: 6px; border-radius: 50%; background: #E0573B; animation: simPulse 1.6s ease-in-out infinite; }
+.sim-scatto .wall { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: clamp(4px, .9vw, 7px); }
+.sim-scatto .tile { border-radius: 7px; opacity: 1; animation: simBreathe 3.4s ease-in-out infinite; }
+.sim-scatto .tile.fresh { outline: 2px solid #E0573B; outline-offset: 1px; animation: simBeat 2.4s ease-in-out infinite; }
+
+/* Everafter — wedding page + RSVP */
+.sim-ever { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(5px, 1vw, 9px); text-align: center; padding: clamp(14px, 2.4vw, 22px); background: radial-gradient(120% 90% at 50% 0%, #16241E, #0C1310); }
+.sim-ever .mono { font-family: var(--font-fraunces), serif; font-weight: 500; font-size: clamp(20px, 3.4vw, 34px); color: #EAF3EE; letter-spacing: .04em; }
+.sim-ever .mono span { color: #6FB894; }
+.sim-ever .names { font-family: var(--font-fraunces), serif; font-size: clamp(13px, 1.7vw, 17px); color: #CFE3D9; }
+.sim-ever .date { font-size: clamp(9.5px, 1.2vw, 11px); color: #6F8A7D; letter-spacing: .18em; text-transform: uppercase; }
+.sim-ever .rsvp { margin-top: clamp(4px, 1vw, 9px); width: min(88%, 320px); background: rgba(255,255,255,.03); border: 1px solid rgba(111,184,148,.2); border-radius: 12px; padding: clamp(9px, 1.6vw, 14px); }
+.sim-ever .rsvp .q { display: block; font-size: clamp(10px, 1.25vw, 12px); color: #CFE3D9; margin-bottom: 8px; }
+.sim-ever .rsvp .opts { display: flex; gap: 6px; }
+.sim-ever .rsvp .opts span { flex: 1; text-align: center; font-size: clamp(9px, 1.15vw, 11px); padding: 7px 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,.1); color: #8FA69B; }
+.sim-ever .rsvp .opts span.on { color: #0D140F; font-weight: 700; border-color: transparent; background: linear-gradient(180deg, #83C7A5, #6FB894); box-shadow: 0 8px 18px -8px rgba(111,184,148,.7); animation: simBeat 2.6s ease-in-out infinite; }
+.sim-ever .count { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; color: #6F8A7D; }
+.sim-ever .count i { width: 6px; height: 6px; border-radius: 50%; background: #6FB894; animation: simPulse 1.6s ease-in-out infinite; }
+
+/* CVAssist — CV → match ring → tailored letter */
+.sim-cv { display: flex; align-items: center; gap: clamp(8px, 1.6vw, 16px); padding: clamp(12px, 2.2vw, 20px); background: linear-gradient(180deg, #12111F, #0C0B16); }
+.sim-cv .doc, .sim-cv .letter { flex: 1; align-self: stretch; background: #17162A; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: clamp(9px, 1.5vw, 13px); display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sim-cv .dt { font-size: 9.5px; color: #726CA0; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 3px; }
+.sim-cv .doc i { height: 6px; border-radius: 3px; background: rgba(255,255,255,.14); }
+.sim-cv .match { flex: 1.15; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.sim-cv .ring { width: clamp(66px, 9vw, 100px); height: auto; }
+.sim-cv .ring .trk { fill: none; stroke: rgba(255,255,255,.09); stroke-width: 10; }
+.sim-cv .ring .prg { fill: none; stroke: #8B7CF7; stroke-width: 10; stroke-linecap: round; stroke-dasharray: 327; stroke-dashoffset: 26; transform: rotate(-90deg); transform-origin: 60px 60px; animation: cvFill 4.5s ease-in-out infinite; }
+.sim-cv .pct { position: absolute; top: calc(50% - 8px); left: 0; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.sim-cv .pct b { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(17px, 2.4vw, 25px); color: #ECEAFB; }
+.sim-cv .pct small { font-size: 8.5px; color: #726CA0; text-transform: uppercase; letter-spacing: .1em; margin-top: 2px; }
+.sim-cv .role { font-size: clamp(9px, 1.15vw, 11px); color: #A7A2CE; text-align: center; }
+.sim-cv .letter .ty { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #8B7CF7, #6D5EF0); transform-origin: left; transform: scaleX(1); animation: cvType 4.5s ease-in-out infinite; }
+.sim-cv .letter .ty:nth-child(2) { width: 92%; } .sim-cv .letter .ty:nth-child(3) { width: 78%; }
+.sim-cv .letter .ty:nth-child(4) { width: 96%; } .sim-cv .letter .ty:nth-child(5) { width: 70%; }
+.sim-cv .letter .ty:nth-child(6) { width: 88%; } .sim-cv .letter .ty:nth-child(7) { width: 60%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sim *, .sim::after { animation: none !important; }
+  .sim-cv .letter .ty { transform: scaleX(1); }
+}
+
 /* simple info rows (compliance / about facts) */
 .hs-rows { display: flex; flex-direction: column; gap: 12px; }
 .hs-row { background: rgba(22,25,33,.55); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; display: flex; justify-content: space-between; gap: 16px; font-family: var(--font-hanken), sans-serif; }

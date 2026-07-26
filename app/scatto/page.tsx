@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import ScattoSim from '@/components/ui/sims/ScattoSim';
 
 export default function ScattoPage() {
   return (
     <ProductPage
       name="Scatto" logo="/logos/scatto-icon.svg" accent="#E0573B"
       url="https://scatto.hnscorpph.com"
+      sim={<ScattoSim />}
       h1="A disposable camera for every event. No app required."
       sub="Guests scan a QR code and shoot. You get all the candid photos in one shared album."
       primaryCta="Try Scatto" secondaryCta={{ label: 'See Everafter bundle', href: '/everafter' }}

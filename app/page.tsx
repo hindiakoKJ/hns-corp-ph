@@ -4,7 +4,7 @@ import HomeFinder from '@/components/ui/HomeFinder';
 import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
 
-const APP_LOGIN = 'https://clerque.hnscorpph.com/login';
+const APP_LOGIN = 'https://clerque.cc/';
 
 const PILLARS = [
   { h: 'Sovereign by design', p: 'Records live on Philippine infrastructure, encrypted, yours to export on day one.' },

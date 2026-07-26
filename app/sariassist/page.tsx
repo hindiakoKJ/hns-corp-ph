@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import SariAssistSim from '@/components/ui/sims/SariAssistSim';
 
 export default function SariAssistPage() {
   return (
     <ProductPage
       name="SariAssist" logo="/logos/sariassist-icon.svg" accent="#E8A24E"
       url="https://sariassist.hnscorpph.com"
+      sim={<SariAssistSim />}
       h1="Ang katuwang ng bawat tindahan."
       sub="Simple at mabilis para sa sari-sari stores, carinderia, at maliliit na negosyo sa Pilipinas."
       primaryCta="I-try ang SariAssist" secondaryCta={{ label: 'Makipag-ugnayan', href: '/contact' }}

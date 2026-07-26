@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import ClerqueSim from '@/components/ui/sims/ClerqueSim';
 
 export default function ClerquePage() {
   return (
     <ProductPage
       name="Clerque" logo="/logos/clerque-icon.png" accent="#8B93F7"
-      url="https://clerque.hnscorpph.com/login"
+      url="https://clerque.cc/"
+      sim={<ClerqueSim />}
       h1="The Filipino business suite that runs offline."
       sub="POS, ledger, sync, and BIR-ready reports — one tool designed around how Philippine MSMEs actually work."
       primaryCta="Open Clerque" secondaryCta={{ label: 'Request demo', href: '/contact' }}

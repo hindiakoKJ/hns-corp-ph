@@ -42,7 +42,7 @@ export default function TermsPage() {
               <p>HNS PH Solutions operates the following products, each subject to these Terms:</p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li><strong className="text-[#F3F1FB]">hnscorpph.com</strong> — corporate website and product information</li>
-                <li><strong className="text-[#F3F1FB]">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.hnscorpph.com)</li>
+                <li><strong className="text-[#F3F1FB]">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.cc)</li>
                 <li><strong className="text-[#F3F1FB]">SariAssist</strong> — point-of-sale app for sari-sari stores and micro-retailers (live at sariassist.hnscorpph.com)</li>
                 <li><strong className="text-[#F3F1FB]">Steady</strong> — health companion app for people living with epilepsy (live at steady.hnscorpph.com)</li>
                 <li><strong className="text-[#F3F1FB]">LOCATR</strong> — verified rental matchmaking app for the Philippines (locatr.hnscorpph.com)</li>

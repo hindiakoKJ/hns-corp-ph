@@ -15,6 +15,8 @@ export interface ProductPageProps {
   note?: string;
   /** path to an app screenshot, e.g. /shots/clerque.png — placeholder shown if omitted */
   shot?: string;
+  /** an animated app simulation to show in the frame (takes priority over the placeholder, below a real shot) */
+  sim?: React.ReactNode;
   featuresHeading: string;
   features: { icon: FeatureIconName; title: string; body: string }[];
   ctaHeading: string;
@@ -53,6 +55,8 @@ export default function ProductPage(p: ProductPageProps) {
             <div className="hs-shot-body">
               {p.shot ? (
                 <img src={p.shot} alt={`${p.name} app screenshot`} />
+              ) : p.sim ? (
+                p.sim
               ) : (
                 <>
                   <span className="hs-shot-plogo"><img src={p.logo} alt="" /></span>

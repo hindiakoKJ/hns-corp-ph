@@ -1,11 +1,13 @@
 import '../home.css';
 import ProductPage from '@/components/ui/ProductPage';
+import AltSpaceCWSim from '@/components/ui/sims/AltSpaceCWSim';
 
 export default function AltSpaceCWPage() {
   return (
     <ProductPage
       name="AltSpaceCW" logo="/logos/altspacecw-icon.svg" accent="#9B7BF0"
       url="https://altspacecw.hnscorpph.com"
+      sim={<AltSpaceCWSim />}
       h1="Co-working management, without the spreadsheets."
       sub="Booking, check-in, billing, and member management — purpose-built for Philippine co-working spaces."
       primaryCta="Try AltSpaceCW" secondaryCta={{ label: 'Book a demo', href: '/contact' }}
