@@ -29,6 +29,6 @@ export const ECO_PRODUCTS: EcoProduct[] = [
   { key: 'CVAssist',      name: 'CVAssist',      accent: '#4F46E5', kind: 'AI job-application co-pilot',              status: 'live', href: '/cvassist',                         logo: '/logos/cvassist-icon.svg' },
   { key: 'Sangguni',      name: 'Sangguni',      accent: '#5B8BF0', kind: 'Government · LGU',                        status: 'live', href: '#', gov: true,                       logo: '/logos/sangguni-icon.svg' },
   { key: 'KonekBarangay', name: 'KonekBarangay', accent: '#3D7BFF', kind: 'Government · Barangay level',             status: 'live', href: '#', gov: true,                       logo: '/logos/konekbarangay-icon.svg' },
-  { key: 'Steady',        name: 'Steady',        accent: '#37D9A0', kind: 'Health companion — seizure logging',      status: 'live', href: 'https://steady.hnscorpph.com',      logo: '/logos/steady-icon.png' },
+  { key: 'Steady',        name: 'Steady',        accent: '#37D9A0', kind: 'Health companion — seizure logging',      status: 'live', href: '/steady',                           logo: '/logos/steady-icon.png' },
   { key: 'LOCATR',        name: 'LOCATR',        accent: '#2BC4DE', kind: 'Verified rental · Philippines',           status: 'soon', href: 'https://locatr.hnscorpph.com',      logo: '/logos/locatr-icon.svg' },
 ];

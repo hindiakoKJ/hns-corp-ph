@@ -284,6 +284,29 @@
 .sim-cv .letter .ty:nth-child(4) { width: 96%; } .sim-cv .letter .ty:nth-child(5) { width: 70%; }
 .sim-cv .letter .ty:nth-child(6) { width: 88%; } .sim-cv .letter .ty:nth-child(7) { width: 60%; }
 
+/* Steady — safety hub */
+@keyframes steadyHalo { 0% { transform: scale(.4); opacity: .55; } 80% { opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+.sim-steady { display: flex; flex-direction: column; gap: clamp(6px, 1.4vw, 12px); padding: clamp(12px, 2.2vw, 20px); background: linear-gradient(180deg, #0E1620, #0A0F16); }
+.sim-steady .top { display: flex; align-items: center; justify-content: space-between; }
+.sim-steady .who { display: inline-flex; align-items: center; gap: 8px; color: #D6E4E0; font-size: clamp(10px, 1.3vw, 12.5px); }
+.sim-steady .who .ava { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-weight: 700; font-size: 11px; color: #0A0F16; background: linear-gradient(180deg, #4FE3B4, #37D9A0); }
+.sim-steady .who b { font-weight: 600; }
+.sim-steady .who small { color: #6B7D78; font-size: 9.5px; }
+.sim-steady .mon { display: inline-flex; align-items: center; gap: 5px; color: #37D9A0; font-size: 9.5px; text-transform: uppercase; letter-spacing: .12em; }
+.sim-steady .mon i { width: 6px; height: 6px; border-radius: 50%; background: #37D9A0; animation: simPulse 1.6s ease-in-out infinite; }
+.sim-steady .core { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.sim-steady .halo { position: relative; width: clamp(58px, 11vw, 96px); height: clamp(58px, 11vw, 96px); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.sim-steady .ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid #37D9A0; opacity: 0; animation: steadyHalo 3.2s ease-out infinite; }
+.sim-steady .ring.d2 { animation-delay: 1.07s; }
+.sim-steady .ring.d3 { animation-delay: 2.13s; }
+.sim-steady .disc { width: 50%; height: 50%; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4FE3B4; z-index: 2; background: radial-gradient(circle, rgba(55,217,160,.3), rgba(55,217,160,.08)); border: 1px solid rgba(55,217,160,.5); }
+.sim-steady .calm { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(14px, 2vw, 20px); color: #EAF4F0; }
+.sim-steady .core small { color: #6B7D78; font-size: clamp(9px, 1.15vw, 11px); }
+.sim-steady .beacon { display: flex; align-items: center; gap: 8px; font-size: clamp(9px, 1.15vw, 11px); color: #B7C7C2; background: rgba(55,217,160,.09); border: 1px solid rgba(55,217,160,.24); border-radius: 9px; padding: clamp(7px, 1.2vw, 10px) 11px; }
+.sim-steady .beacon .bi { font-size: 8.5px; font-weight: 800; letter-spacing: .1em; color: #0A0F16; background: linear-gradient(180deg, #4FE3B4, #37D9A0); padding: 3px 7px; border-radius: 5px; }
+.sim-steady .foot { display: flex; align-items: center; justify-content: space-between; font-size: 9.5px; color: #6B7D78; }
+.sim-steady .foot .free { color: #37D9A0; border: 1px solid rgba(55,217,160,.3); border-radius: 5px; padding: 3px 7px; }
+
 @media (prefers-reduced-motion: reduce) {
   .sim *, .sim::after { animation: none !important; }
   .sim-cv .letter .ty { transform: scaleX(1); }
