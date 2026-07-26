@@ -13,6 +13,8 @@ export interface ProductPageProps {
   primaryCta: string;
   secondaryCta?: { label: string; href: string };
   note?: string;
+  /** path to an app screenshot, e.g. /shots/clerque.png — placeholder shown if omitted */
+  shot?: string;
   featuresHeading: string;
   features: { icon: FeatureIconName; title: string; body: string }[];
   ctaHeading: string;
@@ -21,6 +23,8 @@ export interface ProductPageProps {
 }
 
 export default function ProductPage(p: ProductPageProps) {
+  let host = p.url;
+  try { host = new URL(p.url).host; } catch { /* keep raw */ }
   return (
     <div className="hs-root">
       <HomeNav />
@@ -38,6 +42,26 @@ export default function ProductPage(p: ProductPageProps) {
             {p.secondaryCta && <Link href={p.secondaryCta.href} className="hs-btn hs-btn-ghost">{p.secondaryCta.label}</Link>}
           </div>
           {p.note && <p className="note">{p.note}</p>}
+
+          {/* app screenshot frame (placeholder until a real shot is dropped in) */}
+          <div className="hs-shot">
+            <div className="hs-shot-bar">
+              <div className="hs-shot-dots"><i /><i /><i /></div>
+              <span className="hs-shot-url">{host}</span>
+              <div className="hs-shot-sp" />
+            </div>
+            <div className="hs-shot-body">
+              {p.shot ? (
+                <img src={p.shot} alt={`${p.name} app screenshot`} />
+              ) : (
+                <>
+                  <span className="hs-shot-plogo"><img src={p.logo} alt="" /></span>
+                  <span className="hs-shot-pname">{p.name}</span>
+                  <span className="hs-shot-plabel">App preview coming soon</span>
+                </>
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
