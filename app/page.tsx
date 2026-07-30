@@ -3,6 +3,7 @@ import './home.css';
 import HomeFinder from '@/components/ui/HomeFinder';
 import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
+import { FeatureIcon, type FeatureIconName } from '@/components/brand/FeatureIcons';
 
 const APP_LOGIN = 'https://clerque.cc/';
 
@@ -14,6 +15,12 @@ const PILLARS = [
 ];
 
 const CREDS = ['SEC-registered', 'BIR-registered', 'Naga City LGU', 'PhilGEPS Red Member', 'Claude for Startups', 'Google for Startups'];
+
+const CUSTOM: { icon: FeatureIconName; title: string; body: string }[] = [
+  { icon: 'calendar', title: 'Booking systems', body: 'Courts, rooms, appointments — reservations that hold up on a busy day.' },
+  { icon: 'report', title: 'Internal tools', body: 'The dashboard or workflow your team keeps rebuilding in spreadsheets.' },
+  { icon: 'mobile', title: 'Client web apps', body: 'Public sites and apps, shipped under your name — not ours.' },
+];
 
 export default function HomePage() {
   return (
@@ -70,6 +77,38 @@ export default function HomePage() {
           <div style={{ marginTop: 64 }}>
             <div className="hs-eyebrow">Registered where it counts</div>
             <div className="hs-creds">{CREDS.map((c) => <span className="hs-cred" key={c}>{c}</span>)}</div>
+          </div>
+        </div>
+      </section>
+
+      {/* commissioned / custom builds */}
+      <section className="hs-sec" id="custom">
+        <div className="hs-wrap">
+          <div className="hs-eyebrow" style={{ marginBottom: 14 }}>Commissioned builds</div>
+          <h2 className="hs-sec-h">The same hands build yours.</h2>
+          <p className="hs-sec-p">
+            Ten products carry our name. Commission a build and it&apos;s the same founder, the same code,
+            PH-hosted — no agency layers between your idea and the person who ships it.
+          </p>
+
+          <div className="hs-fgrid">
+            {CUSTOM.map((c) => (
+              <div className="hs-fcard" key={c.title}>
+                <div className="ic"><FeatureIcon name={c.icon} size={22} /></div>
+                <div><h4>{c.title}</h4><p>{c.body}</p></div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hs-proof">
+            <p>
+              <strong>PicklePop</strong> (<a href="https://picklepop.cc" target="_blank" rel="noopener noreferrer">picklepop.cc</a>) is one we shipped —
+              a court-booking app we built for a Philippine pickleball club, live and taking reservations today.
+            </p>
+            <div className="acts">
+              <Link href="/contact?topic=custom" className="hs-btn hs-btn-indigo">Start a build</Link>
+              <a href="https://picklepop.cc" target="_blank" rel="noopener noreferrer" className="hs-btn hs-btn-ghost">See PicklePop ↗</a>
+            </div>
           </div>
         </div>
       </section>

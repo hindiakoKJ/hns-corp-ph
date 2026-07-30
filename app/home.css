@@ -158,6 +158,14 @@
 .hs-fcard h4 { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: 18px; margin: 0 0 7px; color: #F3F1FB; }
 .hs-fcard p { font-family: var(--font-hanken), sans-serif; color: var(--mut); font-size: 14px; line-height: 1.6; margin: 0; }
 
+/* commissioned-builds proof strip */
+.hs-proof { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 34px; background: rgba(22,25,33,.5); backdrop-filter: blur(10px); border: 1px solid var(--line2); border-radius: 16px; padding: 22px 26px; }
+.hs-proof p { flex: 1 1 340px; font-family: var(--font-hanken), sans-serif; color: var(--mut); font-size: 15px; line-height: 1.65; margin: 0; max-width: 62ch; }
+.hs-proof p strong { color: #F3F1FB; font-weight: 700; }
+.hs-proof p a { color: var(--lav); text-decoration: none; border-bottom: 1px solid rgba(196,192,251,.35); }
+.hs-proof p a:hover { color: #fff; border-bottom-color: rgba(255,255,255,.6); }
+.hs-proof .acts { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+
 /* app screenshot — browser-window frame (holds a placeholder until a real shot is added) */
 .hs-shot { max-width: 900px; margin: 52px auto 0; border: 1px solid var(--line2); border-radius: 14px; overflow: hidden; background: var(--panel); box-shadow: 0 44px 100px -46px rgba(0,0,0,.85); }
 .hs-shot-bar { display: flex; align-items: center; gap: 12px; padding: 11px 15px; background: var(--panel2); border-bottom: 1px solid var(--line); }

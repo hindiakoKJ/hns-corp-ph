@@ -8,7 +8,7 @@ import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
 
 const CONCERNS: Record<string, string[]> = {
-  'HNS PH Solutions': ['Partnership inquiry', 'Press / Media', 'General question', 'Other'],
+  'HNS PH Solutions': ['Custom build', 'Partnership inquiry', 'Press / Media', 'General question', 'Other'],
   Clerque:      ['Sales inquiry', 'Technical support', 'Feature request', 'Bug report', 'Other'],
   SariAssist:   ['App feedback', 'Bug report', 'Other'],
   CVAssist:     ['App feedback', 'Bug report', 'Feature request', 'Other'],
@@ -24,6 +24,7 @@ const PRODUCTS = Object.keys(CONCERNS);
 
 const TOPIC_MAP: Record<string, { product: string; concern: string }> = {
   partnership: { product: 'HNS PH Solutions', concern: 'Partnership inquiry' },
+  custom:      { product: 'HNS PH Solutions', concern: 'Custom build' },
   sales:       { product: 'Clerque',   concern: 'Sales inquiry' },
 };
 
