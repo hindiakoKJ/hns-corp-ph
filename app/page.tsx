@@ -4,6 +4,7 @@ import HomeFinder from '@/components/ui/HomeFinder';
 import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
 import { FeatureIcon, type FeatureIconName } from '@/components/brand/FeatureIcons';
+import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
 
 const APP_LOGIN = 'https://clerque.cc/';
 
@@ -32,8 +33,8 @@ export default function HomePage() {
       <section className="hs-hero">
         <div className="hs-hero-bg" aria-hidden="true" />
         <div className="hs-hero-glow" aria-hidden="true" />
-        <div className="hs-wrap">
-          <div className="hs-hero-in">
+        <div className="hs-hero-grid">
+          <div className="hs-hero-main">
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
             <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
             <p className="hs-sub">
@@ -44,12 +45,24 @@ export default function HomePage() {
               <a href="#find" className="hs-btn hs-btn-indigo">Find your product ↓</a>
               <Link href="/about" className="hs-btn hs-btn-ghost">Our story</Link>
             </div>
-            <div className="hs-stats">
-              <div className="hs-stat"><b>11</b><span>Products shipped</span></div>
-              <div className="hs-stat"><b>100%</b><span>PH data residency</span></div>
-              <div className="hs-stat"><b>6</b><span>Registrations &amp; backers</span></div>
-            </div>
           </div>
+
+          <aside className="hs-hero-rail">
+            <div className="hs-hero-stats">
+              <div className="s"><b>11</b><span>Products shipped</span></div>
+              <div className="s"><b>100%</b><span>PH data residency</span></div>
+              <div className="s"><b>6</b><span>Registrations &amp; backers</span></div>
+            </div>
+            <div className="hs-hero-index">
+              <div className="ix-lbl">The eleven</div>
+              <ul>
+                {ECO_PRODUCTS.map((p) => (
+                  <li key={p.key}><Link href={p.href} className="ix">{p.name}</Link></li>
+                ))}
+              </ul>
+              <a href="#products" className="ix-all">Browse all eleven →</a>
+            </div>
+          </aside>
         </div>
       </section>
 
