@@ -38,14 +38,14 @@ export default function HomePage() {
             <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
             <p className="hs-sub">
               A one-founder software house in Naga City, building sovereign, BIR-compliant, offline-ready tools
-              for Filipino business, government, and life. Ten products, one login — and your data never leaves the country.
+              for Filipino business, government, and life. Eleven products, one login — and your data never leaves the country.
             </p>
             <div className="hs-acts">
               <a href="#find" className="hs-btn hs-btn-indigo">Find your product ↓</a>
               <Link href="/about" className="hs-btn hs-btn-ghost">Our story</Link>
             </div>
             <div className="hs-stats">
-              <div className="hs-stat"><b>10</b><span>Products shipped</span></div>
+              <div className="hs-stat"><b>11</b><span>Products shipped</span></div>
               <div className="hs-stat"><b>100%</b><span>PH data residency</span></div>
               <div className="hs-stat"><b>6</b><span>Registrations &amp; backers</span></div>
             </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
           </div>
           <div>
             <p className="hs-sec-p" style={{ maxWidth: 'none', margin: 0 }}>
-              HNS PH Solutions started with one accounting tool and grew into a ten-product ecosystem — from the
+              HNS PH Solutions started with one accounting tool and grew into an eleven-product ecosystem — from the
               sari-sari counter to the barangay hall. Everything is built, shipped, and hosted in the Philippines.
               Every record stays in-country.
             </p>

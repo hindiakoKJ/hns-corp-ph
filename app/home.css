@@ -116,6 +116,7 @@
 .hs-card .st { font-family: var(--font-hanken), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
 .hs-card .st.live { color: #BEEAD0; background: rgba(55,217,160,.14); }
 .hs-card .st.soon { color: var(--mut); border: 1px solid var(--line2); }
+.hs-card .st.new { color: #CFC9FF; background: rgba(109,94,240,.22); border: 1px solid rgba(109,94,240,.5); }
 .hs-card h3 { font-size: 23px; display: flex; align-items: center; gap: 8px; }
 .hs-card .gov { font-family: var(--font-hanken), sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .05em; color: #fff; background: var(--indigo); border-radius: 4px; padding: 2px 6px; }
 .hs-card .kind { font-family: var(--font-hanken), sans-serif; color: var(--mut); font-size: 14.5px; line-height: 1.55; margin: 8px 0 20px; flex: 1; }
@@ -315,6 +316,22 @@
 .sim-steady .beacon .bi { font-size: 8.5px; font-weight: 800; letter-spacing: .1em; color: #0A0F16; background: linear-gradient(180deg, #4FE3B4, #37D9A0); padding: 3px 7px; border-radius: 5px; }
 .sim-steady .foot { display: flex; align-items: center; justify-content: space-between; font-size: 9.5px; color: #6B7D78; }
 .sim-steady .foot .free { color: #37D9A0; border: 1px solid rgba(55,217,160,.3); border-radius: 5px; padding: 3px 7px; }
+
+/* Magnet Moments — die-cut magnet preview (warm-paper brand) */
+@keyframes magnetWobble { 0%, 100% { transform: rotate(-2.4deg); } 50% { transform: rotate(2.4deg); } }
+@keyframes magnetCut { to { stroke-dashoffset: -18; } }
+.sim-magnet { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(9px, 1.8vw, 14px); padding: clamp(14px, 2.4vw, 22px); background: radial-gradient(120% 100% at 50% 0%, #EFE4CC, #E2D2B0); }
+.sim-magnet .head { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-bottom: clamp(2px, 1vw, 8px); }
+.sim-magnet .brand { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(12px, 1.6vw, 16px); color: #2A2118; letter-spacing: .01em; }
+.sim-magnet .tag { font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: #927E5C; }
+.sim-magnet .magnet { position: relative; width: clamp(90px, 18vw, 138px); aspect-ratio: 1; background: #fff; border-radius: 9px; padding: 8px; box-shadow: 0 16px 30px -12px rgba(70,52,22,.55), 0 4px 9px -3px rgba(70,52,22,.35); animation: magnetWobble 5.5s ease-in-out infinite; }
+.sim-magnet .photo { width: 100%; height: 100%; border-radius: 4px; background: linear-gradient(140deg, #E29A5B 0%, #C4577E 50%, #4E6FB0 100%); }
+.sim-magnet .cut { position: absolute; inset: -7px; width: calc(100% + 14px); height: calc(100% + 14px); pointer-events: none; }
+.sim-magnet .cut rect { fill: none; stroke: #A97C2E; stroke-width: 1.4; stroke-dasharray: 5 4; animation: magnetCut 1.6s linear infinite; }
+.sim-magnet .sizes { display: flex; gap: 7px; }
+.sim-magnet .sizes span { font-size: 10px; color: #7C6A48; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(70,52,22,.22); background: rgba(255,255,255,.35); }
+.sim-magnet .sizes span.on { color: #33270F; font-weight: 700; border-color: #B98E3C; background: #fff; }
+.sim-magnet .cap { font-family: var(--font-fraunces), serif; font-style: italic; font-size: clamp(10px, 1.3vw, 12.5px); color: #6E5C3C; }
 
 @media (prefers-reduced-motion: reduce) {
   .sim *, .sim::after { animation: none !important; }

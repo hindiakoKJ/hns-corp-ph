@@ -14,7 +14,7 @@ const FACTS: [string, string][] = [
 ];
 
 const ROADMAP = [
-  { phase: 'Now', items: ['Clerque', 'SariAssist', 'AltSpaceCW', 'Scatto', 'Everafter', 'CVAssist', 'Sangguni', 'KonekBarangay', 'Steady'] },
+  { phase: 'Now', items: ['Clerque', 'SariAssist', 'AltSpaceCW', 'Scatto', 'Everafter', 'CVAssist', 'Magnet Moments', 'Sangguni', 'KonekBarangay', 'Steady'] },
   { phase: 'Next', items: ['LOCATR — rental matchmaking', 'Clerque payroll module'] },
   { phase: 'Later', items: ['National interoperability (PhilSys)', 'Multi-LGU federation', 'Healthcare records integration', 'Export-ready financial statements'] },
 ];

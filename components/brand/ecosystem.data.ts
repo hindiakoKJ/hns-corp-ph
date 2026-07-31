@@ -14,6 +14,7 @@ export interface EcoProduct {
   href: string;
   logo: string;
   gov?: boolean;
+  isNew?: boolean;
 }
 
 export const HNS_ACCENT = '#0B7080';
@@ -27,6 +28,7 @@ export const ECO_PRODUCTS: EcoProduct[] = [
   { key: 'Scatto',        name: 'Scatto',        accent: '#E0573B', kind: 'Disposable event camera',                 status: 'live', href: '/scatto',                           logo: '/logos/scatto-icon.svg' },
   { key: 'Everafter',     name: 'Everafter',     accent: '#5E9E7E', kind: 'Filipino wedding websites',               status: 'live', href: '/everafter',                        logo: '/logos/everafter-icon.svg' },
   { key: 'CVAssist',      name: 'CVAssist',      accent: '#4F46E5', kind: 'AI job-application co-pilot',              status: 'live', href: '/cvassist',                         logo: '/logos/cvassist-icon.svg' },
+  { key: 'MagnetMoments', name: 'Magnet Moments',accent: '#D4A94A', kind: 'Custom fridge magnets, cut to the mm',     status: 'live', href: '/magnetmoments', isNew: true,        logo: '/logos/magnetmoments-icon.png' },
   { key: 'Sangguni',      name: 'Sangguni',      accent: '#5B8BF0', kind: 'Government · LGU',                        status: 'live', href: '#', gov: true,                       logo: '/logos/sangguni-icon.svg' },
   { key: 'KonekBarangay', name: 'KonekBarangay', accent: '#3D7BFF', kind: 'Government · Barangay level',             status: 'live', href: '#', gov: true,                       logo: '/logos/konekbarangay-icon.svg' },
   { key: 'Steady',        name: 'Steady',        accent: '#37D9A0', kind: 'Health companion — seizure logging',      status: 'live', href: '/steady',                           logo: '/logos/steady-icon.png' },

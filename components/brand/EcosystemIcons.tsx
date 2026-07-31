@@ -144,6 +144,15 @@ export function CVAssistIcon({ color = 'currentColor', ...p }: IconProps) {
   );
 }
 
+export function MagnetMomentsIcon({ color = 'currentColor', ...p }: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M23 18 V33 a9 9 0 0 0 18 0 V18" {...stroke(color)} />
+      <path d="M17 18 H29 M35 18 H47" {...stroke(color)} />
+    </Svg>
+  );
+}
+
 export const ECO_ICONS = {
   HNScorpPH:     HNScorpPHIcon,
   Clerque:       ClerqueIcon,
@@ -154,6 +163,7 @@ export const ECO_ICONS = {
   Scatto:        ScattoIcon,
   Everafter:     EverafterIcon,
   CVAssist:      CVAssistIcon,
+  MagnetMoments: MagnetMomentsIcon,
   LOCATR:        LocatrIcon,
   KonekBarangay: KonekBarangayIcon,
 } as const;
