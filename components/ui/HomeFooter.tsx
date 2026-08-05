@@ -20,13 +20,18 @@ export default function HomeFooter() {
         <div>
           <Link href="/" className="hs-brand"><span className="mk"><Mark size={24} /></span><span className="wm">HNS PH Solutions<span className="opc">OPC</span></span></Link>
           <p className="fd">Sovereign digital infrastructure for Filipino businesses, families, and government. An SEC-, BIR-, and Naga City LGU-registered OPC.</p>
+          <address className="hs-foot-contact">
+            Unit 103, Rex Centro, Nin Kaaraman,<br />
+            Bagumbayan Sur, Naga City, Camarines Sur 4400, Philippines<br />
+            <a href="tel:+639496338541">+63 949 633 8541</a> · <a href="mailto:hnscorpph@gmail.com">hnscorpph@gmail.com</a>
+          </address>
         </div>
         <div className="hs-foot-col">
           <h4>Products</h4>
           <Link href="/clerque">Clerque</Link>
           <Link href="/sariassist">SariAssist</Link>
           <Link href="/cvassist">CVAssist</Link>
-          <Link href="/scatto">Scatto</Link>
+          <Link href="/pricing">Pricing</Link>
         </div>
         <div className="hs-foot-col">
           <h4>Platform</h4>
@@ -46,6 +51,11 @@ export default function HomeFooter() {
           <span className="lbl">Powered by</span>
           <HNSFootmark size={20} />
         </a>
+        <div className="hs-foot-legal">
+          <Link href="/terms">Terms</Link>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/refunds">Refunds</Link>
+        </div>
         <span>© {new Date().getFullYear()} HNS PH Solutions OPC · Naga City, Philippines</span>
       </div>
     </footer>

@@ -145,7 +145,15 @@ export default function ContactPage() {
           <div className="hs-eyebrow" style={{ marginBottom: 18 }}>Contact</div>
           <h1>Get in touch.</h1>
           <p className="sub">We read everything. You&apos;ll hear back directly from the team.</p>
-          <a href="mailto:hnscorpph@gmail.com" style={{ color: '#C4C0FB', fontSize: 15, fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>hnscorpph@gmail.com</a>
+          <div className="hs-contact-info">
+            <p className="who">HNS PH Solutions OPC</p>
+            <p>Unit 103, Rex Centro, Nin Kaaraman, Bagumbayan Sur,<br />Naga City, Camarines Sur 4400, Philippines</p>
+            <p>
+              <a href="tel:+639496338541">+63 949 633 8541</a>
+              {'  ·  '}
+              <a href="mailto:hnscorpph@gmail.com">hnscorpph@gmail.com</a>
+            </p>
+          </div>
         </div>
       </section>
 
