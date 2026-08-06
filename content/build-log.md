@@ -95,4 +95,4 @@ Every 60 seconds, a NestJS `@Cron` job processes pending AccountingEvents — jo
 
 This log is updated when something ships or when we make a decision worth documenting. No newsletter — follow via RSS (coming) or check back.
 
-**Contact:** hnscorpph@gmail.com
+**Contact:** support@hnscorpph.com

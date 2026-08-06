@@ -78,4 +78,4 @@ We don't list things that are just ideas. If it's not in the codebase, it's not 
 
 If you're using Clerque or Steady and there's something you want to see, let us know.
 
-**Contact:** hnscorpph@gmail.com
+**Contact:** support@hnscorpph.com

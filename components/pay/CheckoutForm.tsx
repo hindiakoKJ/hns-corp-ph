@@ -36,11 +36,11 @@ export default function CheckoutForm({ planId, amount }: { planId: string; amoun
         return;
       }
       if (res.status === 503) {
-        setErr('Card & e-wallet checkout is being finalised. To complete your order now, message us at +63 949 633 8541 or hnscorpph@gmail.com and we’ll send a secure payment link.');
+        setErr('Card & e-wallet checkout is being finalised. To complete your order now, message us at +63 949 633 8541 or support@hnscorpph.com and we’ll send a secure payment link.');
       } else if (res.status === 422) {
         setErr('Please enter your full name and email.');
       } else {
-        setErr('We couldn’t start your payment. Please try again, or contact us at hnscorpph@gmail.com.');
+        setErr('We couldn’t start your payment. Please try again, or contact us at support@hnscorpph.com.');
       }
     } catch {
       setErr('Network error. Please check your connection and try again.');

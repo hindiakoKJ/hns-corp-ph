@@ -64,7 +64,7 @@ export default function RefundsPage() {
 
             <Section title="4. How to request a refund">
               <p>
-                Email <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">hnscorpph@gmail.com</a> or call
+                Email <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">support@hnscorpph.com</a> or call
                 {' '}<a href="tel:+639496338541" className="font-medium text-[#C4C0FB] hover:underline">+63 949 633 8541</a> with your order email
                 and reason. Approved refunds are returned to your original payment method via Xendit,
                 typically within 5–10 business days depending on your bank or e-wallet.
@@ -74,7 +74,7 @@ export default function RefundsPage() {
             <Section title="5. Contact">
               <p>
                 HNS PH Solutions OPC · Unit 103, Rex Centro, Nin Kaaraman, Bagumbayan Sur, Naga City,
-                Camarines Sur 4400, Philippines · <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">hnscorpph@gmail.com</a>
+                Camarines Sur 4400, Philippines · <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">support@hnscorpph.com</a>
                 {' '}· <a href="tel:+639496338541" className="font-medium text-[#C4C0FB] hover:underline">+63 949 633 8541</a>
               </p>
             </Section>

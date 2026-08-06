@@ -151,7 +151,7 @@ export default function ContactPage() {
             <p>
               <a href="tel:+639496338541">+63 949 633 8541</a>
               {'  ·  '}
-              <a href="mailto:hnscorpph@gmail.com">hnscorpph@gmail.com</a>
+              <a href="mailto:support@hnscorpph.com">support@hnscorpph.com</a>
             </p>
           </div>
         </div>

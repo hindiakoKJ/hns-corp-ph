@@ -52,10 +52,10 @@ We build the tools that should exist but don't. Starting with the ones where we 
 
 We're a small team. If you have a question, a problem, or something you want to build together, email us.
 
-**General:** hnscorpph@gmail.com  
-**Sales / Clerque:** hnscorpph@gmail.com?subject=Sales%20Inquiry  
-**Partnership:** hnscorpph@gmail.com?subject=Partnership%20Inquiry  
-**Steady:** hnscorpph@gmail.com?subject=Steady%20Inquiry  
+**General:** support@hnscorpph.com  
+**Sales / Clerque:** support@hnscorpph.com?subject=Sales%20Inquiry  
+**Partnership:** support@hnscorpph.com?subject=Partnership%20Inquiry  
+**Steady:** support@hnscorpph.com?subject=Steady%20Inquiry  
 
 We read everything.
 

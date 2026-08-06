@@ -147,4 +147,4 @@ Steady is a free app. No subscription. No ads. No in-app purchases. We built it 
 
 **CTAs:**  
 - "Get Steady" → (App Store / Play Store link — defer until app is publicly listed)  
-- "Contact us" → mailto:hnscorpph@gmail.com?subject=Steady%20Inquiry  
+- "Contact us" → mailto:support@hnscorpph.com?subject=Steady%20Inquiry  

@@ -121,7 +121,7 @@ Clerque is available now. No setup fee. Contact us to get started.
 
 **CTAs:**  
 - Primary: "Open Clerque" → https://clerque.hnscorpph.com/login  
-- Secondary: "Contact us" → mailto:hnscorpph@gmail.com?subject=Sales%20Inquiry  
+- Secondary: "Contact us" → mailto:support@hnscorpph.com?subject=Sales%20Inquiry  
 
 ---
 
@@ -134,6 +134,6 @@ Products: Clerque · Steady
 Company: For MSMEs · Build · Roadmap · About  
 Legal: Privacy · Terms  
 
-**Contact:** hnscorpph@gmail.com
+**Contact:** support@hnscorpph.com
 
 **Copyright:** © 2026 HNScorpPH OPC. SEC OPC filing in progress.

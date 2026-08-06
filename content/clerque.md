@@ -120,4 +120,4 @@ Clerque is available now. Login to get started or contact us if you have questio
 
 **CTAs:**  
 - "Open Clerque" → https://clerque.hnscorpph.com/login (new tab)  
-- "Contact us" → mailto:hnscorpph@gmail.com?subject=Sales%20Inquiry  
+- "Contact us" → mailto:support@hnscorpph.com?subject=Sales%20Inquiry  

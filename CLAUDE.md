@@ -59,8 +59,8 @@ Repo: `hindiakoKJ/hns-corp-ph` at `E:\AI Projects\hns-corp-ph`
 | Element | URL |
 |---|---|
 | Login / Visit App / Start with Clerque | `https://clerque.hnscorpph.com/login` |
-| Partner with HNScorp | `mailto:hnscorpph@gmail.com?subject=Partnership%20Inquiry` |
-| Contact Sales | `mailto:hnscorpph@gmail.com?subject=Sales%20Inquiry` |
+| Partner with HNScorp | `mailto:support@hnscorpph.com?subject=Partnership%20Inquiry` |
+| Contact Sales | `mailto:support@hnscorpph.com?subject=Sales%20Inquiry` |
 | Privacy / Terms | `#` (deferred — no policy pages yet) |
 
 ---

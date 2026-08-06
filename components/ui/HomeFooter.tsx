@@ -23,7 +23,7 @@ export default function HomeFooter() {
           <address className="hs-foot-contact">
             Unit 103, Rex Centro, Nin Kaaraman,<br />
             Bagumbayan Sur, Naga City, Camarines Sur 4400, Philippines<br />
-            <a href="tel:+639496338541">+63 949 633 8541</a> · <a href="mailto:hnscorpph@gmail.com">hnscorpph@gmail.com</a>
+            <a href="tel:+639496338541">+63 949 633 8541</a> · <a href="mailto:support@hnscorpph.com">support@hnscorpph.com</a>
           </address>
         </div>
         <div className="hs-foot-col">

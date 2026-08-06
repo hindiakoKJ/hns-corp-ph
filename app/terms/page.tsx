@@ -61,7 +61,7 @@ export default function TermsPage() {
               <ul className="list-disc space-y-2 pl-5">
                 <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
                 <li>You are responsible for all activity that occurs under your account.</li>
-                <li>Notify us immediately at <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">hnscorpph@gmail.com</a> if you suspect unauthorized access.</li>
+                <li>Notify us immediately at <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">support@hnscorpph.com</a> if you suspect unauthorized access.</li>
                 <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
               </ul>
             </Section>
@@ -170,8 +170,8 @@ export default function TermsPage() {
             <Section title="11. Contact">
               <p>
                 Questions about these Terms? Reach us at{' '}
-                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">
-                  hnscorpph@gmail.com
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                  support@hnscorpph.com
                 </a>.
               </p>
             </Section>

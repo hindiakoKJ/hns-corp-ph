@@ -47,8 +47,8 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-3">
                 <strong className="text-[#F3F1FB]">Data Protection Officer / Contact:</strong>{' '}
-                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">
-                  hnscorpph@gmail.com
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                  support@hnscorpph.com
                 </a>
               </p>
             </Section>
@@ -127,8 +127,8 @@ export default function PrivacyPage() {
               </ul>
               <p className="mt-3">
                 To exercise any of these rights, email{' '}
-                <a href="mailto:hnscorpph@gmail.com" className="font-medium text-[#C4C0FB] hover:underline">
-                  hnscorpph@gmail.com
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                  support@hnscorpph.com
                 </a>{' '}
                 with the subject line &quot;Privacy Request — [your name].&quot; We will respond within 15 business days.
               </p>
