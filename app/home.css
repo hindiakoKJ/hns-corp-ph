@@ -468,3 +468,22 @@
   .hs-checkout { grid-template-columns: 1fr; gap: 28px; }
   .co-summary { position: static; order: -1; }
 }
+
+/* editorial mono labels — de-SaaS technical accent (headlines stay Fraunces serif) */
+.hs-eyebrow,
+.hs-badge,
+.hs-hero-stats .s span,
+.hs-hero-index .ix-lbl,
+.hs-foot h4,
+.hs-cred,
+.hs-pbadge span,
+.hs-pay .lbl,
+.hs-plan .tag,
+.co-methods span,
+.hs-footmark .lbl,
+.hs-shot-url {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+.hs-eyebrow, .hs-hero-index .ix-lbl { letter-spacing: .1em; }
+.hs-hero-stats .s span { letter-spacing: .02em; }
+.hs-badge { letter-spacing: .01em; }
