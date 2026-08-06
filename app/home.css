@@ -57,15 +57,17 @@
 .hs-btn-ghost:hover { border-color: var(--lav); color: #fff; }
 
 /* ── nav ─────────────────────────────────────────────────────────────────── */
-.hs-nav { position: sticky; top: 0; z-index: 60; background: rgba(14,16,22,.72); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.hs-nav { position: sticky; top: 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, backdrop-filter .28s ease, border-color .28s ease; }
+.hs-nav.scrolled { background: rgba(14,16,22,.72); backdrop-filter: blur(14px); border-bottom-color: var(--line); }
 .hs-nav-in { display: flex; align-items: center; gap: 26px; height: 70px; }
 .hs-brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-fraunces), serif; font-weight: 600; font-size: 21px; letter-spacing: -.01em; white-space: nowrap; flex-shrink: 0; }
 .hs-brand .mk { width: 27px; height: 27px; color: var(--lav); }
 .hs-brand .wm { white-space: nowrap; }
 .hs-brand .opc { font-size: .62em; letter-spacing: .03em; opacity: .66; margin-left: 6px; }
-.hs-nlinks { display: flex; gap: 26px; margin-left: auto; font-family: var(--font-hanken), sans-serif; }
-.hs-nlinks a { font-size: 14.5px; font-weight: 500; color: var(--mut); transition: color .14s; }
-.hs-nlinks a:hover { color: var(--txt); }
+.hs-nlinks { display: flex; gap: 3px; margin: 0 auto; padding: 5px 7px; background: rgba(255,255,255,.05); border: 1px solid var(--line2); border-radius: 999px; backdrop-filter: blur(8px); font-family: var(--font-hanken), sans-serif; }
+.hs-nlinks a { font-size: 14px; font-weight: 500; color: var(--mut); padding: 8px 15px; border-radius: 999px; transition: color .14s, background .14s; }
+.hs-nlinks a:hover { color: var(--txt); background: rgba(255,255,255,.07); }
+.hs-nav-cta { border-radius: 999px; }
 .hs-burger { display: none; margin-left: auto; width: 42px; height: 42px; align-items: center; justify-content: center; border: 1px solid var(--line2); border-radius: 9px; background: rgba(255,255,255,.03); color: var(--txt); cursor: pointer; flex-shrink: 0; }
 .hs-mmenu { display: flex; flex-direction: column; gap: 2px; padding: 10px 30px 20px; background: rgba(12,14,22,.96); backdrop-filter: blur(14px); border-top: 1px solid var(--line); }
 .hs-mmenu a { font-family: var(--font-hanken), sans-serif; font-size: 16px; font-weight: 500; color: var(--txt); padding: 13px 0; border-bottom: 1px solid var(--line); }
@@ -90,11 +92,11 @@
   position: relative; z-index: 2;
   max-width: 1720px; margin: 0 auto;
   padding: clamp(72px, 8.5vw, 116px) clamp(28px, 5vw, 72px) clamp(60px, 7vw, 96px);
-  display: grid; grid-template-columns: minmax(0, 1fr) clamp(258px, 24vw, 340px);
+  display: grid; grid-template-columns: clamp(258px, 24vw, 340px) minmax(0, 1fr);
   gap: clamp(36px, 5vw, 80px); align-items: start;
 }
 .hs-hero-main { min-width: 0; }
-.hs-hero-rail { align-self: stretch; display: flex; flex-direction: column; gap: clamp(22px, 2.6vw, 34px); border-left: 1px solid var(--line); padding-left: clamp(24px, 3vw, 44px); padding-top: 8px; }
+.hs-hero-rail { align-self: stretch; display: flex; flex-direction: column; gap: clamp(22px, 2.6vw, 34px); border-right: 1px solid var(--line); padding-right: clamp(24px, 3vw, 44px); padding-top: 8px; }
 .hs-hero-stats { display: flex; flex-direction: column; gap: 18px; }
 .hs-hero-stats .s b { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(30px, 3vw, 40px); line-height: 1; color: #F3F1FB; display: block; }
 .hs-hero-stats .s span { display: block; font-family: var(--font-hanken), sans-serif; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--mut); margin-top: 6px; }
@@ -106,8 +108,9 @@
 .hs-hero-index .ix-all:hover { color: #fff; }
 
 @media (max-width: 940px) {
-  .hs-hero-grid { grid-template-columns: 1fr; gap: 36px; padding-left: 20px; padding-right: 20px; }
-  .hs-hero-rail { border-left: none; padding-left: 0; padding-top: 26px; border-top: 1px solid var(--line); }
+  .hs-hero-grid { grid-template-columns: 1fr; gap: 30px; padding-left: 20px; padding-right: 20px; }
+  .hs-hero-main { order: -1; }
+  .hs-hero-rail { border-right: none; padding-right: 0; padding-top: 26px; border-top: 1px solid var(--line); }
   .hs-hero-stats { flex-direction: row; flex-wrap: wrap; gap: 22px 40px; }
   .hs-hero-index { display: none; }
 }

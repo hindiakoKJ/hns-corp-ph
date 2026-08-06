@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Mark({ size = 26 }: { size?: number }) {
   return (
@@ -17,10 +17,18 @@ function Mark({ size = 26 }: { size?: number }) {
 
 export default function HomeNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const close = () => setOpen(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="hs-nav">
+    <header className={`hs-nav${scrolled || open ? ' scrolled' : ''}`}>
       <div className="hs-wrap hs-nav-in">
         <Link href="/" className="hs-brand" onClick={close}>
           <span className="mk"><Mark size={26} /></span><span className="wm">HNS PH Solutions<span className="opc">OPC</span></span>

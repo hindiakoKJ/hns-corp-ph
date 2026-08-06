@@ -33,20 +33,7 @@ export default function HomePage() {
       <section className="hs-hero">
         <div className="hs-hero-bg" aria-hidden="true" />
         <div className="hs-hero-glow" aria-hidden="true" />
-        <div className="hs-hero-grid">
-          <div className="hs-hero-main">
-            <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-            <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
-            <p className="hs-sub">
-              A one-founder software house in Naga City, building sovereign, BIR-compliant, offline-ready tools
-              for Filipino business, government, and life. Eleven products, one login — and your data never leaves the country.
-            </p>
-            <div className="hs-acts">
-              <a href="#find" className="hs-btn hs-btn-indigo">Find your product ↓</a>
-              <Link href="/about" className="hs-btn hs-btn-ghost">Our story</Link>
-            </div>
-          </div>
-
+        <div className="hs-hero-grid hs-hero-right">
           <aside className="hs-hero-rail">
             <div className="hs-hero-stats">
               <div className="s"><b>11</b><span>Products shipped</span></div>
@@ -63,6 +50,19 @@ export default function HomePage() {
               <a href="#products" className="ix-all">Browse all eleven →</a>
             </div>
           </aside>
+
+          <div className="hs-hero-main">
+            <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
+            <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
+            <p className="hs-sub">
+              A one-founder software house in Naga City, building sovereign, BIR-compliant, offline-ready tools
+              for Filipino business, government, and life. Eleven products, one login — and your data never leaves the country.
+            </p>
+            <div className="hs-acts">
+              <a href="#find" className="hs-btn hs-btn-indigo">Find your product ↓</a>
+              <Link href="/about" className="hs-btn hs-btn-ghost">Our story</Link>
+            </div>
+          </div>
         </div>
       </section>
 
