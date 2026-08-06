@@ -53,7 +53,7 @@ export default function HomePage() {
 
           <div className="hs-hero-main">
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-            <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
+            <h1 className="hs-h1">Built here.<br /><span className="em">Owned</span> here.</h1>
             <p className="hs-sub">
               POS, LGU portals, wedding sites, job tools, and more — eleven Philippine-built products,
               all BIR-ready, offline-first, and hosted in the Philippines.
