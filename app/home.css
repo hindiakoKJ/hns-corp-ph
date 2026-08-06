@@ -59,7 +59,7 @@
 /* ── nav ─────────────────────────────────────────────────────────────────── */
 .hs-nav { position: sticky; top: 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, backdrop-filter .28s ease, border-color .28s ease; }
 .hs-nav.scrolled { background: rgba(14,16,22,.72); backdrop-filter: blur(14px); border-bottom-color: var(--line); }
-.hs-nav-in { display: flex; align-items: center; gap: 26px; height: 70px; }
+.hs-nav-in { display: flex; align-items: center; gap: 26px; height: 70px; max-width: 1720px; padding: 0 clamp(28px, 5vw, 72px); }
 .hs-brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-fraunces), serif; font-weight: 600; font-size: 21px; letter-spacing: -.01em; white-space: nowrap; flex-shrink: 0; }
 .hs-brand .mk { width: 27px; height: 27px; color: var(--lav); }
 .hs-brand .wm { white-space: nowrap; }
@@ -95,7 +95,7 @@
   display: grid; grid-template-columns: clamp(258px, 24vw, 340px) minmax(0, 1fr);
   gap: clamp(36px, 5vw, 80px); align-items: start;
 }
-.hs-hero-main { min-width: 0; }
+.hs-hero-main { min-width: 0; max-width: 900px; margin-left: auto; }
 .hs-hero-rail { align-self: stretch; display: flex; flex-direction: column; gap: clamp(22px, 2.6vw, 34px); border-right: 1px solid var(--line); padding-right: clamp(24px, 3vw, 44px); padding-top: 8px; }
 .hs-hero-stats { display: flex; flex-direction: column; gap: 18px; }
 .hs-hero-stats .s b { font-family: var(--font-fraunces), serif; font-weight: 600; font-size: clamp(30px, 3vw, 40px); line-height: 1; color: #F3F1FB; display: block; }
