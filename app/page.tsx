@@ -36,18 +36,18 @@ export default function HomePage() {
         <div className="hs-hero-grid hs-hero-right">
           <aside className="hs-hero-rail">
             <div className="hs-hero-stats">
-              <div className="s"><b>11</b><span>Products shipped</span></div>
+              <div className="s"><b>12</b><span>Products shipped</span></div>
               <div className="s"><b>100%</b><span>PH data residency</span></div>
               <div className="s"><b>6</b><span>Registrations &amp; backers</span></div>
             </div>
             <div className="hs-hero-index">
-              <div className="ix-lbl">The eleven</div>
+              <div className="ix-lbl">The twelve</div>
               <ul>
                 {ECO_PRODUCTS.map((p) => (
                   <li key={p.key}><Link href={p.href} className="ix">{p.name}</Link></li>
                 ))}
               </ul>
-              <a href="#products" className="ix-all">Browse all eleven →</a>
+              <a href="#products" className="ix-all">Browse all twelve →</a>
             </div>
           </aside>
 
@@ -55,7 +55,7 @@ export default function HomePage() {
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
             <h1 className="hs-h1">Built here.<br /><span className="em">Owned</span> here.</h1>
             <p className="hs-sub">
-              POS, LGU portals, wedding sites, job tools, and more — eleven Philippine-built products,
+              POS, LGU portals, event RSVP sites, job tools, and more — twelve Philippine-built products,
               all BIR-ready, offline-first, and hosted in the Philippines.
             </p>
             <div className="hs-acts">
@@ -138,7 +138,7 @@ export default function HomePage() {
           </div>
           <div>
             <p className="hs-sec-p" style={{ maxWidth: 'none', margin: 0 }}>
-              HNS PH Solutions started with one accounting tool and grew into an eleven-product ecosystem — from the
+              HNS PH Solutions started with one accounting tool and grew into a twelve-product ecosystem — from the
               sari-sari counter to the barangay hall. Everything is built, shipped, and hosted in the Philippines.
               Every record stays in-country.
             </p>

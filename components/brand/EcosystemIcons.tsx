@@ -153,6 +153,15 @@ export function MagnetMomentsIcon({ color = 'currentColor', ...p }: IconProps) {
   );
 }
 
+export function MyMomentsIcon({ color = 'currentColor', ...p }: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M18 14 Q18 11 21 11 H43 Q46 11 46 14 V51 L32 41 L18 51 Z" {...stroke(color)} />
+      <path d="M32 21 c 2.6 -3.4 7.4 -0.4 0 5 c -7.4 -5.4 -2.6 -8.4 0 -5 Z" fill={color} />
+    </Svg>
+  );
+}
+
 export const ECO_ICONS = {
   HNScorpPH:     HNScorpPHIcon,
   Clerque:       ClerqueIcon,
@@ -164,6 +173,7 @@ export const ECO_ICONS = {
   Everafter:     EverafterIcon,
   CVAssist:      CVAssistIcon,
   MagnetMoments: MagnetMomentsIcon,
+  MyMoments:     MyMomentsIcon,
   LOCATR:        LocatrIcon,
   KonekBarangay: KonekBarangayIcon,
 } as const;

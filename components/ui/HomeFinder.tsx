@@ -9,11 +9,11 @@ type Cat = 'all' | 'business' | 'government' | 'life';
 const CATEGORY: Record<string, Exclude<Cat, 'all'>> = {
   Clerque: 'business', SariAssist: 'business', AltSpaceCW: 'business',
   Sangguni: 'government', KonekBarangay: 'government',
-  Everafter: 'life', Scatto: 'life', CVAssist: 'life', LOCATR: 'life', Steady: 'life', MagnetMoments: 'life',
+  Everafter: 'life', Scatto: 'life', CVAssist: 'life', LOCATR: 'life', Steady: 'life', MagnetMoments: 'life', MyMoments: 'life',
 };
 
 const DOORS: { id: Cat; k: string; d: string }[] = [
-  { id: 'all',        k: 'Everything', d: 'All eleven products' },
+  { id: 'all',        k: 'Everything', d: 'All twelve products' },
   { id: 'business',   k: 'For business', d: 'POS · ledger · co-working · sari-sari stores' },
   { id: 'government', k: 'For government', d: 'LGU ordinances · barangay services' },
   { id: 'life',       k: 'For life', d: 'Weddings · events · jobs · rentals · health' },
