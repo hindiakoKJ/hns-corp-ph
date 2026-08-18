@@ -33,36 +33,49 @@ export default function HomePage() {
       <section className="hs-hero">
         <div className="hs-hero-bg" aria-hidden="true" />
         <div className="hs-hero-glow" aria-hidden="true" />
-        <div className="hs-hero-grid hs-hero-right">
-          <aside className="hs-hero-rail">
-            <div className="hs-hero-stats">
-              <div className="s"><b>12</b><span>Products shipped</span></div>
-              <div className="s"><b>100%</b><span>PH data residency</span></div>
-              <div className="s"><b>6</b><span>Registrations &amp; backers</span></div>
+        <div className="hs-hero-dir">
+          <div className="hs-dir-head">
+            <div className="hs-dir-lead">
+              <h1 className="hs-dir-slogan">Built here. <span className="em">Owned</span> here.</h1>
+              <p className="hs-dir-sub">A one-founder software house in Naga City. The whole catalog — pick where you&apos;re headed.</p>
+              <Link href="/about" className="hs-dir-story">Our story →</Link>
             </div>
-            <div className="hs-hero-index">
-              <div className="ix-lbl">The twelve</div>
-              <ul>
-                {ECO_PRODUCTS.map((p) => (
-                  <li key={p.key}><Link href={p.href} className="ix">{p.name}</Link></li>
-                ))}
-              </ul>
-              <a href="#products" className="ix-all">Browse all twelve →</a>
-            </div>
-          </aside>
-
-          <div className="hs-hero-main">
-            <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-            <h1 className="hs-h1">Built here.<br /><span className="em">Owned</span> here.</h1>
-            <p className="hs-sub">
-              POS, LGU portals, event RSVP sites, job tools, and more — twelve Philippine-built products,
-              all BIR-ready, offline-first, and hosted in the Philippines.
-            </p>
-            <div className="hs-acts">
-              <a href="#find" className="hs-btn hs-btn-indigo">Find your product ↓</a>
-              <Link href="/about" className="hs-btn hs-btn-ghost">Our story</Link>
+            <div className="hs-dir-meta">
+              <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
+              <div className="hs-dir-stats">
+                <span><b>12</b> shipped</span>
+                <span><b>100%</b> PH-hosted</span>
+                <span><b>6</b> backers</span>
+              </div>
             </div>
           </div>
+
+          <nav className="hs-dir-index" aria-label="All products">
+            <div className="hs-eyebrow">The twelve</div>
+            <ol className="hs-dir-list">
+              {ECO_PRODUCTS.map((p, i) => {
+                const inner = (
+                  <>
+                    <span className="n">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="mid">
+                      <span className="nm">{p.name}</span>
+                      <span className="kd">{p.kind}</span>
+                    </span>
+                    <span className={`st ${p.isNew ? 'new' : p.status}`}>{p.isNew ? 'New' : p.status === 'live' ? 'Live' : 'Soon'}</span>
+                  </>
+                );
+                return (
+                  <li key={p.key}>
+                    {p.href.startsWith('/')
+                      ? <Link href={p.href} className="row">{inner}</Link>
+                      : p.href.startsWith('http')
+                        ? <a href={p.href} className="row">{inner}</a>
+                        : <span className="row row-na">{inner}</span>}
+                  </li>
+                );
+              })}
+            </ol>
+          </nav>
         </div>
       </section>
 
