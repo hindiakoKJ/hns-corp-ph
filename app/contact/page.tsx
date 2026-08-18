@@ -78,7 +78,7 @@ function ContactForm() {
     return (
       <div style={{ background: 'rgba(139,124,247,.08)', border: '1px solid rgba(139,124,247,.3)', borderRadius: 18, padding: '48px 32px', textAlign: 'center' }}>
         <div style={{ fontSize: 44, marginBottom: 14 }}>✓</div>
-        <h2 style={{ fontFamily: 'var(--font-fraunces), serif', fontSize: 26, fontWeight: 600, color: '#F3F1FB', marginBottom: 10 }}>Message sent.</h2>
+        <h2 style={{ fontFamily: 'var(--font-display), serif', fontSize: 26, fontWeight: 600, color: '#F3F1FB', marginBottom: 10 }}>Message sent.</h2>
         <p style={{ fontFamily: 'var(--font-hanken)', color: '#9AA0B2', marginBottom: 24 }}>We&apos;ll reply to <strong style={{ color: '#E8E9EE' }}>{email}</strong> shortly.</p>
         <Link href="/" style={{ color: '#C4C0FB', fontSize: 14, fontWeight: 600 }}>← Back to home</Link>
       </div>

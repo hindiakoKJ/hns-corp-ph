@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton, Hanken_Grotesk } from 'next/font/google';
+import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton, Hanken_Grotesk, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 
 // Poster/brutalist display for the look-a mockup.
@@ -14,6 +14,15 @@ const fraunces = Fraunces({
   weight: ['400', '500', '600', '700', '900'],
   style: ['normal', 'italic'],
   variable: '--font-fraunces',
+  display: 'swap',
+});
+
+// Dramatic Didone display serif for the headlines (replaces Fraunces).
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -61,7 +70,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${anton.variable} ${hanken.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${dmSerif.variable} ${anton.variable} ${hanken.variable}`}>
       <body>{children}</body>
     </html>
   );
