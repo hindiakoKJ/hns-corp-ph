@@ -543,3 +543,47 @@
 .hs-eyebrow, .hs-hero-index .ix-lbl { letter-spacing: .1em; }
 .hs-hero-stats .s span { letter-spacing: .02em; }
 .hs-badge { letter-spacing: .01em; }
+
+/* ── glassmorphism pass ──────────────────────────────────────────────────── */
+/* Tunable tokens — dial frost up/down here in one place. */
+.hs-root {
+  --glass-bg: linear-gradient(155deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+  --glass-border: rgba(255,255,255,.15);
+  --glass-blur: blur(18px) saturate(135%);
+  --glass-sheen: inset 0 1px 0 rgba(255,255,255,.18);
+  --glass-shadow: 0 20px 46px -22px rgba(0,0,0,.55);
+}
+/* frosted card + panel surfaces */
+.hs-fcard,
+.hs-card,
+.hs-plan,
+.hs-proof,
+.co-summary,
+.hs-pay {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-sheen), var(--glass-shadow);
+}
+/* nav pill + solidified bar + badges */
+.hs-nlinks {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-sheen);
+}
+.hs-nav.scrolled {
+  background: rgba(16,18,26,.5);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom-color: var(--glass-border);
+}
+.hs-badge, .hs-pbadge {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
+  box-shadow: var(--glass-sheen);
+}
