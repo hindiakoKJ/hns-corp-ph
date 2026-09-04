@@ -144,6 +144,16 @@ export default function HomePage() {
           </p>
 
           <div className="hs-enters">
+            <div className="hs-enters-shot">
+              <img
+                src="/enters-kit.jpg"
+                width={1000}
+                height={1000}
+                loading="lazy"
+                decoding="async"
+                alt="Enters 63.5mm magnetic fridge-magnet making kit — two presses and consumable blanks on a table"
+              />
+            </div>
             <div className="hs-enters-body">
               <ul className="hs-enters-perks">
                 <li>
@@ -151,15 +161,15 @@ export default function HomePage() {
                   <span>Five percent off everything at enters.cn — apply code <b>HNS</b> at checkout.</span>
                 </li>
                 <li>
-                  <span className="pk">Free air freight</span>
+                  <span className="pk air">Free air freight</span>
                   <span>Philippine orders placed through the HNS code get a free air-freight shipping upgrade from us — for faster delivery.</span>
                 </li>
               </ul>
-            </div>
-            <div className="hs-enters-cta">
-              <div className="hs-enters-code">CODE <b>HNS</b></div>
-              <a href="https://www.enters.cn/HNS" target="_blank" rel="noopener noreferrer" className="hs-btn hs-btn-indigo">Shop Enters ↗</a>
-              <span className="hs-enters-url">enters.cn/HNS</span>
+              <div className="hs-enters-foot">
+                <div className="hs-enters-code">CODE <b>HNS</b></div>
+                <a href="https://www.enters.cn/HNS" target="_blank" rel="noopener noreferrer" className="hs-btn hs-btn-indigo">Shop Enters ↗</a>
+                <span className="hs-enters-url">enters.cn/HNS</span>
+              </div>
             </div>
           </div>
         </div>

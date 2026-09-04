@@ -598,16 +598,18 @@
 
 /* ── Enters affiliate partner-offer band ─────────────────────────────────── */
 .hs-enters {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(28px, 4vw, 64px); align-items: center;
+  display: grid; grid-template-columns: minmax(230px, 320px) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 52px); align-items: center;
   margin-top: clamp(24px, 3vw, 38px);
-  padding: clamp(24px, 3vw, 40px);
+  padding: clamp(20px, 2.6vw, 32px);
   border-radius: 22px;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-sheen), var(--glass-shadow);
 }
+.hs-enters-shot { min-width: 0; }
+.hs-enters-shot img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,.14); }
 .hs-enters-body { min-width: 0; }
 .hs-enters-perks { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 .hs-enters-perks li { display: flex; gap: 14px; align-items: flex-start; }
@@ -621,14 +623,15 @@
   color: #CFC9FF; background: rgba(109,94,240,.2); border: 1px solid rgba(109,94,240,.5);
 }
 .hs-enters-perks .pk.air { color: #BEEAD0; background: rgba(55,217,160,.14); border-color: rgba(55,217,160,.42); }
-.hs-enters-cta {
-  flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
-  padding-left: clamp(0px, 2vw, 40px); border-left: 1px solid var(--line);
+.hs-enters-foot {
+  display: flex; align-items: center; gap: 16px 20px; flex-wrap: wrap;
+  margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line);
 }
-.hs-enters-code { font-family: var(--font-plex-mono), monospace; font-size: 11px; letter-spacing: .16em; color: var(--mut); }
-.hs-enters-code b { display: block; font-family: var(--font-display), serif; font-weight: 400; font-size: 30px; letter-spacing: .1em; color: #F3F1FB; margin-top: 4px; }
-.hs-enters-url { font-family: var(--font-plex-mono), monospace; font-size: 11px; letter-spacing: .04em; color: var(--dim); }
+.hs-enters-code { font-family: var(--font-plex-mono), monospace; font-size: 11px; letter-spacing: .16em; color: var(--mut); display: inline-flex; align-items: baseline; gap: 9px; }
+.hs-enters-code b { font-family: var(--font-display), serif; font-weight: 400; font-size: 24px; letter-spacing: .1em; color: #F3F1FB; }
+.hs-enters-url { font-family: var(--font-plex-mono), monospace; font-size: 11px; letter-spacing: .04em; color: var(--dim); margin-left: auto; }
 @media (max-width: 760px) {
-  .hs-enters { grid-template-columns: 1fr; gap: 26px; }
-  .hs-enters-cta { align-items: flex-start; text-align: left; padding-left: 0; border-left: none; border-top: 1px solid var(--line); padding-top: 24px; }
+  .hs-enters { grid-template-columns: 1fr; gap: 22px; }
+  .hs-enters-shot { max-width: 360px; }
+  .hs-enters-url { margin-left: 0; }
 }
