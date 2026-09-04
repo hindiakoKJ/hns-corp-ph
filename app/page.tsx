@@ -132,6 +132,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* partner offer — Enters affiliate */}
+      <section className="hs-sec" id="enters">
+        <div className="hs-wrap">
+          <div className="hs-eyebrow" style={{ marginBottom: 14 }}>Partner offer</div>
+          <h2 className="hs-sec-h">Press your own magnets.</h2>
+          <p className="hs-sec-p">
+            Enters builds the presses, dies, and blanks behind small-batch magnet- and badge-making — the
+            hardware side of what Magnet Moments does for you. We&apos;re now an official Enters affiliate, so
+            kitting out your own bench comes with perks.
+          </p>
+
+          <div className="hs-enters">
+            <div className="hs-enters-body">
+              <ul className="hs-enters-perks">
+                <li>
+                  <span className="pk">5% off</span>
+                  <span>Five percent off everything at enters.cn — apply code <b>HNS</b> at checkout.</span>
+                </li>
+                <li>
+                  <span className="pk">Free air freight</span>
+                  <span>Philippine orders placed through the HNS code get a free air-freight shipping upgrade from us — for faster delivery.</span>
+                </li>
+              </ul>
+            </div>
+            <div className="hs-enters-cta">
+              <div className="hs-enters-code">CODE <b>HNS</b></div>
+              <a href="https://www.enters.cn/HNS" target="_blank" rel="noopener noreferrer" className="hs-btn hs-btn-indigo">Shop Enters ↗</a>
+              <span className="hs-enters-url">enters.cn/HNS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* story */}
       <section className="hs-sec">
         <div className="hs-wrap hs-story">
