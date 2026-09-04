@@ -34,19 +34,12 @@ export default function HomePage() {
         <div className="hs-hero-bg" aria-hidden="true" />
         <div className="hs-hero-glow" aria-hidden="true" />
         <div className="hs-hero-dir">
-          <div className="hs-dir-head">
-            <div className="hs-dir-lead">
-              <h1 className="hs-dir-slogan">Built here. <span className="em">Owned</span> here.</h1>
-              <p className="hs-dir-sub">A one-founder software house in Naga City. The whole catalog — pick where you&apos;re headed.</p>
-              <Link href="/about" className="hs-dir-story">Our story →</Link>
-            </div>
-            <div className="hs-dir-meta">
-              <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-              <div className="hs-dir-stats">
-                <span><b>12</b> shipped</span>
-                <span><b>100%</b> PH-hosted</span>
-                <span><b>6</b> backers</span>
-              </div>
+          <div className="hs-dir-meta">
+            <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
+            <div className="hs-dir-stats">
+              <span><b>12</b> shipped</span>
+              <span><b>100%</b> PH-hosted</span>
+              <span><b>6</b> backers</span>
             </div>
           </div>
 
