@@ -64,7 +64,6 @@ export default function HomePage() {
         <div className="hs-hero-dir">
           <nav className="hs-dir-index" aria-label="All products">
             <div className="hs-dir-head">
-              <h2>The <em>twelve</em></h2>
               <div className="hs-eyebrow">The collection · Live and coming soon</div>
             </div>
             <ol className="hs-dir-list">
