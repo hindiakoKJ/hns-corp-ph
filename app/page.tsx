@@ -47,7 +47,6 @@ export default function HomePage() {
             <h1 className="hs-sr">HNS PH Solutions</h1>
             <div className="hs-acts">
               <a href="#directory" className="hs-btn hs-btn-indigo">Browse the apps</a>
-              <Link href="/contact" className="hs-btn hs-btn-ghost">Talk to us</Link>
             </div>
             <div className="hs-stats">
               <div className="hs-stat"><b>12</b><span>Shipped</span></div>
