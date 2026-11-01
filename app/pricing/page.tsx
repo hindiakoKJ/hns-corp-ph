@@ -6,6 +6,8 @@ import HomeFooter from '@/components/ui/HomeFooter';
 import { peso, PLANS } from '@/components/pay/plans';
 
 export const metadata: Metadata = {
+  // Kept online for the Xendit merchant review only; hidden from navigation and search.
+  robots: { index: false, follow: false },
   title: 'Pricing — HNS PH Solutions',
   description: 'Simple, honest pricing for SariAssist. Pay securely with card, GCash, Maya, GrabPay, or bank transfer via Xendit.',
 };

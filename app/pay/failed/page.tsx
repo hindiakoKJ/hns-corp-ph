@@ -4,7 +4,9 @@ import type { Metadata } from 'next';
 import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
 
-export const metadata: Metadata = { title: 'Payment not completed — HNS PH Solutions', robots: { index: false } };
+export const metadata: Metadata = {
+  // Kept online for the Xendit merchant review only; hidden from navigation and search.
+  robots: { index: false, follow: false }, title: 'Payment not completed — HNS PH Solutions' };
 
 export default function PayFailedPage() {
   return (
