@@ -6,7 +6,9 @@ import HomeFooter from '@/components/ui/HomeFooter';
 import CheckoutForm from '@/components/pay/CheckoutForm';
 import { PLANS, peso } from '@/components/pay/plans';
 
-export const metadata: Metadata = { title: 'Checkout — HNS PH Solutions' };
+export const metadata: Metadata = {
+  // Kept online for the Xendit merchant review only; hidden from navigation and search.
+  robots: { index: false, follow: false }, title: 'Checkout — HNS PH Solutions' };
 
 export default async function CheckoutPage({ searchParams }: { searchParams: Promise<{ plan?: string }> }) {
   const sp = await searchParams;

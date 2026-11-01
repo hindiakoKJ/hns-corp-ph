@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton, Hanken_Grotesk, DM_Serif_Display } from 'next/font/google';
+import { Space_Grotesk, Manrope, IBM_Plex_Mono, Fraunces, Anton, Hanken_Grotesk, DM_Serif_Display, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 
 // Poster/brutalist display for the look-a mockup.
@@ -23,6 +23,15 @@ const dmSerif = DM_Serif_Display({
   weight: '400',
   style: ['normal', 'italic'],
   variable: '--font-display',
+  display: 'swap',
+});
+
+// Classical reading serif for the oil-painting theme (running copy; DM Serif Display stays the headline face).
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -70,7 +79,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${dmSerif.variable} ${anton.variable} ${hanken.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} ${plexMono.variable} ${fraunces.variable} ${dmSerif.variable} ${anton.variable} ${hanken.variable} ${cormorant.variable}`}>
       <body>{children}</body>
     </html>
   );

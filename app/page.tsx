@@ -8,6 +8,14 @@ import { ECO_PRODUCTS } from '@/components/brand/ecosystem.data';
 
 const APP_LOGIN = 'https://clerque.cc/';
 
+// Gallery-catalogue numbering for the directory (I, II, III …).
+function toRoman(n: number) {
+  const t: [number, string][] = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let out = '';
+  for (const [v, r] of t) while (n >= v) { out += r; n -= v; }
+  return out;
+}
+
 const PILLARS = [
   { h: 'Sovereign by design', p: 'Records live on Philippine infrastructure, encrypted, yours to export on day one.' },
   { h: 'BIR-compliant', p: 'OR sequencing, immutable Z-read & X-read, quarterly forms — built to CAS spec.' },
@@ -29,27 +37,40 @@ export default function HomePage() {
       {/* nav */}
       <HomeNav />
 
-      {/* hero */}
-      <section className="hs-hero">
-        <div className="hs-hero-bg" aria-hidden="true" />
-        <div className="hs-hero-glow" aria-hidden="true" />
-        <div className="hs-hero-dir">
-          <div className="hs-dir-meta">
+      {/* hero — the harbour painting */}
+      <section className="hs-ohero">
+        <div className="hs-ohero-art" role="img" aria-label="Oil painting of a Bicol harbour at dusk: a bangka on the water below Mt. Isarog, the sun setting on the horizon" />
+        <div className="hs-ohero-scrim" aria-hidden="true" />
+        <div className="hs-ohero-in">
+          <div className="hs-ohero-copy">
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-            <div className="hs-dir-stats">
-              <span><b>12</b> shipped</span>
-              <span><b>100%</b> PH-hosted</span>
-              <span><b>6</b> backers</span>
+            <h1 className="hs-sr">HNS PH Solutions</h1>
+            <div className="hs-acts">
+              <a href="#directory" className="hs-btn hs-btn-indigo">Browse the apps</a>
+              <Link href="/contact" className="hs-btn hs-btn-ghost">Talk to us</Link>
+            </div>
+            <div className="hs-stats">
+              <div className="hs-stat"><b>12</b><span>Shipped</span></div>
+              <div className="hs-stat"><b>100%</b><span>PH-hosted</span></div>
+              <div className="hs-stat"><b>6</b><span>Backers</span></div>
             </div>
           </div>
+        </div>
+        <div className="hs-plaque" aria-hidden="true"><b>Plate I</b>Harbour at dusk, below Mt. Isarog</div>
+      </section>
 
+      {/* the directory — a framed placard hung over the painting's lower edge */}
+      <section className="hs-gallery" id="directory">
+        <div className="hs-hero-dir">
           <nav className="hs-dir-index" aria-label="All products">
-            <div className="hs-eyebrow">The twelve</div>
+            <div className="hs-dir-head">
+              <div className="hs-eyebrow">The collection · Live and coming soon</div>
+            </div>
             <ol className="hs-dir-list">
               {ECO_PRODUCTS.map((p, i) => {
                 const inner = (
                   <>
-                    <span className="n">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="n">{toRoman(i + 1)}</span>
                     <span className="mid">
                       <span className="nm">{p.name}</span>
                       <span className="kd">{p.kind}</span>

@@ -19,15 +19,15 @@ export default function TermsPage() {
         {/* Hero */}
         <section className="relative flex flex-col items-center justify-center px-6 pb-16 pt-24 text-center">
           <div className="relative z-10 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#C4C0FB]">Legal</p>
-            <h1 className="mb-3 text-4xl font-bold tracking-tight text-white md:text-5xl">Terms of Service</h1>
-            <p className="text-base text-white/45">Last updated: {LAST_UPDATED}</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#F2C66D]">Legal</p>
+            <h1 className="mb-3 text-4xl font-normal tracking-tight text-[#FBF4E8] md:text-6xl [font-family:var(--font-display),serif]">Terms of Service</h1>
+            <p className="text-base text-[#A29380]">Last updated: {LAST_UPDATED}</p>
           </div>
         </section>
 
         {/* Content */}
         <section className="bg-transparent px-6 py-16">
-          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-[#C4D0C8]">
+          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-[#D8CBB8]">
 
             <div>
               <p>
@@ -41,11 +41,11 @@ export default function TermsPage() {
             <Section title="1. The Services">
               <p>HNS PH Solutions operates the following products, each subject to these Terms:</p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li><strong className="text-[#F3F1FB]">hnscorpph.com</strong> — corporate website and product information</li>
-                <li><strong className="text-[#F3F1FB]">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.cc)</li>
-                <li><strong className="text-[#F3F1FB]">SariAssist</strong> — point-of-sale app for sari-sari stores and micro-retailers (live at sariassist.hnscorpph.com)</li>
-                <li><strong className="text-[#F3F1FB]">Steady</strong> — health companion app for people living with epilepsy (live at steady.hnscorpph.com)</li>
-                <li><strong className="text-[#F3F1FB]">LOCATR</strong> — verified rental matchmaking app for the Philippines (locatr.hnscorpph.com)</li>
+                <li><strong className="text-[#FBF4E8]">hnscorpph.com</strong> — corporate website and product information</li>
+                <li><strong className="text-[#FBF4E8]">Clerque</strong> — business management suite for Philippine MSMEs (live at clerque.cc)</li>
+                <li><strong className="text-[#FBF4E8]">SariAssist</strong> — point-of-sale app for sari-sari stores and micro-retailers (live at sariassist.hnscorpph.com)</li>
+                <li><strong className="text-[#FBF4E8]">Steady</strong> — health companion app for people living with epilepsy (live at steady.hnscorpph.com)</li>
+                <li><strong className="text-[#FBF4E8]">LOCATR</strong> — verified rental matchmaking app for the Philippines (locatr.hnscorpph.com)</li>
               </ul>
             </Section>
 
@@ -61,7 +61,7 @@ export default function TermsPage() {
               <ul className="list-disc space-y-2 pl-5">
                 <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
                 <li>You are responsible for all activity that occurs under your account.</li>
-                <li>Notify us immediately at <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">support@hnscorpph.com</a> if you suspect unauthorized access.</li>
+                <li>Notify us immediately at <a href="mailto:support@hnscorpph.com" className="font-medium text-[#F2C66D] hover:underline">support@hnscorpph.com</a> if you suspect unauthorized access.</li>
                 <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
               </ul>
             </Section>
@@ -170,7 +170,7 @@ export default function TermsPage() {
             <Section title="11. Contact">
               <p>
                 Questions about these Terms? Reach us at{' '}
-                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#F2C66D] hover:underline">
                   support@hnscorpph.com
                 </a>.
               </p>
@@ -187,7 +187,7 @@ export default function TermsPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-4 text-lg font-bold tracking-tight text-[#F3F1FB]">{title}</h2>
+      <h2 className="mb-4 text-2xl font-normal text-[#FBF4E8] [font-family:var(--font-display),serif]">{title}</h2>
       {children}
     </div>
   );
@@ -196,7 +196,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubSection({ name, children }: { name: string; children: React.ReactNode }) {
   return (
     <div className="mt-4">
-      <h3 className="mb-2 text-sm font-semibold text-[#F3F1FB]">{name}</h3>
+      <h3 className="mb-2 text-sm font-semibold text-[#FBF4E8]">{name}</h3>
       {children}
     </div>
   );

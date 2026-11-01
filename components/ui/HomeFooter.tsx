@@ -31,7 +31,6 @@ export default function HomeFooter() {
           <Link href="/clerque">Clerque</Link>
           <Link href="/sariassist">SariAssist</Link>
           <Link href="/cvassist">CVAssist</Link>
-          <Link href="/pricing">Pricing</Link>
         </div>
         <div className="hs-foot-col">
           <h4>Platform</h4>
