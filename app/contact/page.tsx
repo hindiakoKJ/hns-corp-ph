@@ -28,15 +28,6 @@ const TOPIC_MAP: Record<string, { product: string; concern: string }> = {
   sales:       { product: 'Clerque',   concern: 'Sales inquiry' },
 };
 
-const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '12px 16px', background: '#181B23',
-  border: '1px solid rgba(232,233,238,.14)', borderRadius: 12, color: '#E8E9EE',
-  fontSize: 15, fontFamily: 'var(--font-hanken)', outline: 'none', transition: 'border-color .15s',
-};
-const labelStyle: React.CSSProperties = {
-  display: 'block', fontSize: 12.5, fontWeight: 600, fontFamily: 'var(--font-hanken)',
-  letterSpacing: '.08em', color: '#9AA0B2', textTransform: 'uppercase', marginBottom: 8,
-};
 
 function ContactForm() {
   const params = useSearchParams();
@@ -76,11 +67,11 @@ function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div style={{ background: 'rgba(139,124,247,.08)', border: '1px solid rgba(139,124,247,.3)', borderRadius: 18, padding: '48px 32px', textAlign: 'center' }}>
+      <div style={{ background: 'rgba(242,198,109,.07)', border: '1px solid rgba(242,198,109,.3)', borderRadius: 4, padding: '48px 32px', textAlign: 'center' }}>
         <div style={{ fontSize: 44, marginBottom: 14 }}>✓</div>
-        <h2 style={{ fontFamily: 'var(--font-display), serif', fontSize: 26, fontWeight: 600, color: '#F3F1FB', marginBottom: 10 }}>Message sent.</h2>
-        <p style={{ fontFamily: 'var(--font-hanken)', color: '#9AA0B2', marginBottom: 24 }}>We&apos;ll reply to <strong style={{ color: '#E8E9EE' }}>{email}</strong> shortly.</p>
-        <Link href="/" style={{ color: '#C4C0FB', fontSize: 14, fontWeight: 600 }}>← Back to home</Link>
+        <h2 style={{ fontFamily: 'var(--font-display), serif', fontSize: 26, fontWeight: 400, color: 'var(--head)', marginBottom: 10 }}>Message sent.</h2>
+        <p style={{ fontFamily: 'var(--font-hanken)', color: 'var(--mut)', marginBottom: 24 }}>We&apos;ll reply to <strong style={{ color: 'var(--txt)' }}>{email}</strong> shortly.</p>
+        <Link href="/" style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 600 }}>← Back to home</Link>
       </div>
     );
   }
@@ -89,18 +80,18 @@ function ContactForm() {
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16 }}>
         <div>
-          <label style={labelStyle}>Name</label>
-          <input required value={name} onChange={e => setName(e.target.value)} placeholder="Juan dela Cruz" style={inputStyle} />
+          <label className="hs-label">Name</label>
+          <input required value={name} onChange={e => setName(e.target.value)} placeholder="Juan dela Cruz" className="hs-field" />
         </div>
         <div>
-          <label style={labelStyle}>Email</label>
-          <input required type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="juan@example.com" style={inputStyle} />
+          <label className="hs-label">Email</label>
+          <input required type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="juan@example.com" className="hs-field" />
         </div>
       </div>
 
       <div>
-        <label style={labelStyle}>Which product?</label>
-        <select required value={product} onChange={e => setProduct(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
+        <label className="hs-label">Which product?</label>
+        <select required value={product} onChange={e => setProduct(e.target.value)} className="hs-field" style={{ cursor: 'pointer' }}>
           <option value="" disabled>Select a product…</option>
           {PRODUCTS.map(p => <option key={p} value={p}>{p}</option>)}
         </select>
@@ -108,8 +99,8 @@ function ContactForm() {
 
       {product && (
         <div>
-          <label style={labelStyle}>What&apos;s your concern?</label>
-          <select required value={concern} onChange={e => setConcern(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
+          <label className="hs-label">What&apos;s your concern?</label>
+          <select required value={concern} onChange={e => setConcern(e.target.value)} className="hs-field" style={{ cursor: 'pointer' }}>
             <option value="" disabled>Select a concern…</option>
             {CONCERNS[product].map(c => <option key={c} value={c}>{c}</option>)}
           </select>
@@ -117,12 +108,12 @@ function ContactForm() {
       )}
 
       <div>
-        <label style={labelStyle}>Message</label>
-        <textarea required rows={5} value={message} onChange={e => setMessage(e.target.value)} placeholder="Tell us what's on your mind…" style={{ ...inputStyle, resize: 'none' }} />
+        <label className="hs-label">Message</label>
+        <textarea required rows={5} value={message} onChange={e => setMessage(e.target.value)} placeholder="Tell us what's on your mind…" className="hs-field" style={{ resize: 'none' }} />
       </div>
 
       {status === 'error' && (
-        <div style={{ background: 'rgba(240,101,90,.08)', border: '1px solid rgba(240,101,90,.3)', borderRadius: 10, padding: '12px 16px', fontSize: 14, color: '#F0908A', fontFamily: 'var(--font-hanken)' }}>
+        <div style={{ background: 'rgba(240,101,90,.08)', border: '1px solid rgba(240,101,90,.3)', borderRadius: 4, padding: '12px 16px', fontSize: 14, color: '#F0908A', fontFamily: 'var(--font-hanken)' }}>
           {errorMsg}
         </div>
       )}

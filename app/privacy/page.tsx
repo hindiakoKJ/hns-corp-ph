@@ -19,22 +19,22 @@ export default function PrivacyPage() {
         {/* Hero */}
         <section className="relative flex flex-col items-center justify-center px-6 pb-16 pt-24 text-center">
           <div className="relative z-10 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#C4C0FB]">Legal</p>
-            <h1 className="mb-3 text-4xl font-bold tracking-tight text-white md:text-5xl">Privacy Policy</h1>
-            <p className="text-base text-white/45">Last updated: {LAST_UPDATED}</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#F2C66D]">Legal</p>
+            <h1 className="mb-3 text-4xl font-normal tracking-tight text-[#FBF4E8] md:text-6xl [font-family:var(--font-display),serif]">Privacy Policy</h1>
+            <p className="text-base text-[#A29380]">Last updated: {LAST_UPDATED}</p>
           </div>
         </section>
 
         {/* Content */}
         <section className="bg-transparent px-6 py-16">
-          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-[#C4D0C8]">
+          <div className="mx-auto max-w-3xl space-y-10 text-sm leading-relaxed text-[#D8CBB8]">
 
             <div>
               <p>
                 HNS PH Solutions OPC (&quot;HNS PH Solutions,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting the
                 privacy of users of our website and products. This Privacy Policy explains what
                 information we collect, how we use it, and your rights under the{' '}
-                <strong className="text-[#F3F1FB]">Republic Act 10173 — Data Privacy Act of 2012</strong> and
+                <strong className="text-[#FBF4E8]">Republic Act 10173 — Data Privacy Act of 2012</strong> and
                 its Implementing Rules and Regulations.
               </p>
             </div>
@@ -46,8 +46,8 @@ export default function PrivacyPage() {
                 families, and communities — including Clerque, SariAssist, CVAssist, Steady, and LOCATR.
               </p>
               <p className="mt-3">
-                <strong className="text-[#F3F1FB]">Data Protection Officer / Contact:</strong>{' '}
-                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                <strong className="text-[#FBF4E8]">Data Protection Officer / Contact:</strong>{' '}
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#F2C66D] hover:underline">
                   support@hnscorpph.com
                 </a>
               </p>
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
               </SubSection>
               <SubSection name="SariAssist">
                 <ul className="list-disc space-y-1 pl-5">
-                  <li><strong className="text-[#F3F1FB]">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNS PH Solutions has no access to it.</li>
+                  <li><strong className="text-[#FBF4E8]">No data collected.</strong> SariAssist operates fully offline. All product and transaction data stays on your device. HNS PH Solutions has no access to it.</li>
                 </ul>
               </SubSection>
               <SubSection name="Steady">
@@ -96,8 +96,8 @@ export default function PrivacyPage() {
                 <li>To respond to contact form inquiries</li>
                 <li>To verify identities on LOCATR (fraud prevention and trust)</li>
                 <li>To send transactional emails (e.g., receipt of your contact form submission)</li>
-                <li>We do <strong className="text-[#F3F1FB]">not</strong> sell personal data to third parties</li>
-                <li>We do <strong className="text-[#F3F1FB]">not</strong> use your data for advertising targeting</li>
+                <li>We do <strong className="text-[#FBF4E8]">not</strong> sell personal data to third parties</li>
+                <li>We do <strong className="text-[#FBF4E8]">not</strong> use your data for advertising targeting</li>
               </ul>
             </Section>
 
@@ -106,9 +106,9 @@ export default function PrivacyPage() {
                 We share personal data only with:
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li><strong className="text-[#F3F1FB]">Resend</strong> — transactional email delivery for contact form submissions (hnscorpph.com only)</li>
-                <li><strong className="text-[#F3F1FB]">Vercel</strong> — website hosting and CDN (standard server logs)</li>
-                <li><strong className="text-[#F3F1FB]">Philippine government agencies</strong> — only when required by law or valid legal process</li>
+                <li><strong className="text-[#FBF4E8]">Resend</strong> — transactional email delivery for contact form submissions (hnscorpph.com only)</li>
+                <li><strong className="text-[#FBF4E8]">Vercel</strong> — website hosting and CDN (standard server logs)</li>
+                <li><strong className="text-[#FBF4E8]">Philippine government agencies</strong> — only when required by law or valid legal process</li>
               </ul>
               <p className="mt-3">
                 No personal data is shared with advertisers, data brokers, or other third parties.
@@ -118,16 +118,16 @@ export default function PrivacyPage() {
             <Section title="5. Your Rights Under RA 10173">
               <p>As a data subject, you have the right to:</p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li><strong className="text-[#F3F1FB]">Access</strong> — request a copy of personal data we hold about you</li>
-                <li><strong className="text-[#F3F1FB]">Correction</strong> — request correction of inaccurate or incomplete data</li>
-                <li><strong className="text-[#F3F1FB]">Erasure</strong> — request deletion of your personal data, subject to legal retention obligations</li>
-                <li><strong className="text-[#F3F1FB]">Object</strong> — object to processing of your personal data for legitimate interests</li>
-                <li><strong className="text-[#F3F1FB]">Data portability</strong> — receive your data in a structured, machine-readable format</li>
-                <li><strong className="text-[#F3F1FB]">Complaint</strong> — file a complaint with the National Privacy Commission (privacy.gov.ph)</li>
+                <li><strong className="text-[#FBF4E8]">Access</strong> — request a copy of personal data we hold about you</li>
+                <li><strong className="text-[#FBF4E8]">Correction</strong> — request correction of inaccurate or incomplete data</li>
+                <li><strong className="text-[#FBF4E8]">Erasure</strong> — request deletion of your personal data, subject to legal retention obligations</li>
+                <li><strong className="text-[#FBF4E8]">Object</strong> — object to processing of your personal data for legitimate interests</li>
+                <li><strong className="text-[#FBF4E8]">Data portability</strong> — receive your data in a structured, machine-readable format</li>
+                <li><strong className="text-[#FBF4E8]">Complaint</strong> — file a complaint with the National Privacy Commission (privacy.gov.ph)</li>
               </ul>
               <p className="mt-3">
                 To exercise any of these rights, email{' '}
-                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#C4C0FB] hover:underline">
+                <a href="mailto:support@hnscorpph.com" className="font-medium text-[#F2C66D] hover:underline">
                   support@hnscorpph.com
                 </a>{' '}
                 with the subject line &quot;Privacy Request — [your name].&quot; We will respond within 15 business days.
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-4 text-lg font-bold tracking-tight text-[#F3F1FB]">{title}</h2>
+      <h2 className="mb-4 text-2xl font-normal text-[#FBF4E8] [font-family:var(--font-display),serif]">{title}</h2>
       {children}
     </div>
   );
@@ -195,7 +195,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubSection({ name, children }: { name: string; children: React.ReactNode }) {
   return (
     <div className="mt-4">
-      <h3 className="mb-2 text-sm font-semibold text-[#F3F1FB]">{name}</h3>
+      <h3 className="mb-2 text-sm font-semibold text-[#FBF4E8]">{name}</h3>
       {children}
     </div>
   );

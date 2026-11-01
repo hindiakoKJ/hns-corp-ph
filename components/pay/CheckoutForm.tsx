@@ -3,15 +3,6 @@
 import { useState } from 'react';
 import { peso } from './plans';
 
-const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '12px 16px', background: '#181B23',
-  border: '1px solid rgba(232,233,238,.14)', borderRadius: 12, color: '#E8E9EE',
-  fontSize: 15, fontFamily: 'var(--font-hanken)', outline: 'none',
-};
-const labelStyle: React.CSSProperties = {
-  display: 'block', fontSize: 12.5, fontWeight: 600, fontFamily: 'var(--font-hanken)',
-  letterSpacing: '.08em', color: '#9AA0B2', textTransform: 'uppercase', marginBottom: 8,
-};
 
 export default function CheckoutForm({ planId, amount }: { planId: string; amount: number }) {
   const [name, setName] = useState('');
@@ -52,16 +43,16 @@ export default function CheckoutForm({ planId, amount }: { planId: string; amoun
   return (
     <form onSubmit={pay} style={{ display: 'grid', gap: 16, maxWidth: 440 }}>
       <div>
-        <label style={labelStyle} htmlFor="co-name">Full name</label>
-        <input id="co-name" name="name" style={inputStyle} value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
+        <label className="hs-label" htmlFor="co-name">Full name</label>
+        <input id="co-name" name="name" className="hs-field" value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
       </div>
       <div>
-        <label style={labelStyle} htmlFor="co-email">Email</label>
-        <input id="co-email" name="email" type="email" style={inputStyle} value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
+        <label className="hs-label" htmlFor="co-email">Email</label>
+        <input id="co-email" name="email" type="email" className="hs-field" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
       </div>
       <div>
-        <label style={labelStyle} htmlFor="co-phone">Mobile number <span style={{ textTransform: 'none', opacity: .6 }}>(optional)</span></label>
-        <input id="co-phone" name="phone" type="tel" style={inputStyle} value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+63" autoComplete="tel" />
+        <label className="hs-label" htmlFor="co-phone">Mobile number <span style={{ textTransform: 'none', opacity: .6 }}>(optional)</span></label>
+        <input id="co-phone" name="phone" type="tel" className="hs-field" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+63" autoComplete="tel" />
       </div>
 
       {err && <p role="alert" style={{ color: '#F1A9A0', fontSize: 14, lineHeight: 1.5, margin: 0 }}>{err}</p>}

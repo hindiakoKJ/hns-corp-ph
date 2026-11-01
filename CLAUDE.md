@@ -19,23 +19,29 @@ Repo: `hindiakoKJ/hns-corp-ph` at `E:\AI Projects\hns-corp-ph`
 ## Stack
 
 - **Framework:** Next.js 15, App Router
-- **Styles:** Tailwind CSS v4 (`@theme inline` in `globals.css`)
-- **Animation:** Framer Motion (`useInView`, `motion`, stagger/fadeUp variants)
-- **Fonts:** Inter Tight (via `next/font/google`)
-- **Logos:** PNG icons in `public/logos/` — one file per brand (`hns-icon.png`, `clerque-icon.png`, `steady-icon.png`)
+- **Styles:** `app/home.css` (site-wide design system, scoped under `.hs-root`, `hs-` classes) + Tailwind CSS v4 on the legal pages
+- **Fonts (root layout):** DM Serif Display (`--font-display`, headlines) · Cormorant Garamond (`--font-cormorant`, running copy) · Hanken Grotesk (`--font-hanken`, small UI)
+- **Logos:** brand marks in `public/logos/`
 
 ---
 
-## Design Tokens (globals.css)
+## Design language: Oil Painting (since Nov 2026)
 
-| Token | Value | Usage |
+A gallery at dusk: plum-night painted canvas, gold-leaf frames, cadmium-orange actions.
+Reference for all 20 explored styles: `.claude/skills/design-styles/SKILL.md`, live at `/styles`.
+
+| Token (`home.css`) | Value | Usage |
 |---|---|---|
-| `hns-600` | `#0891B2` | HNScorpPH cyan |
-| `clerque-600` | `#4F46E5` | Clerque indigo |
-| `steady-600` | `#0D9488` | Steady teal |
-| `paper` | `#FAFAF9` | Body background |
-| `sand` | `#F5F0E8` | Alternate section bg |
-| `ink` | `#0F172A` | Primary text |
+| `--bg` | `#140E26` | Plum night base |
+| `--txt` / `--head` | `#F6EEE2` / `#FBF4E8` | Cream text / headlines |
+| `--mut` | `#D2C3AE` | Secondary copy |
+| `--gold` / `--gold-hi` | `#F2C66D` / `#FFE2A0` | Gold leaf: eyebrows, links, numbers |
+| `--orange` | `#F2711C` | Primary buttons (`.hs-btn-indigo`, name kept for compatibility) |
+| `--frame` | gold gradient | Gold frames (hero directory, CTA, app shots, featured plan) |
+
+Old token names (`--indigo`, `--lav`) are aliased to the new palette.
+Paintings are pre-rendered images in `public/art/` (`harbor.jpg`, `harbor-1280.jpg`, `canvas-night.jpg`, `canvas-tile.png`);
+regenerate them with `node scripts/paint-art.js`. Don't use live SVG turbulence filters on the real site (too heavy for phones).
 
 ---
 
