@@ -44,11 +44,7 @@ export default function HomePage() {
         <div className="hs-ohero-in">
           <div className="hs-ohero-copy">
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
-            <h1 className="hs-h1">Software the Philippines <span className="em">owns.</span></h1>
-            <p className="hs-sub">
-              Twelve sovereign products for businesses, families and LGUs. BIR-compliant, offline-ready,
-              and hosted in-country, from the sari-sari counter to the barangay hall.
-            </p>
+            <h1 className="hs-sr">HNS PH Solutions</h1>
             <div className="hs-acts">
               <a href="#directory" className="hs-btn hs-btn-indigo">Browse the twelve</a>
               <Link href="/contact" className="hs-btn hs-btn-ghost">Talk to us</Link>

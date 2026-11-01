@@ -115,16 +115,19 @@
 .hs-mmenu .hs-btn { width: 100%; font-family: var(--font-hanken), sans-serif; font-size: 15px; }
 
 /* ── homepage hero: the harbour painting ─────────────────────────────────── */
-.hs-ohero { position: relative; isolation: isolate; overflow: hidden; margin-top: -72px; min-height: clamp(620px, 92vh, 900px); display: flex; align-items: center; }
+.hs-ohero { position: relative; isolation: isolate; overflow: hidden; margin-top: -72px; min-height: clamp(520px, 76vh, 760px); display: flex; align-items: flex-end; }
 .hs-ohero-art { position: absolute; inset: 0; z-index: -2; background: #2A1B4E url('/art/harbor.jpg') 62% 50% / cover no-repeat; }
 .hs-ohero-scrim {
   position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(90deg, rgba(16,10,30,.9) 0%, rgba(16,10,30,.7) 30%, rgba(16,10,30,.18) 58%, rgba(16,10,30,0) 74%),
+    linear-gradient(90deg, rgba(16,10,30,.72) 0%, rgba(16,10,30,.4) 26%, rgba(16,10,30,0) 50%),
     linear-gradient(180deg, rgba(16,10,30,.55) 0%, rgba(16,10,30,0) 18%, rgba(16,10,30,0) 66%, rgba(20,14,38,.92) 94%, var(--bg) 100%);
 }
 .hs-ohero-in { width: 100%; max-width: 1720px; margin: 0 auto; padding: 150px clamp(28px, 5vw, 72px) 190px; }
 .hs-ohero-copy { max-width: 640px; }
+.hs-ohero-copy .hs-badge { margin-bottom: 26px; }
+/* visually hidden, still read by screen readers and search engines */
+.hs-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hs-plaque { position: absolute; right: clamp(28px, 5vw, 72px); bottom: 150px; padding: 9px 16px; border: 4px solid transparent; background: linear-gradient(#1E1410, #1E1410) padding-box, var(--frame) border-box; font-family: var(--font-cormorant), serif; font-style: italic; font-size: 15px; color: var(--mut); box-shadow: 0 14px 28px -14px rgba(0,0,0,.8); }
 .hs-plaque b { font-style: normal; font-family: var(--font-hanken), sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1px; }
 
@@ -173,10 +176,10 @@
   .hs-dir-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  .hs-ohero { min-height: 0; }
   .hs-ohero-art { background-image: url('/art/harbor-1280.jpg'); background-position: 64% 50%; }
-  .hs-ohero-scrim { background: linear-gradient(180deg, rgba(16,10,30,.72) 0%, rgba(16,10,30,.52) 45%, rgba(16,10,30,.82) 82%, var(--bg) 100%); }
-  .hs-ohero-in { padding: 128px 20px 150px; }
+  .hs-ohero-scrim { background: linear-gradient(180deg, rgba(16,10,30,.55) 0%, rgba(16,10,30,.1) 30%, rgba(16,10,30,.25) 55%, rgba(16,10,30,.85) 84%, var(--bg) 100%); }
+  .hs-ohero { min-height: 560px; }
+  .hs-ohero-in { padding: 120px 20px 140px; }
   .hs-plaque { display: none; }
   .hs-stats { gap: 26px; margin-top: 36px; }
   .hs-stat b { font-size: 30px; }
