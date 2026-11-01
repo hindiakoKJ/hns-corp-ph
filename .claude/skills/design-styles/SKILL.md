@@ -7,6 +7,8 @@ description: Reference of 20 graphic design styles (Art Deco, Bauhaus, Brutalism
 
 A working reference for picking a visual direction and applying it to **UI**, **posters**, and **cards** (social posts, OG images, product/feature cards).
 
+**Live samples:** `/styles` in this repo (`app/styles/`) renders the HNS homepage hero and a 4:5 social card in all 20 styles. Start the dev server and open `http://localhost:3002/styles`. Each style is a scoped `.x-<id>` block in `app/styles/styles.css`; procedural art (low-poly, ink, watercolor, oil, guilloché) lives in `app/styles/art.tsx`.
+
 ## How to use this
 
 1. **Pick by mood first, not by looks.** Use the selection table below.
