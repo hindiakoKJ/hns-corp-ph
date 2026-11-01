@@ -46,7 +46,7 @@ export default function HomePage() {
             <div className="hs-badge"><span className="d" /> SEC · BIR · Naga City LGU · PhilGEPS Red Member</div>
             <h1 className="hs-sr">HNS PH Solutions</h1>
             <div className="hs-acts">
-              <a href="#directory" className="hs-btn hs-btn-indigo">Browse the twelve</a>
+              <a href="#directory" className="hs-btn hs-btn-indigo">Browse the apps</a>
               <Link href="/contact" className="hs-btn hs-btn-ghost">Talk to us</Link>
             </div>
             <div className="hs-stats">
