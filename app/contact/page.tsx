@@ -7,20 +7,7 @@ import '../home.css';
 import HomeNav from '@/components/ui/HomeNav';
 import HomeFooter from '@/components/ui/HomeFooter';
 
-const CONCERNS: Record<string, string[]> = {
-  'HNS PH Solutions': ['Custom build', 'Partnership inquiry', 'Press / Media', 'General question', 'Other'],
-  Clerque:      ['Sales inquiry', 'Technical support', 'Feature request', 'Bug report', 'Other'],
-  SariAssist:   ['App feedback', 'Bug report', 'Other'],
-  CVAssist:     ['App feedback', 'Bug report', 'Feature request', 'Other'],
-  Steady:       ['App feedback', 'Bug report', 'Privacy concern', 'Other'],
-  LOCATR:       ['Landlord inquiry', 'Renter inquiry', 'Partnership inquiry', 'Bug report', 'Other'],
-  AltSpaceCW:   ['Operator inquiry', 'Sales inquiry', 'Technical support', 'Bug report', 'Other'],
-  Scatto:       ['Event setup help', 'Sales inquiry', 'Bug report', 'Feature request', 'Other'],
-  Everafter:    ['General inquiry', 'Sales inquiry', 'Bug report', 'Feature request', 'Other'],
-  KonekBarangay:['LGU inquiry', 'Partnership inquiry', 'General question', 'Other'],
-};
-
-const PRODUCTS = Object.keys(CONCERNS);
+import { CONCERNS, PRODUCTS, HONEYPOT_FIELD } from '@/components/contact/options';
 
 const TOPIC_MAP: Record<string, { product: string; concern: string }> = {
   partnership: { product: 'HNS PH Solutions', concern: 'Partnership inquiry' },
@@ -41,6 +28,8 @@ function ContactForm() {
   const [message,  setMessage]  = useState('');
   const [status,   setStatus]   = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [openedAt] = useState(() => Date.now());
 
   useEffect(() => {
     if (product && concern && !CONCERNS[product]?.includes(concern)) setConcern('');
@@ -54,7 +43,7 @@ function ContactForm() {
       const res  = await fetch('/api/contact', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ name, email, product, concern, message }),
+        body:    JSON.stringify({ name, email, product, concern, message, [HONEYPOT_FIELD]: honeypot, elapsedMs: Date.now() - openedAt }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Something went wrong.');
@@ -78,6 +67,11 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+      {/* Honeypot: hidden from people and screen readers; bots that fill every field get dropped. */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label htmlFor="hp-website">Website</label>
+        <input id="hp-website" name={HONEYPOT_FIELD} type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={e => setHoneypot(e.target.value)} />
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16 }}>
         <div>
           <label className="hs-label">Name</label>
